@@ -1,0 +1,2603 @@
+
+[CHARDEF c_imp_pevnost]
+ID=c_mongbat
+NAME=Imp
+SOUND=snd_MONSTER_MNGBAT1
+ICON=i_pet_mongbat
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Imp duplikator
+
+CAN=MT_FLY|MT_WALK
+
+ATTACK=50
+ARMOR=25
+MOVERATE=5
+
+RESOURCES=3 i_ribs_raw, 3 i_hide, 2 i_reag_batwing
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_duplicator
+TEVENTS=e_daemon
+
+CATEGORY=Monsters
+SUBSECTION=Caves
+DESCRIPTION=Imp
+
+ON=@Create
+COLOR=color_red1
+NPC=brain_monster
+FAME=1000
+KARMA={-2000 -2999}
+
+STR=250
+DEX={90 120}
+INT={86 110}
+
+MAXHITS={200 300}
+MAXSTAM={100 120}
+MAXMANA={860 1100}
+
+tag.dupecount=3
+
+tag.experience=<eval {15.0 22.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[1]>
+
+//other resists
+tag(resist_poison,850)
+tag.resist_para=<eval {200 450}>
+tag(resist_summon,350)
+tag(resist_bleed,100)
+
+tag(resist_sharp,00)
+tag(resist_slash,00)        //sekery
+tag(resist_pierce,150)
+tag(resist_blunt,00)
+
+tag(resist_fire,900)
+tag(resist_elect,400)
+tag(resist_cold,-200)
+
+//typ monstra
+tag(monstertype,daemon)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical //ruzne
+
+EI=50.0
+Parrying={50.0 60.0}
+Magery={40.0 60.0}
+Resist=50.0
+Tactics={55.0 70.0}
+Wrestling={60.0 75.0}
+SpiritSpeak=35.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_feeblemind
+ADDSPELL=s_harm
+ADDSPELL=s_magic_arrow
+
+ON=@NPCRestock
+ITEM=loot_IMP
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_strach_mage_male]
+NAME=Kouzelnik Strachu
+ID=C_man
+
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=140
+ARMOR=40
+MOVERATE=4
+
+RESOURCES=8 t_magic
+FOODTYPE=
+//=r_mountains,r_caves,r_dungeon
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_looter
+TEVENTS=e_humanoid
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Carodej strachu (male)
+
+ON=@Create
+COLOR=colors_skin
+NPC=brain_monster
+FAME=100
+KARMA=-5000
+
+STR=1000
+DEX=1000
+INT=290
+NAME=#NAMES_HUMANMALE
+
+MAXHITS={7500 8000}
+MAXSTAM={100 120}
+MAXMANA=1200
+
+tag.experience=<eval {150.0 160.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,450)
+tag.resist_para=<eval {600 750}>
+tag(resist_summon,900)
+tag(resist_bleed,600)
+//weap resists
+tag(resist_sharp,200)
+tag(resist_slash,200)
+tag(resist_pierce,-200)
+tag(resist_blunt,500)
+//magic resists
+tag(resist_fire,400)
+tag(resist_elect,400)
+tag(resist_cold,200)
+
+//typ monstra
+tag(monstertype,humanoid,70)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical //ruzne
+
+Wrestling=150.0
+Resist=100.0
+Tactics={100.0 150.0}
+Parrying={90.0 100.0}
+Macefighting={90.0 100.0}
+Magery=450.0
+EI=130.0
+Provocation=100.0
+Peacemaking=100.0
+SpiritSpeak=40.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+ADDSPELL=s_greater_heal
+ADDSPELL=s_paralyze
+
+ITEMnewbie=i_monster_create
+
+
+ITEMNEWBIE=random_male_hair
+ITEMNEWBIE=random_facial_hair
+COLOR=color_snow
+ITEMnewbie=i_wand_3
+COLOR=098B
+ITEMnewbie=i_sandals
+COLOR=000
+ITEMnewbie=i_robe
+COLOR=0989
+ITEMnewbie=i_candle_lit
+COLOR=0989
+ITEMnewbie=i_pants_long
+COLOR=0961
+ITEMnewbie=i_platemail_gorget
+COLOR=0989
+ITEMnewbie=i_bone_gloves
+COLOR=0989
+ITEMnewbie=i_mask_bear
+COLOR=0989
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{10 15}
+ITEM=RANDOM_REAGENT_NECRO,{10 15}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_strach_mage_female]
+NAME=Carodejka Strachu
+ID=C_WOMAN
+ICON=i_pet_woMAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=120
+ARMOR=40
+MOVERATE=4
+
+RESOURCES=8 t_magic
+FOODTYPE=
+//=r_mountains,r_caves,r_dungeon
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_monster
+TEVENTS=e_looter
+TEVENTS=e_humanoid
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Carodejka strachu (female)
+
+ON=@Create
+COLOR=colors_skin
+NPC=brain_monster
+FAME=100
+KARMA=-5000
+
+STR=1000
+DEX=1000
+INT=290
+NAME=#NAMES_HUMANFEMALE
+
+MAXHITS={7500 8000}
+MAXSTAM={100 120}
+MAXMANA=1200
+
+tag.experience=<eval {120.0 150.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,550)
+tag.resist_para=<eval {600 750}>
+tag(resist_summon,900)
+tag(resist_bleed,600)
+//weap resists
+tag(resist_sharp,200)
+tag(resist_slash,00)
+tag(resist_pierce,-100)
+tag(resist_blunt,500)
+//magic resists
+tag(resist_fire,400)
+tag(resist_elect,400)
+tag(resist_cold,400)
+
+//typ monstra
+tag(monstertype,humanoid,70)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical //ruzne
+
+Wrestling=150.0
+Resist={120.0 170.0}
+Tactics={100.0 150.0}
+Parrying={90.0 100.0}
+Macefighting={90.0 100.0}
+Magery=300.0
+EI=130.0
+Provocation=100.0
+Peacemaking=100.0
+SpiritSpeak=40.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+ADDSPELL=s_greater_heal
+ADDSPELL=s_paralyze
+
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=random_female_hair
+ITEMnewbie=i_wand_2
+COLOR=098B
+ITEMnewbie=i_sandals
+COLOR=000
+ITEMnewbie=i_dress_full
+COLOR=09C4
+ITEMnewbie=i_candle_lit
+COLOR=0989
+ITEMnewbie=i_mask_bear
+COLOR=0989
+ITEMnewbie=i_necklance_silver
+COLOR=00
+ITEMnewbie=i_bone_gloves
+COLOR=0989
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{10 15}
+ITEM=RANDOM_REAGENT_NECRO,{10 15}
+
+//////////
+[CHARDEF c_duch_runy_1]
+NAME=Duch Runy Snehu
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP|MT_MALE
+
+ATTACK=90
+ARMOR=100
+MOVERATE=4
+
+BLOODCOLOR=098b
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+TEVENTS=e_summoneater_vamp
+TSPEECH=spk_human_prime
+TEVENTS=e_humanoid
+TEVENTS=e_npc_roundattack
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Duch Runy Bily
+
+ON=@Create
+COLOR=00
+NPC=brain_Human
+KARMA=-6000
+FAME=1000
+
+STR=1000
+DEX=700
+INT=800
+
+MAXHITS={10400 10500}
+MAXSTAM={400 450}
+MAXMANA=250
+
+tag.experience=<eval {380.0 400.0}>
+
+tag.roundattack_damage=30,40  //dmg od - do
+tag.roundattack_time=5,7      //prodleva od - do v sek
+tag.roundattack_chance=200    //20.0%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//other resists
+tag(resist_poison,700)
+tag.resist_para=<eval {650 750}>
+tag(resist_summon,700)
+tag(resist_bleed,800)
+
+//weap resists
+tag(resist_sharp,750)
+tag(resist_slash,50)
+tag(resist_pierce,850)
+tag(resist_blunt,850)
+
+//magic resists
+tag(resist_fire,-50)
+tag(resist_elect,500)
+tag(resist_cold,950)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+
+//weap flags
+tag.weapflag=dam_piercing|dam_physical
+
+Swordsmanship=150.0
+Tactics=1000
+Resist={1200 1300}
+Magery=2000
+EI=100.0
+SpiritSpeak=100.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+//addspell=s_greater_heal
+
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_halberd
+COLOR=0434
+ITEMNEWBIE=i_deathrobe
+COLOR=0434
+ITEM=i_npc_mount
+tag.mount=i_mt_horse_gray
+tag.mountcolor=2500
+
+ON=@NPCRestock
+ITEM=loot_human
+ITEM=i_gold
+
+ON=@npcseenewplayer
+dorand 2
+  say("Zemri, cerve!")
+  say("Priprav se na smrt!")
+enddo
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_duch_runy_2]
+NAME=Duch Runy
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP|MT_MALE
+
+ATTACK=80
+ARMOR=110
+MOVERATE=4
+
+RESOURCES=
+FOODTYPE=
+
+BLOODCOLOR=0995
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+TEVENTS=e_summoneater
+TSPEECH=spk_human_prime
+TEVENTS=e_humanoid
+TEVENTS=e_npc_stam_dmg
+TEVENTS=e_parakrik
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Duch Runy Zlaty
+
+ON=@Create
+COLOR=00
+NPC=brain_Human
+KARMA=-6000
+FAME=1000
+STR=1000
+DEX=600
+INT=800
+
+MAXHITS={8500 9500}
+MAXSTAM={250 300}
+MAXMANA=400
+
+tag.experience=<eval {340.0 380.0}>
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {650 750}>
+tag(resist_summon,700)
+tag(resist_bleed,500)
+
+//weap resists
+tag(resist_sharp,700)
+tag(resist_slash,800)
+tag(resist_pierce,500)
+tag(resist_blunt,100)
+
+//magic resists
+tag(resist_fire,500)
+tag(resist_elect,50)
+tag(resist_cold,800)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+
+//weap flags
+tag.weapflag=dam_piercing|dam_physical
+
+Swordsmanship=150.0
+Fencing=100.0
+Tactics=100.0
+Resist={1200 1300}
+Magery=300.0
+EI=100.0
+SpiritSpeak=80.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_greater_heal
+ADDSPELL=s_flamestrike
+
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_katana
+COLOR=0428
+ITEMNEWBIE=i_deathrobe
+COLOR=0995
+ITEMNEWBIE=i_shield_round_bronze
+COLOR=0428
+ITEM=i_npc_mount
+tag.mount=i_mt_horse_gray
+tag.mountcolor=0995
+ON=@NPCRestock
+ITEM=loot_human
+ITEM=i_gold
+
+ON=@npcseenewplayer
+dorand 2
+  say("Zemri, cerve!")
+  say("Priprav se na smrt!")
+enddo
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_duch_runy_3]
+NAME=Duch Runy
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP|MT_MALE
+
+ATTACK=80
+ARMOR=100
+MOVERATE=4
+
+BLOODCOLOR=0995
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+TEVENTS=e_summoneater
+TSPEECH=spk_human_prime
+TEVENTS=e_humanoid
+TEVENTS=e_lightnings
+TEVENTS=e_npc_critic
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Duch Runy Zeleny
+
+ON=@Create
+COLOR=07D1
+NPC=brain_Human
+KARMA=-6000
+FAME=1000
+
+STR=1000
+DEX=600
+INT=800
+
+MAXHITS={8000 9000}
+MAXSTAM={250 300}
+MAXMANA=400
+
+tag.experience=<eval {330.0 380.0}>
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(e_lightnings_chance,100) // 6.7% chance
+tag(e_lightnings_range,5)
+
+
+tag.npc_critic_chance=250         //25% chance
+tag.npc_critic_dmg=20,25
+
+//other resists
+tag(resist_poison,200)
+tag.resist_para=<eval {650 750}>
+tag(resist_summon,700)
+tag(resist_bleed,400)
+
+//weap resists
+tag(resist_sharp,300)
+tag(resist_slash,800)
+tag(resist_pierce,100)
+tag(resist_blunt,800)
+
+//magic resists
+tag(resist_fire,100)
+tag(resist_elect,800)
+tag(resist_cold,800)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+
+//weap flags
+tag.weapflag=dam_piercing|dam_physical
+
+Swordsmanship=150.0
+Tactics=1000
+Resist={1200 1300}
+Magery=300.0
+EI=100.0
+SpiritSpeak=70.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_meteor_swarm
+ADDSPELL=s_lightning
+ADDSPELL=s_greater_heal
+ADDSPELL=s_flamestrike
+
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_deathrobe
+COLOR=07D1
+NAME=Roba Zivota
+ITEMNEWBIE=i_cleaver_meat
+COLOR=098b
+NAME=Sekacek
+ITEMNEWBIE=i_shield_wood
+COLOR=07D1
+NAME=Stit
+ITEMNEWBIE=i_platemail_gloves
+COLOR=07D1
+NAME=Rukavice
+ITEMNEWBIE=i_npc_mount
+tag.mount=i_mt_horse_gray
+tag.mountcolor=00
+ON=@NPCRestock
+ITEM=loot_human
+ITEM=i_gold
+
+ON=@npcseenewplayer
+dorand 2
+  say("Zemri, cerve!")
+  say("Priprav se na smrt!")
+enddo
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_duch_runy_4]
+NAME=Duch Runy
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP|MT_MALE
+
+ATTACK=70
+ARMOR=100
+MOVERATE=4
+
+RESOURCES=
+FOODTYPE=
+
+BLOODCOLOR=0995
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+TEVENTS=e_summoneater
+TSPEECH=spk_human_prime
+TEVENTS=e_humanoid
+TEVENTS=e_autoreflect
+TEVENTS=e_npc_curse_mana
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Duch Runy Cerny
+
+ON=@Create
+COLOR=00
+NPC=brain_Human
+KARMA=-6000
+FAME=1000
+
+STR=1000
+DEX=1000
+INT=800
+
+MAXHITS={12000 13000}
+MAXSTAM={500 600}
+MAXMANA=100
+
+tag.experience=<eval {390.0 410.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+tag.npc_curse_mana_chance=250       // 25% chance to trigger this event
+tag.npc_curse_mana_delay=15,25      // delay between another possible strike
+tag.npc_curse_mana_dmg=20,30
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {650 750}>
+tag(resist_summon,700)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,800)
+tag(resist_slash,800)
+tag(resist_pierce,850)
+tag(resist_blunt,850)
+
+//magic resists
+tag(resist_fire,400)
+tag(resist_elect,200)
+tag(resist_cold,00)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+
+//weap flags
+tag.weapflag=dam_piercing|dam_physical
+
+Wrestling=100.0
+Swordsmanship=150.0
+Tactics=1000
+Resist={1200 1300}
+Magery=2000.0
+EI=100.0
+SpiritSpeak=80.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_greater_heal
+NAME=Kniha Smrti
+
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_deathrobe
+COLOR=2500
+NAME=Roba Smrti
+ITEMNEWBIE=i_candle_lit
+NAME=Svicka Temnoty
+ITEMNEWBIE=i_npc_mount
+tag.mount=i_mt_horse_gray
+tag.mountcolor=2500
+
+ON=@NPCRestock
+ITEM=loot_human
+ITEM=i_gold
+
+ON=@npcseenewplayer
+dorand 2
+  say("Zemri, cerve!")
+  say("Priprav se na smrt!")
+enddo
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_duch_runy_5]
+NAME=Duch Runy Krve
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP|MT_MALE
+
+ATTACK=150
+ARMOR=90
+MOVERATE=4
+
+BLOODCOLOR=098c
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+TEVENTS=e_summoneater
+TSPEECH=spk_human_prime
+TEVENTS=e_humanoid
+TEVENTS=e_lifeLeech          //kazda rana saje HP
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Duch Runy Krvavy
+
+ON=@Create
+COLOR=00
+NPC=brain_Human
+KARMA=-6000
+FAME=1000
+
+STR=1000
+DEX=300
+INT=800
+
+MAXHITS={12000 13000}
+MAXSTAM={350 400}
+MAXMANA=500
+
+tag.experience=<eval {380.0 400.0}>
+
+tag.npc_lifeLeech=100,150      //tolik si prida kazdou ranou
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//other resists
+tag(resist_poison,550)
+tag.resist_para=<eval {650 750}>
+tag(resist_summon,700)
+tag(resist_bleed,-450)
+
+//weap resists
+tag(resist_sharp,650)
+tag(resist_slash,950)
+tag(resist_pierce,350)
+tag(resist_blunt,350)
+
+//magic resists
+tag(resist_fire,800)
+tag(resist_elect,300)
+tag(resist_cold,-50)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+
+//weap flags
+tag.weapflag=dam_piercing|dam_physical
+
+Fencing=150.0
+Wrestling=100.0
+Swordsmanship=150.0
+Tactics=1000
+Resist={1200 1300}
+Magery=1000.0
+EI=90.0
+SpiritSpeak=100.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_greater_heal
+
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_deathrobe
+COLOR=020
+NAME=krvava roba
+ITEMNEWBIE=i_shield_heater
+NAME=Krvavy Stit
+COLOR=098D
+ITEMNEWBIE=i_sword_long
+NAME=Krvavy Mec
+COLOR=098D
+ITEMNEWBIE=i_npc_mount
+tag.mount=i_mt_horse_gray
+tag.mountcolor=020
+
+ON=@NPCRestock
+ITEM=i_gold
+
+ON=@npcseenewplayer
+say("V boji se mi nikdo nevyrovna.")
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_vladce_run]
+NAME=Vladce Run
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP|MT_MALE
+
+ATTACK=100
+ARMOR=70
+MOVERATE=4
+
+BLOODCOLOR=0992
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+TEVENTS=e_summoneater
+TSPEECH=spk_human_prime
+TEVENTS=e_humanoid
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Vladce Run
+
+ON=@Create
+COLOR=00
+NPC=brain_Human
+KARMA=-6000
+FAME=1500
+
+STR=1000
+DEX=1000
+INT=800
+
+MAXHITS={8500 9000}
+MAXSTAM={350 360}
+MAXMANA=500
+
+tag.experience=<eval {400.0 450.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+//other resists
+tag(resist_poison,600)
+tag(resist_para,700)
+tag(resist_summon,700)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,450)
+tag(resist_slash,350)
+tag(resist_pierce,00)
+tag(resist_blunt,850)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,600)
+tag(resist_cold,50)
+
+//typ monstra
+tag(monstertype,humanoid,40)
+
+//weap flags
+tag.weapflag=dam_piercing|dam_physical
+
+Wrestling=100.0
+Swordsmanship=150.0
+Tactics=100.0
+Resist={120.0 130.0}
+Magery=100.0
+EI=2600.0
+SpiritSpeak=160.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_greater_heal
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_cape
+COLOR=0845
+ITEMNEWBIE=i_pitchfork
+COLOR=0845
+ITEMNEWBIE=i_person_lord_british
+COLOR=0845
+NAME=runove brneni
+ITEMNEWBIE=i_bone_helmet
+COLOR=0845
+NAME=runove brneni
+
+ITEMNEWBIE=i_npc_mount
+tag.mount=i_mt_horse_gray
+tag.mountcolor=2500
+
+ON=@NPCRestock
+ITEM=i_gold
+
+ON=@npcseenewplayer
+say("Zemrete!")
+
+
+//////////////////////////////////////////////////////////////
+[CHARDEF c_strach_fanatik]
+NAME=Fanatik
+ID=C_man
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=155
+ARMOR=60
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_parakrik
+TEVENTS=e_ps_fanatik
+TEVENTS=e_humanoid
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Temny Bojovnik
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+TITLE=Temny Fanatik
+NPC=brain_monster
+FAME=500
+KARMA=-5000
+
+STR=1000
+DEX=500
+INT=500
+
+MAXHITS={10500 10600}
+MAXSTAM={240 260}
+MAXMANA=1200
+
+tag.experience=<eval {300.0 350.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+//other resists
+tag(resist_poison,250)
+tag(resist_para,800)
+tag(resist_summon,750)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,750)
+tag(resist_pierce,400)
+tag(resist_blunt,400)
+
+//magic resists
+tag(resist_fire,800)
+tag(resist_elect,300)
+tag(resist_cold,800)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Wrestling=150.0
+Resist={120.0 170.0}
+Tactics={100.0 150.0}
+Parrying={90.0 100.0}
+Macefighting=150.0
+Swordsmanship=150.0
+Provocation=100.0
+Peacemaking=100.0
+SpiritSpeak=100.0
+
+ITEMnewbie=i_monster_create
+
+ITEMnewbie=i_bardiche_adamantinum
+ITEMnewbie=i_obsidian_platemail_leggings
+ITEMnewbie=i_obsidian_platemail
+ITEMnewbie=i_obsidian_platemail_arms
+ITEMnewbie=i_obsidian_platemail_gauntlets
+ITEMnewbie=i_obsidian_platemail_gorget
+ITEMnewbie=i_obsidian_nose_helm
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{20 30}
+
+//////////////////////////////////////////////////////////////
+[CHARDEF c_strach_fanatik_kapitan]
+NAME=Fanatik
+ID=C_man
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=170
+ARMOR=60
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_parakrik
+TEVENTS=e_ps_fanatik
+TEVENTS=e_humanoid
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Temny Bojovnik
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+TITLE=Temny Fanatik Kapitan
+NPC=brain_monster
+FAME=500
+KARMA=-5000
+
+STR=1000
+DEX=500
+INT=500
+
+MAXHITS={17000 22000}
+MAXSTAM={240 260}
+MAXMANA=1200
+
+tag.experience=<eval {600.0 750.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+//other resists
+tag(resist_poison,250)
+tag(resist_para,800)
+tag(resist_summon,750)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,750)
+tag(resist_pierce,400)
+tag(resist_blunt,400)
+
+//magic resists
+tag(resist_fire,800)
+tag(resist_elect,300)
+tag(resist_cold,800)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Wrestling=150.0
+Resist={140.0 190.0}
+Tactics={100.0 150.0}
+Parrying={90.0 100.0}
+Macefighting=190.0
+Swordsmanship=190.0
+Provocation=100.0
+Peacemaking=100.0
+SpiritSpeak=100.0
+
+ITEMnewbie=i_monster_create
+
+ITEMnewbie=i_bardiche_adamantinum
+ITEMnewbie=i_adamantinum_platemail_leggings
+ITEMnewbie=i_adamantinum_platemail
+ITEMnewbie=i_adamantinum_platemail_arms
+ITEMnewbie=i_adamantinum_platemail_gauntlets
+ITEMnewbie=i_adamantinum_platemail_gorget
+ITEMnewbie=i_adamantinum_nose_helm
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{100 250}
+
+///////////////////////////////////////////
+
+
+[CHARDEF c_menivec_small]
+ID=c_slime
+NAME=Chladny Menivec
+SOUND=snd_MONSTER_SLIME1
+ICON=i_pet_slime
+ANIM=060c7f
+CAN=MT_WALK|MT_run
+
+ATTACK=70
+ARMOR=80
+MOVERATE=4
+
+RESOURCES=1 i_ribs_raw
+FOODTYPE=
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_menavec
+TEVENTS=e_npc_regeneration
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Menivec Maly
+
+ON=@Create
+COLOR=0990
+NPC=brain_monster
+FAME=500
+KARMA={-4000 -5999}
+
+STR=800
+DEX=500
+INT=10
+
+MAXHITS={3000 3500}
+MAXSTAM={300 330}
+MAXMANA=0
+
+tag.experience=<eval {100.0 110.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,700)
+tag(resist_summon,850)
+tag(resist_bleed,-500)
+
+//weap resists
+tag(resist_sharp,250)
+tag(resist_slash,450)
+tag(resist_pierce,600)
+tag(resist_blunt,800)
+
+//magic resists
+tag(resist_fire,-50)
+tag(resist_elect,850)
+tag(resist_cold,400)
+
+//typ monstra
+tag(monstertype,ooze)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+tag(regespeed,30)
+
+Parrying=100.0
+Poisoning={120.0 150.0}
+Tactics=100.0
+Wrestling=100.0
+SpiritSpeak=70.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_scroll_polymorph,{0 1}
+ITEM=i_gold
+
+///////////////////////////////////////////////
+
+[CHARDEF c_menivec]
+ID=c_slime
+NAME=Menivec
+SOUND=snd_MONSTER_SLIME1
+ICON=i_pet_slime
+ANIM=060c7f
+CAN=MT_WALK|MT_run
+
+ATTACK=100
+ARMOR=90
+MOVERATE=4
+
+RESOURCES=1 i_ribs_raw
+FOODTYPE=
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_menavec
+TEVENTS=e_npc_regeneration
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Menivec Stredni
+
+ON=@Create
+COLOR=0619
+NPC=brain_monster
+FAME=500
+KARMA={-4000 -5999}
+
+STR=800
+DEX=500
+INT=10
+
+MAXHITS={15000 16000}
+MAXSTAM={300 320}
+MAXMANA=0
+
+tag.experience=<eval {250.0 270.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,700)
+tag(resist_summon,850)
+tag(resist_bleed,-200)
+
+//weap resists
+tag(resist_sharp,450)
+tag(resist_slash,650)
+tag(resist_pierce,800)
+tag(resist_blunt,900)
+
+//magic resists
+tag(resist_fire,850)
+tag(resist_elect,-50)
+tag(resist_cold,450)
+
+//typ monstra
+tag(monstertype,ooze)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+tag(regespeed,30)
+
+Parrying=100.0
+Poisoning={150.0 200.0}
+Tactics=100.0
+Wrestling=100.0
+SpiritSpeak=100.0
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_scroll_polymorph,{0 1}
+ITEM=i_gold
+
+////////////////////////////////////////
+
+[CHARDEF c_menivec_powerful]
+ID=c_slime
+NAME=Menivec
+SOUND=snd_MONSTER_SLIME1
+ICON=i_pet_slime
+ANIM=060c7f
+CAN=MT_WALK|MT_run
+
+ATTACK=140
+ARMOR=100
+MOVERATE=4
+
+RESOURCES=1 i_ribs_raw
+FOODTYPE=
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_menavec_powerful
+TEVENTS=e_npc_regeneration
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Menivec Velky
+
+ON=@Create
+COLOR=08FD
+NPC=brain_monster
+FAME=1500
+KARMA={-4000 -5999}
+
+STR=800
+DEX=500
+INT=1000
+
+MAXHITS={30000 31000}
+MAXSTAM={360 400}
+MAXMANA=500
+
+tag.experience=<eval {520.0 550.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,900)
+tag(resist_summon,850)
+tag(resist_bleed,00)
+
+//weap resists
+tag(resist_sharp,250)
+tag(resist_slash,450)
+tag(resist_pierce,800)
+tag(resist_blunt,900)
+
+//magic resists
+tag(resist_fire,600)
+tag(resist_elect,600)
+tag(resist_cold,00)
+
+//typ monstra
+tag(monstertype,ooze)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+tag(regespeed,25)
+
+Parrying=100.0
+Poisoning={200.0 230.0}
+Tactics=100.0
+Wrestling=100.0
+SpiritSpeak=200.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_scroll_polymorph,{0 1}
+ITEM=i_gold
+
+/////////////////////////
+[CHARDEF c_fire_fanatik]
+NAME=Ohnivy Fanatik
+ID=C_man
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=150
+ARMOR=70
+MOVERATE=4
+
+RESOURCES=
+FOODTYPE=
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_monster
+TEVENTS=e_parakrik
+TEVENTS=e_explode
+TEVENTS=e_phoenix_fire
+TEVENTS=e_fire
+TEVENTS=e_humanoid
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Ohnivy Bojovnik
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+TITLE=Bojovnik Ohne
+NPC=brain_monster
+FAME=1000
+KARMA=-5000
+
+STR=1000
+DEX=3500
+INT=500
+
+MAXHITS={4000 5000}
+MAXSTAM={290 300}
+MAXMANA=1200
+
+tag.experience=<eval {250.0 260.0}>
+Tag.explode_dmg=90
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+//other resists
+tag(resist_poison,350)
+tag(resist_para,800)
+tag(resist_summon,750)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,250)
+tag(resist_pierce,300)
+tag(resist_blunt,600)
+
+//magic resists
+tag(resist_fire,1000)
+tag(resist_elect,300)
+tag(resist_cold,-450)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+tag(monstertype2,fire)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Wrestling=150.0
+Resist={120.0 170.0}
+Tactics={100.0 150.0}
+Macefighting=150.0
+Swordsmanship=150.0
+Provocation=100.0
+Peacemaking=100.0
+SpiritSpeak=145.0
+
+ITEMnewbie=i_monster_create
+
+ITEMnewbie=i_bardiche_adamantinum
+COLOR=0986
+NAME=Ohniva Zbran
+ITEMnewbie=i_obsidian_platemail_leggings
+COLOR=0845
+NAME=Ohniva Zbroj
+ITEMnewbie=i_obsidian_platemail
+COLOR=0845
+NAME=Ohniva Zbroj
+ITEMnewbie=i_obsidian_platemail_arms
+COLOR=0845
+NAME=Ohniva Zbroj
+ITEMnewbie=i_obsidian_platemail_gauntlets
+COLOR=0845
+NAME=Ohniva Zbroj
+ITEMnewbie=i_obsidian_platemail_gorget
+COLOR=0845
+NAME=Ohniva Zbroj
+ITEMnewbie=i_obsidian_nose_helm
+COLOR=0845
+NAME=Ohniva Zbroj
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{20 50}
+
+////////////////////////////////////////////////
+
+[CHARDEF c_fire_lord]
+ID=c_ophidian_queen
+NAME=Fire Lord
+SOUND=snd_MONSTER_OPHIDIAN_WARRIOR1
+ICON=i_pet_ophid_war
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_FIRE_IMMUNE|MT_EQUIP|MT_GHOST
+
+ATTACK=145
+ARMOR=100
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+BLOODCOLOR=0996
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_fire_lord
+TEVENTS=e_character
+TEVENTS=e_phoenix
+TEVENTS=e_summoneater                          //smaze summona, co zasahne
+TEVENTS=e_npc_detect
+TEVENTS=e_fire
+TEVENTS=e_npc_critic              //sance na kritik melee
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Ohnivy Kral
+
+ON=@Create
+COLOR=0981
+NPC=brain_monster
+FAME=20000
+KARMA=-8000
+
+STR=2500
+DEX=1500
+INT=1000
+
+MAXHITS={30000 31000}
+MAXSTAM={260 280}
+MAXMANA=0
+
+tag.experience=<eval {1500.0 1700.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+tag.npc_critic_chance=250         //25% chance
+tag.npc_critic_dmg=20,25          //dmg in between
+
+//other resists
+tag(resist_poison,800)
+tag(resist_para,1000)
+tag(resist_summon,500)
+tag(resist_bleed,250)
+
+//weap resists
+tag(resist_sharp,350)
+tag(resist_slash,00)
+tag(resist_pierce,00)
+tag(resist_blunt,800)
+
+//magic resists
+tag(resist_fire,1000)
+tag(resist_elect,500)
+tag(resist_cold,-450)
+
+//typ monstra
+
+tag(monstertype,daemon,60)
+tag(monstertype2,fire)
+
+//weap flags
+tag.weapflag=dam_fire|dam_magic
+
+Peacemaking=100.0
+Provocation=100.0
+Parrying={100.0 150.0}
+Tactics={200.0 300.0}
+Wrestling={200.0 300.0}
+SpiritSpeak=200.00
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+/////////////////////////////////
+
+[CHARDEF c_fire_lord_summon] //////// summon na konec PS
+ID=c_ophidian_queen
+NAME=Fire Lord
+SOUND=snd_MONSTER_OPHIDIAN_WARRIOR1
+ICON=i_pet_ophid_war
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_FIRE_IMMUNE|MT_EQUIP|MT_GHOST
+
+ATTACK=145
+ARMOR=100
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+
+BLOODCOLOR=0996
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_fire_lord
+TEVENTS=e_summoneater                          //smaze summona, co zasahne
+TEVENTS=e_npc_detect
+TEVENTS=e_npc_curse                     //vsechny viditelne zrani o dmg
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Ohnivy Kral
+
+ON=@Create
+COLOR=0981
+NPC=brain_monster
+FAME=20000
+KARMA=-8000
+
+STR=2500
+DEX=1500
+INT=1000
+
+MAXHITS={30000 30000}
+MAXSTAM={260 280}
+MAXMANA=0
+
+tag.experience=<eval {800.0 900.0}>
+
+tag.npc_curse_chance=250                // 25% chance to trigger this event
+tag.npc_curse_delay=15,17               // delay between another possible strike
+tag.npc_curse_dmg=30,35                 // dmg
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[8]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,750)
+tag(resist_bleed,750)
+
+//weap resists
+tag(resist_sharp,350)
+tag(resist_slash,00)
+tag(resist_pierce,00)
+tag(resist_blunt,400)
+
+//magic resists
+tag(resist_fire,1000)
+tag(resist_elect,500)
+tag(resist_cold,-650)
+
+//typ monstra
+tag(monstertype,fire)
+//weap flags
+tag.weapflag=dam_fire|dam_magic
+
+Peacemaking=100.0
+Provocation=100.0
+Parrying={100.0 150.0}
+Tactics={200.0 300.0}
+Wrestling={200.0 300.0}
+SpiritSpeak=200.00
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_OPHIDIAN
+ITEM=i_gold
+
+
+[CHARDEF c_strach_mage_chief]
+NAME=Cernokneznik Hruzy
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=130
+ARMOR=110
+MOVERATE=4
+
+RESOURCES=8 t_magic
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_summoneater                          //smaze summona, co zasahne
+TEVENTS=e_strach_lord1
+TEVENTS=e_parakrik
+TEVENTS=e_npc_detect
+TEVENTS=e_humanoid
+TEVENTS=e_lightnings
+TEVENTS=e_phoenix_fire
+TEVENTS=e_npc_roundattack
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Cernokneznik hruzy
+
+ON=@Create
+COLOR=colors_skin
+NPC=brain_monster
+FAME=100
+KARMA=-5000
+
+STR=1000
+DEX=3000
+INT=450
+NAME=Lord Strachu
+
+MAXHITS={29000 30000}
+MAXSTAM={200 260}
+MAXMANA=2400
+
+tag.experience=<eval 900.0 950.0}>
+
+tag.roundattack_damage=40,50  //dmg od - do
+tag.roundattack_time=15,17    //prodleva od - do v sek
+tag.roundattack_chance=400    //40.0%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(e_lightnings_chance,100)      //10.0% chance
+tag(e_lightnings_range,5)
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,1000)
+tag(resist_bleed,675)
+
+//weap resists
+tag(resist_sharp,200)
+tag(resist_slash,800)
+tag(resist_pierce,400)
+tag(resist_blunt,800)
+
+//magic resists
+tag(resist_fire,900)
+tag(resist_elect,200)
+tag(resist_cold,450)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical //ruzne
+
+Wrestling=150.0
+Resist={120.0 170.0}
+Tactics={100.0 150.0}
+Parrying={90.0 100.0}
+Macefighting={90.0 100.0}
+fencing={90.0 100.0}
+swordsmanship={90.0 100.0}
+Magery=1000.0
+EI=120.0
+Provocation=100.0
+Peacemaking=100.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+
+ITEMnewbie=i_monster_create
+ITEM=i_npc_mount
+tag.mount=i_mt_horse_gray
+tag.mountcolor=0455
+
+ITEMNEWBIE=i_light_source
+ITEMNEWBIE=random_female_hair
+ITEMnewbie=i_bone_helmet
+COLOR=0989
+NAME=Zbroj desu
+ITEMnewbie=i_spear_short
+COLOR=067A
+NAME=Kopi Jedovateho Strachu
+ITEMnewbie=i_sandals
+COLOR=0989
+ITEMnewbie=i_bone_leggings
+COLOR=0989
+NAME=Zbroj desu
+ITEMnewbie=i_bone_chest
+COLOR=0989
+NAME=Zbroj desu
+ITEMnewbie=i_necklance_silver
+COLOR=0989
+ITEMnewbie=i_bone_gloves
+COLOR=0989
+ITEMnewbie=i_shield_chaos
+COLOR=0989
+NAME=Stit Strachu
+ITEMnewbie=i_bone_arms
+COLOR=0989
+NAME=Zbroj desu
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{40 60}
+ITEM=RANDOM_REAGENT_NECRO,{30 50}
+
+/////////////////////////////////////////////////////////
+
+[CHARDEF c_strach_mage_chief2]
+
+NAME=Cernokneznik Hruzy
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=140
+ARMOR=140
+MOVERATE=4
+
+RESOURCES=8 t_magic
+FOODTYPE=
+//=r_mountains,r_caves,r_dungeon
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_summoneater                          //smaze summona, co zasahne
+TEVENTS=e_potiondrinker
+TEVENTS=e_strach_lord2
+TEVENTS=e_npc_detect
+TEVENTS=e_humanoid
+TEVENTS=e_phoenix
+TEVENTS=e_phoenix_fire
+TEVENTS=e_npc_roundattack_pullall
+TEVENTS=e_parakrik
+TEVENTS=e_lightnings
+TEVENTS=e_managain
+TEVENTS=e_npc_summoning
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Cernokneznik hruzy
+
+ON=@Create
+NAME=Lord Strachu
+COLOR=colors_skin
+NPC=brain_monster
+FAME=100
+KARMA=-5000
+
+STR=10000
+DEX=400
+INT=500
+
+MAXHITS={30000 30000}
+MAXSTAM={300 400}
+MAXMANA=3000
+
+tag(e_lightnings_chance,100) // 10.0% chance
+tag(e_lightnings_range,5)
+
+tag(npc_summoning_chance,50)                       //5%
+tag(npc_summoning_time,60)                         //nezakouzli znovu 60 sek
+tag(npc_summoning_count,3)                         //pocet
+tag(npc_summoning_char[0],c_smrtka)
+tag(npc_summoning_char[1],c_smrtka)
+tag(npc_summoning_char[2],c_smrtka_run)
+
+tag.roundattack_damage=40,45  //dmg od - do
+tag.roundattack_time=15,17    //prodleva od - do v sek
+tag.roundattack_chance=200    //20.0%
+
+tag.experience=<eval {1700.0 1800.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[8]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,1000)
+tag(resist_bleed,675)
+
+//weap resists
+tag(resist_sharp,200)
+tag(resist_slash,800)
+tag(resist_pierce,400)
+tag(resist_blunt,800)
+
+//magic resists
+tag(resist_fire,900)
+tag(resist_elect,200)
+tag(resist_cold,450)
+
+//typ monstra
+tag(monstertype,humanoid,40)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical //ruzne
+
+Wrestling=150.0
+Resist={120.0 170.0}
+Tactics={100.0 150.0}
+Parrying={90.0 100.0}
+Macefighting={90.0 100.0}
+fencing={90.0 100.0}
+swordsmanship={90.0 100.0}
+Magery=400.0
+EI=120.0
+Provocation=100.0
+Peacemaking=100.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+ITEMnewbie=i_monster_create
+
+ITEM=i_npc_mount
+tag.mount=i_mt_horse_gray
+tag.mountcolor=0989
+
+ITEMNEWBIE=i_light_source
+ITEMNEWBIE=random_female_hair
+ITEMnewbie=i_bone_helmet
+COLOR=0989
+NAME=Zbroj desu
+ITEMnewbie=i_spear_short
+COLOR=067A
+NAME=Kopi Jedovateho Strachu
+ITEMnewbie=i_sandals
+COLOR=0989
+ITEMnewbie=i_bone_leggings
+COLOR=0989
+NAME=Zbroj desu
+ITEMnewbie=i_bone_chest
+COLOR=0989
+NAME=Zbroj desu
+ITEMnewbie=i_necklance_silver
+COLOR=0989
+ITEMnewbie=i_bone_gloves
+COLOR=0989
+ITEMnewbie=i_shield_chaos
+COLOR=0989
+NAME=Stit Strachu
+ITEMnewbie=i_bone_arms
+COLOR=0989
+NAME=Zbroj desu
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{200 300}
+ITEM=RANDOM_REAGENT_NECRO,{200 250}
+
+/////////////////////////////////////////////////
+
+[CHARDEF c_reaper_fire]
+ID=c_reaper
+NAME=Reaper
+SOUND=snd_MONSTER_REAPER1
+ICON=i_pet_REAPER
+ANIM=078c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=100
+ARMOR=100
+MOVERATE=5
+
+//RESOURCES=150 i_reag_bone
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_ovinovac
+TEVENTS=e_summoneater                          //smaze summona, co zasahne
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_phoenix
+TEVENTS=e_phoenix_fire
+TEVENTS=e_reaper
+TEVENTS=e_fire
+TEVENTS=e_npc_curse               //vsechny viditelne zrani o dmg
+TEVENTS=e_npc_curse_mana            //mass sani many
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Fire reaper s elvenem
+
+ON=@Create
+NPC=brain_monster
+KARMA={-3000 -5999}
+COLOR=098E
+FAME=30000
+
+STR=5000
+DEX=200
+INT=420
+
+MAXHITS={30000 30500}
+MAXSTAM={100 160}
+MAXMANA=1000
+
+tag.experience=<eval {800.0 1100.0}>
+
+tag(Poisoning_dmg,30) // affects spell_poison
+tag(Poisoning_MvM_dmg,80) // affects spell_poison
+
+tag.npc_curse_mana_chance=250       // 25% chance to trigger this event
+tag.npc_curse_mana_delay=15,20      // delay between another possible strike
+tag.npc_curse_mana_dmg=50,60        // mana reduce in between 50 and 60
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+tag.npc_curse_chance=450          // 25% chance to trigger this event
+tag.npc_curse_delay=15,17         // delay between another possible strike
+tag.npc_curse_dmg=40,45           // dmg
+
+//other resists
+tag(resist_poison,800)
+tag(resist_para,1000)
+tag(resist_summon,500)
+tag(resist_bleed,600)
+
+//weap resists
+tag(resist_sharp,400)
+tag(resist_slash,-50)
+tag(resist_pierce,950)
+tag(resist_blunt,950)
+
+//magic resists
+tag(resist_fire,1000)
+tag(resist_elect,700)
+tag(resist_cold,-650)
+
+//typ monstra
+tag(monstertype,reaper,60)
+tag(monstertype2,fire)
+
+//weap flags
+tag.weapflag=dam_fire|dam_magic
+
+Parrying={55.0 65.0}
+Resist=200.0
+Tactics={100.0 130.0}
+Wrestling=100.0
+Magery=150.0
+EI=120.0
+SpiritSpeak=160.0
+
+ITEMNEWBIE=i_spellbook
+//addspell=s_paralyze
+//addspell=s_poison
+ADDSPELL=s_lightning
+ADDSPELL=s_fireball
+//addspell=s_summon_undead
+ADDSPELL=s_summon_elem_air
+ADDSPELL=s_summon_daemon
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=I_LOG_mithril,1
+ITEM=RANDOM_REAGENT,{15 50}
+ITEM=RANDOM_REAGENT_NECRO,{15 50}
+
+
+[CHARDEF c_druid_serpent]
+NAME=serpent druid
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=75
+ARMOR=80
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_serpentdruid
+TEVENTS=e_humanoid
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Serpent Druid
+
+ON=@Create
+COLOR=colors_skin
+NPC=brain_monster
+FAME=1000
+KARMA=-5000
+
+STR=1000
+DEX=200
+INT=350
+NAME=#NAMES_HUMANMALE
+
+MAXHITS={15000 16000}
+MAXSTAM={150 200}
+MAXMANA=2000
+
+tag.experience=<eval {400.0 450.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,350)
+tag(resist_para,650)
+tag(resist_summon,900)
+tag(resist_bleed,600)
+
+//weap resists
+tag(resist_sharp,-300)
+tag(resist_slash,00)
+tag(resist_pierce,-300)
+tag(resist_blunt,500)
+
+//magic resists
+tag(resist_fire,200)
+tag(resist_elect,600)
+tag(resist_cold,100)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical //ruzne
+
+tag.had=c_druid_had
+
+Wrestling=150.0
+Resist={100.0 110.0}
+Tactics={100.0 150.0}
+Parrying={90.0 100.0}
+Macefighting={90.0 100.0}
+Magery=400.0
+EI=120.0
+Provocation=100.0
+Peacemaking=100.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+ADDSPELL=s_explosion
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_hair_long
+COLOR=0995
+ITEMnewbie=i_hat_cape_2
+COLOR=0995
+NAME=Kape
+ITEMnewbie=i_studded_tunic
+COLOR=084D
+NAME=Zbroj
+ITEMnewbie=i_studded_leggings
+COLOR=0995
+NAME=Zbroj
+ITEMnewbie=i_cape
+COLOR=084D
+NAME=Plast
+ITEMnewbie=i_studded_sleeves
+COLOR=0995
+NAME=Zbroj
+ITEMnewbie=i_bone_gloves
+COLOR=0995
+NAME=Zbroj
+ITEMnewbie=i_sandals
+NAME=Sandale
+ITEMnewbie=i_staff_black
+COLOR=0630
+NAME=Hadi hul
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{50 70}
+
+///////////////////////////
+
+[CHARDEF c_druid_serpent_elder]
+NAME=Arcidruid
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=75
+ARMOR=80
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_serpentdruid
+TEVENTS=e_humanoid
+TEVENTS=e_npc_curse                 //vsechny viditelne zrani o dmg
+TEVENTS=e_npc_curse_stam            //mass sani staminy
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Serpent Druid Elder
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+COLOR=colors_skin
+NPC=brain_monster
+FAME=1000
+KARMA=-5000
+
+STR=1000
+DEX=300
+INT=350
+
+MAXHITS={26000 28000}
+MAXSTAM={250 300}
+MAXMANA=2000
+
+tag.experience=<eval {700.0 750.0}>
+
+tag.npc_curse_chance=250                // 25% chance to trigger this event
+tag.npc_curse_delay=15,17               // delay between another possible strike
+tag.npc_curse_dmg=30,35                 // dmg
+
+tag.npc_curse_stam_chance=250       // 25% chance to trigger this event
+tag.npc_curse_stam_delay=12,15      // delay between another possible strike
+tag.npc_curse_stam_dmg=40,60        // stam reduce in between 50 and 60
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,50)
+tag(resist_para,750)
+tag(resist_summon,900)
+tag(resist_bleed,600)
+
+//weap resists
+tag(resist_sharp,-300)
+tag(resist_slash,00)
+tag(resist_pierce,-300)
+tag(resist_blunt,800)
+
+//magic resists
+tag(resist_fire,800)
+tag(resist_elect,600)
+tag(resist_cold,200)
+
+//typ monstra
+tag(monstertype,humanoid,50)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical //ruzne
+
+tag.had=c_druid_had_elder
+
+Wrestling=150.0
+Resist={120.0 170.0}
+Tactics={100.0 150.0}
+Parrying={90.0 100.0}
+Macefighting={90.0 100.0}
+Magery=400.0
+EI=120.0
+Provocation=100.0
+Peacemaking=100.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+ADDSPELL=s_explosion
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_hair_long
+COLOR=0995
+ITEMnewbie=i_hat_cape_2
+COLOR=0995
+NAME=Kape
+ITEMnewbie=i_studded_tunic
+COLOR=084D
+NAME=Zbroj
+ITEMnewbie=i_studded_leggings
+COLOR=0995
+NAME=Zbroj
+ITEMnewbie=i_robe
+COLOR=0995
+NAME=Zbroj
+ITEMnewbie=i_cape
+COLOR=084D
+NAME=Plast
+ITEMnewbie=i_studded_sleeves
+COLOR=0995
+NAME=Zbroj
+ITEMnewbie=i_bone_gloves
+COLOR=0995
+NAME=Zbroj
+ITEMnewbie=i_sandals
+NAME=Sandale
+ITEMnewbie=i_staff_black
+COLOR=0630
+NAME=Hadi hul
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{60 100}
+
+/////////////////////////////////////////////
+
+[CHARDEF c_druid_had]
+ID=c_serpent_giant
+NAME=Had
+SOUND=snd_MONSTER_SEASERP1
+ICON=i_pet_snake_giant
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN
+
+ATTACK=140
+ARMOR=70
+MOVERATE=4
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Serpent Druid v Morfu
+
+ON=@Create
+NAME=Had
+COLOR=0989
+NPC=brain_monster
+FAME=1000
+KARMA=-5000
+
+STR=7000
+DEX=300
+INT=450
+
+MAXHITS={7000 8000}
+MAXSTAM={250 300}
+
+tag.experience=<eval {200.0 210.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+tag.weapflag=dam_physical
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {800 950}>
+tag(resist_summon,900)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,300)
+tag(resist_slash,-50)
+tag(resist_pierce,300)
+tag(resist_blunt,800)
+
+//magic resists
+tag(resist_fire,200)
+tag(resist_elect,600)
+tag(resist_cold,100)
+
+SpiritSpeak=80.0
+Poisoning={200.0 250.0}
+Resist=100.0
+Wrestling=200.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{20 55}
+
+////////////////////////////////////////////
+
+[CHARDEF c_druid_had_elder]
+ID=c_serpent_giant
+NAME=Had
+SOUND=snd_MONSTER_SEASERP1
+ICON=i_pet_snake_giant
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN
+
+ATTACK=150
+ARMOR=90
+MOVERATE=4
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_regeneration
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Serpent Druid v Morfu
+
+ON=@Create
+NAME=Had
+COLOR=0989
+NPC=brain_monster
+FAME=1000
+KARMA=-5000
+
+STR=7000
+DEX=400
+INT=450
+
+MAXHITS={7000 8000}
+MAXSTAM={350 400}
+
+tag.experience=<eval {200.0 210.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+tag.weapflag=dam_physical
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {800 950}>
+tag(resist_summon,900)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,300)
+tag(resist_slash,-50)
+tag(resist_pierce,300)
+tag(resist_blunt,800)
+
+//magic resists
+tag(resist_fire,200)
+tag(resist_elect,400)
+tag(resist_cold,100)
+
+SpiritSpeak=80.0
+Poisoning={200.0 250.0}
+Resist=100.0
+Wrestling=200.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{20 55}
+
+/////////////////////////////////////
+
+[CHARDEF c_serpent_malej]
+ID=c_snake
+NAME=Had
+SOUND=snd_MONSTER_SEASERP1
+ICON=i_pet_snake_giant
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN
+
+ATTACK=140
+ARMOR=70
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Serpent malej
+
+ON=@Create
+NAME=Had
+COLOR=0989
+NPC=brain_monster
+FAME=1000
+KARMA=-5000
+
+STR=7000
+DEX=400
+INT=450
+
+MAXHITS=500
+MAXSTAM=200
+
+tag.experience=<eval {200.0 210.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+tag.weapflag=dam_physical
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {800 950}>
+tag(resist_summon,900)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,300)
+tag(resist_slash,-50)
+tag(resist_pierce,300)
+tag(resist_blunt,800)
+
+//magic resists
+tag(resist_fire,200)
+tag(resist_elect,400)
+tag(resist_cold,100)
+
+Poisoning={120.0 150.0}
+Resist=100.0
+Wrestling=200.0
+Peacemaking=100.0
+Provocation=100.0
+SpiritSpeak=75.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{10 35}
+
+///////////////////////////////////////////////////////////
+
+[EOF]

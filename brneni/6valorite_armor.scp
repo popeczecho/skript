@@ -1,0 +1,773 @@
+
+
+[ITEMDEF 04795]
+DEFNAME=i_VALORITE_PLATEMAIL
+NAME=Valorite Platemail
+ID=i_platemail_chest
+
+ARMOR=80
+REQSTR=60
+WEIGHT=18.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite platemail
+DESCRIPTION=Platemail chest
+RESOURCES=25 i_ingot_valorite
+SKILLMAKE=Blacksmithing 88.0, Tinkering 70.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=39
+armorcreate(Valorite,plate)
+
+[ITEMDEF 04796]
+DEFNAME=i_VALORITE_PLATEMAIL_ARMS
+NAME=Valorite Platemail Arms
+ID=i_platemail_arms
+
+ARMOR=80
+REQSTR=40
+WEIGHT=14.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite platemail
+DESCRIPTION=Platemail Arms
+RESOURCES=18 i_ingot_valorite
+SKILLMAKE=Blacksmithing 84.0, Tinkering 70.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=15
+armorcreate(Valorite,plate)
+
+[ITEMDEF 04797]
+DEFNAME=i_VALORITE_PLATEMAIL_leggings
+NAME=Valorite Platemail Legs
+ID=i_platemail_leggings
+
+ARMOR=80
+REQSTR=60
+WEIGHT=16.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite platemail
+DESCRIPTION=Platemail Legs
+RESOURCES=20 i_ingot_valorite
+SKILLMAKE=Blacksmithing 86.0, Tinkering 70.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=25
+armorcreate(Valorite,plate)
+
+[ITEMDEF 04799]
+DEFNAME=i_VALORITE_PLATEMAIL_GORGET
+NAME=Valorite Platemail Gorget
+ID=i_platemail_gorget
+
+ARMOR=80
+REQSTR=30
+WEIGHT=5.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite platemail
+DESCRIPTION=Platemail Gorget
+RESOURCES=10 i_ingot_valorite
+SKILLMAKE=Blacksmithing 80.0, Tinkering 70.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=9
+armorcreate(Valorite,plate)
+
+[ITEMDEF 0479a]
+DEFNAME=i_VALORITE_PLATEMAIL_GAUNTLETS
+NAME=Valorite Platemail Gauntlets
+ID=i_platemail_gloves
+
+ARMOR=80
+REQSTR=45
+WEIGHT=5.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite platemail
+DESCRIPTION=Platemail Gauntlets
+RESOURCES=12 i_ingot_valorite
+SKILLMAKE=Blacksmithing 82.0, Tinkering 70.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=9
+armorcreate(Valorite,plate)
+
+[ITEMDEF 0479b]
+DEFNAME=i_VALORITE_FEMALE_PLATEMAIL
+NAME=Valorite Platemail
+ID=i_armor_female_plate
+
+ARMOR=80
+REQSTR=15
+WEIGHT=11.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite platemail
+DESCRIPTION=Female Platemail
+RESOURCES=22 i_ingot_valorite
+SKILLMAKE=Blacksmithing 80.0, Tinkering 70.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=39
+armorcreate(Valorite,plate)
+
+/////////////////////////////////////////////// HELMY
+
+
+[ITEMDEF 04798]
+DEFNAME=i_VALORITE_PLATE_HELM
+NAME=Valorite Plate Helm
+ID=i_platemail_helm
+
+ARMOR=80
+REQSTR=40
+WEIGHT=8.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite platemail
+DESCRIPTION=Plate Helm
+RESOURCES=15 i_ingot_valorite
+SKILLMAKE=Blacksmithing 85.0, Tinkering 70.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=15
+armorcreate(Valorite,plate)
+
+[ITEMDEF 047a6]
+DEFNAME=i_VALORITE_CLOSED_HELM
+NAME=Valorite Closed Helm
+ID=i_helm_closed
+
+ARMOR=80
+REQSTR=20
+WEIGHT=8.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite platemail
+DESCRIPTION=Closed Helm
+RESOURCES=15 i_ingot_valorite
+SKILLMAKE=Blacksmithing 80.0, Tinkering 70.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=15
+armorcreate(Valorite,plate)
+
+[ITEMDEF 047a8]
+DEFNAME=i_VALORITE_BASCINET
+NAME=Valorite Bascinet
+ID=i_bascinet
+
+ARMOR=80
+REQSTR=10
+WEIGHT=7.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite platemail
+DESCRIPTION=Bascinet
+RESOURCES=15 i_ingot_valorite
+SKILLMAKE=Blacksmithing 80.0, Tinkering 70.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=15
+armorcreate(Valorite,plate)
+
+[ITEMDEF 047a9]
+DEFNAME=i_VALORITE_NOSE_HELM
+NAME=Valorite Nose Helm
+ID=i_helm_nose
+
+ARMOR=80
+REQSTR=0
+WEIGHT=8.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite platemail
+DESCRIPTION=Nose Helm
+
+RESOURCES=15 i_ingot_valorite
+SKILLMAKE=Blacksmithing 80.0, Tinkering 70.0
+
+tdata1=6//valorite
+
+
+ON=@Create
+HITPOINTS=15
+armorcreate(Valorite,plate)
+
+/////////////////////////////////////////////// CHAIN MAIL
+
+[ITEMDEF i_Valorite_CHAINMAIL_gorget]
+ID=i_leather_gorget
+NAME=Valorite Chainmail Gorget
+WEIGHT=2.0
+ARMOR=50
+REQSTR=20
+RESOURCES=10 i_ingot_Valorite
+SKILLMAKE=Blacksmithing 55.0, Tinkering 86.0
+tdata1=6//valorite
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite chainmail
+DESCRIPTION=Chainmail gorget
+
+ON=@Create
+HITPOINTS=7
+armorcreate(Valorite,chain)
+
+[ITEMDEF i_Valorite_CHAINMAIL_sleeves]
+ID=i_leather_sleeves
+NAME=Valorite Chainmail Sleeves
+WEIGHT=2.0
+ARMOR=50
+REQSTR=20
+RESOURCES=10 i_ingot_Valorite
+SKILLMAKE=Blacksmithing 55.0, Tinkering 86.0
+tdata1=6//valorite
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite chainmail
+DESCRIPTION=Chainmail sleeves
+
+ON=@Create
+HITPOINTS=12
+armorcreate(Valorite,chain)
+
+[ITEMDEF i_Valorite_CHAINMAIL_gloves]
+ID=i_leather_gloves
+NAME=Valorite Chainmail Gloves
+WEIGHT=2.0
+ARMOR=50
+REQSTR=20
+RESOURCES=10 i_ingot_Valorite
+SKILLMAKE=Blacksmithing 55.0, Tinkering 86.0
+tdata1=6//valorite
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite chainmail
+DESCRIPTION=Chainmail gloves
+
+ON=@Create
+HITPOINTS=7
+armorcreate(Valorite,chain)
+
+[ITEMDEF 0479c]
+DEFNAME=i_VALORITE_CHAINMAIL_COIF
+NAME=Valorite Chainmail Coif
+ID=i_chainmail_coif
+
+ARMOR=50
+REQSTR=20
+WEIGHT=5.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite chainmail
+DESCRIPTION=Chainmail Coif
+RESOURCES=10 i_ingot_valorite
+SKILLMAKE=Blacksmithing 55.0, Tinkering 86.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=12
+armorcreate(Valorite,chain)
+
+[ITEMDEF 0479d]
+DEFNAME=i_VALORITE_CHAINMAIL_LEGGINGS
+NAME=Valorite Chainmail Leggings
+ID=i_chainmail_leggings
+
+ARMOR=50
+REQSTR=20
+WEIGHT=8.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite chainmail
+DESCRIPTION=Chainmail Leggings
+RESOURCES=18 i_ingot_valorite
+SKILLMAKE=Blacksmithing 55.0, Tinkering 87.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=20
+armorcreate(Valorite,chain)
+
+[ITEMDEF 0479e]
+DEFNAME=i_VALORITE_CHAINMAIL_TUNIC
+NAME=Valorite Chainmail Tunic
+ID=i_chainmail_tunic
+
+ARMOR=50
+REQSTR=20
+WEIGHT=11.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite chainmail
+DESCRIPTION=Chainmail Tunic
+RESOURCES=25 i_ingot_valorite
+SKILLMAKE=Blacksmithing 55.0, Tinkering 88.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=31
+armorcreate(Valorite,chain)
+
+
+//////////////////////////////////////////////////// RING MAIL
+
+[ITEMDEF i_Valorite_kite_wood_shield]
+ID=i_shield_kite_wood
+NAME=Valorite kite shield
+WEIGHT=2.0
+ARMOR=21
+REQSTR=20
+RESOURCES=10 i_ingot_Valorite
+SKILLMAKE=Blacksmithing 55.0, Tinkering 83.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite ringmail
+DESCRIPTION=Kite wood shield
+
+tdata1=6
+
+ON=@Create
+HITPOINTS=22
+shieldcreate(Valorite,ring)
+
+ON=@equip
+tdata1=6
+
+[ITEMDEF i_Valorite_RINGMAIL_gorget]
+ID=i_leather_gorget
+NAME=Valorite ringmail gorget
+WEIGHT=2.0
+ARMOR=50
+REQSTR=20
+RESOURCES=10 i_ingot_Valorite
+SKILLMAKE=Blacksmithing 55.0, Tinkering 83.0
+tdata1=6//valorite
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite ringmail
+DESCRIPTION=Ringmail gorget
+
+ON=@Create
+HITPOINTS=7
+armorcreate(Valorite,ring)
+
+[ITEMDEF i_Valorite_RINGMAIL_helm]
+ID=i_helm_open
+NAME=Valorite Ringmail Helm
+WEIGHT=2.0
+ARMOR=50
+REQSTR=20
+RESOURCES=10 i_ingot_Valorite
+SKILLMAKE=Blacksmithing 55.0, Tinkering 83.0
+tdata1=6//valorite
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite ringmail
+DESCRIPTION=Ringmail helm
+
+ON=@Create
+HITPOINTS=9
+armorcreate(Valorite,ring)
+
+[ITEMDEF 0479f]
+DEFNAME=i_valorite_ringmail_leggings
+NAME=Valorite Ringmail Leggings
+ID=i_ringmail_leggings
+
+ARMOR=50
+REQSTR=20
+WEIGHT=11.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite ringmail
+DESCRIPTION=Ringmail Leggings
+RESOURCES=16 i_ingot_valorite
+SKILLMAKE=Blacksmithing 55.0, Tinkering 83.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=13
+armorcreate(Valorite,ring)
+
+[ITEMDEF 047a0]
+DEFNAME=i_VALORITE_RINGMAIL_SLEEVES
+NAME=Valorite Ringmail Sleeves
+ID=i_ringmail_sleeves
+
+ARMOR=50
+REQSTR=20
+WEIGHT=9.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite ringmail
+DESCRIPTION=Ringmail Sleeves
+RESOURCES=14 i_ingot_valorite
+SKILLMAKE=Blacksmithing 55.0, Tinkering 81.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=9
+armorcreate(Valorite,ring)
+
+[ITEMDEF 047a1]
+DEFNAME=i_VALORITE_RINGMAIL_GLOVES
+NAME=Valorite Ringmail Gloves
+ID=i_ringmail_gloves
+
+ARMOR=50
+REQSTR=20
+WEIGHT=2.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite ringmail
+DESCRIPTION=Ringmail Gloves
+RESOURCES=10 i_ingot_valorite
+SKILLMAKE=Blacksmithing 55.0, Tinkering 80.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=7
+armorcreate(Valorite,ring)
+
+[ITEMDEF 047a2]
+DEFNAME=i_VALORITE_RINGMAIL_TUNIC
+NAME=Valorite Ringmail Tunic
+ID=i_ringmail_tunic
+
+ARMOR=50
+REQSTR=20
+WEIGHT=11.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite ringmail
+DESCRIPTION=Ringmail Tunic
+RESOURCES=18 i_ingot_valorite
+SKILLMAKE=Blacksmithing 55.0, Tinkering 84.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=21
+armorcreate(Valorite,ring)
+
+
+//////////////////////////////////////////////////////SHIELDY
+
+[ITEMDEF 047a3]
+DEFNAME=i_VALORITE_BUCKLER_SHIELD
+NAME=Valorite Buckler
+ID=i_shield_buckler
+ARMOR=14
+REQSTR=15
+WEIGHT=6.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite studded
+DESCRIPTION=Buckler
+RESOURCES=10 i_ingot_valorite
+SKILLMAKE=Blacksmithing 80.0, Tinkering 70.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=13
+shieldcreate(Valorite,studded)
+
+[ITEMDEF 047a4]
+DEFNAME=i_VALORITE_HEATER_SHIELD
+NAME=Valorite Heater Shield
+ID=I_SHIELD_HEATER
+ARMOR=12
+REQSTR=30
+WEIGHT=13.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite platemail
+DESCRIPTION=Heater Shield
+RESOURCES=18 i_ingot_valorite
+SKILLMAKE=Blacksmithing 88.0, Tinkering 70.0
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=35
+shieldcreate(Valorite,plate)
+
+[ITEMDEF 047a5]
+DEFNAME=i_valorite_metal_shield
+NAME=Valorite Metal Shield
+ID=i_shield_round_metal
+ARMOR=21
+REQSTR=15
+WEIGHT=10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite chainmail
+DESCRIPTION=Metal Shield
+RESOURCES=14 i_ingot_valorite
+SKILLMAKE=Blacksmithing 85.0, Tinkering 70.0
+
+tdata1=6//valorite
+
+
+ON=@Create
+HITPOINTS=26
+shieldcreate(Valorite,chain)
+
+[ITEMDEF i_studded_cap_Valorite]
+ID=i_leather_cap
+RESOURCES=2 i_ingot_Valorite, i_leather_cap
+ARMOR=28
+NAME=Valorite Studded Cap
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite Studded
+DESCRIPTION=Studded Cap
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+tdata1=6//Valorite
+
+ON=@Create
+HITPOINTS=7
+armorcreate(Valorite,studded)
+
+[ITEMDEF i_studded_sleeves_Valorite]
+ID=i_studded_sleeves
+RESOURCES=2 i_ingot_Valorite, i_leather_sleeves
+ARMOR=28
+NAME=Valorite Studded Sleeves
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite Studded
+DESCRIPTION=Studded Sleeves
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+
+tdata1=6//Valorite
+
+ON=@Create
+HITPOINTS=7
+armorcreate(Valorite,studded)
+
+[ITEMDEF i_studded_gloves_Valorite]
+ID=i_studded_gloves
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+RESOURCES=2 i_ingot_Valorite, i_leather_gloves
+ARMOR=28
+NAME=Valorite Studded Gloves
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite Studded
+DESCRIPTION=Studded Gloves
+
+tdata1=6//Valorite
+
+ON=@Create
+HITPOINTS=5
+armorcreate(Valorite,studded)
+
+[ITEMDEF i_studded_gorget_Valorite]
+ID=i_studded_gorget
+RESOURCES=1 i_ingot_Valorite, i_leather_gorget
+ARMOR=28
+NAME=Valorite Studded Gorget
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite Studded
+DESCRIPTION=Studded Gorget
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+
+tdata1=6//Valorite
+
+ON=@Create
+HITPOINTS=5
+armorcreate(Valorite,studded)
+
+[ITEMDEF i_studded_leggings_Valorite]
+ID=i_studded_leggings
+RESOURCES=6 i_ingot_Valorite, i_leather_leggings
+ARMOR=28
+NAME=Valorite Studded Leggings
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite Studded
+DESCRIPTION=Studded Leggings
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+tdata1=6//Valorite
+
+ON=@Create
+HITPOINTS=10
+armorcreate(Valorite,studded)
+
+[ITEMDEF i_studded_tunic_Valorite]
+ID=i_studded_tunic
+RESOURCES=12 i_ingot_Valorite, i_leather_tunic
+ARMOR=28
+NAME=Valorite Studded Tunic
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite Studded
+DESCRIPTION=Studded Tunic
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+
+tdata1=6//Valorite
+
+ON=@Create
+HITPOINTS=16
+armorcreate(Valorite,studded)
+
+[ITEMDEF i_armor_female_bustier_studded_Valorite]
+ID=i_armor_female_bustier_studded
+RESOURCES=12 i_ingot_Valorite, i_armor_female_bustier
+ARMOR=28
+NAME=Valorite Studded Bustier
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite Studded
+DESCRIPTION=Studded Bustier
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+
+tdata1=6//Valorite
+
+ON=@Create
+HITPOINTS=16
+armorcreate(Valorite,studded)
+
+[ITEMDEF i_armor_female_studded_Valorite]
+ID=i_armor_female_studded
+ARMOR=28
+NAME=Valorite Female Studded Armor
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite Studded
+DESCRIPTION=Studded female Armor
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+RESOURCES=12 i_ingot_Valorite, i_armor_female_leather
+
+tdata1=6//Valorite
+
+ON=@Create
+HITPOINTS=16
+armorcreate(Valorite,studded)
+
+
+[ITEMDEF i_bone_arms_Valorite]
+ID=i_bone_arms
+RESOURCES=2 i_ingot_valorite, i_bone_arms
+NAME=Bone Arms of Valorite
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+
+WEIGHT=3.0
+ARMOR=28
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite bone
+DESCRIPTION=Bone Arms
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=7
+armorcreate(Valorite,bone)
+
+[ITEMDEF i_bone_chest_Valorite]
+ID=i_bone_chest
+NAME=Bone Chest of Valorite
+RESOURCES=12 i_ingot_valorite,  i_bone_chest
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+
+WEIGHT=13.0
+ARMOR=28
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite bone
+DESCRIPTION=Bone Chest
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=16
+armorcreate(Valorite,bone)
+
+[ITEMDEF i_bone_gloves_Valorite]
+ID=i_bone_gloves
+NAME=Bone Gloves of Valorite
+RESOURCES=3 i_ingot_valorite, i_bone_gloves
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+
+WEIGHT=5.0
+ARMOR=28
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite bone
+DESCRIPTION=Bone Gloves
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=5
+armorcreate(Valorite,bone)
+
+[ITEMDEF i_bone_helmet_Valorite]
+ID=i_bone_helmet
+NAME=Bone Helmet of Valorite
+RESOURCES=5 i_ingot_valorite, i_bone_helmet
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+
+WEIGHT=6.0
+ARMOR=28
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite bone
+DESCRIPTION=Bone Helmet
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=9
+armorcreate(Valorite,bone)
+
+[ITEMDEF i_bone_leggings_Valorite]
+ID=i_bone_leggings
+NAME=Bone Legs of Valorite
+RESOURCES=6 i_ingot_valorite, i_bone_leggings
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+
+WEIGHT=8.0
+ARMOR=28
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Valorite bone
+DESCRIPTION=Bone Legs
+
+tdata1=6//valorite
+
+ON=@Create
+HITPOINTS=10
+armorcreate(Valorite,bone)
+
+[EOF]

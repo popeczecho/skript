@@ -1,0 +1,918 @@
+//////////////////////////////////////////////////////
+//               G A R G O Y L E S                  //
+//                                                  //
+//////////////////////////////////////////////////////
+[CHARDEF 04]
+DEFNAME=c_gargoyle
+NAME=Gargoyle
+SOUND=snd_MONSTER_GARGYL1
+ICON=i_pet_GARG
+ANIM=03fbc7f
+CAN=MT_WALK|MT_USEHANDS
+
+ATTACK=28
+ARMOR=26
+MOVERATE=3
+
+RESOURCES=5 i_ribs_raw
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+CATEGORY=Monsters
+SUBSECTION=Caves
+DESCRIPTION=Gargoyle
+
+ON=@Create
+NPC=brain_monster
+FAME=1000
+KARMA={-1000 -1500}
+
+STR={155 190}
+DEX={76 95}
+INT={81 105}
+
+MAXHITS={325 375}
+MAXSTAM={255 285}
+MAXMANA=0
+
+tag.experience=<eval {26.0 29.0}>
+
+tag.npc_bleed=200 //20.0%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,500)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,150)
+tag(resist_bleed,200)
+
+tag(resist_sharp,150)
+tag(resist_slash,200)        //sekery
+tag(resist_pierce,-50)
+tag(resist_blunt,50)
+
+tag(resist_fire,250)
+tag(resist_elect,100)
+tag(resist_cold,-250)
+
+Parrying={35.0 45.0}
+Resist=50.0
+Tactics={60.0 70.0}
+Wrestling={80.0 90.0}
+SpiritSpeak=20.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_GARGOYLE
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_gargoyle_stone]
+ID=c_gargoyle
+NAME=Stone Gargoyle
+SOUND=snd_MONSTER_GARGYL1
+ICON=i_pet_GARG
+CAN=MT_WALK|MT_RUN
+
+ATTACK=40
+ARMOR=60
+MOVERATE=3
+
+RESOURCES=4 tm_rocks
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+CATEGORY=Monsters
+SUBSECTION=Caves
+DESCRIPTION=Stone Gargoyle
+
+ON=@Create
+COLOR=0482
+NPC=brain_monster
+FAME=1000
+KARMA={-800 -1800}
+
+STR=250
+DEX=90
+INT=150
+
+MAXHITS={675 725}
+MAXSTAM={275 335}
+MAXMANA=0
+
+tag.experience=<eval {48.0 50.0}>
+
+tag.npc_bleed=300 //30.0%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,1000)
+tag.resist_para=<eval {400 550}>
+tag(resist_summon,250)
+tag(resist_bleed,500)
+
+tag(resist_sharp,300)
+tag(resist_slash,300)
+tag(resist_pierce,100)
+tag(resist_blunt,-350)
+
+tag(resist_fire,300)
+tag(resist_elect,-300)
+tag(resist_cold,150)
+
+Parrying={55.0 65.0}
+Resist=60.0
+Tactics={80.0 90.0}
+Wrestling={50.0 70.0}
+SpiritSpeak=20.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_GARGOYLE
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF 043]
+DEFNAME=c_gargoyle_lord
+NAME=Lord Gargoyle
+SOUND=snd_MONSTER_GARGYL1
+ICON=i_pet_GARG
+CAN=MT_WALK|MT_FIRE_IMMUNE|mt_run
+
+ATTACK=55
+ARMOR=80
+MOVERATE=3
+
+RESOURCES=8 i_ribs_raw
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+TEVENTS=e_npc_curse
+
+CATEGORY=Monsters
+SUBSECTION=Caves
+DESCRIPTION=Lord Gargoyles
+
+ON=@Create
+NPC=brain_monster
+FAME=1000
+KARMA=-1000
+
+STR=3000
+DEX=350
+INT=900
+
+MAXHITS={3500 3700}
+MAXSTAM={250 335}
+MAXMANA=0
+
+tag.experience=<eval {90.0 105.0}>
+
+tag.npc_bleed=300 //30.0%
+
+tag.npc_curse_chance=250                // 25% chance to trigger this event
+tag.npc_curse_delay=15,20               // delay between another possible strike
+tag.npc_curse_dmg=35,40                 // dmg
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,100)
+tag.resist_para=<eval {500 650}>
+tag(resist_summon,250)
+tag(resist_bleed,100)
+
+tag(resist_sharp,50)
+tag(resist_slash,50)
+tag(resist_pierce,150)
+tag(resist_blunt,50)
+
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,200)
+
+Magery=120.0
+EI=120.0
+Resist=150.0
+Wrestling=120.0
+SpiritSpeak=45.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_GARGOYLE
+ITEM=i_gold
+
+//////////////////////////////////////////////////////
+//               V A M P I R E S                    //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF c_vampire]
+ID=c_gargoyle
+NAME=Vampire
+SOUND=snd_MONSTER_GARGYL1
+ICON=i_pet_GARG
+CAN=MT_WALK
+
+ATTACK=38
+ARMOR=60
+MOVERATE=3
+
+RESOURCES=5 i_ribs_raw
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_lifeLeech
+
+CATEGORY=Monsters
+SUBSECTION=Caves
+DESCRIPTION=Vampire
+
+ON=@Create
+COLOR=0021
+NPC=brain_monster
+FAME=1000
+KARMA=-8500
+
+STR=300
+DEX=150
+INT=200
+
+MAXHITS={300 325}
+MAXSTAM={155 185}
+MAXMANA=0
+
+tag.experience=<eval {25.0 27.0}>
+
+tag.npc_lifeLeech=5,10      //tolik si prida kazdou ranou
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//typ monstra
+tag(monstertype,undead)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,300)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,150)
+tag(resist_bleed,-500)
+
+tag(resist_sharp,00)
+tag(resist_slash,00)        //sekery
+tag(resist_pierce,50)
+tag(resist_blunt,150)
+
+tag(resist_fire,100)
+tag(resist_elect,100)
+tag(resist_cold,500)
+
+Parrying=70.0
+Magery=80.1
+EI=70.0
+Parrying=50.0
+Tactics=80.0
+Wrestling=80.0
+SpiritSpeak=30.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_reag_blood_vial, {2 5}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_vampire_blood]
+ID=c_gargoyle
+NAME=Blood Vampire
+SOUND=snd_MONSTER_GARGYL1
+ICON=i_pet_GARG
+CAN=MT_WALK
+
+ATTACK=45
+ARMOR=70
+MOVERATE=3
+
+RESOURCES=5 i_ribs_raw
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_critic
+TEVENTS=e_lifeLeech
+
+CATEGORY=Monsters
+SUBSECTION=Caves
+DESCRIPTION=Blood Vampire
+
+ON=@Create
+COLOR=098c
+NPC=brain_monster
+FAME=1000
+KARMA=-4000
+
+STR=300
+DEX=250
+INT=150
+
+MAXHITS={1000 1100}
+MAXSTAM={155 205}
+MAXMANA=0
+
+tag.experience=<eval {48.0 50.0}>
+
+tag.npc_lifeLeech=10,15      //tolik si prida kazdou ranou
+
+tag.npc_critic_chance=250                //25% chance
+tag.npc_critic_dmg=25,30                 //dmg in between
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//typ monstra
+tag(monstertype,undead)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,200)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,250)
+tag(resist_bleed,-600)
+
+tag(resist_sharp,-150)
+tag(resist_slash,50)
+tag(resist_pierce,150)
+tag(resist_blunt,150)
+
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,200)
+
+Magery=90.1
+EI=80.0
+Resist=80.0
+Wrestling=100.0
+SpiritSpeak=35.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_fireball
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_reag_blood_vial, {5 10}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_vampire_great]
+ID=c_gargoyle_lord
+NAME=Great Vampire
+SOUND=snd_MONSTER_GARGYL1
+ICON=i_pet_GARG
+CAN=MT_WALK
+
+ATTACK=75
+ARMOR=90
+MOVERATE=3
+
+RESOURCES=5 i_ribs_raw
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_parakrik
+TEVENTS=e_lifeLeech
+
+CATEGORY=Monsters
+SUBSECTION=Caves
+DESCRIPTION=Great Vampire
+
+ON=@Create
+COLOR=0981
+NPC=brain_monster
+FAME=1000
+KARMA=-10000
+
+STR=900
+DEX=350
+INT=290
+
+MAXHITS={2300 2500}
+MAXSTAM={280 320}
+MAXMANA=1000
+
+tag.experience=<eval {100.0 105.0}>
+
+tag.npc_lifeLeech=15,20      //tolik si prida kazdou ranou
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//typ monstra
+tag(monstertype,undead,80)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,250)
+tag.resist_para=<eval {400 550}>
+tag(resist_summon,250)
+tag(resist_bleed,-500)
+
+tag(resist_sharp,-150)
+tag(resist_slash,50)
+tag(resist_pierce,250)
+tag(resist_blunt,150)
+
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,200)
+
+Parrying=100.0
+Magery=110.1
+Resist=100.0
+EI=50.0
+Tactics=110.0
+Wrestling=110.0
+SpiritSpeak=40.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_summon_undead
+ADDSPELL=s_lightning
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_reag_blood_vial, {10 15}
+
+//////////////////////////////////////////////////////
+//                  H A R P Y                       //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 01e]
+DEFNAME=c_harpy
+NAME=Harpy
+SOUND=snd_MONSTER_HARPY1
+ICON=i_pet_HARPY
+ANIM=03f8c7f
+CAN=MT_WALK|MT_FEMALE|MT_USEHANDS
+
+ATTACK=29
+ARMOR=24
+MOVERATE=3
+
+RESOURCES=5 i_ribs_raw,30 i_feather
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Caves
+DESCRIPTION=Harpy
+
+ON=@Create
+NPC=brain_monster
+FAME=1000
+KARMA={-2000 -2999}
+
+STR=300
+DEX={186 210}
+INT={51 75}
+
+MAXHITS={375 425}
+MAXSTAM={200 220}
+MAXMANA=0
+
+tag.experience=<eval {22.0 24.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,animal)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,300)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,300)
+tag(resist_bleed,100)
+
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,-50)
+tag(resist_blunt,50)
+
+tag(resist_fire,-250)   //peri chytne
+tag(resist_elect,100)
+tag(resist_cold,250)
+
+Parrying={75.0 90.0}
+Tactics={70.0 100.0}
+Wrestling={70.0 90.0}
+SpiritSpeak=25.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_HARPY
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_harpy_stone]
+ID=c_harpy
+NAME=Stone Harpy
+SOUND=snd_MONSTER_HARPY1
+ICON=i_pet_HARPY
+CAN=MT_FLY|MT_WALK|MT_FEMALE
+
+ATTACK=28
+ARMOR=60
+MOVERATE=3
+
+RESOURCES=4 tm_rocks
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_stun
+
+CATEGORY=Monsters
+SUBSECTION=Caves
+DESCRIPTION=Stone Harpy
+
+ON=@Create
+COLOR=0482
+NPC=brain_monster
+FAME=1000
+KARMA={-4000 -4999}
+
+STR=295
+DEX=110
+INT=51
+
+MAXHITS={750 850}
+MAXSTAM={100 120}
+MAXMANA=0
+
+tag.experience=<eval {30.0 33.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,animal)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,600)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,300)
+tag(resist_bleed,300)
+
+tag(resist_sharp,250)
+tag(resist_slash,200)
+tag(resist_pierce,150)
+tag(resist_blunt,-150)
+
+tag(resist_fire,50)   //peri chytne
+tag(resist_elect,-200)
+tag(resist_cold,150)
+
+Parrying={75.0 90.0}
+Tactics={70.0 100.0}
+Wrestling={60.0 90.0}
+Resist=80.0
+SpiritSpeak=25.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_HARPY
+ITEM=i_gold
+//////////////////////////////////////////////////////
+//          M O N G B A T S , I M P                 //
+//               H E A D L E S S                    //
+//////////////////////////////////////////////////////
+
+[CHARDEF 027]
+DEFNAME=c_mongbat
+NAME=Subterranean Mongbat
+SOUND=snd_MONSTER_MNGBAT1
+ICON=i_pet_mongbat
+ANIM=03f8c7f
+CAN=MT_WALK
+
+ATTACK=27
+ARMOR=10
+MOVERATE=5
+
+RESOURCES=2 i_ribs_raw, 2 i_reag_batwing
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Caves
+DESCRIPTION=Subterranean Mongbat
+
+ON=@Create
+NPC=brain_monster
+FAME=1000
+KARMA={-2000 -2999}
+
+STR={70 90}
+DEX={60 80}
+INT=60
+
+MAXHITS={200 250}
+MAXSTAM={60 80}
+MAXMANA=0
+
+tag.experience=<eval {5.0 6.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+tag(monstertype,undead)
+
+tag.weapflag=dam_physical
+
+tag.resist_poison=600
+tag.resist_summon=<eval {390 500}>
+
+Parrying={50.0 60.0}
+Tactics={35.0 50.0}
+Wrestling={40.0 55.0}
+SpiritSpeak=15.0
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_mongbat_arboreal]
+ID=c_mongbat
+NAME=Arboreal Mongbat
+SOUND=snd_MONSTER_MNGBAT1
+ICON=i_pet_mongbat
+ANIM=03f8c7f
+CAN=MT_WALK
+
+ATTACK=32
+ARMOR=5
+MOVERATE=5
+
+RESOURCES=2 i_ribs_raw, 2 i_reag_batwing
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Caves
+DESCRIPTION=Arboreal Mongbat
+
+ON=@Create
+COLOR=colors_red
+NPC=brain_monster
+FAME=1000
+KARMA={-1000 -1999}
+
+STR=100
+DEX={26 38}
+INT={16 54}
+
+MAXHITS={180 220}
+MAXSTAM={20 45}
+MAXMANA=0
+
+tag.experience=<eval {8.0 10.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+tag(monstertype,undead)
+
+tag.weapflag=dam_physical
+
+tag.resist_poison=600
+tag.resist_summon=<eval {390 500}>
+
+Parrying={45.0 55.0}
+Tactics={50.0 70.0}
+Wrestling={70.0 80.0}
+SpiritSpeak=15.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_IMP
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_imp]
+ID=c_mongbat
+NAME=Imp
+SOUND=snd_MONSTER_MNGBAT1
+ICON=i_pet_mongbat
+CAN=MT_FLY|MT_WALK
+
+ATTACK=20
+ARMOR=15
+MOVERATE=5
+
+RESOURCES=3 i_ribs_raw, 2 i_reag_batwing
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Caves
+DESCRIPTION=Imp
+
+ON=@Create
+COLOR=color_red1
+NPC=brain_monster
+FAME=1000
+KARMA={-2000 -2999}
+
+STR=250
+DEX={61 80}
+INT={86 110}
+
+MAXHITS={400 500}
+MAXSTAM={60 100}
+MAXMANA=500
+
+tag.experience=<eval {15.0 20.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal,60)
+tag(monstertype2,undead,60)
+
+tag.weapflag=dam_sharp|dam_physical
+
+tag(resist_poison,850)
+tag.resist_para=<eval {200 350}>
+tag(resist_summon,250)
+tag(resist_bleed,200)
+
+tag(resist_sharp,00)
+tag(resist_slash,00)
+tag(resist_pierce,250)
+tag(resist_blunt,-150)
+
+tag(resist_fire,600)
+tag(resist_elect,200)
+tag(resist_cold,-200)
+
+Parrying={50.0 60.0}
+Magery={50.0 60.0}
+Resist=50.0
+Tactics={55.0 70.0}
+Wrestling={80.0 85.0}
+SpiritSpeak=15.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+
+ON=@NPCRestock
+ITEM=loot_IMP
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF 01f]
+DEFNAME=c_headless
+NAME=Headless
+SOUND=snd_MONSTER_HEADLS1
+ICON=i_pet_HEADLESS
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS
+
+ATTACK=16
+ARMOR=9
+MOVERATE=5
+
+RESOURCES=2 i_ribs_raw
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Caves
+DESCRIPTION=Headless
+
+ON=@Create
+COLOR=colors_skin
+NPC=brain_monster
+FAME=1000
+KARMA={-1000 -1999}
+
+STR=400
+DEX={36 55}
+INT=110
+
+MAXHITS={150 200}
+MAXSTAM={30 60}
+MAXMANA=0
+
+tag.experience=<eval {5.0 7.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//typ monstra
+tag(monstertype,humanoid,60)
+tag(monstertype2,undead,60)
+
+tag.weapflag=dam_physical
+
+tag.resist_poison=400
+tag.resist_summon=<eval {390 500}>
+
+Parrying={35.0 45.0}
+Tactics={25.0 40.0}
+Wrestling={55.0 60.0}
+SpiritSpeak=20.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+[EOF]

@@ -1,0 +1,1692 @@
+///////////////////////////////////////////////////////////
+///////////////////     EYES     //////////////////////////
+///////////////////////////////////////////////////////////
+// blood ocko
+[CHARDEF c_blood_eye]
+ID=c_gazer
+NAME=Blood Eye
+
+ATTACK=60
+ARMOR=10
+MOVERATE=4
+
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+RESOURCES=i_reag_blood_vial 3
+
+CATEGORY=Dungeony
+SUBSECTION=Etheria
+DESCRIPTION=Blood Eye
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+
+ON=@Create
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+COLOR=098c
+
+STR=300
+DEX=800
+INT=200
+
+MAXHITS={500 600}
+MAXSTAM={575 650}
+MAXMANA=0
+
+tag.experience=<eval {35.0 45.0}>
+
+tag(npc_port_distance,10)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+Resist=2000
+Wrestling=1000
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_reag_blood_vial,{0 3}
+
+///////////////////////////////////////////////
+
+[CHARDEF c_water_eye]
+ID=c_gazer
+NAME=Water Eye
+
+ATTACK=60
+ARMOR=10
+MOVERATE=4
+
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+CATEGORY=Dungeony
+SUBSECTION=Etheria
+DESCRIPTION=Water Eye
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+
+ON=@Create
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+COLOR=0984
+//ALIGNMENT=EVIL
+
+STR=300
+DEX=800
+INT=200
+
+MAXHITS={600 700}
+MAXSTAM={575 650}
+MAXMANA=0
+
+tag.experience=<eval {35.0 45.0}>
+
+tag(npc_port_distance,10)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+Resist=2000
+Wrestling=1000
+SpiritSpeak=45.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+///////////////////////////
+[CHARDEF c_iron_eye]
+ID=c_gazer
+NAME=Iron Eye
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=35
+ARMOR=20
+MOVERATE=4
+
+RESOURCES=1 i_ore_iron
+BLOODCOLOR=color_o_iron
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Iron eye
+
+ON=@Create
+COLOR=color_o_iron
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=250
+DEX=1000
+INT=500
+
+MAXHITS={300 360}
+MAXSTAM={400 450}
+MAXMANA=0
+
+tag.experience=<eval {22.0 25.0}>
+tag(npc_port_distance,8)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,450)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,50)
+tag(resist_slash,150)
+tag(resist_pierce,-100)
+tag(resist_blunt,-300)
+
+//magic resists
+tag(resist_fire,450)
+tag(resist_elect,350)
+tag(resist_cold,400)
+
+//typ monstra
+tag(monstertype,eye)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Tactics=100.0
+Resist=100.0
+Wrestling=1000
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_ice_eye]
+ID=c_gazer
+NAME=Ice Eye
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=42
+ARMOR=25
+MOVERATE=4
+
+BLOODCOLOR=color_ice
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+TEVENTS=e_snowmonster
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Ice eye
+
+ON=@Create
+COLOR=0480
+NPC=brain_monster
+FAME=1
+KARMA=-2000
+
+STR=450
+DEX=1000
+INT=650
+
+MAXHITS={400 450}
+MAXSTAM={700 800}
+MAXMANA=0
+
+tag.experience=<eval {40.0 45.0}>
+
+tag(npc_port_distance,10)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,350)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,50)
+tag(resist_slash,100)
+tag(resist_pierce,-100)
+tag(resist_blunt,-300)
+
+//magic resists
+tag(resist_fire,-400)
+tag(resist_elect,500)
+tag(resist_cold,500)
+
+//typ monstra
+tag(monstertype,eye)
+tag(monstertype2,snow)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Resist=2000
+Tactics=100.0
+Wrestling=1000
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_snow_eye]
+ID=c_gazer
+NAME=Snow Eye
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=37
+ARMOR=20
+MOVERATE=4
+
+BLOODCOLOR=color_snow
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+TEVENTS=e_snowmonster
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Snow eye
+
+ON=@Create
+COLOR=0481
+NPC=brain_monster
+FAME=1
+KARMA=-2000
+
+STR=500
+DEX=1000
+INT=600
+
+MAXHITS={350 400}
+MAXSTAM={400 500}
+MAXMANA=0
+
+tag.experience=<eval {30.0 34.0}>
+
+tag(npc_port_distance,10)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,350)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,-100)
+tag(resist_blunt,-300)
+
+//magic resists
+tag(resist_fire,-200)
+tag(resist_elect,500)
+tag(resist_cold,450)
+
+//typ monstra
+tag(monstertype,eye)
+tag(monstertype2,snow)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Resist=200.0
+Wrestling=1000.0
+Tactics=100.0
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_shadow_eye]
+ID=c_gazer
+NAME=Shadow Eye
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=40
+ARMOR=50
+MOVERATE=4
+
+RESOURCES=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+TEVENTS=e_duplicator
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Shadow eye
+
+ON=@Create
+COLOR=07FFF
+NPC=brain_monster
+FAME=1
+KARMA=-2000
+
+STR=500
+DEX=500
+INT=100
+
+MAXHITS={800 900}
+MAXSTAM={400 600}
+MAXMANA=0
+
+tag.experience=<eval {45.0 50.0}>
+tag(npc_port_distance,10)
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,350)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,-100)
+tag(resist_blunt,-300)
+
+//magic resists
+tag(resist_fire,500)
+tag(resist_elect,500)
+tag(resist_cold,450)
+
+//typ monstra
+tag(monstertype,eye)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Resist=200.0
+Wrestling=1000.0
+Tactics=100.0
+Stealth=200.0
+Hiding=200.0
+Peacemaking=100.0
+SpiritSpeak=40.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_stone_eye]
+ID=c_gazer
+NAME=Stone Eye
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=45
+ARMOR=50
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Shadow eye
+
+ON=@Create
+COLOR=0482
+NPC=brain_monster
+FAME=1
+KARMA=-2000
+
+STR=500
+DEX=500
+INT=100
+
+MAXHITS={900 1000}
+MAXSTAM={300 400}
+MAXMANA=0
+
+tag.experience=<eval {40.0 45.0}>
+tag(npc_port_distance,10)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,350)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,500)
+tag(resist_blunt,-500)
+
+//magic resists
+tag(resist_fire,500)
+tag(resist_elect,500)
+tag(resist_cold,450)
+
+//typ monstra
+tag(monstertype,eye)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Resist=200.0
+Wrestling=1000.0
+Tactics=100.0
+Peacemaking=100.0
+SpiritSpeak=40.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_exorcist_eye]
+ID=c_gazer
+NAME=Exorcist Eye
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=50
+ARMOR=20
+MOVERATE=4
+
+BLOODCOLOR=022f
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+TEVENTS=e_summoneater
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Exorcist eye
+
+ON=@Create
+COLOR=022d
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=250
+DEX=1000
+INT=500
+
+MAXHITS={500 590}
+MAXSTAM={850 1000}
+MAXMANA=0
+
+tag.experience=<eval {50.0 55.0}>
+tag(npc_port_distance,10)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,500)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,950)
+tag(resist_slash,950)
+tag(resist_pierce,-200)
+tag(resist_blunt,950)
+
+//magic resists
+tag(resist_fire,900)
+tag(resist_elect,900)
+tag(resist_cold,900)
+
+//typ monstra
+tag(monstertype,eye)
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Tactics=100.0
+Resist=100.0
+Wrestling=1000.0
+SpiritSpeak=45.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF 030a]
+DEFNAME=c_beholder
+NAME=Beholder
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+ANIM=0ffc78c7f
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=50
+ARMOR=30
+MOVERATE=4
+
+RESOURCES=4 i_ribs_raw
+BLOODCOLOR=-1
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Belhoder
+
+ON=@Create
+COLOR=0981
+NPC=brain_monster
+FAME=1
+KARMA={-350 -1500}
+
+STR=700
+DEX=400
+INT=0
+
+MAXHITS={2780 2900}
+MAXSTAM={380 390}
+MAXMANA=0
+
+tag.experience=<eval {85.0 100.0}>
+
+tag(npc_port_distance,10)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,350)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,-100)
+tag(resist_blunt,-300)
+
+//magic resists
+tag(resist_fire,500)
+tag(resist_elect,500)
+tag(resist_cold,450)
+
+//typ monstra
+tag(monstertype,eye)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Poisoning={150.0 200.0}
+Resist=200.0
+Tactics=100.0
+Wrestling=1000.0
+DetectingHidden=250.0
+Peacemaking=100.0
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF 016]
+DEFNAME=c_gazer
+NAME=Gazer
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+ANIM=06007f
+CAN=MT_WALK
+
+ATTACK=35
+ARMOR=20
+MOVERATE=4
+
+RESOURCES=4 i_ribs_raw
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Gazer
+
+ON=@Create
+NPC=brain_monster
+FAME=1
+KARMA=-1000
+
+STR=500
+DEX=140
+INT=40
+
+MAXHITS={250 280}
+MAXSTAM={80 110}
+MAXMANA=0
+
+tag.experience=<eval {20.0 24.0}>
+tag(npc_port_distance,10)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,eye)
+
+tag.weapflag=dam_slashing|dam_physical
+
+//other resists
+tag(resist_poison,400)
+tag(resist_para,200)
+tag(resist_summon,150)
+tag(resist_bleed,200)
+
+//weap resists
+tag(resist_sharp,00)
+tag(resist_slash,-100)
+tag(resist_pierce,-100)
+tag(resist_blunt,-100)
+
+//magic resists
+tag(resist_fire,250)
+tag(resist_elect,250)
+tag(resist_cold,150)
+
+Parrying={55.0 65.0}
+Resist={50.0 65.0}
+Tactics={50.0 70.0}
+Wrestling={60.0 70.0}
+SpiritSpeak=25.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_light_source
+
+ON=@NPCRestock
+ITEM=loot_GAZER
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_gazer_elder]
+ID=c_gazer
+NAME=Elder Gazer
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+ANIM=06007f
+CAN=MT_WALK|MT_FIRE_IMMUNE
+
+ATTACK=25
+ARMOR=30
+MOVERATE=4
+
+RESOURCES=8 i_ribs_raw
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Elder Gazer
+
+ON=@Create
+COLOR=0400
+NPC=brain_monster
+FAME=1
+KARMA=-3000
+
+STR=500
+DEX=125
+INT=60
+
+MAXHITS={400 480}
+MAXSTAM={80 110}
+MAXMANA={250 400}
+
+tag.experience=<eval {40.0 45.0}>
+
+tag(npc_port_distance,10)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,eye)
+
+tag.weapflag=dam_slashing|dam_physical
+
+//other resists
+tag(resist_poison,830)
+tag(resist_para,200)
+tag(resist_summon,150)
+tag(resist_bleed,100)
+
+//weap resists
+tag(resist_sharp,-100)
+tag(resist_slash,-200)
+tag(resist_pierce,-100)
+tag(resist_blunt,-300)
+
+//magic resists
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,50)
+
+Parrying={55.0 65.0}
+Magery={70.0 85.0}
+Resist={50.0 65.0}
+Tactics={50.0 70.0}
+Wrestling={50.0 70.0}
+EI={60.0 70.0}
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_light_source
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_harm
+ADDSPELL=s_fireball
+
+ON=@NPCRestock
+ITEM=loot_GAZER
+ITEM=i_gold
+
+
+[CHARDEF c_bulva]
+ID=c_gazer
+NAME=Bulva
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=45
+ARMOR=50
+MOVERATE=4
+
+BLOODCOLOR=color_o_verite
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+TEVENTS=e_summoneater_vamp
+TEVENTS=e_duplicator
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Bulva
+
+ON=@Create
+COLOR=0433
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=300
+DEX=1000
+INT=500
+
+MAXHITS={1400 1500}
+MAXSTAM={400 600}
+MAXMANA=0
+
+tag.experience=<eval {60.0 70.0}>
+tag(npc_port_distance,10)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanNotBe>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,850)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,-100)
+tag(resist_blunt,-300)
+
+//magic resists
+tag(resist_fire,700)
+tag(resist_elect,700)
+tag(resist_cold,650)
+
+//typ monstra
+tag(monstertype,eye)
+//weap flags
+tag.weapflag=dam_piercing|dam_physical
+
+Tactics=100.0
+Resist=100.0
+Wrestling=1000
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+
+[CHARDEF c_copper_eye]
+DEFNAME=c_copper_eye
+ID=c_gazer
+NAME=Copper Eye
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=25
+ARMOR=20
+MOVERATE=4
+
+//resources=2 i_ore_copper
+BLOODCOLOR=color_o_copper
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Copper eye
+
+ON=@Create
+COLOR=color_o_copper
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=250
+DEX=1000
+INT=500
+
+MAXHITS={240 260}
+MAXSTAM={300 400}
+MAXMANA=0
+
+tag.experience=<eval {10.0 15.0}>
+
+tag(npc_port_distance,10)
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,350)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,00)
+tag(resist_blunt,-300)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,00)
+tag(resist_cold,250)
+
+//typ monstra
+tag(monstertype,eye)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Tactics=100.0
+Resist=1500
+Wrestling=1000.0
+SpiritSpeak=35.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_verite_eye]
+DEFNAME=c_verite_eye
+ID=c_gazer
+NAME=Verite Eye
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=35
+ARMOR=50
+MOVERATE=4
+
+//resources=2 i_ore_verite
+BLOODCOLOR=color_o_verite
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Verite eye
+
+ON=@Create
+COLOR=color_o_verite
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=250
+DEX=1000
+INT=500
+
+MAXHITS={240 280}
+MAXSTAM={400 450}
+MAXMANA=0
+
+tag.experience=<eval {40.0 65.0}>
+
+tag(npc_port_distance,10)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,930)
+tag(resist_para,1000)
+tag(resist_summon,350)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,00)
+tag(resist_blunt,-300)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,00)
+tag(resist_cold,250)
+
+//typ monstra
+tag(monstertype,eye)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Tactics=100.0
+Resist=250.0
+Wrestling=1000.0
+SpiritSpeak=50.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_valorite_eye]
+DEFNAME=c_valorite_eye
+ID=c_gazer
+NAME=Valorite Eye
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=50
+ARMOR=50
+MOVERATE=4
+
+BLOODCOLOR=color_o_valorite
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Valorite eye
+
+ON=@Create
+COLOR=color_o_valorite
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=250
+DEX=1000
+INT=500
+
+MAXHITS={500 600}
+MAXSTAM={450 500}
+MAXMANA=0
+
+tag.experience=<eval {60.0 70.0}>
+
+tag(npc_port_distance,10)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,850)
+tag(resist_para,1000)
+tag(resist_summon,450)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,00)
+tag(resist_blunt,-300)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,00)
+tag(resist_cold,250)
+
+//typ monstra
+tag(monstertype,eye,80)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Tactics=100.0
+Resist=200.0
+Wrestling=1000.0
+SpiritSpeak=60.0
+Peacemaking=100.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_obsidian_eye]
+DEFNAME=c_obsidian_eye
+ID=c_gazer
+NAME=Obsidian Eye
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=85
+ARMOR=70
+MOVERATE=4
+
+BLOODCOLOR=0989
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Obsidian eye
+
+ON=@Create
+COLOR=color_o_obsidian
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=250
+DEX=1000
+INT=500
+
+MAXHITS={700 800}
+MAXSTAM={300 350}
+MAXMANA=0
+
+tag.experience=<eval {90.0 100.0}>
+
+tag(npc_port_distance,10)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,850)
+tag(resist_para,1000)
+tag(resist_summon,550)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,00)
+tag(resist_blunt,-300)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,00)
+tag(resist_cold,250)
+
+//typ monstra
+tag(monstertype,eye,80)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Tactics=100.0
+Resist=250.0
+Wrestling=1000.0
+SpiritSpeak=70.0
+Peacemaking=100.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_adamantinum_eye]
+DEFNAME=c_adamantinum_eye
+ID=c_gazer
+NAME=Adamantinum Eye
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=90
+ARMOR=70
+MOVERATE=4
+
+BLOODCOLOR=color_o_adamantinum
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+TEVENTS=e_summoneater
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Adamantinum eye
+
+ON=@Create
+COLOR=color_o_adamantinum
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=250
+DEX=1000
+INT=500
+
+MAXHITS={1100 1200}
+MAXSTAM={380 440}
+MAXMANA=0
+
+tag.experience=<eval {120.0 130.0}>
+tag(npc_port_distance,10)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,850)
+tag(resist_para,1000)
+tag(resist_summon,750)
+tag(resist_bleed,1000)
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,00)
+tag(resist_blunt,-300)
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,00)
+tag(resist_cold,250)
+
+//typ monstra
+tag(monstertype,eye,80)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Tactics=100.0
+Resist=250.0
+Wrestling=1000.0
+SpiritSpeak=95.0
+Provocation=100.0
+Peacemaking=100.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_mitheril_eye]
+DEFNAME=c_mitheril_eye
+ID=c_gazer
+NAME=Mitheril Eye
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=120
+ARMOR=100
+MOVERATE=4
+
+BLOODCOLOR=098b
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+TEVENTS=e_summoneater_vamp
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Mitheril eye
+
+ON=@Create
+COLOR=098b
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=250
+DEX=1000
+INT=500
+
+MAXHITS={4000 4500}
+MAXSTAM={410 440}
+MAXMANA=0
+
+tag.experience=<eval {200.0 210.0}>
+
+tag(npc_port_distance,10)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,700)
+tag(resist_para,1000)
+tag(resist_summon,990)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,00)
+tag(resist_slash,450)
+tag(resist_pierce,500)
+tag(resist_blunt,-150)
+
+//magic resists
+tag(resist_fire,600)
+tag(resist_elect,600)
+tag(resist_cold,600)
+
+//typ monstra
+tag(monstertype,eye,70)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Tactics=100.0
+Resist=250.0
+Wrestling=1000.0
+SpiritSpeak=195.0
+Provocation=100.0
+Peacemaking=100.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+///////////////////////////
+[CHARDEF c_invisible_eye]
+DEFNAME=c_invisbile_eye
+ID=c_gazer
+NAME=Invisbile Eye
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=65
+ARMOR=40
+MOVERATE=4
+
+BLOODCOLOR=08B0
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+TEVENTS=e_backstub
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Invisible Eye
+
+ON=@Create
+COLOR=08B0
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=250
+DEX=1000
+INT=500
+
+MAXHITS={1000 1200}
+MAXSTAM={180 240}
+MAXMANA=0
+
+tag.experience=<eval 65.0 70.0}>
+tag(npc_port_distance,10)
+
+tag.backstub_damageReducer=500            //redukce dmg na 50%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,600)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,300)
+tag(resist_blunt,-300)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,300)
+tag(resist_cold,250)
+
+//typ monstra
+tag(monstertype,eye)
+
+//weap flags
+tag.weapflag=dam_piercing|dam_physical
+
+//tag.thiefmrcha=1
+
+Tactics=100.0
+Resist=250.0
+Wrestling=1000
+SpiritSpeak=80.0
+Peacemaking=100.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+/////////////////////
+[CHARDEF c_fire_eye]
+DEFNAME=c_fire_eye
+ID=c_gazer
+NAME=Fire Eye
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=60
+ARMOR=50
+MOVERATE=4
+
+RESOURCES=
+FOODTYPE=
+BLOODCOLOR=00
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+TEVENTS=e_phoenix
+TEVENTS=e_npc_detect
+TEVENTS=e_summoneater                  //smaze summona, co zasahne
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=fire eye
+
+ON=@Create
+COLOR=098E
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=250
+DEX=1000
+INT=500
+
+MAXHITS={1800 2600}
+MAXSTAM={250 340}
+MAXMANA=0
+
+tag.experience=<eval {80.0 100.0}>
+tag(npc_port_distance,10)
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,1000)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,200)
+tag(resist_slash,200)
+tag(resist_pierce,400)
+tag(resist_blunt,950)
+
+//magic resists
+tag(resist_fire,1000)
+tag(resist_elect,500)
+tag(resist_cold,-650)
+
+//typ monstra
+tag(monstertype,fire)
+tag(monstertype2,eye,80)
+
+//weap flags
+tag.weapflag=dam_fire|dam_magic|dam_physical|dam_piercing
+
+Tactics=100.0
+Resist=250.0
+Wrestling=1000
+SpiritSpeak=90.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+
+///////////////////////
+
+[CHARDEF c_ancient_eye]
+ID=c_gazer
+NAME=Ancient eye
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=60
+ARMOR=40
+MOVERATE=4
+
+BLOODCOLOR=099D
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_iron_eye
+TEVENTS=e_summoneater
+TEVENTS=e_summonhater
+TEVENTS=e_npc_infiniteMana
+
+CATEGORY=Monsters
+SUBSECTION=Eyes and Gazers
+DESCRIPTION=Caster eye
+
+ON=@Create
+COLOR=099D
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=250
+DEX=1000
+INT=200
+
+MAXHITS={600 700}
+MAXSTAM={450 500}
+MAXMANA=120
+
+tag.experience=<eval {80.0 90.0}>
+
+tag(npc_port_distance,10)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,850)
+tag(resist_para,1000)
+tag(resist_summon,750)
+tag(resist_bleed,500)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,-100)
+tag(resist_pierce,100)
+tag(resist_blunt,100)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,100)
+tag(resist_cold,00)
+
+//typ monstra
+tag(monstertype,eye,80)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Tactics=100.0
+Resist=150.0
+Wrestling=1000.0
+SpiritSpeak=60.0
+Peacemaking=100.0
+EI=75.0
+SpiritSpeak=30.0
+magery=100.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_light_source
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_fireball
+ADDSPELL=s_paralyze
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[EOF]

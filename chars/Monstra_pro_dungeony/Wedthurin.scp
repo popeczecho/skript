@@ -1,0 +1,2486 @@
+///////////////////////////////////////
+[CHARDEF 794]
+DEFNAME=c_minotaur_king
+NAME=Kral Minotauru
+SOUND=snd_MONSTER_CENTAUR
+ICON=i_pet_skeleton
+CAN=MT_WALK|MT_RUN
+
+ATTACK=140
+ARMOR=115
+MOVERATE=3
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Minotaur King
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_NPC_Bleed
+TEVENTS=e_stomp
+TEVENTS=e_rage
+TEVENTS=e_npc_roundattack
+TEVENTS=e_summonhater
+TEVENTS=e_npc_charge
+
+ON=@Create
+NPC=brain_monster
+FAME=500
+KARMA=-5000
+
+STR=5000
+DEX=200
+INT=50
+
+MAXHITS=21000
+MAXSTAM={450 500}
+MAXMANA=0
+
+tag.experience=<eval {1030.0 1050.0}>
+
+tag.hitspeed=5
+
+tag.npc_bleed=350//35.0%
+
+tag.roundattack_damage=30,40  //dmg od - do
+tag.roundattack_time=8,9   //cas od - do
+
+//other resists
+tag(resist_poison,300)
+tag(resist_para,1000)
+tag(resist_summon,700)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,-50)
+tag(resist_slash,200)
+tag(resist_pierce,100)
+tag(resist_blunt,300)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,400)
+tag(resist_cold,100)
+
+//typ monstra
+tag(monstertype,humanoid,40)
+tag(monstertype2,animal,40)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Tactics=100.0
+Resist=220.0
+Wrestling=1000.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+///////////////////////////////////////
+[CHARDEF 82]
+DEFNAME=c_minotaur_mage
+NAME=Minotaur Carodej
+SOUND=snd_MONSTER_CENTAUR
+ICON=i_pet_skeleton
+CAN=MT_WALK|MT_RUN
+
+ATTACK=60
+ARMOR=80
+MOVERATE=3
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Minotaur Carodej
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_rage
+TEVENTS=e_summoneater
+TEVENTS=e_summonhater
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_earthstun
+TEVENTS=e_roots
+
+ON=@Create
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=1000
+DEX=150
+INT=300
+
+MAXHITS={5500 6000}
+MAXSTAM={450 500}
+MAXMANA=0
+
+tag.experience=<eval {380.0 395.0}>
+tag.hitspeed=6
+
+tag.npc_port_timer=4
+tag(npc_port_distance,9)
+
+Tag.npc_stun_chance=300
+
+//other resists
+tag(resist_poison,300)
+tag(resist_para,1000)
+tag(resist_summon,700)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,-100)
+tag(resist_slash,100)
+tag(resist_pierce,00)
+tag(resist_blunt,200)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,400)
+tag(resist_cold,100)
+
+//typ monstra
+tag(monstertype,humanoid,40)
+tag(monstertype2,animal,40)
+
+//weap flags
+tag.weapflag=dam_lightning|dam_magic
+
+EI=110.0
+Magery=120.0
+Resist=105.0
+Wrestling=120.0
+SpiritSpeak=55.0
+
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=loot_SKELETON
+ITEM=i_gold
+///////////////////////////////////////
+[CHARDEF 83]
+DEFNAME=c_mv_minotaur_strazce
+NAME=Minotaur Strazce
+SOUND=snd_MONSTER_CENTAUR
+ICON=i_pet_skeleton
+CAN=MT_WALK|MT_RUN
+
+ATTACK=115
+ARMOR=100
+MOVERATE=3
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Minotaur strazce
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_NPC_Bleed
+TEVENTS=e_stomp
+TEVENTS=e_rage
+TEVENTS=e_npc_roundattack
+TEVENTS=e_summonhater
+
+ON=@Create
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=5000
+DEX=200
+INT=50
+
+MAXHITS={8500 9000}
+MAXSTAM={450 500}
+MAXMANA=0
+
+tag.experience=<eval {420.0 440.0}>
+
+tag.hitspeed=5
+
+tag.npc_bleed=350//35.0%
+
+tag.roundattack_damage=30,40  //dmg od - do
+tag.roundattack_time=20,30    //cas od - do
+
+//other resists
+tag(resist_poison,300)
+tag(resist_para,1000)
+tag(resist_summon,700)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,50)
+tag(resist_pierce,200)
+tag(resist_blunt,200)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,200)
+tag(resist_cold,200)
+
+//typ monstra
+tag(monstertype,humanoid,40)
+tag(monstertype2,animal,40)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Tactics=100.0
+Resist=150.0
+Wrestling=1000.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+//////////////////////////////
+[CHARDEF 37]
+DEFNAME=c_minotaur_valecnik
+NAME=Minotaur Valecnik
+SOUND=snd_MONSTER_CENTAUR
+ICON=i_pet_skeleton
+CAN=MT_WALK|MT_RUN
+
+ATTACK=90
+ARMOR=70
+MOVERATE=3
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Minotaur valecnik
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_stun
+TEVENTS=e_rage
+
+ON=@Create
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=3000
+DEX=250
+INT=50
+
+MAXHITS={3000 3100}
+MAXSTAM={450 500}
+MAXMANA=0
+
+tag.experience=<eval {160.0 170.0}>
+tag.hitspeed=6
+
+tag.npc_port_timer=4
+tag(npc_port_distance,9)
+
+Tag.npc_stun_chance=200
+
+//other resists
+tag(resist_poison,300)
+tag(resist_para,1000)
+tag(resist_summon,700)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,-50)
+tag(resist_slash,200)
+tag(resist_pierce,100)
+tag(resist_blunt,300)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,400)
+tag(resist_cold,100)
+
+//typ monstra
+tag(monstertype,humanoid,40)
+tag(monstertype2,animal,40)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Tactics=100.0
+Resist=150.0
+Wrestling=120.0
+SpiritSpeak=60.0
+Peacemaking=100.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_SKELETON
+ITEM=i_gold
+///////////////////////////////////
+[CHARDEF 84]
+DEFNAME=c_mv_vampir
+NAME=Vampire Bat
+SOUND=snd_MONSTER_SUCCUBUS
+ICON=i_pet_skeleton
+CAN=MT_WALK|MT_RUN
+
+ATTACK=65
+ARMOR=50
+MOVERATE=3
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Vampirek
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_lifeLeech_vampire
+TEVENTS=e_lightweak
+TEVENTS=e_npc_bleed
+
+ON=@Create
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+COLOR=0098d
+
+STR=250
+DEX=300
+INT=500
+
+MAXHITS={1000 1100}
+MAXSTAM={450 500}
+MAXMANA=0
+
+tag.experience=<eval {75.0 80.0}>
+
+tag.npc_bleed=200//20.0%
+tag.hitspeed=4
+
+tag(resist_poison,1000)
+tag(resist_para,<eval {300 400}>)
+tag(resist_summon,1000)
+tag(resist_bleed,950)
+
+//weap resists
+tag(resist_sharp,950)
+tag(resist_slash,950)
+tag(resist_pierce,1000)
+tag(resist_blunt,1000)
+
+//magic resists
+tag(resist_fire,800)
+tag(resist_elect,1000)
+tag(resist_cold,1000)
+endif
+//typ monstra
+tag(monstertype,undead,80)
+
+//weap flags
+tag.weapflag=dam_sharp|dam_physical
+
+Tactics=100.0
+Wrestling=90.0
+Fencing=90.0
+SpiritSpeak=60.0
+Resist=60.0
+Provocation=100.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_reag_blood_vial,{5 10}
+///////////////////////////////////
+[CHARDEF 23]
+DEFNAME=c_mv_mlaticka
+NAME=Bruttus
+SOUND=snd_MONSTER_OGRE1
+ICON=i_pet_elem_earth
+ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=150
+ARMOR=110
+MOVERATE=3
+
+RESOURCES=8 i_ribs_raw
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_humanoid
+TEVENTS=e_parakrik
+TEVENTS=e_npc_roundattack_pullall
+TEVENTS=e_summonhater
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Bruttus
+
+ON=@Create
+NPC=brain_monster
+FAME=250
+KARMA=-10000
+
+STR=9000
+DEX=380
+INT=130
+
+MAXHITS={15000 16000}
+MAXSTAM={360 370}
+MAXMANA=0
+
+tag.experience=<eval {750.0 800.0}>
+
+tag.roundattack_damage=50,60  //dmg od - do
+tag.roundattack_time=10,13    //cas od - do
+tag.roundattack_chance=200    //20.0%
+
+tag.stam_dmg_chance=250             // 25% chance to trigger this event
+tag.stam_dmg_power=40               // takes 40 of stam
+
+tag.npc_bleed=400 //40.0%
+
+//other resists
+tag(resist_poison,500)
+tag(resist_para,1000)
+tag(resist_summon,700)
+tag(resist_bleed,400)
+
+//weap resists
+tag(resist_sharp,300)
+tag(resist_slash,200)
+tag(resist_pierce,-100)
+tag(resist_blunt,300)
+
+//magic resists
+tag(resist_fire,150)
+tag(resist_elect,-250)
+tag(resist_cold,50)
+
+//typ monstra
+tag(monstertype,humanoid,70)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Wrestling=130.0
+Tactics=120.0
+Parrying=150.0
+SpiritSpeak=100.0
+Resist=220.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////////
+////////////////////////Vyvrhelove//////////////////////////////
+///////////////////////////////////////////////////////////////
+
+[CHARDEF c_vyvrhel_cokl]
+ID=c_wolf
+NAME=Trhac
+SOUND=snd_ANIMALS_WOLF1
+ICON=i_pet_wolf
+CAN=MT_WALK|MT_run
+
+ATTACK=100
+ARMOR=60
+MOVERATE=5
+
+RESOURCES=4 i_ribs_raw
+FOODTYPE=55 t_FISH,64 t_meat_raw
+BLOODCOLOR=colors_lava
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Hafan
+
+ON=@Create
+COLOR=074E
+NPC=brain_monster
+FAME={100 500}
+KARMA=-2000
+
+STR=520
+DEX=200
+INT=130
+
+MAXHITS={1600 1700}
+MAXSTAM={200 220}
+MAXMANA=0
+
+tag.experience=<eval {90.0 100.0}>
+
+tag.npc_bleed=300 // 30.0%
+
+tag(monstertype,animal,60)
+
+tag.weapflag=dam_sharp|dam_physical
+
+tag(resist_poison,-300)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,400)
+tag(resist_bleed,00)
+
+tag(resist_sharp,100)
+tag(resist_slash,100)
+tag(resist_pierce,00)
+tag(resist_blunt,50)
+
+tag(resist_fire,100)
+tag(resist_elect,300)
+tag(resist_cold,150)
+
+Parrying=100.0
+Resist=80.0
+Tactics=100.0
+Wrestling=100.0
+Taming=99.0
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+////////////////////////////////////////////////////////////////////
+
+[CHARDEF c_vyvrhel_boss]
+ID=c_man
+NAME=Vudce Vyvrhelu
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run
+
+ATTACK=130
+ARMOR=130
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_detect
+TEVENTS=e_npc_critic
+TEVENTS=e_npc_warcry
+TEVENTS=e_npc_summoning
+TEVENTS=e_illusionist
+TEVENTS=e_explosiondispell
+TEVENTS=e_npc_stam_dmg
+TEVENTS=e_npcvykryti
+TEVENTS=e_summonhater
+TEVENTS=e_npc_mass_dispel
+TEVENTS=e_npc_knife_throwing
+TEVENTS=e_phoenix
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Boss
+
+ON=@Create
+COLOR=0410
+Title=Vudce vyhnancu
+NPC=brain_human
+FAME={100 300}
+KARMA={-2000 -2999}
+
+STR=3000
+DEX=700
+INT=100
+
+MAXHITS=32500
+MAXSTAM={1000 1100}
+MAXMANA=0
+
+tag.hitspeed=3
+
+tag.experience=<eval {2200.0 2300.0}>
+
+tag(npcDetect_timer,20)
+
+tag(npc_summoning_chance,50)  //5% chance
+tag(npc_summoning_time,90)
+tag(npc_summoning_count,3)
+tag(npc_summoning_char[0],c_vyvrhel_straz)
+tag(npc_summoning_char[1],c_vrah)
+tag(npc_summoning_char[2],c_vyvrhel_straz_ranger)
+
+tag.stam_dmg_chance=250             // 25% chance to trigger this event
+tag.stam_dmg_power=20               // takes 30 of stam
+
+tag.npc_critic_chance=250
+tag.npc_critic_dmg=30,35
+
+tag.npc_port_timer=12
+tag(npc_port_distance,6)
+
+tag(monstertype,humanoid,40)
+tag.weapflag=dam_sharp|dam_physical
+
+tag(resist_poison,500)
+tag(resist_para,1000)
+tag(resist_summon,850)
+tag(resist_bleed,400)
+
+tag(resist_sharp,400)
+tag(resist_slash,700)        //sekery
+tag(resist_pierce,500)
+tag(resist_blunt,400)
+
+tag(resist_fire,400)
+tag(resist_elect,600)
+tag(resist_cold,400)
+
+Tactics={100.0 110.0}
+Wrestling=100.0
+Resist=260.0
+SpiritSpeak=200.0
+Peacemaking=100.0
+Provocation=100.0
+Fencing={100.0 110.0}
+Swordsmanship={90.0 100.0}
+
+ITEMNEWBIE=i_hair_long
+ITEMNEWBIE=i_beard_long
+ITEMNEWBIE=i_bandana
+ITEMNEWBIE=i_elven_mec2
+COLOR=0981
+NAME=Mec smrti
+
+ITEM=i_npc_mount
+tag.mount=i_mt_ostard_zostrich
+tag.mountcolor=0990
+
+ITEMNEWBIE=i_shield_round_bronze
+COLOR=0990
+NAME=Vzacna zbroj
+ITEMNEWBIE=i_sash
+COLOR=0997
+ITEMNEWBIE=i_cape
+COLOR=098C
+ITEMNEWBIE=i_platemail_leggings
+COLOR=0990
+NAME=Vzacna zbroj
+ITEMNEWBIE=i_platemail_chest
+COLOR=0990
+NAME=Vzacna zbroj
+ITEMNEWBIE=i_platemail_gloves
+COLOR=0990
+NAME=Vzacna zbroj
+ITEMNEWBIE=i_platemail_arms
+COLOR=0990
+NAME=Vzacna zbroj
+ITEMNEWBIE=i_platemail_gorget
+COLOR=0990
+NAME=Vzacna zbroj
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{70 80}
+ITEM=RANDOM_REAGENT,{50 60}
+
+////////////////////////////////////////////////////////////////////
+
+[CHARDEF c_vyvrhel_war_dvojruk] //velky dmg, mensi vydrz, vetsi rezisty na kouzla,round
+NAME=Vyvrhel
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP 
+
+ATTACK=95
+ARMOR=80
+MOVERATE=3
+
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_roundattack
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=War dvojruk
+
+ON=@Create
+NAME=Vyvrhel
+Title=Valecnik
+COLOR=colors_skin
+NPC=brain_Human
+KARMA=-6000
+FAME=250
+
+STR=1000
+DEX=300
+INT=100
+
+MAXHITS={2100 2200}
+MAXSTAM={250 260}
+MAXMANA=0
+
+tag.experience=<eval {110.0 120.0}>
+
+tag.hitspeed=5
+
+tag.roundattack_damage=30,40 //dmg od - do
+tag.roundattack_time=15,20   //cas od - do
+tag.roundattack_chance=250   //25 %
+
+tag(monstertype,humanoid,40)
+tag.weapflag=dam_slashing|dam_physical
+
+tag(resist_poison,-100)
+tag.resist_para=<eval {500 750}>
+tag(resist_summon,550)
+tag(resist_bleed,200)
+
+tag(resist_sharp, 200)
+tag(resist_slash, 00)
+tag(resist_pierce,200)
+tag(resist_blunt, 00)
+
+tag(resist_fire,600)
+tag(resist_elect,400)
+tag(resist_cold,400)
+
+Swordsmanship=100.0
+Tactics=90.0
+Resist=120.0
+Wrestling=150.0
+SpiritSpeak=50.0
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_gray
+
+ITEMNEWBIE={i_bardiche_iron 1 i_axe_battle_large_Iron 1  i_halberd_Iron 1  i_axe_double_Iron 1}
+COLOR=098A
+ITEMNEWBIE=i_helm_nose
+ITEMNEWBIE=i_boots_thigh
+ITEMNEWBIE=i_platemail_gloves
+ITEMNEWBIE=i_chainmail_tunic
+ITEMNEWBIE=i_surcoat
+ITEMNEWBIE=i_platemail_gorget
+ITEMNEWBIE=i_chainmail_leggings
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+////////////////////////////////////////////////////////////////////
+
+[CHARDEF c_vyvrhel_vyvolavac] //summoner, mega vydrz
+NAME=Vyvolavac
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP 
+
+ATTACK=80
+ARMOR=90
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_npc_manashield
+TEVENTS=e_npc_curse_mana            //mass sani many
+TEVENTS=e_npc_stam_dmg              //mlacenim saje staminu
+TEVENTS=e_npc_summoning
+TEVENTS=e_summoneater
+TEVENTS=e_summonhater
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Vyvolavac
+
+ON=@Create
+NAME=Vyvolavac
+Title=Vyvolavac
+COLOR=colors_skin
+NPC=brain_Human
+KARMA=-6000
+FAME=250
+
+STR=2500
+DEX=290
+INT=350
+
+MAXHITS={8500 9000}
+MAXSTAM={250 260}
+MAXMANA=0
+
+tag.experience=<eval {300.0 320.0}>
+
+tag.npc_curse_mana_chance=250       // 25% chance to trigger this event
+tag.npc_curse_mana_delay=15,20      // delay between another possible strike
+tag.npc_curse_mana_dmg=40,50        // mana reduce in between 50 and 60
+
+tag.stam_dmg_chance=250             // 25% chance to trigger this event
+tag.stam_dmg_power=30               // takes 30 of stam
+
+tag(npc_summoning_chance,200)      //50%
+tag(npc_summoning_time,30)        //nezakouzli znovu 60 sek
+tag(npc_summoning_count,2)        //pocet
+tag(npc_summoning_char[0],c_daemon)
+tag(npc_summoning_char[1],c_daemon)
+
+tag(monstertype,humanoid,40)
+tag.weapflag=dam_magic|dam_fire
+
+tag(resist_poison,600)
+tag.resist_para=<eval {700 800}>
+tag(resist_summon,450)
+tag(resist_bleed,400)
+
+tag(resist_sharp,300)
+tag(resist_slash,300)
+tag(resist_pierce,200)
+tag(resist_blunt,400)
+
+tag(resist_fire,450)
+tag(resist_elect,550)
+tag(resist_cold,300)
+
+tag.weapflag=dam_magic|dam_fire
+
+Resist=250.0
+Wrestling={90.0 100.0}
+Magery=200.0
+EI={90.0 100.0}
+Parrying=150.0
+Provocation=100
+SpiritSpeak=60.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_summon_elem_fire
+ADDSPELL=s_summon_elem_air
+ADDSPELL=s_summon_daemon
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_gray
+
+ITEMNEWBIE=i_robe_cape
+COLOR=0988
+ITEMNEWBIE=i_cape
+COLOR=0988
+ITEMNEWBIE=i_boots_thigh
+ITEMNEWBIE=i_spellbook
+COLOR=0995
+ITEMNEWBIE=i_studded_gloves
+COLOR=0988
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRESTOCK
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{40 50}
+ITEM=RANDOM_REAGENT,{30 40}
+ITEM=RANDOM_REAGENT,{30 40}
+
+////////////////////////////////////////////////////////////////////
+
+[CHARDEF c_vyvrhel_mag] //summoner, mega vydrz
+NAME=Vyvrhel
+ID={C_MAN C_WOMAN}
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP
+
+ATTACK=50
+ARMOR=80
+MOVERATE=3
+
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_npc_infiniteMana
+
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Carodej low
+
+ON=@Create
+NAME=Vyvrhel Carodej
+Title=Carodej
+COLOR=colors_skin
+NPC=brain_Human
+KARMA=-6000
+FAME=250
+
+STR=500
+DEX=200
+INT=240
+
+MAXHITS=1800
+MAXSTAM={250 260}
+MAXMANA=0
+
+tag.experience=<eval {110.0 120.0}>
+
+tag.roundattack_damage=25,30 //dmg od - do
+tag.roundattack_time=15,20   //cas od - do
+tag.roundattack_chance=200   //15.0%
+
+tag(monstertype,humanoid,40)
+tag.weapflag=dam_magic|dam_fire
+
+TAG(RESIST_POISON,300)
+TAG.RESIST_PARA=<EVAL {700 800}>
+TAG(RESIST_SUMMON,750)
+TAG(RESIST_BLEED,500)
+
+TAG(RESIST_SHARP,600)
+TAG(RESIST_SLASH,400)
+TAG(RESIST_PIERCE,600)
+TAG(RESIST_BLUNT,400)
+
+TAG(RESIST_FIRE,0)
+TAG(RESIST_ELECT,0)
+TAG(RESIST_COLD,200)
+
+Macefighting=90.0
+Resist=120.0
+Tactics=90.0
+Magery=120.0
+Wrestling=105.0
+EI=100.0
+SpiritSpeak=50.0
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_gray
+
+ITEMNEWBIE=I_SPELLBOOK
+ADDSPELL S_LIGHTNING
+ADDSPELL S_fireball
+addspell s_paralyze
+ADDSPELL S_MAGIC_REFLECTION
+
+ITEMNEWBIE=i_helm_orc
+ITEMNEWBIE=i_studded_tunic
+COLOR=097F
+ITEMNEWBIE=i_studded_gloves
+COLOR=097F
+ITEMNEWBIE=i_cape
+COLOR=07DF
+ITEMNEWBIE=i_sandals
+COLOR=07DF
+ITEMNEWBIE=i_staff_quarter
+COLOR=06B8
+ITEMNEWBIE=i_cape
+COLOR=07DF
+ITEMNEWBIE=i_studded_sleeves
+COLOR=0989
+ITEMNEWBIE=i_pants_long
+COLOR=03BC
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRESTOCK
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{25 30}
+ITEM=RANDOM_REAGENT,{15 20}
+
+////////////////////////////////////////////////////////////////////
+[CHARDEF c_vyvrhel_mag_high] //summoner, mega vydrz
+
+NAME=Vyvrhel Zaklinac
+ID={C_MAN C_WOMAN}
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP
+
+ATTACK=70
+ARMOR=100
+MOVERATE=3
+
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_summonhater
+TEVENTS=e_npc_curse
+TEVENTS=e_npc_swapchar
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Carodej swaper
+
+ON=@Create
+NAME=Vyvrhel Zaklinac
+Title=Carodej
+COLOR=colors_skin
+NPC=brain_Human
+KARMA=-6000
+FAME=250
+
+STR=500
+DEX=200
+INT=350
+
+MAXHITS=3300
+MAXSTAM={250 260}
+MAXMANA=0
+
+tag.experience=<eval {180.0 190.0}>
+
+tag.npc_curse_chance=50            // 5% chance to trigger this event
+tag.npc_curse_delay=15,20          // delay between another possible strike
+tag.npc_curse_dmg=20,30
+
+tag(monstertype,humanoid,40)
+tag.weapflag=dam_magic|dam_lightning
+
+TAG(RESIST_POISON,300)
+TAG.RESIST_PARA=<EVAL {700 800}>
+TAG(RESIST_SUMMON,750)
+TAG(RESIST_BLEED,500)
+
+TAG(RESIST_SHARP,600)
+TAG(RESIST_SLASH,400)
+TAG(RESIST_PIERCE,600)
+TAG(RESIST_BLUNT,400)
+
+TAG(RESIST_FIRE,0)
+TAG(RESIST_ELECT,0)
+TAG(RESIST_COLD,200)
+
+Macefighting=90.0
+Resist=200.0
+Tactics=90.0
+Magery=120.0
+Wrestling=105.0
+EI=110.0
+SpiritSpeak=50.0
+Peacemaking=100.0
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_gray
+
+ITEMNEWBIE=I_SPELLBOOK
+ADDSPELL S_LIGHTNING
+ADDSPELL S_fireball
+ADDSPELL s_paralyze
+ADDSPELL S_MAGIC_REFLECTION
+
+ITEMNEWBIE=i_robe
+COLOR=0844
+ITEMNEWBIE=i_cape
+COLOR=0844
+ITEMNEWBIE=i_studded_gloves
+COLOR=097F
+ITEMNEWBIE=i_sandals
+COLOR=07DF
+ITEMNEWBIE=i_staff_quarter
+COLOR=099A
+ITEMNEWBIE=i_studded_sleeves
+COLOR=0989
+ITEMNEWBIE=i_hat_straw_tall
+COLOR=03BC
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRESTOCK
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{35 40}
+ITEM=RANDOM_REAGENT,{20 30}
+
+////////////////////////////////////////////////////////////////////
+[CHARDEF c_vyvrhel_necromancer] // negr
+ID=C_MAN
+NAME=Necromancer
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP 
+
+ATTACK=100
+ARMOR=120
+MOVERATE=3
+
+BLOODCOLOR=0998
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_npc_curse         //vsechny viditelne zrani o dmg
+TEVENTS=e_mv_zavri
+TEVENTS=e_random_port
+TEVENTS=e_npc_summoning
+TEVENTS=e_phoenix_fire
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Necromancer - miniboss
+
+ON=@CREATE
+Title=Necromancer
+NPC=brain_human
+COLOR=colors_skin
+FAME=2000
+KARMA={-4000 -4999}
+
+STR=7000
+DEX=300
+INT=450
+
+MAXHITS={21000 22000}
+MAXSTAM=130
+MAXMANA=2000
+
+tag.experience=<eval {800.0 850.0}>
+
+tag.npc_curse_chance=250                // 25% chance to trigger this event
+tag.npc_curse_delay=15,20               // delay between another possible strike
+tag.npc_curse_dmg=50,60                 // dmg in between 50 and 60
+
+tag(npc_summoning_chance,50)      //50%
+tag(npc_summoning_time,30)        //nezakouzli znovu 60 sek
+tag(npc_summoning_count,4)        //pocet
+tag(npc_summoning_char[0],c_skull_head_Fire)
+tag(npc_summoning_char[1],c_skull_head_Fire)
+tag(npc_summoning_char[2],c_skeleton_axe_lvl_5)
+tag(npc_summoning_char[3],c_liche_king)
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {850 950}>
+tag(resist_summon,650)
+tag(resist_bleed,500)
+
+tag(resist_sharp,400)
+tag(resist_slash,500)
+tag(resist_pierce,100)
+tag(resist_blunt,-100)
+
+tag(resist_fire,300)
+tag(resist_elect,400)
+tag(resist_cold,-150)
+
+//typ monstra
+tag(monstertype,undead,50)
+tag(monstertype2,humanoid,20)
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Parrying={85.0 100.0}
+Resist=220.0
+Wrestling=100.0
+Magery=120.0
+Wrestling=100.0
+Tactics=100.0
+EI=120.0`
+SpiritSpeak=55.0
+
+// knows spells
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_summon_undead
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+ADDSPELL=s_magic_reflection
+ADDSPELL=s_summon_elem_fire
+
+ITEMNEWBIE=i_robe
+COLOR=0989
+ITEMNEWBIE=i_bone_helmet
+COLOR=0989
+ITEMNEWBIE=i_bone_gloves
+COLOR=0989
+ITEMNEWBIE=i_bone_chest
+COLOR=0989
+ITEMNEWBIE=i_boots_thigh
+COLOR=098D
+ITEMNEWBIE=i_staff_gnarled
+COLOR=098F
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRESTOCK
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{40 60}
+ITEM=random_reagent_necro,{25 30}
+
+////////////////////////////////////////
+[CHARDEF c_vyvrhel_arcimag] //dmger
+NAME=Vyvrhel Carodej
+ID={C_MAN C_WOMAN}
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP 
+
+ATTACK=100
+ARMOR=120
+MOVERATE=4
+
+BLOODCOLOR=020
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_npc_manashield
+TEVENTS=e_npc_curse         //vsechny viditelne zrani o dmg
+TEVENTS=e_summoneater
+TEVENTS=e_npc_mass_dispel
+TEVENTS=e_shield_and_regen
+TEVENTS=e_fire_field
+TEVENTS=e_lightnings
+TEVENTS=e_frostarmor
+TEVENTS=e_summonhater
+TEVENTS=e_npc_detect
+TEVENTS=e_npc_mass_dispel
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Arcimag
+
+ON=@Create
+NAME=Arcimag
+Title=Nejvyssi carodej
+COLOR=colors_skin
+NPC=brain_Human
+KARMA=-6000
+FAME=250
+
+STR=1000
+DEX=200
+INT=350
+
+MAXHITS=12000
+MAXSTAM=130
+MAXMANA=2000
+
+tag.experience=<eval {550.0 570.0}>
+
+tag.npc_curse_chance=250                // 25% chance to trigger this event
+tag.npc_curse_delay=15,20               // delay between another possible strike
+tag.npc_curse_dmg=40,50                 // dmg in between 50 and 60
+
+tag(monstertype,humanoid)
+tag.weapflag=dam_magic|dam_elect
+
+tag(resist_poison,600)
+tag(resist_para,1000)
+tag(resist_summon,850)
+tag(resist_bleed,300)
+
+tag(resist_sharp,200)
+tag(resist_slash,300)
+tag(resist_pierce,450)
+tag(resist_blunt,200)
+
+tag(resist_fire,0)
+tag(resist_elect,200)
+tag(resist_cold,300)
+
+//typ monstra
+tag(monstertype,humanoid,40)
+
+tag.hitspeed=6
+
+//weap flags
+tag.weapflag=dam_magic|dam_elect
+
+Parrying={85.0 100.0}
+Resist=220.0
+Wrestling=100.0
+Magery=120.0
+Macefighting=100.0
+Tactics=100.0
+EI=100.0
+SpiritSpeak=55.0
+Swordsmanship=100.0
+
+// knows spells
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_chain_lightning
+ADDSPELL=s_magic_reflection
+ADDSPELL=s_energy_bolt
+
+ITEMNEWBIE=i_robe
+COLOR=098F
+ITEMNEWBIE=i_hat_wizards
+COLOR=098D
+ITEMNEWBIE=i_staff_black
+COLOR=098F
+ITEMNEWBIE=i_studded_gloves
+COLOR=0989
+ITEMNEWBIE=i_studded_gorget
+COLOR=0989
+ITEMNEWBIE=i_sandals
+COLOR=0989
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRESTOCK
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{50 70}
+ITEM=random_reagent_necro,{25 30}
+
+////////////////////////////////////////////////////////////////////
+
+[CHARDEF c_vyvrhel_straz] //vydrzny
+NAME=Vyvrhel
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP 
+
+ATTACK=90
+ARMOR=120
+MOVERATE=3
+
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_roundattack_pullall
+TEVENTS=e_npc_critic
+TEVENTS=e_npc_warcry
+TEVENTS=e_npcvykryti
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=War straz
+
+ON=@Create
+NAME=Straz
+Title=Valecnik
+COLOR=colors_skin
+NPC=brain_Human
+KARMA=-6000
+FAME=250
+
+STR=2000
+DEX=350
+INT=100
+
+MAXHITS=5000
+MAXSTAM={250 260}
+MAXMANA=0
+
+tag.experience=<eval {280.0 290.0}>
+
+tag.roundattack_damage=40,45 //dmg od - do
+tag.roundattack_time=10,15   //cas od - do
+tag.roundattack_chance=150   //15.0%
+tag.pullAll_distance=7       //o kolik posun
+
+tag(monstertype,humanoid,40)
+//weap flags
+tag.weapflag=dam_physical|dam_sharp
+
+tag(resist_poison,-100)
+tag.resist_para=<eval {500 750}>
+tag(resist_summon,550)
+tag(resist_bleed,200)
+
+tag(resist_sharp, 200)
+tag(resist_slash, 00)
+tag(resist_pierce,200)
+tag(resist_blunt, 00)
+
+tag(resist_fire,600)
+tag(resist_elect,400)
+tag(resist_cold,400)
+
+Swordsmanship=100.0
+Tactics=90.0
+Resist=200.0
+Wrestling=150.0
+SpiritSpeak=50.0
+Fencing=110.0
+Parrying=100.0
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_gray
+
+ITEM=i_npc_mount
+tag.mount=i_mt_horse_brown_dk
+tag.mountcolor=06c8
+
+ITEMNEWBIE=i_platemail_leggings
+COLOR=098A
+ITEMNEWBIE=i_platemail_chest
+COLOR=098A
+ITEMNEWBIE=i_platemail_gloves
+COLOR=098A
+ITEMNEWBIE=i_platemail_arms
+COLOR=098A
+ITEMNEWBIE=i_platemail_gorget
+COLOR=098A
+ITEMNEWBIE=i_helm_nose
+COLOR=098A
+ITEMNEWBIE=i_shield_kite_metal
+COLOR=098A
+ITEMNEWBIE=i_sash
+COLOR=098D
+ITEMNEWBIE=i_cape
+COLOR=098D
+ITEMNEWBIE=i_sword_long
+COLOR=098A
+
+ITEMnewbie=i_monster_create
+
+
+//////////////////////
+[CHARDEF c_vyvrhel_straz_nohorse] //vydrzny
+NAME=Elitni straz
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP 
+
+ATTACK=110
+ARMOR=125
+MOVERATE=3
+
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+//TEVENTS=e_npc_roundattack_pullall
+TEVENTS=e_npc_critic
+//TEVENTS=e_npc_warcry
+TEVENTS=e_summonhater
+TEVENTS=e_npcvykryti
+TEVENTS=e_npc_leaper
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=War pevnost
+
+ON=@Create
+NAME=Vyvrhel
+Title=Elitni straz
+COLOR=colors_skin
+NPC=brain_Human
+KARMA=-6000
+FAME=250
+
+STR=2000
+DEX=350
+INT=100
+
+MAXHITS=8000
+MAXSTAM={250 260}
+MAXMANA=0
+
+tag.experience=<eval {380.0 390.0}>
+
+tag.roundattack_damage=35,40 //dmg od - do
+tag.roundattack_time=10,15   //cas od - do
+tag.roundattack_chance=150   //15.0%
+tag.pullAll_distance=7       //o kolik posun
+
+tag.npc_port_timer=8
+tag(npc_port_distance,4)
+
+tag(monstertype,humanoid,40)
+//weap flags
+tag.weapflag=dam_physical|dam_sharp
+
+tag(resist_poison,300)
+tag.resist_para=<eval {700 900}>
+tag(resist_summon,450)
+tag(resist_bleed,200)
+
+tag(resist_sharp, 100)
+tag(resist_slash, 300)
+tag(resist_pierce,100)
+tag(resist_blunt, 200)
+
+tag(resist_fire,400)
+tag(resist_elect,100)
+tag(resist_cold,400)
+
+Swordsmanship=100.0
+Tactics=90.0
+Resist=220.0
+Wrestling=150.0
+SpiritSpeak=50.0
+Fencing=110.0
+Parrying=100.0
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_gray
+
+ITEMNEWBIE=i_platemail_leggings
+COLOR=098A
+ITEMNEWBIE=i_platemail_chest
+COLOR=098A
+ITEMNEWBIE=i_platemail_gloves
+COLOR=098A
+ITEMNEWBIE=i_platemail_arms
+COLOR=098A
+ITEMNEWBIE=i_platemail_gorget
+COLOR=098A
+ITEMNEWBIE=i_helm_nose
+COLOR=098A
+ITEMNEWBIE=i_shield_kite_metal
+COLOR=0989
+ITEMNEWBIE=i_sash
+COLOR=0989
+ITEMNEWBIE=i_cape
+COLOR=0989
+ITEMNEWBIE=i_sword_long
+COLOR=098A
+
+ITEMnewbie=i_monster_create
+
+
+////////////////////////////////////////////////////////////////////
+
+[CHARDEF c_vyvrhel_straz_ranger] //strelec na koni
+NAME=Vyvrhel
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP 
+
+ATTACK=80
+ARMOR=110
+MOVERATE=4
+
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_sniper
+TEVENTS=e_NPC_multishot
+TEVENTS=e_summoneater
+TEVENTS=e_npc_detect
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Ranger straz
+
+ON=@Create
+NAME=Straz
+Title=Strelec
+COLOR=colors_skin
+NPC=brain_Human
+KARMA=-6000
+FAME=250
+
+STR=200
+DEX=350
+INT=100
+
+MAXHITS={3900 4000}
+MAXSTAM={250 260}
+MAXMANA=0
+
+tag.experience=<eval {270.0 280.0}>
+
+tag.hitspeed=5
+
+tag.multishot_chance=100                       // 5% chance pri zasahu monstra
+tag.multishot_delay=15,20                      // prodleva nez znovu
+tag.multishot_dmg=20,25                       // dmg in between 30 and 40
+
+tag(monstertype,humanoid,40)
+tag.weapflag=dam_physical|dam_piercing
+
+tag(resist_poison,500)
+tag.resist_para=<eval {400 550}>
+tag(resist_summon,600)
+tag(resist_bleed,400)
+
+tag(resist_sharp, 400)
+tag(resist_slash, 600)
+tag(resist_pierce,00)
+tag(resist_blunt, 600)
+
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,00)
+
+tag.npc_sniper_dmg=15           //o 15 HP
+tag.npc_sniper_chance=250       //30% Defaultne 20%
+
+Swordsmanship=100.0
+Archery=120.0
+Tactics=90.0
+Resist=200.0
+Wrestling=150.0
+Parrying=100
+SpiritSpeak=50.0
+
+ITEM=i_npc_mount
+tag.mount=i_mt_horse_brown_dk
+tag.mountcolor=06c8
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_gray
+ITEMNEWBIE=i_hat_feather
+COLOR=097F
+ITEMNEWBIE=i_ringmail_tunic
+COLOR=098A
+ITEMNEWBIE=i_ringmail_sleeves
+COLOR=098A
+ITEMNEWBIE=i_ringmail_gloves
+COLOR=0989
+ITEMNEWBIE=i_chainmail_leggings
+COLOR=0966
+ITEMNEWBIE=i_sandals
+COLOR=07D1
+ITEMNEWBIE=i_cape
+COLOR=097F
+ITEMNEWBIE=i_bow
+COLOR=0671
+ITEMNEWBIE=i_arrow, 150
+ITEMNEWBIE=i_sash
+COLOR=098D
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRESTOCK
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{40 50}
+
+//////////////////////////////
+[CHARDEF c_vyvrhel_straz_ranger_nohorse] //strelec bez kone
+NAME=Vyvrhel Strelec
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP 
+
+ATTACK=95
+ARMOR=115
+MOVERATE=4
+
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_sniper
+TEVENTS=e_NPC_multishot
+TEVENTS=e_summoneater
+TEVENTS=e_npc_detect
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Ranger pevnost elitni
+
+ON=@Create
+NAME=Vyvrhel Strelec
+Title=Elitni straz
+COLOR=colors_skin
+NPC=brain_Human
+KARMA=-6000
+FAME=250
+
+STR=200
+DEX=350
+INT=100
+
+MAXHITS=7000
+MAXSTAM={250 260}
+MAXMANA=0
+
+tag.experience=<eval {380.0 390.0}>
+
+tag.hitspeed=5
+
+tag.multishot_chance=100                       // 5% chance pri zasahu monstra
+tag.multishot_delay=15,20                      // prodleva nez znovu
+tag.multishot_dmg=25,35                       // dmg in between 30 and 40
+
+tag(monstertype,humanoid,40)
+tag.weapflag=dam_physical|dam_piercing
+
+tag(resist_poison,300)
+tag.resist_para=<eval {700 900}>
+tag(resist_summon,450)
+tag(resist_bleed,200)
+
+tag(resist_sharp, 100)
+tag(resist_slash, 300)
+tag(resist_pierce,100)
+tag(resist_blunt, 200)
+
+tag(resist_fire,400)
+tag(resist_elect,100)
+tag(resist_cold,400)
+
+Swordsmanship=100.0
+Archery=120.0
+Tactics=90.0
+Resist={70.0 90.0}
+Wrestling=150.0
+Parrying=100
+SpiritSpeak=50.0
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_gray
+ITEMNEWBIE=i_hat_feather
+COLOR=0989
+ITEMNEWBIE=i_ringmail_tunic
+COLOR=098A
+ITEMNEWBIE=i_ringmail_sleeves
+COLOR=098A
+ITEMNEWBIE=i_ringmail_gloves
+COLOR=0989
+ITEMNEWBIE=i_chainmail_leggings
+COLOR=0966
+ITEMNEWBIE=i_sandals
+COLOR=07D1
+ITEMNEWBIE=i_cape
+COLOR=0989
+ITEMNEWBIE=i_bow
+COLOR=0671
+ITEMNEWBIE=i_arrow, 150
+ITEMNEWBIE=i_sash
+COLOR=0989
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRESTOCK
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{40 50}
+
+////////////////////////////////////////////////////////////////////
+
+[CHARDEF c_vyvrhel_war_kladivo] //velky dmg, mensi vydrz, vetsi rezisty na kouzla,omracak
+NAME=Vyvrhel
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP 
+
+ATTACK=80
+ARMOR=80
+MOVERATE=3
+
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_stun
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=War kladivo
+
+ON=@Create
+NAME=Vyvrhel
+Title=Valecnik
+COLOR=colors_skin
+NPC=brain_Human
+KARMA=-6000
+FAME=250
+
+STR=1000
+DEX=300
+INT=100
+
+MAXHITS={2200 2300}
+MAXSTAM={250 260}
+MAXMANA=0
+
+tag.experience=<eval {110.0 120.0}>
+
+tag.hitspeed=5
+
+Tag.npc_stun_chance=300
+
+//typ monstra
+tag(monstertype,humanoid,40)
+
+//weap flags
+tag.weapflag=dam_psyhical|dam_blunt
+
+tag(resist_poison,-100)
+tag.resist_para=<eval {500 750}>
+tag(resist_summon,550)
+tag(resist_bleed,200)
+
+tag(resist_sharp, 200)
+tag(resist_slash, 00)
+tag(resist_pierce,200)
+tag(resist_blunt, 00)
+
+tag(resist_fire,600)
+tag(resist_elect,400)
+tag(resist_cold,400)
+
+Swordsmanship=100.0
+Macefighting=110.0
+Tactics=90.0
+Resist=120.0
+Wrestling=150.0
+SpiritSpeak=50.0
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_gray
+
+ITEMNEWBIE=i_hammer_war
+COLOR=098A
+ITEMNEWBIE=i_helm_nose
+ITEMNEWBIE=i_boots_thigh
+ITEMNEWBIE=i_platemail_gloves
+ITEMNEWBIE=i_chainmail_tunic
+ITEMNEWBIE=i_surcoat
+ITEMNEWBIE=i_platemail_gorget
+ITEMNEWBIE=i_chainmail_leggings
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+////////////////////////////////////////////////////////////////////
+
+[CHARDEF c_vyvrhel_war_jednoruk] //mensi dmg, vetsi vydrz, vetsi psyhical rezisty, leap
+NAME=Vyvrhel
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP 
+
+ATTACK=55
+ARMOR=100
+MOVERATE=3
+
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_leaper
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=War jednoruk
+
+ON=@Create
+NAME=Vyvrhel
+Title=Valecnik
+COLOR=colors_skin
+NPC=brain_Human
+KARMA=-6000
+FAME=250
+
+STR=1000
+DEX=300
+INT=100
+
+MAXHITS={2500 2600}
+MAXSTAM={250 260}
+MAXMANA=0
+
+tag.experience=<eval {90.0 100.0}>
+
+tag.npc_port_timer=20
+tag(npc_port_distance,5)
+
+
+//typ monstra
+tag(monstertype,humanoid,40)
+
+//weap flags
+tag.weapflag=dam_psyhical|dam_sharp
+
+tag(resist_poison,-100)
+tag.resist_para=<eval {500 750}>
+tag(resist_summon,550)
+tag(resist_bleed,200)
+
+tag(resist_sharp, 200)
+tag(resist_slash, 00)
+tag(resist_pierce,200)
+tag(resist_blunt, 00)
+
+tag(resist_fire,600)
+tag(resist_elect,400)
+tag(resist_cold,400)
+
+Swordsmanship=100.0
+Fencing=100.0
+Tactics=90.0
+Resist=120.0
+Wrestling=150.0
+Parrying=100
+SpiritSpeak=50.0
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_gray
+
+ITEMNEWBIE=i_sword_viking
+COLOR=098A
+ITEMNEWBIE=i_chainmail_coif
+ITEMNEWBIE=i_boots_thigh
+ITEMNEWBIE=i_platemail_gloves
+ITEMNEWBIE=i_chainmail_tunic
+ITEMNEWBIE=i_surcoat
+ITEMNEWBIE=i_platemail_gorget
+ITEMNEWBIE=i_chainmail_leggings
+ITEMNEWBIE=i_shield_wood
+COLOR=0748
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+////////////////////////////////////////////////////////////////////
+
+[CHARDEF c_vyvrhel_ranger] //silny dmg, maly armor
+NAME=Vyvrhel Strelec
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP 
+
+ATTACK=55
+ARMOR=80
+MOVERATE=4
+
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_sniper
+TEVENTS=e_npc_knockback
+TEVENTS=e_summonhater
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Ranger
+
+ON=@Create
+NAME=Vyvrhel Strelec
+Title=Strelec
+COLOR=colors_skin
+NPC=brain_Human
+KARMA=-6000
+FAME=250
+
+STR=1000
+DEX=250
+INT=140
+
+MAXHITS=2000
+MAXSTAM={250 260}
+MAXMANA=0
+
+tag.experience=<eval {110.0 120.0}>
+
+tag.hitspeed=6
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,40)
+tag.weapflag=dam_physical|dam_piercing
+
+tag(resist_poison,500)
+tag.resist_para=<eval {400 550}>
+tag(resist_summon,600)
+tag(resist_bleed,400)
+
+tag(resist_sharp, 400)
+tag(resist_slash, 600)
+tag(resist_pierce,00)
+tag(resist_blunt, 600)
+
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,00)
+
+tag.npc_sniper_dmg=20           //o 20 HP
+tag.npc_sniper_chance=250       //30% Defaultne 20%
+
+Swordsmanship=100.0
+Archery=120.0
+Tactics=90.0
+Resist=120.0
+Wrestling=150.0
+Parrying=100
+SpiritSpeak=50.0
+Peacemaking=100.0
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_gray
+ITEMNEWBIE=i_hat_feather
+COLOR=07D1
+ITEMNEWBIE=i_ringmail_tunic
+COLOR=097F
+ITEMNEWBIE=i_ringmail_sleeves
+COLOR=098A
+ITEMNEWBIE=i_ringmail_gloves
+COLOR=097F
+ITEMNEWBIE=i_pants_short
+ITEMNEWBIE=i_sandals
+COLOR=07D1
+ITEMNEWBIE=i_cape
+COLOR=07D1
+ITEMNEWBIE=i_crossbow_heavy
+COLOR=07D1
+ITEMNEWBIE=i_xbolt, 150
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRESTOCK
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{25 35}
+
+////////////////////////////////////////////////////////////////////
+
+[CHARDEF c_vrah]
+NAME=Vrah
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP 
+
+ATTACK=70
+ARMOR=70
+MOVERATE=3
+
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_backstub
+TEVENTS=e_NPC_Bleed
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Vrah
+
+ON=@Create
+NAME=Vrah
+Title=Vyhnanec
+COLOR=colors_skin
+NPC=brain_Human
+KARMA=-6000
+FAME=250
+
+STR=1000
+DEX=350
+INT=150
+
+MAXHITS=1800
+MAXSTAM={250 260}
+MAXMANA=0
+
+tag.experience=<eval {110.0 120.0}>
+
+tag.npc_bleed=400 //40.0%
+
+tag.hitspeed=5
+
+tag(monstertype,humanoid,40)
+tag.weapflag=dam_physical|dam_piercing
+
+tag(resist_poison,1000)
+tag.resist_para=<eval {500 650}>
+tag(resist_summon,500)
+tag(resist_bleed,0)
+
+tag(resist_sharp,0)
+tag(resist_slash,200)
+tag(resist_pierce,400)
+tag(resist_blunt,200)
+
+tag(resist_fire,400)
+tag(resist_elect,600)
+tag(resist_cold,600)
+
+Swordsmanship=100.0
+Fencing=100.0
+Archery=120.0
+Tactics=100.0
+Resist=120.0
+Wrestling=150.0
+Parrying=100
+SpiritSpeak=50.0
+Poisoning={100.0 110.0}
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_gray
+ITEMNEWBIE=i_hat_cape_3
+COLOR=0967
+ITEMNEWBIE=i_leather_tunic
+COLOR=06C4
+ITEMNEWBIE=i_pants_long
+COLOR=089F
+ITEMNEWBIE=i_boots_calf
+COLOR=089F
+ITEMNEWBIE=i_studded_sleeves
+COLOR=0967
+ITEMNEWBIE=i_thief_knives
+ITEMNEWBIE=i_leather_gloves
+COLOR=01
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRESTOCK
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{20 30}
+
+////////////////////////////////////////////////////////////////////
+
+[CHARDEF c_hrdlorez]
+NAME=Vyvrhel
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP 
+
+ATTACK=100
+ARMOR=100
+MOVERATE=3
+
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_backstub
+TEVENTS=e_NPC_Bleed
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Vrah
+
+ON=@Create
+NAME=Hrdlorez
+Title=Vyhnanec
+COLOR=colors_skin
+NPC=brain_Human
+KARMA=-6000
+FAME=250
+
+STR=1000
+DEX=350
+INT=150
+
+MAXHITS=3800
+MAXSTAM={250 260}
+MAXMANA=0
+
+tag.experience=<eval {250.0 260.0}>
+
+tag.npc_bleed=400 //40.0%
+
+tag.hitspeed=5
+
+tag(monstertype,humanoid,40)
+tag.weapflag=dam_physical|dam_piercing
+
+tag(resist_poison,1000)
+tag.resist_para=<eval {500 650}>
+tag(resist_summon,500)
+tag(resist_bleed,0)
+
+tag(resist_sharp,0)
+tag(resist_slash,200)
+tag(resist_pierce,400)
+tag(resist_blunt,200)
+
+tag(resist_fire,400)
+tag(resist_elect,600)
+tag(resist_cold,600)
+
+Swordsmanship=100.0
+Fencing=100.0
+Archery=120.0
+Tactics=100.0
+Resist=200.0
+Wrestling=150.0
+Parrying=100
+SpiritSpeak=50.0
+Poisoning={130.0 140.0}
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_gray
+
+ITEMNEWBIE=i_hat_cape_3
+COLOR=0967
+ITEMNEWBIE=i_leather_tunic
+COLOR=06C4
+ITEMNEWBIE=i_pants_long
+COLOR=089F
+ITEMNEWBIE=i_boots_calf
+COLOR=089F
+ITEMNEWBIE=i_studded_sleeves
+COLOR=0967
+ITEMNEWBIE=i_kryss
+COLOR=098A
+ITEMNEWBIE=i_shield_metal
+COLOR=098A
+ITEMNEWBIE=i_leather_gloves
+COLOR=01
+
+ITEM=i_npc_mount
+tag.mount=i_mt_horse_brown_dk
+tag.mountcolor=06c8
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRESTOCK
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{20 30}
+
+////////////////////////////////
+[CHARDEF c_mv_Derahir]
+NAME=Derahir
+ID=C_man
+
+TSPEECH=spk_mv_Derahir
+
+TEVENTS=e_character
+
+CATEGORY=Dungeony
+SUBSECTION=Wedthurin
+DESCRIPTION=Zajatec - poradce
+
+ON=@UserDCLick
+f_qDClick(f_mv_Derahir)
+
+ON=@Create
+NPC=brain_human
+COLOR=color_clovek
+STR=1500
+DEX=150
+INT=200
+INVUL 1
+
+Provocation=100.0
+Peacemaking=100.0
+
+tag(noanimate,1)
+
+FAME=10
+KARMA=500
+
+ItemNewbie=i_hair_long
+COLOR=0045c
+Itemnewbie=i_beard_long
+COLOR=0045c
+
+ON=@NPCRestock
+ItemNewbie=i_robe
+COLOR=03CB
+ITEMNEWBIE=i_sandals
+COLOR=00
+ItemNewbie=i_leather_gloves
+COLOR=0763
+
+ITEMnewbie=i_monster_create
+
+/////////////////////////////////////////
+[SPEECH spk_mv_Derahir]
+ON=*Dobry*
+ON=*den*
+ON=*zdravim*
+ON=*hi*
+ON=*hello*
+f_qSpeech(f_mv_Derahir)
+
+[FUNCTION f_mv_Derahir]
+if (<src.flags>&statf_dead)
+return 0
+endif
+if (<src.tag(q_mv_Derahir)> == 6)
+say("Nemame si uz co rici ...")
+else
+dialog(d_mv_Derahir)
+endif
+
+[DIALOG d_mv_Derahir]
+argo.questDialog_create(03000,"<name>")
+arg(q_mv_Derahir,<eval src.tag(q_mv_Derahir)>)
+
+argo.dialog_newPage("Pozdrav")
+
+if (<arg(q_mv_Derahir)> < 2)
+argo.questDialog_baseButt(1)
+else
+argo.questdialog_baseButt(1,27,"Potrebuji pomoc")
+endif
+argo.questdialog_baseButt(2)
+argo.questdialog_baseButt(3)
+argo.questdialog_basebutt(4)
+argo.questdialog_baseButt(5)
+argo.questdialog_baseButt(6)
+
+argo.dialog_page("Pozdrav")
+if (<arg(q_mv_Derahir)> == 0)
+argo.setText(argo.newTextLine,"Co tady pohledavas ? Jak ses sem dostal ? Zmizte ! Tady vas neceka nic jinyho nez smrt...")
+argo.questDialog_HTMLGUMP
+elseif (<arg(q_mv_Derahir)> == 1)
+argo.setText(argo.newTextLine,"Rad te vidim ziveho.")
+argo.questDialog_HTMLGUMP
+elseif (<arg(q_mv_Derahir)> == 2)
+argo.setText(argo.newTextLine,"Ahoj ! Rad te zase vidim ziveho. Dekuji ti za zachranu, ale bohuzel ti nemam co nabidnout krome par rad.")
+argo.questDialog_HTMLGUMP
+elseif (<arg(q_mv_Derahir)> == 3)
+argo.setText(argo.newTextLine,"Ahoj ! Rad te zase vidim ziveho. Povedlo se Vam odblokovat most?")
+argo.questDialog_HTMLGUMP
+elseif (<arg(q_mv_Derahir)> == 4)
+argo.setText(argo.newTextLine,"Zdravim te. Uz jsem se lekl, ze se nevratis. Nasel si mechanismus na otevreni brany?")
+argo.questDialog_HTMLGUMP
+elseif (<arg(q_mv_Derahir)> == 5)
+argo.setText(argo.newTextLine,"Ahoj ! Rad te zase vidim ziveho. Ale myslim, ze az se vydas do pevnosti, tak uz se neuvidime ...")
+argo.questDialog_HTMLGUMP
+elseif (<arg(q_mv_Derahir)> == 6)
+argo.setText(argo.newTextLine,"Myslim, ze uz si nemame co rict ...")
+argo.questDialog_HTMLGUMP
+endif
+
+if (<arg(q_mv_Derahir)> >= 2)
+argo.dialog_page("Potrebuji pomoc")
+if (<arg(q_mv_Derahir)> == 2)
+argo.settext(argo.newTextLine,"<def_questDialog_colorTextEmote>*Muz si te uprene prohlizi.*<def_questDialog_colorTextNormal> Citim to z tebe. Touha po bohatstvi. Rad bych te presvedcil k opaku - abys na misto zapomnel a uz se nikdy nevratil. Inu dobra ... vydej se skrze pevnost Wedthurinu. Tam najdete co hledate. Nejdriv vsak musite odblokovat pasti na moste. Past je potreba deaktivovat spoustecim mechanismem. Zacal bych u chramu na kopci, nebot nemam poneti, kde presne je. Posledni dobou se tam poflakuje jeden z mocnych carodeju, ktery ma jako jeden z mala pristup do blizke osetrovny. Urcite s tim bude mit spojitost. ")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Podekovat a odejit.")
+argo.questdialog_addResponse(0,1,1,"q_mv_story_1")
+elseif (<arg(q_mv_Derahir)> == 3)
+argo.settext(argo.newTextLine,"Dalsi problem, na ktery narazite, jezablokovana vstupni brana do pevnosti. Spinaci mechanismus se nachazi ve vezi u vstupni brany. Sam jsem ho hlidal. Dejte pozor na zesilene hlidky! ")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Podekovat a odejit")
+argo.questdialog_addResponse(0,1,1,"q_mv_story_2")
+elseif (<arg(q_mv_Derahir)> == 4)
+argo.settext(argo.newTextLine,"Nyni se uz musite vydat skrz pevnost k samotnemu vudci, ktery ukryva veskere bohatstvi Wedthurinu. Co se skryva v samotne pevnosti vam uz neporadim, sam to nevim ... I kdyz ... vsiml jsem si, ze u domu alchemisty se zvetsily hlidky. Je mozne, ze s tim bude mit spojitost. Radeji se tam take porozhlidnete. Jsem si ale zcela jist, ze pres dvere to nepujde - musite najit skryty portal.")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Podekovat a odejit.")
+argo.questdialog_addResponse(0,1,1,"q_mv_story_3")
+else
+argo.settext(argo.newtextLine,"Co jsem vedel jsem ti uz rekl. Nyni je to uz na Vas.")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Odejit.")
+argo.questdialog_exitResponse(0,1)
+endif
+endif
+
+if (<arg(q_mv_Derahir)> < 2)
+argo.dialog_page("Kdo Jsi?")
+argo.setText(argo.newTextLine,"Me jmeno je <name>. Jsem byvalym vudcem tohoto mesta a byvaly kapitan Gondorskych vojsk.")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Co se tady stalo ?")
+argo.questdialog_addResponse(0,0,1,"q_mv_prevrat")
+argo.settext(argo.newTextLine,"Proc uz nejsi v Gondoru ?")
+argo.questdialog_addResponse(0,0,1,"q_mv_kapitan")
+endif
+endif
+
+if (<arg(q_mv_Derahir)> < 2)
+argo.dialog_page("q_mv_prevrat")
+argo.setText(argo.NewTextLine,"Do teto oblasti jsme prisli pred nedavnou dobou s tim, ze chceme vybudovat spolecnost, ktera mezi sebou nevalci a neni pod primou vladou jednoho cloveka. Prichazelo stale vic lidi a spolecnost rostla. To je dlouhe povidani ... Nicmene jednoho dne tu doslo k prevratu a z mesta se stal razem agresivni narod prahnouci po moci, jehoz jedinym cilem je okradat a ziskavat majetek.")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Proc ste utekli z Gondoru ?")
+argo.questdialog_addResponse(0,0,0,"q_mv_kapitan")
+argo.settext(argo.newTextLine,"Rozloucit se a odejit...")
+argo.questdialog_exitResponse(0,1)
+endif
+
+if (<arg(q_mv_Derahir)> < 2)
+argo.dialog_page("q_mv_kapitan")
+argo.setText(argo.NewTextLine,"Z Gondoru jsme s nekolika dalsima lidma utekli prave sem. Rozkazy, ktere jsme museli plnit, se tykaly uz jen chladnokrevneho vrazdeni a niceni vlastniho lidu, ktery se snazil vzeprit systemu. Nic o co by clovek dale stal. Pro nas uz Gondor nebyl nadale Gondor ...")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Co se tady stalo ?")
+argo.questdialog_addResponse(0,0,0,"q_mv_prevrat")
+argo.settext(argo.newTextLine,"Rozloucit se a odejit...")
+argo.questdialog_exitResponse(0,1)
+endif
+
+argo.dialog_page("Mohu pomoci?")
+if (<eval src.tag(q_mv_Derahir)> == 0)
+argo.settext(argo.newTextLine,"Jak vidis, tak by asi mensi pomoc bodla. Pro zacatek by jste me mohli dostat z tedle klece.")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Co je potreba ?")
+argo.questdialog_addResponse(0,0,1,"q_mv_klic")
+elseif (<eval src.tag(q_mv_Derahir)> == 1)
+argo.settext(argo.newTextLine,"Potrebuju ty klice. Uz si je nasel ?")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newtextline,"Zatim ne")
+argo.questdialog_exitResponse(0,1)
+argo.settext(argo.newtextline,"Rozmyslel jsem se. Nepomuzu ti, delej si tady co chces !")
+argo.questdialog_addResponse(0,1,1,"q_mv_Derahir_decline")
+if (<src.restest(i_mv_klic_cela)> == 1)
+argo.settext(argo.newtextline,"Tady je mas")
+argo.questdialog_addResponse(0,1,1,"q_mv_klic_accept_2")
+endif
+else
+argo.settext(argo.newtextline,"Nepotrebuji pomoc. Udelal jsi pro me dost.")
+argo.questDialog_HTMLGUMP
+endif
+
+if (<eval src.tag(q_mv_Derahir)> == 0)
+argo.dialog_page("q_mv_klic")
+argo.setText(argo.newTextLine,"To je vcelku jednoduche. Klec je zamknuta a ja potrebuji klice. Zkuste se tady poohlidnout, musi tu nekde byt.")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newtextline,"Jdeme na to !")
+argo.questdialog_addResponse(0,1,1,"q_mv_klic_accept")
+endif
+
+argo.dialog_page("Obchodovat")
+argo.settext(argo.newTextLine,"Pokud chces koupit hlinu nebo stary ohlodany jidlo...")
+argo.questDialog_HTMLGUMP
+
+argo.dialog_page("Hledam praci")
+argo.settext(argo.newTextLine,"Tak to te asi zklamu.")
+argo.questDialog_HTMLGUMP
+
+argo.dialog_page("Nesu ti")
+argo.settext(argo.newTextLine,"Co mi neses ?")
+argo.questDialog_HTMLGUMP
+if (<eval src.tag(q_mv_Derahir)> == 1)
+if (<src.restest(i_mv_klic_cela)> == 1)
+argo.settext(argo.newtextline,"Tady mas ten klic")
+argo.questdialog_addResponse(0,1,0,"q_mv_klic_accept_2")
+endif
+endif
+
+argo.dialog_page("Prohlednout")
+argo.settext(argo.newTextLine,"<def_questDialog_colorTextEmote>*Vidis zanedbaneho muze stredniho veku. I pres jeho ocividne dlouhe uvezneni z nej vyzaruje sila a klid. Jeho tvar jiz zazila velke mnozstvi zraneni z boju.*")
+argo.questDialog_HTMLGUMP
+
+[DIALOG d_mv_Derahir button]
+ON=@Anybutton
+if (<argn> == argo.dialog_linkButton("q_mv_klic_accept"))
+src.tag(q_mv_Derahir,1)
+elseif (<argn> == argo.dialog_linkButton("q_mv_klic_accept_2"))
+if (<src.restest(i_mv_Klic_cela)> == 1)
+src.consume(i_mv_klic_cela)
+src.tag(q_mv_Derahir,2)
+src.addexp(1500)
+say("Dekuji ti ... ")
+else
+say("Vsak zadny klic nemas")
+endif
+elseif (<argn> == argo.dialog_linkButton("q_mv_story_1"))
+src.tag(q_mv_Derahir,3)
+src.addexp(500)
+elseif (<argn> == argo.dialog_linkButton("q_mv_story_2"))
+src.tag(q_mv_Derahir,4)
+src.addexp(500)
+elseif (<argn> == argo.dialog_linkButton("q_mv_story_3"))
+src.tag(q_mv_Derahir,5)
+src.addexp(500)
+elseif (<argn> == argo.dialog_linkButton("q_mv_Derahir_decline"))
+src.tag(q_mv_Derahir,6)
+say("Jak myslis ...")
+endif
+
+[EOF]

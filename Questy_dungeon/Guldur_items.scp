@@ -1,0 +1,903 @@
+//////         Itemy pro guldur       //////
+//////        Sortir (UO Reborn)      //////
+//////            20.04.2022          //////
+
+///////////////////////Itemy (guldur)/////////////////////////////////////
+
+[ITEMDEF i_guldur_brasna]
+ID=i_backpack
+NAME=Osoupana Brasna
+TYPE=t_normal
+WEIGHT=10
+
+ON=@create
+attr_movenever=1
+COLOR=098D
+
+ON=@userdclick
+if (<src.tag(q_guldur_starec)>==1)
+if (<src.restest(i_guldur_dopis_dcera)>>=1)
+src.sysMessage("Dopis uz jsi vzal")
+else
+src.giveitem(i_guldur_dopis_dcera).bounce
+src.sysMessage("Vyndal jsi dopis od starcovo dcery")
+endif
+else
+src.sysMessage("To mi asi bude k nicemu...")
+endif
+return 1
+
+ON=@timer
+TIMER=3600
+return 1
+
+//////////////////Mince/////////////////////////////
+
+[ITEMDEF i_guldur_mince]
+ID=i_fruit_lemon
+NAME=Stara mince
+TYPE=00
+WEIGHT=1
+
+ON=@create
+ATTR=08010
+COLOR=0995
+
+ON=@userDClick
+message("Trochu zasle, ale vypada velmi vzacne.")
+
+//////////////////////Dopis////////////////////////////////
+
+[ITEMDEF i_guldur_dopis_dcera]
+ID=i_map_rolled
+NAME=Muj milovany otce
+TYPE=t_script
+WEIGHT=4
+
+ON=@create
+ATTR=08010
+COLOR=0428
+
+/////////////////////Timer/////////////////////////////////////
+
+[ITEMDEF i_guldur_starec_delay]
+ID=i_memory
+NAME=guldur_starec_delay
+TYPE=T_EQ_SCRIPT
+
+ON=@EQUIP
+TIMER=120 //1den 86400
+
+ON=@CREATE
+ATTR=attr_invis|attr_decay
+
+ON=@TIMER
+cont.tag.remove(q_guldur_starec)
+remove
+return 1 
+
+
+///////////////////////////Secret Door////////////////////////////////
+
+[ITEMDEF i_door_secret_guldur_1]
+ID=0e8
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Doors
+SUBSECTION=Secret Door (dungeon)
+DESCRIPTION=@ (secret door)
+on=@create
+COLOR=00450
+TYPE=T_DOOR
+
+[ITEMDEF i_door_secret_guldur_1_O]
+ID=0e9
+RESOURCES=100 i_rock_plain
+CATEGORY=Buildings - Doors
+SUBSECTION=Secret Door (dungeon)
+DESCRIPTION=@ (secret door)
+on=@create
+COLOR=00450
+TYPE=T_DOOR
+
+////////////////////////////Tajny port//////////////////////////////
+
+[ITEMDEF i_guldur_torch_port]
+ID=i_torch_wall
+TYPE=t_script
+NAME=Louce na port
+
+ON=@create
+attr_movenever=1
+
+ON=@timer
+if (0<tag(otevreno)>==1)
+tag(otevreno,0)
+DISPID=i_torch_wall
+update
+endif
+return 1
+
+ON=@Userdclick
+if (src.isgm)
+src.sysMessage("Tajemna louc")
+  if (link.more2)
+    src.sysMessage("Hlidaci spawn je nastaven, nesahat ! ")
+	return 1
+  else
+    target("Zamer spawn, kterej chrani louci pred zapalenim")
+    return 1
+  endif
+else
+if (0<tag(otevreno)>==0)
+if (link.more2)
+src.sysMessage("Nekdo zamezuje manipulaci s louci")
+else
+src.sysMessage("Zapalenim louce jsi otevrel port...")
+DISPID=i_torch_wall_lit
+update
+tag(otevreno,1)
+src.newitem(i_guldur_tajna_mistnost_port)
+lastnew.p=5635 1182 10 100
+SOUND=snd_SPELL_GATE_TRAVEL
+TIMER=500
+else
+src.sysMessage("Nic se nestalo")
+endif
+endif
+endif
+return 1
+
+ON=@targon_item
+	if (src.targ.type==t_spawn_char)
+		link=<src.targ>
+		src.sysMessage("Spawn uspesne nastaven")
+	else
+		src.sysMessage("To neni spawn. Musis zamerit spawn")
+	endif
+return 1
+
+ON=@targon_char
+	src.sysMessage("Musis zamerit spawn, ne monstrum")
+	return 1
+
+ON=@targon_Ground
+	src.sysMessage("Kus zeme asi nebude hlidat")
+	return 1
+
+[ITEMDEF i_guldur_tajna_mistnost_port]
+NAME=Tajny portal
+ID=i_anim_heal_effect
+TYPE=t_script
+
+ON=@Create
+COLOR=0981
+TIMER=180
+
+ON=@step
+if !(src.npc)
+src.go 5637 1186 10 100 //Posleme ho do tajne mistnosti
+return 1
+endif
+
+ON=@timer
+cont.remove
+remove
+
+ON=@UserClick
+  src.sysMessage("Zajimalo by te, co je na druhe strane ...")
+  return 1
+
+////////////////////////////Guldur zamky///////////////////////////
+
+[ITEMDEF i_guldur_dvere]
+ID=i_door_metal
+TYPE=t_door_guldur
+NAME=Pevne zavrene dvere
+
+ON=@Create
+ATTR=010
+more2=<dispid>
+morep=<p>
+
+
+[TYPEDEF t_door_guldur]
+ON=@userclick
+if (src.isgm)
+    src.sysMessage("Dvere na nekolik spoustecich dlazdic, ktere se po case restuji")
+	src.sysMessage("Zamek 1 je na <tag(Zamek1).p>")
+	src.sysMessage("Zamek 2 je na <tag(Zamek2).p>")
+	src.sysMessage("Zamek 3 je na <tag(Zamek3).p>")
+	src.sysMessage("Zamek 4 je na <tag(Zamek4).p>")
+	return 1
+else
+	src.sysMessage("Zamcene dvere bez zamku, musis najit zpusob jak je otevrit")
+endif
+
+ON=@userdclick
+if (src.isgm)
+	src.sysMessage("Dvere na nekolik spoustecich dlazdic, ktere se po case restuji")
+	src.sysMessage("Zamek 1 je na <tag(Zamek1).p>")
+	src.sysMessage("Zamek 2 je na <tag(Zamek2).p>")
+	src.sysMessage("Zamek 3 je na <tag(Zamek3).p>")
+	src.sysMessage("Zamek 4 je na <tag(Zamek4).p>")
+	return 1
+else
+	if (<tag(Zamek1).tag(odemceno) == 1> && <tag(Zamek2).tag(odemceno) == 1> && <tag(Zamek3).tag(odemceno) == 1> && <tag(Zamek4).tag(odemceno) == 1>)
+		if !(<tag(zaviratko).tag(otevreno) == 1>)
+			type=t_door
+			dclick
+			type=t_door_etherka
+			return 1
+		endif
+	else
+	src.sysMessage("<src.sex(Zkusil,Zkusila)> jsi se zaprit, ale zda se ze mechanismus dveri je stale uzamceny. .")
+	return 1
+endif
+
+ON=@timer
+DISPID=<more2>
+P=<morep>
+update
+return 1
+
+[ITEMDEF i_guldur_zamek_targetitko]
+ID=i_memory
+TYPE=t_eq_script
+
+ON=@equip
+target("Vyber dvere")
+
+ON=@timer
+remove
+
+ON=@targon_item
+link.tag(nastaveno,1)
+link.tag(dvere,<cont.targ.uid>)
+cont.targ.uid.tag(<link.name>,<link>)
+return 1
+
+
+[ITEMDEF i_guldur_zamek1]
+ID=051a
+NAME=Zamek1
+
+ON=@create
+ATTR=090
+COLOR=0987
+
+ON=@userclick
+if (src.isgm)
+	src.sysMessage("<name> pro dvere na <tag(dvere).p>")
+	if (<tag(odemceno) == 1>)
+		src.sysMessage("Otevren jeste <timer> sekund")
+	else
+		src.sysMessage("Zamcen")
+	endif
+endif
+
+ON=@userdclick
+if (src.isgm)
+	if !(<tag(nastaveno) == 1>)
+		src.newitemsafe(i_guldur_zamek_targetitko)
+		lastnew.timer=60
+		lastnew.equip
+		lastnew.link=<uid>
+	endif
+	src.sysMessage("<name> pro dvere na <tag(dvere).p>")
+	if (<tag(odemceno) == 1>)
+		src.sysMessage("Otevren jeste <timer> sekund")
+	else
+		src.sysMessage("Zamcen")
+	endif
+	return 1
+endif
+
+ON=@step
+if (src.isgm)
+	src.sysMessage("<name> pro dvere na <tag(dvere).p>")
+	if (<tag(odemceno) == 1>)
+		src.sysMessage("Otevren jeste <timer> sekund")
+	else
+		src.sysMessage("Zamcen")
+	endif
+else
+	if (src.isplayer)
+		if (<tag(odemceno) == 1>)
+			src.sysMessage("Zda se, ze se neco seplo...")
+			timer=18000
+		else
+			src.sysMessage("Nekde se vysunula zaklapka stareho mechanismu.")
+			tag(odemceno,1)
+			timer=18000
+		endif
+	else
+		return 0
+	endif
+endif
+
+ON=@timer
+tag(odemceno,0)
+return 1
+
+[ITEMDEF i_guldur_zamek2]
+ID=051a
+NAME=Zamek2
+
+ON=@create
+ATTR=090
+COLOR=0987
+
+ON=@userclick
+if (src.isgm)
+	src.sysMessage("<name> pro dvere na <tag(dvere).p>")
+	if (<tag(odemceno) == 1>)
+		src.sysMessage("Otevren jeste <timer> sekund")
+	else
+		src.sysMessage("Zamcen")
+	endif
+endif
+
+ON=@userdclick
+if (src.isgm)
+	if !(<tag(nastaveno) == 1>)
+		src.newitemsafe(i_guldur_zamek_targetitko)
+		lastnew.timer=60
+		lastnew.equip
+		lastnew.link=<uid>
+	endif
+	src.sysMessage("<name> pro dvere na <tag(dvere).p>")
+	if (<tag(odemceno) == 1>)
+		src.sysMessage("Otevren jeste <timer> sekund")
+	else
+		src.sysMessage("Zamcen")
+	endif
+	return 1
+endif
+
+ON=@step
+if (src.isgm)
+	src.sysMessage("<name> pro dvere na <tag(dvere).p>")
+	if (<tag(odemceno) == 1>)
+		src.sysMessage("Otevren jeste <timer> sekund")
+	else
+		src.sysMessage("Zamcen")
+	endif
+else
+	if (src.isplayer)
+		if (<tag(odemceno) == 1>)
+			src.sysMessage("Slapl si na volnou dlazdici...")
+			timer=15000
+		else
+			src.sysMessage("Slysis, jak se uvolnila ovladaci cast, ceho si...")
+			tag(odemceno,1)
+			timer=15000
+		endif
+	else
+		return 0
+	endif
+endif
+
+ON=@timer
+tag(odemceno,0)
+return 1
+
+[ITEMDEF i_guldur_zamek3]
+ID=051a
+NAME=Zamek3
+
+ON=@create
+ATTR=090
+COLOR=0987
+
+ON=@userclick
+if (src.isgm)
+	src.sysMessage("<name> pro dvere na <tag(dvere).p>")
+	if (<tag(odemceno) == 1>)
+		src.sysMessage("Otevren jeste <timer> sekund")
+	else
+		src.sysMessage("Zamcen")
+	endif
+endif
+
+ON=@userdclick
+if (src.isgm)
+	if !(<tag(nastaveno) == 1>)
+		src.newitemsafe(i_guldur_zamek_targetitko)
+		lastnew.timer=60
+		lastnew.equip
+		lastnew.link=<uid>
+	endif
+	src.sysMessage("<name> pro dvere na <tag(dvere).p>")
+	if (<tag(odemceno) == 1>)
+		src.sysMessage("Otevren jeste <timer> sekund")
+	else
+		src.sysMessage("Zamcen")
+	endif
+	return 1
+endif
+
+ON=@step
+if (src.isgm)
+	src.sysMessage("<name> pro dvere na <tag(dvere).p>")
+	if (<tag(odemceno) == 1>)
+		src.sysMessage("Otevren jeste <timer> sekund")
+	else
+		src.sysMessage("Zamcen")
+	endif
+else
+	if (src.isplayer)
+		if (<tag(odemceno) == 1>)
+			src.sysMessage("Vypada to ze jsi sepl co si...")
+			timer=11000
+		else
+			src.sysMessage("Mozna dalsi prvek stareho mechanismu.")
+			tag(odemceno,1)
+			timer=11000
+		endif
+	else
+		return 0
+	endif
+endif
+
+ON=@timer
+tag(odemceno,0)
+return 1
+
+[ITEMDEF i_guldur_zamek4]
+ID=051a
+NAME=Zamek4
+
+ON=@create
+ATTR=090
+COLOR=0987
+
+ON=@userclick
+if (src.isgm)
+	src.sysMessage("<name> pro dvere na <tag(dvere).p>")
+	if (<tag(odemceno) == 1>)
+		src.sysMessage("Otevren jeste <timer> sekund")
+	else
+		src.sysMessage("Zamcen")
+	endif
+endif
+
+ON=@userdclick
+if (src.isgm)
+	if !(<tag(nastaveno) == 1>)
+		src.newitemsafe(i_guldur_zamek_targetitko)
+		lastnew.timer=60
+		lastnew.equip
+		lastnew.link=<uid>
+	endif
+	src.sysMessage("<name> pro dvere na <tag(dvere).p>")
+	if (<tag(odemceno) == 1>)
+		src.sysMessage("Otevren jeste <timer> sekund")
+	else
+		src.sysMessage("Zamcen")
+	endif
+	return 1
+endif
+
+ON=@step
+if (src.isgm)
+	src.sysMessage("<name> pro dvere na <tag(dvere).p>")
+	if (<tag(odemceno) == 1>)
+		src.sysMessage("Otevren jeste <timer> sekund")
+	else
+		src.sysMessage("Zamcen")
+	endif
+else
+	if (src.isplayer)
+		if (<tag(odemceno) == 1>)
+			src.sysMessage("Ozvala se rana...")
+			timer=7000
+		else
+			src.sysMessage("Zrejme se aktivovalo neco velkeho, radeji se nikde moc nezdrzuj.")
+			tag(odemceno,1)
+			timer=7000
+		endif
+	else
+		return 0
+	endif
+endif
+
+ON=@timer
+tag(odemceno,0)
+return 1
+////////////////////////////// Guldur ohen //////////////////////////
+[typedef t_guldur_fire]
+on=@userDclick
+if (<timer><1)
+  if !(<tag(ohenZapalen)>)
+    if (<src.restest(i_torch)>)
+      src.consume(i_torch)
+	  timer=600
+	  src.classMessage("Zapalujes svou louc bilym plamenem")
+	  tag(ohenZapalen,1)
+	  src.newitemsafe(i_guldur_torch_lit)
+	  lastnew.link=<src>
+	  lastnew.cont=<src>
+	  lastnew.tag(brazier,<uid>)
+	  lastnew.update
+	  tag(louc,<lastnew>)
+	  src.tag(guldurFire,<lastnew>)
+	  src.tag(guldurBrazier,<uid>)
+	  src.newequip(i_guldur_hlidacTimeru)
+	  src.events +e_guldur_fire_nosic
+	else
+	  src.sysMessage("Nemas co pouzit na ohen")
+    endif
+  else
+    src.sysMessage("Ohen este neni pripraven!")
+  endif
+else
+  src.sysMessage("Ohen este neni pripraven!")
+endif
+return 1
+
+on=@userClick
+src.sysMessage("Zhnouci bily plamen neutichajici bolesti bloudnych dusi Gulduru")
+return 1
+
+[itemdef i_guldur_hlidacTimeru]
+id=i_memory
+type=t_eq_script
+name=Hlidac timeru guldur louce
+
+on=@equip
+timer=7200
+
+on=@timer
+cont.sysMessage("Bily plamen vyhasl...")
+finduid(<cont.tag(guldurBrazier)>).tag(ohenZapalen,0)
+finduid(<cont.tag(guldurBrazier)>).tag.remove(louc)
+finduid(<cont.tag(guldurFire)>).remove
+cont.tag.remove(guldurFire)
+cont.tag.remove(guldurBrazier)
+cont.events -e_guldur_fire_nosic
+remove
+return 1
+
+////////////
+
+[events e_guldur_fire_nosic]
+ON=@Created
+ON=@DrinkingPotion
+ON=@afterswing
+ON=@beforegeteffect
+ON=@beforedoeffect
+ON=@beforegetswing
+ON=@aftergetswing
+ON=@death
+sysMessage("Bily plamen vyhasl...")
+findid(i_guldur_hlidacTimeru).remove
+finduid(<tag(guldurBrazier)>).tag(ohenZapalen,0)
+finduid(<tag(guldurBrazier)>).tag.remove(louc)
+finduid(<tag(guldurFire)>).remove
+tag.remove(guldurFire)
+tag.remove(guldurBrazier)
+events -e_guldur_fire_nosic
+
+///////////
+
+[itemdef i_guldur_fire]
+id=i_fire
+type=t_guldur_fire
+name=Bily plamen
+
+on=@create
+attr_moveNever=1
+color=0989
+
+on=@timer
+return 1
+///////////
+[typedef t_guldur_torch]
+on=@userdclick
+if !(src.isgm)
+  if (<link>)
+    if (<src>!=<link>)
+      src.sysMessage("Nejsi hoden")
+	  return 1
+    endif
+  else
+    src.sysMessage("Nejsi hoden")
+    return 1
+  endif
+endif
+return 1
+
+on=@userClick
+src.sysMessage("Louc nesouci bily plamen Dol Gulduru.")
+return 1
+
+on=@pickup_pack
+if !(src.isgm)
+  if (<link>)
+    if (<src>!=<link>)
+      src.sysMessage("Nejsi hoden")
+	  return 1
+    endif
+  else
+    src.sysMessage("Nejsi hoden")
+    return 1
+  endif
+endif
+
+on=@pickup_ground
+if !(src.isgm)
+  if (<link>)
+    if (<src>!=<link>)
+      src.sysMessage("Nejsi hoden")
+	  return 1
+    endif
+  else
+    src.sysMessage("Nejsi hoden")
+    return 1
+  endif
+endif
+
+on=@equip
+if !(src.isgm)
+  if (<link>)
+    if (<src>!=<link>)
+      src.sysMessage("Nejsi hoden")
+	  return 1
+    endif
+  else
+    src.sysMessage("Nejsi hoden")
+    return 1
+  endif
+endif
+
+on=@timer
+remove
+return 1
+
+///////////
+[itemdef i_guldur_torch_lit]
+id=i_torch_lit
+type=t_guldur_torch
+name=Bily plamen
+
+on=@create
+timer=7200
+color=0989
+
+////////////
+[typedef t_guldur_brazier]
+on=@userDclick
+if (<src.findid(i_guldur_torch_lit)>)
+  if (<return_nth(1,<morep>)>>0)
+    src.classMessage("Zapalujes bilym ohnem ohniste!")
+    src.sysMessage("Bily plamen vyhasl...")
+	src.findid(i_guldur_hlidacTimeru).remove
+    finduid(<src.tag(guldurBrazier)>).tag(ohenZapalen,0)
+    finduid(<src.tag(guldurBrazier)>).tag.remove(louc)
+    finduid(<src.tag(guldurFire)>).remove
+    src.tag.remove(guldurFire)
+    src.tag.remove(guldurBrazier)
+    src.events -e_guldur_fire_nosic
+	sfx(0102)
+	src.newitemsafe(i_guldur_odpocet)
+	lastnew.p=<src.p>
+	lastnew.morep=<morep>
+	lastnew.link=<src>
+	lastnew.timerd=30
+	lastnew.update
+	src.newitemsafe(i_fire)
+    lastnew.color=0989
+    lastnew.p=<p>
+    lastnew.move(0,0,7)
+	lastnew.timer=300
+    lastnew.update
+  else
+    src.redMessage("Chyba! Kontaktuj GM o nastaveni souradnic brazieru!")
+  endif
+endif
+return 1
+
+[itemdef i_guldur_odpocet]
+id=I_gold
+type=t_script
+name=Odpocet na prevoznika
+
+on=@create
+attr_invis=1
+
+on=@timer
+link.newnpc(c_guldur_prevoznik)
+lastnewchar.invis
+lastnewchar.p=<morep>
+lastnewchar.update
+lastnewchar.flag_immobile=1
+lastnewchar.invisguldur
+link.newitemsafe(i_mazac_linku)
+lastnew.p=<morep>
+lastnew.link=<lastnewchar>
+lastnew.timer=300
+lastnew.update
+remove
+return 1
+
+
+[ITEMDEF i_mazac_linku]
+ID=04f3
+NAME=mazatko potvory
+TYPE=t_eq_script
+
+ON=@create
+COLOR=021
+ATTR=090
+
+ON=@timer
+link.remove
+remove
+return 1
+
+[itemdef i_guldur_brazier]
+id=00e31
+type=t_guldur_brazier
+name=brazier
+
+on=@create
+attr_Movenever=1
+
+[FUNCTION invisguldur]
+newitemsafe(i_fx_guldur)
+lastnew.link=<uid>
+lastnew.p=<p>
+
+[FUNCTION invisguldur_2]
+invis
+say("Oc zadas smrtelniku?")
+NewItemSafe=i_fire_column
+lastnew.COLOR=0995
+lastnew.ATTR=attr_static|attr_decay
+lastnew.TIMER=2
+lastnew.P=<P>
+lastnew.MOVE(1,1,0,0)
+lastnew.color=0989
+NewItemSafe=i_fire_column
+lastnew.COLOR=0995
+lastnew.ATTR=attr_static|attr_decay
+lastnew.TIMER=2
+lastnew.P=<P>
+lastnew.MOVE(1,-1,0,0)
+lastnew.color=0989
+NewItemSafe=i_fire_column
+lastnew.COLOR=0995
+lastnew.ATTR=attr_static|attr_decay
+lastnew.TIMER=2
+lastnew.P=<P>
+lastnew.MOVE(-1,1,0,0)
+lastnew.color=0989
+NewItemSafe=i_fire_column
+lastnew.COLOR=0995
+lastnew.ATTR=attr_static|attr_decay
+lastnew.TIMER=2
+lastnew.P=<P>
+lastnew.MOVE(-1,-1,0,0)
+lastnew.color=0989
+
+NewItemSafe=i_fx_sparkle
+lastnew.COLOR=0995
+lastnew.ATTR=attr_static|attr_decay
+lastnew.TIMER=4
+lastnew.P=<P>
+lastnew.MOVE n
+NewItemSafe=i_fx_sparkle
+lastnew.COLOR=0995
+lastnew.ATTR=attr_static|attr_decay
+lastnew.TIMER=4
+lastnew.P=<P>
+lastnew.MOVE s
+NewItemSafe=i_fx_sparkle
+lastnew.COLOR=0995
+lastnew.ATTR=attr_static|attr_decay
+lastnew.TIMER=4
+lastnew.P=<P>
+lastnew.MOVE w
+NewItemSafe=i_fx_sparkle
+lastnew.COLOR=0995
+lastnew.ATTR=attr_static|attr_decay
+lastnew.TIMER=4
+lastnew.P=<P>
+lastnew.MOVE e
+
+NewItemSafe=i_fx_sparkle
+lastnew.COLOR=0985
+lastnew.ATTR=attr_static|attr_decay
+lastnew.TIMER=5
+lastnew.P=<P>
+lastnew.MOVE(2,2,0,0)
+lastnew.color=0989
+NewItemSafe=i_fx_sparkle
+lastnew.COLOR=0985
+lastnew.ATTR=attr_static|attr_decay
+lastnew.TIMER=5
+lastnew.P=<P>
+lastnew.MOVE(2,-2,0,0)
+lastnew.color=0989
+NewItemSafe=i_fx_sparkle
+lastnew.COLOR=0985
+lastnew.ATTR=attr_static|attr_decay
+lastnew.TIMER=5
+lastnew.P=<P>
+lastnew.MOVE(-2,2,0,0)
+lastnew.color=0989
+NewItemSafe=i_fx_sparkle
+lastnew.COLOR=0985
+lastnew.ATTR=attr_static|attr_decay
+lastnew.TIMER=5
+lastnew.P=<P>
+lastnew.MOVE(-2,-2,0,0)
+lastnew.color=0989
+
+[ITEMDEF i_fx_guldur]
+ID=i_moongate_blue
+
+ON=@create
+color=0989
+DISPID=01af4
+more1=0
+timerd=1
+
+ON=@timer
+if (more1==0)
+  if (dispid<01afb)
+    dispid=<eval dispid+1>
+    timerd=1
+    updatex
+  else
+    link.invisguldur_2
+    more1=1
+    timerd=1
+  endif
+elseif (more1==1)
+  if (dispid!=i_moongate_blue)
+    dispid=i_moongate_blue
+    updatex
+    timer=3
+  else
+    dispid=01afb
+    updatex
+    more1=2
+    timerd=1
+  endif
+elseif (more1==2)
+  if (dispid>01af4)
+    dispid=<eval dispid-1>
+    updatex
+    timerd=1
+  else
+    remove
+  endif
+endif
+return 1
+
+////////////////////////////// Guldur gata na 3 random pozice //////////////////////////
+
+[itemdef i_guldur_gate_3_pos]
+id=i_moongate_blue
+
+on=@create
+attr_movenever=1
+
+on=@step
+if !(tag(setCords))
+  tag(setCords,1)
+  dorand 3
+    morep=2312,2508
+    morep=2350,2539
+    morep=2330,2441
+  enddo
+endif
+timer=3600
+
+on=@timer
+morep=0,0,0,0
+tag(setCords,0)
+return 1
+
+[EOF]

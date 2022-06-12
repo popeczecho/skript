@@ -1,0 +1,1014 @@
+///////////////////////////////////////////////////////////
+/////////////////////// BROUCI/////////////////////////////
+///////////////////////////////////////////////////////////
+//               VZHLEDY
+//c_fireant_worker       // delnik
+//c_fireant_warrior      // masivnejsi verze delnika
+//c_fireant_queen        // velkoprdelata verze
+//c_beetle_giant         // s krovkama
+//c_bug_giant            // velkej s krovkama
+
+[CHARDEF c_bug]
+
+ID=c_beetle_giant
+NAME=Brouk
+SOUND=snd_MONSTER_TERA_DRONE1
+ICON=i_pet_terathan_drone
+ANIM=078c7f
+CAN=MT_WALK
+
+ATTACK=20
+ARMOR=30
+MOVERATE=4
+
+RESOURCES=4 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Bugs
+DESCRIPTION=Brouk zakladni
+
+ON=@Create
+COLOR=00
+NPC=brain_monster
+FAME=1
+KARMA={-2000 -2999}
+
+STR=600
+DEX=100
+INT=0
+
+MAXHITS={450 500}
+MAXSTAM={50 100}
+MAXMANA=0
+
+tag.experience=<eval {20.0 22.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//STR
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,900)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,150)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-100)
+tag(resist_pierce,150)
+tag(resist_blunt,100)
+
+tag(resist_fire,100)
+tag(resist_elect,200)
+tag(resist_cold,400)
+
+Parrying=100.0
+Resist=80.0
+Tactics=100.0
+Wrestling=60.0
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=RANDOM_REAGENT,{12 15}
+ITEM=i_gold
+
+////////////////////////////////////////////
+
+[CHARDEF c_bug_worker]
+ID=c_beetle_giant
+NAME=Brouk delnik
+SOUND=snd_MONSTER_TERA_DRONE1
+ICON=i_pet_terathan_drone
+ANIM=078c7f
+CAN=MT_WALK
+
+ATTACK=25
+ARMOR=30
+MOVERATE=4
+
+RESOURCES=4 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Bugs
+DESCRIPTION=Bug delnik
+
+ON=@Create
+COLOR=00
+NPC=brain_monster
+FAME=1
+KARMA={-2000 -2999}
+
+STR=600
+DEX=100
+INT=0
+
+MAXHITS={650 750}
+MAXSTAM={50 100}
+MAXMANA=0
+
+tag.experience=<eval {23.0 28.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//STR
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,900)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,150)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-100)
+tag(resist_pierce,150)
+tag(resist_blunt,100)
+
+tag(resist_fire,100)
+tag(resist_elect,200)
+tag(resist_cold,400)
+
+Parrying=100.0
+Resist=80.0
+Tactics=100.0
+Wrestling=80.0
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=RANDOM_REAGENT,{13 16}
+ITEM=i_gold
+////////////////////////////////////////////
+
+[CHARDEF c_bug_drone]
+ID=c_fireant_worker
+NAME=Brouk Trubec
+SOUND=snd_MONSTER_TERA_DRONE1
+ICON=i_pet_terathan_drone
+ANIM=078c7f
+CAN=MT_WALK
+
+ATTACK=25
+ARMOR=30
+MOVERATE=4
+
+RESOURCES=6 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_leaper
+
+CATEGORY=Monsters
+SUBSECTION=Bugs
+DESCRIPTION=Bug strazce
+
+ON=@Create
+COLOR=00
+NPC=brain_monster
+FAME=1
+KARMA={-2000 -2999}
+
+STR=600
+DEX=100
+INT=0
+
+MAXHITS={1000 1100}
+MAXSTAM={150 200}
+MAXMANA=0
+
+tag.experience=<eval {35.0 40.0}>
+
+tag.npc_port_timer=15
+tag(npc_port_distance,6)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//STR
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//typ monstra
+tag(monstertype,animal)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,750)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,150)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-100)
+tag(resist_pierce,150)
+tag(resist_blunt,100)
+
+tag(resist_fire,100)
+tag(resist_elect,200)
+tag(resist_cold,400)
+
+Parrying=100.0
+Resist=90.0
+Tactics=100.0
+Wrestling=80.0
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=RANDOM_REAGENT,{15 18}
+ITEM=i_gold
+////////////////////////////////////////////
+
+[CHARDEF c_bug_guard]
+ID=c_fireant_worker
+NAME=Brouk Strazce
+SOUND=snd_MONSTER_TERA_DRONE1
+ICON=i_pet_terathan_drone
+ANIM=078c7f
+CAN=MT_WALK
+
+ATTACK=40
+ARMOR=30
+MOVERATE=4
+
+RESOURCES=6 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_leaper
+TEVENTS=e_npc_critic
+
+CATEGORY=Monsters
+SUBSECTION=Bugs
+DESCRIPTION=Bug strazce
+
+ON=@Create
+COLOR=00
+NPC=brain_monster
+FAME=1
+KARMA={-2000 -2999}
+STR=600
+DEX=100
+INT=0
+
+MAXHITS={1500 1700}
+MAXSTAM={150 200}
+MAXMANA=0
+
+tag.experience=<eval {40.0 45.0}>
+
+tag.npc_port_timer=15
+tag(npc_port_distance,6)
+
+tag.npc_critic_chance=250         //25% chance
+tag.npc_critic_dmg=10,15          //dmg in between
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//STR
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//typ monstra
+tag(monstertype,animal)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,600)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,150)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-100)
+tag(resist_pierce,150)
+tag(resist_blunt,100)
+
+tag(resist_fire,100)
+tag(resist_elect,200)
+tag(resist_cold,400)
+
+Parrying=100.0
+Resist=90.0
+Tactics=100.0
+Wrestling=100.0
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+////////////////////////////////////////////
+
+[CHARDEF c_bug_mage]
+ID=c_fireant_worker
+NAME=Brouk mag
+SOUND=snd_MONSTER_TERA_DRONE1
+ICON=i_pet_terathan_drone
+ANIM=078c7f
+CAN=MT_WALK
+
+ATTACK=20
+ARMOR=25
+MOVERATE=4
+
+RESOURCES=10 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_summoneater                          //smaze summona, co zasahne
+
+CATEGORY=Monsters
+SUBSECTION=Bugs
+DESCRIPTION=Bug mage
+
+ON=@Create
+COLOR=00
+NPC=brain_monster
+FAME=1
+KARMA={-2000 -2999}
+
+STR=1500
+DEX=150
+INT=40
+
+MAXHITS={1200 1300}
+MAXSTAM={100 150}
+MAXMANA=2500
+
+tag.experience=<eval {65.0 70.0}>
+
+tag(Poisoning_dmg,10) // affects spell_poison
+tag(Poisoning_MvM_dmg,60) // affects spell_poison
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//typ monstra
+tag(monstertype,animal,80)
+
+tag.weapflag=dam_lightning|dam_magic
+
+tag(resist_poison,900)
+tag.resist_para=<eval {800 950}>
+tag(resist_summon,150)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-100)
+tag(resist_pierce,150)
+tag(resist_blunt,100)
+
+tag(resist_fire,100)
+tag(resist_elect,200)
+tag(resist_cold,400)
+
+Parrying=100
+Resist=100.0
+Wrestling=80.0
+Magery=100.0
+EI=45.0
+SpiritSpeak=55.0
+
+ITEMNEWBIE=i_spellbook
+addspell s_lightning
+addspell s_fireball
+ADDSPELL=s_poison
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{20 25}
+
+////////////////////////////////////////////////////
+
+[CHARDEF c_bug_shadow]
+ID=c_fireant_worker
+NAME=Brouk Strazce
+SOUND=snd_MONSTER_TERA_DRONE1
+ICON=i_pet_terathan_drone
+ANIM=078c7f
+CAN=MT_WALK|MT_run
+
+ATTACK=40
+ARMOR=25
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_backstub
+TEVENTS=e_npc_leaper
+
+CATEGORY=Monsters
+SUBSECTION=Bugs
+DESCRIPTION=Bug strazce ninja
+
+ON=@Create
+COLOR=07FFF     // pruhledna
+//color=08b0    // seda
+NPC=brain_monster
+FAME=1
+KARMA=-1500
+
+STR=1500
+DEX=170
+INT=300
+
+MAXHITS={700 800}
+MAXSTAM={170 225}
+MAXMANA=0
+
+tag.experience=<eval {65.0 70.0}>
+
+tag.npc_port_timer=10
+tag(npc_port_distance,9)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//typ monstra
+tag(monstertype,animal,80)
+
+//other resists
+tag(resist_poison,900)
+tag.resist_para=<eval {600 700}>
+tag(resist_summon,150)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-100)
+tag(resist_pierce,100)
+tag(resist_blunt,100)
+
+tag(resist_fire,100)
+tag(resist_elect,200)
+tag(resist_cold,400)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+
+//weap flags
+tag.weapflag=dam_physical
+
+Tactics=250.0
+Wrestling=100.0
+Poisoning=110.0
+Provocation=100.0
+Peacemaking=100.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+////////////////////////////////////////////
+
+[CHARDEF c_bug_warrior]
+ID=c_fireant_warrior
+NAME=Brouk bojovnik
+SOUND=snd_MONSTER_TERA_DRONE1
+ICON=i_pet_terathan_drone
+ANIM=078c7f
+CAN=MT_WALK|MT_run
+
+ATTACK=65
+ARMOR=60
+MOVERATE=5
+
+RESOURCES=10 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+TEVENTS=e_npc_leaper
+TEVENTS=e_summoneater
+
+CATEGORY=Monsters
+SUBSECTION=Bugs
+DESCRIPTION=Bug bojovnik
+
+ON=@Create
+COLOR=00
+NPC=brain_monster
+FAME=100
+KARMA={-2000 -2999}
+
+STR=600
+DEX=250
+INT=0
+
+MAXHITS={2700 2800}
+MAXSTAM={250 300}
+MAXMANA=0
+
+tag.experience=<eval {135.0 140.0}>
+
+tag.npc_bleed=350 //40.0%
+
+tag.npc_port_timer=6
+tag(npc_port_distance,7)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//STR
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//typ monstra
+tag(monstertype,animal,70)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,700)
+tag.resist_para=<eval {750 850}>
+tag(resist_summon,150)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-100)
+tag(resist_pierce,150)
+tag(resist_blunt,100)
+
+tag(resist_fire,100)
+tag(resist_elect,200)
+tag(resist_cold,400)
+
+Parrying=100.0
+Resist=90.0
+Tactics=100.0
+Wrestling=120.0
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{30 45}
+
+////////////////////////////////////////////
+
+[CHARDEF c_bug_elite]
+ID=c_fireant_warrior
+NAME=Brouk elitni
+SOUND=snd_MONSTER_TERA_DRONE1
+ICON=i_pet_terathan_drone
+ANIM=078c7f
+CAN=MT_WALK|MT_run
+
+ATTACK=95
+ARMOR=80
+MOVERATE=5
+
+RESOURCES=10 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+TEVENTS=e_npc_leaper
+TEVENTS=e_summoneater
+TEVENTS=e_npc_summoning
+TEVENTS=e_npc_roundattack_pullall
+TEVENTS=e_npc_critic
+
+CATEGORY=Monsters
+SUBSECTION=Bugs
+DESCRIPTION=Bug elite
+
+ON=@Create
+COLOR=00
+NPC=brain_monster
+FAME=100
+KARMA={-2000 -2999}
+
+STR=1500
+DEX=400
+INT=0
+
+MAXHITS={4400 4500}
+MAXSTAM={850 900}
+MAXMANA=0
+
+tag.experience=<eval {195.0 210.0}>
+
+tag.roundattack_damage=50,55  //dmg od - do
+tag.roundattack_time=8,10     //cas od - do
+tag.roundattack_chance=400    //40.0%
+
+tag.npc_critic_chance=250         //25% chance
+tag.npc_critic_dmg=20,25          //dmg in between
+
+tag.npc_bleed=400 //40.0%
+
+tag.npc_port_timer=5
+tag(npc_port_distance,9)
+
+tag(npc_summoning_chance,50)                       //5%
+tag(npc_summoning_time,60)                         //nezakouzli znovu 60 sek
+tag(npc_summoning_count,1)                         //pocet
+tag(npc_summoning_char[0],c_bug_shadow)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//STR
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//typ monstra
+tag(monstertype,animal,60)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,900)
+tag.resist_para=960
+tag(resist_summon,150)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-100)
+tag(resist_pierce,150)
+tag(resist_blunt,100)
+
+tag(resist_fire,100)
+tag(resist_elect,200)
+tag(resist_cold,400)
+
+Parrying=100.0
+Resist=100.0
+Tactics=100.0
+Wrestling=120.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{30 45}
+
+////////////////////////////////////////////
+
+[CHARDEF c_bug_matka]
+ID=c_fireant_queen
+NAME=Brouk matka
+SOUND=snd_MONSTER_TERA_DRONE1
+ICON=i_pet_terathan_drone
+ANIM=078c7f
+CAN=MT_WALK
+
+ATTACK=60
+ARMOR=60
+MOVERATE=4
+
+RESOURCES=10 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_summoning
+TEVENTS=e_summoneater                          //smaze summona, co zasahne
+TEVENTS=e_autoreflect
+TEVENTS=e_managain
+TEVENTS=e_lightnings
+TEVENTS=e_npc_curse               //vsechny viditelne zrani o dmg
+
+CATEGORY=Monsters
+SUBSECTION=Bugs
+DESCRIPTION=Bug mage
+
+ON=@Create
+COLOR=00
+NPC=brain_monster
+FAME=100
+KARMA={-2000 -2999}
+
+STR=1000
+DEX=150
+INT=350
+
+MAXHITS={5000 5400}
+MAXSTAM={50 150}
+MAXMANA=2500
+
+tag.experience=<eval {170.0 180.0}>
+
+tag.npc_curse_chance=250          // 25% chance to trigger this event
+tag.npc_curse_delay=15,17         // delay between another possible strike
+tag.npc_curse_dmg=30,35           // dmg
+
+tag(e_lightnings_chance,67)   //6.7% chance
+tag(e_lightnings_range,5)
+
+tag(npc_summoning_chance,50)                       //5%
+tag(npc_summoning_time,60)                         //nezakouzli znovu 60 sek
+tag(npc_summoning_count,1)                         //pocet
+tag(npc_summoning_char[0],c_bug_shadow)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//typ monstra
+tag(monstertype,animal,60)
+
+tag.weapflag=dam_lightning|dam_magic
+
+tag(resist_poison,500)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,150)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-150)
+tag(resist_pierce,100)
+tag(resist_blunt,50)
+
+tag(resist_fire,150)
+tag(resist_elect,250)
+tag(resist_cold,450)
+
+Parrying=120.0
+Resist=170.0
+Wrestling=100.0
+Magery=120.0
+//Macefighting=120
+Provocation=100.0
+EI=55.0
+SpiritSpeak=35.0
+
+ITEMNEWBIE=i_spellbook
+addspell s_lightning
+addspell s_fireball
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{45 60}
+
+////////////////////////////////////////////////////
+
+[CHARDEF c_bug_boss]
+ID=c_bug_giant
+NAME=Brouk Kralovna
+SOUND=snd_MONSTER_TERA_DRONE1
+ICON=i_pet_bullfrog
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN
+
+ATTACK=100
+ARMOR=115
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_NPC_Bleed
+TEVENTS=e_parakrik
+TEVENTS=e_summoneater
+TEVENTS=e_npc_summoning
+TEVENTS=e_illusionist
+TEVENTS=e_npc_leaper
+
+CATEGORY=Monsters
+SUBSECTION=Bugs
+DESCRIPTION=Bug boss
+
+ON=@Create
+NPC=brain_monster
+FAME={100 2000}
+KARMA={-5000 -5999}
+
+STR=3000
+DEX=450
+INT=100
+
+MAXHITS={16000 17000}
+MAXSTAM={300 340}
+MAXMANA=0
+
+tag.experience=<eval {630.0 675.0}>
+
+tag.npc_bleed=300 //30.0%
+
+tag.npc_port_timer=10
+tag(npc_port_distance,6)
+
+tag(npc_summoning_chance,50)                       //5%
+tag(npc_summoning_time,60)                         //nezakouzli znovu 60 sek
+tag(npc_summoning_count,2)                         //pocet
+tag(npc_summoning_char[0],c_bug_matka)
+tag(npc_summoning_char[1],c_bug_shadow)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//typ monstra
+//typ monstra
+tag(monstertype,animal,50)
+
+tag.weapflag=dam_physical|dam_blunt
+
+//other resists
+tag(resist_poison,1000) //
+tag(resist_summon,1000)
+tag(resist_para,990)    // nemelo by skoro jit
+tag(resist_bleed,950)
+
+tag(resist_sharp,750)
+tag(resist_slash,750)        // sekery
+tag(resist_pierce,350)
+tag(resist_blunt,150)        //brouk
+
+tag(resist_fire,750)
+tag(resist_elect,100)        //krovky
+tag(resist_cold,450)
+
+Parrying=150.0
+Wrestling=150.0
+Resist=200.0
+Provocation=100.0
+Peacemaking=100.0
+Poisoning=400.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{60 80}
+
+
+[CHARDEF 0313]
+DEFNAME=c_bug_giant
+NAME=Giant Bug
+SOUND=snd_MONSTER_TERA_DRONE1
+ICON=i_pet_bullfrog
+ANIM=078c7f
+CAN=MT_WALK
+
+ATTACK=80
+ARMOR=140
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_selfreser
+
+CATEGORY=Monsters
+SUBSECTION=Insect
+DESCRIPTION=Giant Bug
+
+ON=@Create
+COLOR=0710
+NPC=brain_monster
+FAME=1
+KARMA={-2000 -4999}
+
+STR={1000 1605}
+DEX={145 210}
+INT={21 45}
+
+
+MAXHITS={1500 1600}
+MAXSTAM={206 245}
+MAXMANA=0
+
+tag.experience=<eval {75.0 80.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+tag(resstimer,<eval {40 60}>)
+
+tag(resist_poison,900)
+tag.resist_para=560
+tag(resist_summon,450)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-100)
+tag(resist_pierce,150)
+tag(resist_blunt,100)
+
+tag(resist_fire,100)
+tag(resist_elect,200)
+tag(resist_cold,400)
+Peacemaking=100.0
+Provocation=100.0
+Parrying={130.0 140.0}
+Tactics={100.0 130.0}
+Wrestling={100.0 120.0}
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{20 30}
+ITEM=RANDOM_REAGENT,{20 30}
+
+//////////////////////////////////////////////////////////////////////////////////////
+[CHARDEF 0317]
+
+DEFNAME=c_beetle_giant
+NAME=Beetle Giant
+SOUND=snd_MONSTER_TERA_DRONE1
+ICON=i_pet_bullfrog
+ANIM=078c7f
+CAN=MT_WALK
+
+ATTACK=40
+ARMOR=40
+MOVERATE=3
+
+RESOURCES=20 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_selfreser
+
+CATEGORY=Monsters
+SUBSECTION=Insect
+DESCRIPTION=Giant Beetle
+
+ON=@Create
+COLOR=0710
+NPC=brain_monster
+FAME=1
+KARMA={-2000 -4999}
+STR={1000 1605}
+DEX={145 250}
+INT={21 45}
+
+
+MAXHITS={700 760}
+MAXSTAM={96 145}
+MAXMANA=0
+
+tag.experience=<eval {35.0 39.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(resstimer,<eval {50 70}>)
+tag(resist_poison,900)
+tag.resist_para=560
+tag(resist_summon,550)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-100)
+tag(resist_pierce,150)
+tag(resist_blunt,100)
+
+tag(resist_fire,100)
+tag(resist_elect,200)
+tag(resist_cold,400)
+
+Peacemaking=100.0
+Provocation=100.0
+Parrying={130.0 140.0}
+Tactics={100.0 130.0}
+Wrestling={100.0 120.0}
+SpiritSpeak=45.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{10 20}
+
+[EOF]

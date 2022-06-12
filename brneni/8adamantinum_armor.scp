@@ -1,0 +1,785 @@
+
+
+[ITEMDEF 04801]
+DEFNAME=i_ADAMANTINUM_PLATEMAIL
+NAME=Adamantinum Platemail
+ID=i_platemail_chest
+
+ARMOR=90
+REQSTR=60
+WEIGHT=16.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum platemail
+DESCRIPTION=Platemail chest
+RESOURCES=25 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 99.0, Tinkering 85.0
+
+tdata1=8//adamantinum
+
+ON=@Create
+HITPOINTS=149
+armorcreate(Adamantinum,plate)
+
+[ITEMDEF 04802]
+DEFNAME=i_ADAMANTINUM_PLATEMAIL_ARMS
+NAME=Adamantinum Platemail Arms
+ID=i_platemail_arms
+
+ARMOR=90
+REQSTR=40
+WEIGHT=13.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum platemail
+DESCRIPTION=Platemail Arms
+RESOURCES=18 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 99.0, Tinkering 85.0
+
+tdata1=8//adamantinum
+
+ON=@Create
+HITPOINTS=58
+armorcreate(Adamantinum,plate)
+
+[ITEMDEF 04803]
+DEFNAME=i_ADAMANTINUM_PLATEMAIL_leggings
+NAME=Adamantinum Platemail Legs
+ID=i_platemail_leggings
+
+ARMOR=90
+REQSTR=60
+WEIGHT=14.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum platemail
+DESCRIPTION=Platemail Legs
+RESOURCES=20 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 99.0, Tinkering 85.0
+
+tdata1=8//adamantinum
+
+ON=@Create
+HITPOINTS=95
+armorcreate(Adamantinum,plate)
+
+[ITEMDEF 04805]
+DEFNAME=i_ADAMANTINUM_PLATEMAIL_GORGET
+NAME=Adamantinum Platemail Gorget
+ID=i_platemail_gorget
+
+ARMOR=90
+REQSTR=30
+WEIGHT=4.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum platemail
+DESCRIPTION=Platemail Gorget
+RESOURCES=10 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 99.0, Tinkering 85.0
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=33
+armorcreate(Adamantinum,plate)
+
+[ITEMDEF 04806]
+DEFNAME=i_ADAMANTINUM_PLATEMAIL_GAUNTLETS
+NAME=Adamantinum Platemail Gauntlets
+ID=i_platemail_gloves
+
+ARMOR=90
+REQSTR=30
+WEIGHT=4.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum platemail
+DESCRIPTION=Platemail Gauntlets
+RESOURCES=12 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 99.0, Tinkering 85.0
+
+tdata1=8//adamantinum
+
+ON=@Create
+HITPOINTS=35
+armorcreate(Adamantinum,plate)
+
+
+[ITEMDEF 04807]
+DEFNAME=i_ADAMANTINUM_FEMALE_PLATEMAIL
+NAME=Adamantinum Platemail
+ID=i_armor_female_plate
+
+ARMOR=90
+REQSTR=15
+WEIGHT=10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum platemail
+DESCRIPTION=Female Platemail
+RESOURCES=22 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 99.0, Tinkering 85.0
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=149
+armorcreate(Adamantinum,plate)
+
+
+////////////////////////////////////////////////////// HELMY
+
+[ITEMDEF 04804]
+DEFNAME=i_ADAMANTINUM_PLATE_HELM
+NAME=Adamantinum Plate Helm
+ID=i_platemail_helm
+
+ARMOR=90
+REQSTR=40
+WEIGHT=7.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum platemail
+DESCRIPTION=Plate Helm
+RESOURCES=15 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 99.0, Tinkering 85.0
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=58
+armorcreate(Adamantinum,plate)
+
+
+[ITEMDEF 04818]
+DEFNAME=i_ADAMANTINUM_CLOSED_HELM
+NAME=Adamantinum Closed Helm
+ID=i_helm_closed
+
+ARMOR=90
+REQSTR=20
+WEIGHT=7.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum platemail
+DESCRIPTION=Closed Helm
+RESOURCES=15 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 99.0, Tinkering 85.0
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=58
+armorcreate(Adamantinum,plate)
+
+[ITEMDEF 04820]
+DEFNAME=i_ADAMANTINUM_BASCINET
+NAME=Adamantinum Bascinet
+ID=i_bascinet
+
+ARMOR=90
+REQSTR=10
+WEIGHT=6.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum platemail
+DESCRIPTION=Bascinet
+RESOURCES=15 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 99.0, Tinkering 85.0
+
+tdata1=8//adamantinum
+
+ON=@Create
+HITPOINTS=58
+armorcreate(Adamantinum,plate)
+
+[ITEMDEF 04821]
+DEFNAME=i_ADAMANTINUM_NOSE_HELM
+NAME=Adamantinum Nose Helm
+ID=i_helm_nose
+
+ARMOR=90
+REQSTR=0
+WEIGHT=7.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum platemail
+DESCRIPTION=Nose Helm
+RESOURCES=15 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 99.0, Tinkering 85.0
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=58
+armorcreate(Adamantinum,plate)
+
+///////////////////////////////////////////////// CHAIN MAIL
+
+[ITEMDEF i_Adamantinum_CHAINMAIL_gorget]
+ID=i_leather_gorget
+NAME=Adamantinum Chainmail Gorget
+WEIGHT=2.0
+ARMOR=60
+REQSTR=20
+RESOURCES=10 i_ingot_Adamantinum
+SKILLMAKE=Blacksmithing 85.0, Tinkering 99.0
+tdata1=8//adamantinum
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum chainmail
+DESCRIPTION=Chainmail gorget
+
+ON=@Create
+HITPOINTS=25
+armorcreate(Adamantinum,chain)
+
+[ITEMDEF i_Adamantinum_CHAINMAIL_sleeves]
+ID=i_leather_sleeves
+NAME=Adamantinum Chainmail Sleeves
+WEIGHT=2.0
+ARMOR=60
+REQSTR=20
+RESOURCES=10 i_ingot_Adamantinum
+SKILLMAKE=Blacksmithing 85.0, Tinkering 99.0
+tdata1=8//adamantinum
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum chainmail
+DESCRIPTION=Chainmail sleeves
+
+ON=@Create
+HITPOINTS=46
+armorcreate(Adamantinum,chain)
+
+[ITEMDEF i_Adamantinum_CHAINMAIL_gloves]
+ID=i_leather_gloves
+NAME=Adamantinum Chainmail Gloves
+WEIGHT=2.0
+ARMOR=60
+REQSTR=20
+RESOURCES=10 i_ingot_Adamantinum
+SKILLMAKE=Blacksmithing 85.0, Tinkering 99.0
+tdata1=8//adamantinum
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum chainmail
+DESCRIPTION=Chainmail gloves
+
+ON=@Create
+HITPOINTS=28
+armorcreate(Adamantinum,chain)
+
+[ITEMDEF 04808]
+DEFNAME=i_ADAMANTINUM_CHAINMAIL_COIF
+NAME=Adamantinum Chainmail Coif
+ID=i_chainmail_coif
+
+ARMOR=60
+REQSTR=20
+WEIGHT=4.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum chainmail
+DESCRIPTION=Chainmail Coif
+RESOURCES=10 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 85.0, Tinkering 99.0
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=46
+armorcreate(Adamantinum,chain)
+
+[ITEMDEF 04809]
+DEFNAME=i_ADAMANTINUM_CHAINMAIL_LEGGINGS
+NAME=Adamantinum Chainmail Leggings
+ID=i_chainmail_leggings
+
+ARMOR=60
+REQSTR=20
+WEIGHT=7.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum chainmail
+DESCRIPTION=Chainmail Leggings
+RESOURCES=18 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 85.0, Tinkering 99.0
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=76
+armorcreate(Adamantinum,chain)
+
+[ITEMDEF 04810]
+DEFNAME=i_ADAMANTINUM_CHAINMAIL_TUNIC
+NAME=Adamantinum Chainmail Tunic
+ID=i_chainmail_tunic
+
+ARMOR=60
+REQSTR=20
+WEIGHT=9.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum chainmail
+DESCRIPTION=Chainmail Tunic
+RESOURCES=20 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 85.0, Tinkering 99.0
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=80
+armorcreate(Adamantinum,chain)
+
+[ITEMDEF i_Adamantinum_kite_wood_shield]
+ID=i_shield_kite_wood
+NAME=Adamantinum kite shield
+WEIGHT=2.0
+ARMOR=21
+REQSTR=20
+RESOURCES=10 i_ingot_Adamantinum
+SKILLMAKE=Blacksmithing 85.0, Tinkering 99.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum ringmail
+DESCRIPTION=Kite wood shield
+
+tdata1=8
+
+ON=@Create
+HITPOINTS=83
+shieldcreate(Adamantinum,ring)
+
+ON=@equip
+tdata1=8
+
+[ITEMDEF i_Adamantinum_RINGMAIL_gorget]
+ID=i_leather_gorget
+NAME=Adamantinum ringmail gorget
+WEIGHT=2.0
+ARMOR=60
+REQSTR=20
+RESOURCES=10 i_ingot_Adamantinum
+SKILLMAKE=Blacksmithing 85.0, Tinkering 99.0
+tdata1=8//adamantinum
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum ringmail
+DESCRIPTION=Ringmail gorget
+
+ON=@Create
+HITPOINTS=25
+armorcreate(Adamantinum,ring)
+
+[ITEMDEF i_Adamantinum_RINGMAIL_helm]
+ID=i_helm_open
+NAME=Adamantinum Ringmail Helm
+WEIGHT=2.0
+ARMOR=60
+REQSTR=20
+RESOURCES=10 i_ingot_Adamantinum
+SKILLMAKE=Blacksmithing 85.0, Tinkering 99.0
+tdata1=8//adamantinum
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum ringmail
+DESCRIPTION=Ringmail helm
+
+ON=@Create
+HITPOINTS=35
+armorcreate(Adamantinum,ring)
+
+[ITEMDEF 04811]
+DEFNAME=i_ADAMANTINUM_RINGMAIL_LEGGINGS
+NAME=Adamantinum Ringmail Leggings
+ID=i_ringmail_leggings
+
+ARMOR=60
+REQSTR=20
+WEIGHT=9.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum ringmail
+DESCRIPTION=Ringmail Leggings
+RESOURCES=16 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 85.0, Tinkering 99.0
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=51
+armorcreate(Adamantinum,ring)
+
+[ITEMDEF 04812]
+DEFNAME=i_ADAMANTINUM_RINGMAIL_SLEEVES
+NAME=Adamantinum Ringmail Sleeves
+ID=i_ringmail_sleeves
+
+ARMOR=60
+REQSTR=20
+WEIGHT=7.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum ringmail
+DESCRIPTION=Ringmail Sleeves
+RESOURCES=14 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 85.0, Tinkering 99.0
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=35
+armorcreate(Adamantinum,ring)
+
+[ITEMDEF 04813]
+DEFNAME=i_ADAMANTINUM_RINGMAIL_GLOVES
+NAME=Adamantinum Ringmail Gloves
+ID=i_ringmail_gloves
+
+ARMOR=60
+REQSTR=20
+WEIGHT=2.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum ringmail
+DESCRIPTION=Ringmail Gloves
+RESOURCES=10 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 85.0, Tinkering 99.0
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=25
+armorcreate(Adamantinum,ring)
+
+[ITEMDEF 04814]
+DEFNAME=i_ADAMANTINUM_RINGMAIL_TUNIC
+NAME=Adamantinum Ringmail Tunic
+ID=i_ringmail_tunic
+
+ARMOR=60
+REQSTR=20
+WEIGHT=9.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum ringmail
+DESCRIPTION=Ringmail Tunic
+RESOURCES=18 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 85.0, Tinkering 99.0
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=80
+armorcreate(Adamantinum,ring)
+
+/////////////////////////////////////////////////// SHIELDY
+
+[ITEMDEF 04815]
+DEFNAME=i_ADAMANTINUM_BUCKLER_shield
+NAME=Adamantinum Buckler
+ID=i_shield_buckler
+ARMOR=16
+REQSTR=15
+WEIGHT=5.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum studded
+DESCRIPTION=Buckler
+RESOURCES=10 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 99.0, Tinkering 85.0
+
+tdata1=8//adamantinum
+
+ON=@Create
+HITPOINTS=50
+shieldcreate(Adamantinum,studded)
+
+[ITEMDEF 04816]
+DEFNAME=i_ADAMANTINUM_HEATER_SHIELD
+NAME=Adamantinum Heater Shield
+ID=I_SHIELD_HEATER
+ARMOR=20
+REQSTR=30
+WEIGHT=12.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum platemail
+DESCRIPTION=Heater Shield
+RESOURCES=18 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 99.0, Tinkering 85.0
+
+tdata1=8//adamantinum
+
+ON=@Create
+HITPOINTS=134
+shieldcreate(Adamantinum,plate)
+
+[ITEMDEF 04817]
+DEFNAME=i_ADAMANTINUM_METAL_SHIELD
+NAME=Adamantinum Metal Shield
+ID=i_shield_round_metal
+ARMOR=24
+REQSTR=15
+WEIGHT=9.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum chainmail
+DESCRIPTION=Metal Shield
+RESOURCES=14 i_ingot_adamantinum
+SKILLMAKE=Blacksmithing 99.0, Tinkering 85.0
+
+tdata1=8//adamantinum
+
+ON=@Create
+HITPOINTS=100
+shieldcreate(Adamantinum,chain)
+
+[ITEMDEF i_studded_cap_Adamantinum]
+ID=i_leather_cap
+RESOURCES=2 i_ingot_Adamantinum, i_leather_cap
+ARMOR=38
+NAME=Adamantinum Studded Cap
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum Studded
+DESCRIPTION=Studded Cap
+SKILLMAKE=Tinkering 90.0, t_tinker_tools
+tdata1=8//adamantinum
+
+ON=@Create
+HITPOINTS=28
+armorcreate(Adamantinum,studded)
+
+[ITEMDEF i_studded_sleeves_Adamantinum]
+ID=i_studded_sleeves
+RESOURCES=2 i_ingot_Adamantinum, i_leather_sleeves
+ARMOR=38
+NAME=Adamantinum Studded Sleeves
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum Studded
+DESCRIPTION=Studded Sleeves
+SKILLMAKE=Tinkering 90.0, t_tinker_tools
+
+tdata1=8//adamantinum
+
+ON=@Create
+HITPOINTS=25
+armorcreate(Adamantinum,studded)
+
+[ITEMDEF i_studded_gloves_Adamantinum]
+ID=i_studded_gloves
+SKILLMAKE=Tinkering 90.0, t_tinker_tools
+RESOURCES=2 i_ingot_Adamantinum, i_leather_gloves
+ARMOR=38
+NAME=Adamantinum Studded Gloves
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum Studded
+DESCRIPTION=Studded Gloves
+
+tdata1=8//adamantinum
+
+ON=@Create
+HITPOINTS=21
+armorcreate(Adamantinum,studded)
+
+[ITEMDEF i_studded_gorget_Adamantinum]
+ID=i_studded_gorget
+RESOURCES=1 i_ingot_Adamantinum, i_leather_gorget
+ARMOR=38
+NAME=Adamantinum Studded Gorget
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum Studded
+DESCRIPTION=Studded Gorget
+SKILLMAKE=Tinkering 90.0, t_tinker_tools
+
+tdata1=8//adamantinum
+
+ON=@Create
+HITPOINTS=20
+armorcreate(Adamantinum,studded)
+
+[ITEMDEF i_studded_leggings_Adamantinum]
+ID=i_studded_leggings
+RESOURCES=6 i_ingot_Adamantinum, i_leather_leggings
+ARMOR=38
+NAME=Adamantinum Studded Leggings
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum Studded
+DESCRIPTION=Studded Leggings
+SKILLMAKE=Tinkering 90.0, t_tinker_tools
+
+tdata1=8//adamantinum
+
+ON=@Create
+HITPOINTS=38
+armorcreate(Adamantinum,studded)
+
+[ITEMDEF i_studded_tunic_Adamantinum]
+ID=i_studded_tunic
+RESOURCES=12 i_ingot_Adamantinum, i_leather_tunic
+ARMOR=38
+NAME=Adamantinum Studded Tunic
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum Studded
+DESCRIPTION=Studded Tunic
+SKILLMAKE=Tinkering 90.0, t_tinker_tools
+tdata1=8//adamantinum
+
+ON=@Create
+HITPOINTS=60
+armorcreate(Adamantinum,studded)
+
+[ITEMDEF i_armor_female_bustier_studded_Adamantinum]
+ID=i_armor_female_bustier_studded
+RESOURCES=12 i_ingot_Adamantinum, i_armor_female_bustier
+ARMOR=38
+NAME=Adamantinum Studded Bustier
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum Studded
+DESCRIPTION=Studded Bustier
+SKILLMAKE=Tinkering 90.0, t_tinker_tools
+
+tdata1=8//adamantinum
+
+ON=@Create
+HITPOINTS=60
+armorcreate(Adamantinum,studded)
+
+[ITEMDEF i_armor_female_studded_Adamantinum]
+ID=i_armor_female_studded
+ARMOR=38
+NAME=Adamantinum Female Studded Armor
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum Studded
+DESCRIPTION=Studded Armor
+SKILLMAKE=Tinkering 90.0, t_tinker_tools
+RESOURCES=12 i_ingot_Adamantinum, i_armor_female_leather
+
+tdata1=8//adamantinum
+
+ON=@Create
+HITPOINTS=60
+armorcreate(Adamantinum,studded)
+
+
+[ITEMDEF i_bone_arms_Adamantinum]
+ID=i_bone_arms
+RESOURCES=2 i_ingot_adamantinum, i_bone_arms
+NAME=Bone Arms of Adamantinum
+SKILLMAKE=Tinkering 90.0, t_tinker_tools
+
+WEIGHT=3.0
+ARMOR=38
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum bone
+DESCRIPTION=Bone Arms
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=28
+armorcreate(Adamantinum,bone)
+
+[ITEMDEF i_bone_chest_Adamantinum]
+ID=i_bone_chest
+NAME=Bone Chest of Adamantinum
+RESOURCES=12 i_ingot_adamantinum, i_bone_chest
+SKILLMAKE=Tinkering 90.0, t_tinker_tools
+
+WEIGHT=13.0
+ARMOR=38
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum bone
+DESCRIPTION=Bone Chest
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=60
+armorcreate(Adamantinum,bone)
+
+[ITEMDEF i_bone_gloves_Adamantinum]
+ID=i_bone_gloves
+NAME=Bone Gloves of Adamantinum
+RESOURCES=3 i_ingot_adamantinum, i_bone_gloves
+SKILLMAKE=Tinkering 90.0, t_tinker_tools
+
+WEIGHT=4.0
+ARMOR=38
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum bone
+DESCRIPTION=Bone Gloves
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=21
+armorcreate(Adamantinum,bone)
+
+[ITEMDEF i_bone_helmet_Adamantinum]
+ID=i_bone_helmet
+NAME=Bone Helmet of Adamantinum
+RESOURCES=5 i_ingot_adamantinum, i_bone_helmet
+SKILLMAKE=Tinkering 90.0, t_tinker_tools
+
+WEIGHT=5.0
+ARMOR=38
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum bone
+DESCRIPTION=Bone Helmet
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=33
+armorcreate(Adamantinum,bone)
+
+[ITEMDEF i_bone_leggings_Adamantinum]
+ID=i_bone_leggings
+NAME=Bone Legs of Adamantinum
+RESOURCES=6 i_ingot_adamantinum, i_bone_leggings
+SKILLMAKE=Tinkering 90.0, t_tinker_tools
+
+WEIGHT=8.0
+ARMOR=38
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Adamantinum bone
+DESCRIPTION=Bone Legs
+
+tdata1=8//adamantinum
+
+
+ON=@Create
+HITPOINTS=38
+armorcreate(Adamantinum,bone)
+
+[EOF]

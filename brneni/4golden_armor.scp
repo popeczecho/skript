@@ -1,0 +1,734 @@
+
+
+[ITEMDEF 04554]
+DEFNAME=i_GOLDEN_PLATEMAIL_ARMS
+NAME=Golden Platemail Arms
+ID=i_platemail_arms
+ARMOR=72
+REQSTR=40
+WEIGHT=16.0
+RESOURCES=18 i_ingot_gold
+SKILLMAKE=Blacksmithing 64.0, Tinkering 50.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden platemail
+DESCRIPTION=Platemail Arms
+
+tdata1=4//gold
+
+ON=@Create
+armorcreate(golden,plate)
+
+[ITEMDEF 04555]
+DEFNAME=i_GOLDEN_PLATEMAIL_leggings
+NAME=Golden Platemail Legs
+ID=i_platemail_leggings
+
+ARMOR=72
+WEIGHT=18.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden platemail
+DESCRIPTION=Platemail Legs
+RESOURCES=20 i_ingot_gold
+SKILLMAKE=Blacksmithing 66.0, Tinkering 50.0
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,plate)
+
+
+
+[ITEMDEF 04557]
+DEFNAME=i_GOLDEN_PLATEMAIL_GORGET
+NAME=Golden Platemail Gorget
+ID=i_platemail_gorget
+
+ARMOR=72
+REQSTR=30
+WEIGHT=6.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden platemail
+DESCRIPTION=Platemail Gorget
+RESOURCES=10 i_ingot_gold
+SKILLMAKE=Blacksmithing 60.0, Tinkering 50.0
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,plate)
+
+[ITEMDEF 04558]
+DEFNAME=i_GOLDEN_PLATEMAIL_GAUNTLETS
+NAME=Golden Platemail Gauntlets
+ID=i_platemail_gloves
+
+ARMOR=72
+REQSTR=30
+WEIGHT=5.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden platemail
+DESCRIPTION=Platemail Gauntlets
+RESOURCES=12 i_ingot_gold
+SKILLMAKE=Blacksmithing 62.0, Tinkering 50.0
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,plate)
+
+[ITEMDEF 04559]
+DEFNAME=i_GOLDEN_PLATEMAIL
+NAME=Golden Platemail
+ID=i_platemail_chest
+ARMOR=72
+REQSTR=60
+WEIGHT=20.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden platemail
+DESCRIPTION=Platemail chest
+RESOURCES=26 i_ingot_gold
+SKILLMAKE=Blacksmithing 68.0, Tinkering 50.0
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,plate)
+
+[ITEMDEF 04572]
+DEFNAME=i_GOLDEN_FEMALE_PLATEMAIL
+NAME=Golden Platemail
+ID=i_armor_female_plate
+ARMOR=72
+REQSTR=15
+WEIGHT=12.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden platemail
+DESCRIPTION=Female Platemail
+RESOURCES=22 i_ingot_gold
+SKILLMAKE=Blacksmithing 60.0, Tinkering 50.0
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,bone)
+
+//////////////////////////////////////////////////// HELMY
+
+[ITEMDEF 04556]
+DEFNAME=i_GOLDEN_PLATE_HELM
+NAME=Golden Plate Helm
+ID=i_platemail_helm
+ARMOR=72
+REQSTR=40
+WEIGHT=9.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden platemail
+DESCRIPTION=Plate Helm
+RESOURCES=15 i_ingot_gold
+SKILLMAKE=Blacksmithing 65.0, Tinkering 50.0
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,plate)
+
+[ITEMDEF 04587]
+DEFNAME=i_GOLDEN_CLOSED_HELM
+NAME=Golden Closed Helm
+ID=i_helm_closed
+ARMOR=72
+REQSTR=20
+WEIGHT=9.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden platemail
+DESCRIPTION=Closed Helm
+RESOURCES=15 i_ingot_gold
+SKILLMAKE=Blacksmithing 60.0, Tinkering 50.0
+
+tdata1=4//gold
+
+ON=@Create
+armorcreate(golden,plate)
+
+[ITEMDEF 04589]
+DEFNAME=i_GOLDEN_BASCINET
+NAME=Golden Bascinet
+ID=i_bascinet
+ARMOR=72
+REQSTR=20
+WEIGHT=8.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden platemail
+DESCRIPTION=Bascinet
+RESOURCES=15 i_ingot_gold
+SKILLMAKE=Blacksmithing 60.0, Tinkering 50.0
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,plate)
+
+[ITEMDEF 0458a]
+DEFNAME=i_GOLDEN_NOSE_HELM
+NAME=Golden Nose Helm
+ID=i_helm_nose
+ARMOR=72
+REQSTR=20
+WEIGHT=9.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden platemail
+DESCRIPTION=Nose Helm
+RESOURCES=15 i_ingot_gold
+SKILLMAKE=Blacksmithing 60.0, Tinkering 50.0
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,plate)
+
+//////////////////////////////////////////////////////// CHAIN MAIL
+
+[ITEMDEF i_Golden_CHAINMAIL_gorget]
+ID=i_leather_gorget
+NAME=Golden Chainmail Gorget
+WEIGHT=2.0
+ARMOR=41
+REQSTR=20
+RESOURCES=10 i_ingot_Gold
+SKILLMAKE=Blacksmithing 45.0, Tinkering 66.0
+tdata1=4//gold
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden chainmail
+DESCRIPTION=Chainmail gorget
+
+ON=@Create
+armorcreate(golden,chain)
+
+[ITEMDEF i_Golden_CHAINMAIL_sleeves]
+ID=i_leather_sleeves
+NAME=Golden Chainmail Sleeves
+WEIGHT=2.0
+ARMOR=41
+REQSTR=20
+RESOURCES=10 i_ingot_Gold
+SKILLMAKE=Blacksmithing 45.0, Tinkering 66.0
+tdata1=4//gold
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden chainmail
+DESCRIPTION=Chainmail sleeves
+
+ON=@Create
+armorcreate(golden,chain)
+
+[ITEMDEF i_Golden_CHAINMAIL_gloves]
+ID=i_leather_gloves
+NAME=Golden Chainmail Gloves
+WEIGHT=2.0
+ARMOR=41
+REQSTR=20
+RESOURCES=10 i_ingot_Gold
+SKILLMAKE=Blacksmithing 45.0, Tinkering 66.0
+tdata1=4//gold
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden chainmail
+DESCRIPTION=Chainmail gloves
+
+ON=@Create
+armorcreate(golden,chain)
+
+
+[ITEMDEF 04573]
+DEFNAME=i_GOLDEN_CHAINMAIL_COIF
+NAME=Golden Chainmail Coif
+ID=i_chainmail_coif
+ARMOR=41
+REQSTR=20
+WEIGHT=6.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden chainmail
+DESCRIPTION=Chainmail Coif
+RESOURCES=10 i_ingot_gold
+SKILLMAKE=Blacksmithing 45.0, Tinkering 66.0
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,chain)
+
+[ITEMDEF 04574]
+DEFNAME=i_GOLDEN_CHAINMAIL_LEGGINGS
+NAME=Golden Chainmail Leggings
+ID=i_chainmail_leggings
+ARMOR=41
+REQSTR=20
+WEIGHT=9.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden chainmail
+DESCRIPTION=Chainmail Leggings
+RESOURCES=18 i_ingot_gold
+SKILLMAKE=Blacksmithing 45.0, Tinkering 67.0
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,chain)
+
+[ITEMDEF 04575]
+DEFNAME=i_GOLDEN_CHAINMAIL_TUNIC
+NAME=Golden Chainmail Tunic
+ID=i_chainmail_tunic
+ARMOR=41
+REQSTR=20
+WEIGHT=13.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden chainmail
+DESCRIPTION=Chainmail Tunic
+RESOURCES=20 i_ingot_gold
+SKILLMAKE=Blacksmithing 45.0, Tinkering 68.0
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,chain)
+
+////////////////////////////////////////////////////// RING MAIL
+
+[ITEMDEF i_Golden_kite_wood_shield]
+ID=i_shield_kite_wood
+NAME=Golden kite shield
+WEIGHT=2.0
+ARMOR=21
+REQSTR=20
+RESOURCES=10 i_ingot_Gold
+SKILLMAKE=Blacksmithing 45.0, Tinkering 63.0
+tdata1=4//gold
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden ringmail
+DESCRIPTION=Kite wood shield
+
+ON=@Create
+shieldcreate(golden,ring)
+
+[ITEMDEF i_Golden_RINGMAIL_gorget]
+ID=i_leather_gorget
+NAME=Golden ringmail gorget
+WEIGHT=2.0
+ARMOR=41
+REQSTR=20
+RESOURCES=10 i_ingot_Gold
+SKILLMAKE=Blacksmithing 45.0, Tinkering 63.0
+tdata1=4//gold
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden ringmail
+DESCRIPTION=Ringmail gorget
+
+ON=@Create
+armorcreate(golden,ring)
+
+[ITEMDEF i_Golden_RINGMAIL_helm]
+ID=i_helm_open
+NAME=Golden Ringmail Helm
+WEIGHT=2.0
+ARMOR=41
+REQSTR=20
+RESOURCES=10 i_ingot_Gold
+SKILLMAKE=Blacksmithing 45.0, Tinkering 63.0
+tdata1=4//gold
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden ringmail
+DESCRIPTION=Ringmail helm
+
+ON=@Create
+armorcreate(golden,ring)
+
+[ITEMDEF 0455a]
+DEFNAME=i_GOLDEN_RINGMAIL_LEGGINGS
+NAME=Golden Ringmail Leggings
+ID=i_ringmail_leggings
+ARMOR=41
+REQSTR=20
+WEIGHT=13.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden ringmail
+DESCRIPTION=Ringmail Leggings
+RESOURCES=16 i_ingot_gold
+SKILLMAKE=Blacksmithing 45.0, Tinkering 63.0
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,ring)
+
+[ITEMDEF 0455b]
+DEFNAME=i_GOLDEN_RINGMAIL_SLEEVES
+NAME=Golden Ringmail Sleeves
+ID=i_ringmail_sleeves
+ARMOR=41
+REQSTR=20
+WEIGHT=11.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden ringmail
+DESCRIPTION=Ringmail Sleeves
+RESOURCES=14 i_ingot_gold
+SKILLMAKE=Blacksmithing 45.0, Tinkering 61.0
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,ring)
+
+[ITEMDEF 0455c]
+DEFNAME=i_GOLDEN_RINGMAIL_GLOVES
+NAME=Golden Ringmail Gloves
+ID=i_ringmail_gloves
+ARMOR=41
+REQSTR=20
+WEIGHT=2.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden ringmail
+DESCRIPTION=Ringmail Gloves
+RESOURCES=10 i_ingot_gold
+SKILLMAKE=Blacksmithing 45.0, Tinkering 60.0
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,ring)
+
+[ITEMDEF 0455d]
+DEFNAME=i_GOLDEN_RINGMAIL_TUNIC
+NAME=Golden Ringmail Tunic
+ID=i_ringmail_tunic
+ARMOR=41
+REQSTR=20
+WEIGHT=13.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden ringmail
+DESCRIPTION=Ringmail Tunic
+SKILLMAKE=Blacksmithing 45.0, Tinkering 64.0
+RESOURCES=18 i_ingot_gold
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,ring)
+
+
+//////////////////////////////////////////////////////// SHIELDY
+
+[ITEMDEF 04576]
+DEFNAME=i_GOLDEN_HEATER_SHIELD
+NAME=Golden Heater Shield
+ID=I_SHIELD_HEATER
+ARMOR=8
+REQSTR=30
+WEIGHT=14.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden platemail
+DESCRIPTION=Heater Shield
+RESOURCES=18 i_ingot_gold
+SKILLMAKE=Blacksmithing 68.0, Tinkering 50.0
+
+tdata1=4//gold
+
+
+ON=@Create
+shieldcreate(golden,plate)
+
+[ITEMDEF 0455e]
+DEFNAME=i_GOLDEN_BUCKLER_SHIELD
+NAME=Golden Buckler
+ID=i_shield_buckler
+ARMOR=11
+REQSTR=15
+WEIGHT=7.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden Studded
+DESCRIPTION=Buckler
+RESOURCES=10 i_ingot_gold
+SKILLMAKE=Blacksmithing 60.0, Tinkering 50.0
+
+tdata1=4//gold
+
+ON=@Create
+shieldcreate(golden,studded)
+
+[ITEMDEF 0455f]
+DEFNAME=i_GOLDEN_METAL_SHIELD
+NAME=Golden Metal Shield
+ID=i_shield_round_metal
+ARMOR=17
+REQSTR=15
+WEIGHT=11.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden chainmail
+DESCRIPTION=Metal Shield
+RESOURCES=14 i_ingot_gold
+SKILLMAKE=Blacksmithing 65.0, Tinkering 50.0
+
+tdata1=4//gold
+
+ON=@Create
+shieldcreate(golden,chain)
+
+[ITEMDEF i_bone_arms_Golden]
+ID=i_bone_arms
+RESOURCES=i_bone_arms, 2 i_ingot_gold
+NAME=Bone Arms of Golden
+SKILLMAKE=Tinkering 60.0, t_tinker_tools
+
+WEIGHT=3.0
+ARMOR=19
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden bone
+DESCRIPTION=Bone Arms
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,bone)
+
+[ITEMDEF i_bone_chest_Golden]
+ID=i_bone_chest
+NAME=Bone Chest of Golden
+RESOURCES= i_bone_chest, 12 i_ingot_gold
+SKILLMAKE=Tinkering 60.0, t_tinker_tools
+
+WEIGHT=14.0
+ARMOR=19
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden bone
+DESCRIPTION=Bone Chest
+
+tdata1=4//gold
+
+ON=@Create
+armorcreate(golden,bone)
+
+[ITEMDEF i_bone_gloves_Golden]
+ID=i_bone_gloves
+NAME=Bone Gloves of Golden
+RESOURCES=i_bone_gloves, 3 i_ingot_gold
+SKILLMAKE=Tinkering 60.0, t_tinker_tools
+
+WEIGHT=5.0
+ARMOR=19
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden bone
+DESCRIPTION=Bone Gloves
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,bone)
+
+[ITEMDEF i_bone_helmet_Golden]
+ID=i_bone_helmet
+NAME=Bone Helmet of Golden
+RESOURCES=i_bone_helmet, 5 i_ingot_gold
+SKILLMAKE=Tinkering 60.0, t_tinker_tools
+
+WEIGHT=6.0
+ARMOR=19
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden bone
+DESCRIPTION=Bone Helmet
+
+tdata1=4//gold
+
+ON=@Create
+armorcreate(golden,bone)
+
+[ITEMDEF i_bone_leggings_Golden]
+ID=i_bone_leggings
+NAME=Bone Legs of Golden
+RESOURCES=i_bone_leggings, 6 i_ingot_gold
+SKILLMAKE=Tinkering 60.0, t_tinker_tools
+
+WEIGHT=9.0
+ARMOR=19
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden bone
+DESCRIPTION=Bone Legs
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,bone)
+
+[ITEMDEF i_studded_cap_Golden]
+ID=i_leather_cap
+RESOURCES=2 i_ingot_Gold, i_leather_cap
+ARMOR=19
+NAME=Golden Studded Cap
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden Studded
+DESCRIPTION=Studded cap
+SKILLMAKE=Tinkering 60.0, t_tinker_tools
+tdata1=1//Golden
+
+ON=@Create
+armorcreate(golden,studded)
+
+[ITEMDEF i_studded_sleeves_Golden]
+ID=i_studded_sleeves
+RESOURCES=2 i_ingot_Gold, i_leather_sleeves
+ARMOR=19
+NAME=Golden Studded Sleeves
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden Studded
+DESCRIPTION=Studded Sleeves
+SKILLMAKE=Tinkering 60.0, t_tinker_tools
+tdata1=4//gold
+
+ON=@Create
+armorcreate(golden,studded)
+
+[ITEMDEF i_studded_gloves_Golden]
+ID=i_studded_gloves
+SKILLMAKE=Tinkering 60.0, t_tinker_tools
+RESOURCES=2 i_ingot_Gold, i_leather_gloves
+ARMOR=19
+NAME=Golden Studded Gloves
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden Studded
+DESCRIPTION=Studded Gloves
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,studded)
+
+[ITEMDEF i_studded_gorget_Golden]
+ID=i_studded_gorget
+RESOURCES=1 i_ingot_Gold, i_leather_gorget
+ARMOR=19
+NAME=Golden Studded Gorget
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden Studded
+DESCRIPTION=Studded Gorget
+SKILLMAKE=Tinkering 60.0, t_tinker_tools
+
+tdata1=4//gold
+
+ON=@Create
+armorcreate(golden,studded)
+
+[ITEMDEF i_studded_leggings_Golden]
+ID=i_studded_leggings
+RESOURCES=6 i_ingot_Gold, i_leather_leggings
+ARMOR=19
+NAME=Golden Studded Leggings
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden Studded
+DESCRIPTION=Studded Leggings
+SKILLMAKE=Tinkering 60.0, t_tinker_tools
+
+tdata1=4//gold
+
+ON=@Create
+armorcreate(golden,studded)
+
+[ITEMDEF i_studded_tunic_Golden]
+ID=i_studded_tunic
+RESOURCES=12 i_ingot_Gold, i_leather_tunic
+ARMOR=19
+NAME=Golden Studded Tunic
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden Studded
+DESCRIPTION=Studded Tunic
+SKILLMAKE=Tinkering 60.0, t_tinker_tools
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,studded)
+
+[ITEMDEF i_armor_female_bustier_studded_Golden]
+ID=i_armor_female_bustier_studded
+RESOURCES=12 i_ingot_Gold, i_armor_female_bustier
+ARMOR=19
+NAME=Golden Studded Bustier
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden Studded
+DESCRIPTION=Studded Bustier
+SKILLMAKE=Tinkering 60.0, t_tinker_tools
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,studded)
+
+[ITEMDEF i_armor_female_studded_Golden]
+ID=i_armor_female_studded
+ARMOR=19
+NAME=Golden Female Studded Armor
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Golden Studded
+DESCRIPTION=Studded female Armor
+SKILLMAKE=Tinkering 60.0, t_tinker_tools
+RESOURCES=12 i_ingot_Gold, i_armor_female_leather
+
+tdata1=4//gold
+
+
+ON=@Create
+armorcreate(golden,studded)
+
+[EOF]

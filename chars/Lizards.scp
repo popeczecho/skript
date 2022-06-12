@@ -1,0 +1,599 @@
+
+////////////////////////////////////////////////////////////
+/////////////////////    LIZARDS    ////////////////////////
+////////////////////////////////////////////////////////////
+
+[CHARDEF 021]
+DEFNAME=c_lizardman
+NAME=Jester
+SOUND=snd_MONSTER_LZRDMN1
+ICON=i_pet_LIZMAN
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=15
+ARMOR=15
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw,{0 1} i_hide_green
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Lizardman
+
+ON=@Create
+NAME=#NAMES_LIZARDMAN
+NPC=brain_monster
+FAME=50
+KARMA={-2000 -2999}
+
+STR=600
+DEX=120
+INT=20
+
+MAXHITS={500 600}
+MAXSTAM={100 120}
+MAXMANA=0
+
+tag.experience=<eval {12.0 16.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,60)
+
+tag(resist_poison,800)
+tag.resist_para=<eval {200 300}>
+tag(resist_summon,400)
+tag(resist_bleed,250)
+
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,150)
+tag(resist_blunt,-150)
+
+tag(resist_fire,300)
+tag(resist_elect,300)
+tag(resist_cold,-100)
+
+Macefighting=80.0
+Parrying=55.0
+Wrestling=80.0
+Resist=65.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_LIZARDMAN
+ITEM=i_gold
+//ITEM=RANDOM_REAGENT,{0 5}
+
+//////////////////////////////////////////
+
+[CHARDEF 023]
+DEFNAME=c_lizardman_spear
+NAME=Jesteri straz
+SOUND=snd_MONSTER_LZRDMN1
+ICON=i_pet_LIZMAN
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=25
+ARMOR=15
+MOVERATE=3
+
+RESOURCES=1 i_hide_green, 6 i_ribs_raw
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_critic                           //sance na kritik melee
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Lizardman {Spear}
+
+ON=@Create
+NAME=#NAMES_LIZARDMAN
+NPC=brain_monster
+FAME=50
+KARMA={-2000 -2999}
+
+STR=600
+DEX=120
+INT=20
+
+MAXHITS={900 960}
+MAXSTAM={100 120}
+MAXMANA=0
+
+tag.experience=<eval {22.0 26.0}>
+
+tag.npc_critic_chance=200                    // 20% chance to trigger this event
+tag.npc_critic_dmg=20,25                     // dmg in between
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag(monstertype,humanoid,60)
+
+tag(resist_poison,800)
+tag.resist_para=<eval {300 400}>
+tag(resist_summon,400)
+tag(resist_bleed,250)
+
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,150)
+tag(resist_blunt,-150)
+
+tag(resist_fire,300)
+tag(resist_elect,300)
+tag(resist_cold,-100)
+
+
+Fencing={80.0 85.0}
+Parrying={85.0 90.0}
+Wrestling={80.0 85.0}
+Resist=70.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_spear_short
+
+ON=@NPCRestock
+ITEM=loot_LIZARDMAN
+ITEM=i_gold
+//ITEM=RANDOM_REAGENT,{5 12}
+
+
+////////////////////////////////////////////////////////////
+
+[CHARDEF c_lizardman_ranger]
+ID=c_lizardman
+NAME=Jester
+SOUND=snd_MONSTER_LZRDMN1
+ICON=i_pet_LIZMAN
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=20
+ARMOR=15
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw,1 i_hide_green
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_NPC_multishot
+TEVENTS=e_npc_sniper                  //Prida dmg k utoku po rane
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Lizardman
+
+ON=@Create
+NAME=#NAMES_LIZARDMAN
+NPC=brain_monster
+FAME=50
+KARMA={-2000 -2999}
+
+STR=600
+DEX=120
+INT=20
+
+MAXHITS={1200 1300}
+MAXSTAM={100 120}
+MAXMANA=0
+
+tag.experience=<eval {32.0 36.0}>
+
+tag.npc_sniper_chance=200                 //20%
+tag.npc_sniper_dmg=15                     //o 15 HP
+
+tag.multishot_chance=200                    // 20% chance pri zasahu monstra
+tag.multishot_delay=15,20                   // prodleva nez znovu
+tag.multishot_dmg=20,30                     // dmg in between 30 and 40
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag(monstertype,humanoid,60)
+
+tag(resist_poison,800)
+tag.resist_para=<eval {300 400}>
+tag(resist_summon,400)
+tag(resist_bleed,250)
+
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,150)
+tag(resist_blunt,-150)
+
+tag(resist_fire,300)
+tag(resist_elect,300)
+tag(resist_cold,-100)
+
+
+Macefighting=80.0
+Archery={80.0 90.0}
+Parrying=55.0
+Wrestling=80.0
+Resist=65.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_bow
+ITEMNEWBIE=i_arrow,{50 75}
+
+ON=@NPCRestock
+ITEM=loot_LIZARDMAN
+ITEM=i_gold
+//ITEM=RANDOM_REAGENT,{14 17}
+
+//////////////////////////////////
+
+[CHARDEF 024]
+DEFNAME=c_lizardman_mace
+NAME=Jesteri bojovnik
+SOUND=snd_MONSTER_LZRDMN1
+ICON=i_pet_LIZMAN
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=35
+ARMOR=20
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw,2 i_hide_green
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_stun
+TEVENTS=e_npc_critic                           //sance na kritik melee
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Lizardman {Mace}
+
+ON=@Create
+NAME=#NAMES_LIZARDMAN
+
+NPC=brain_monster
+FAME=1
+KARMA={-2000 -2999}
+
+STR=600
+DEX=150
+INT=20
+
+MAXHITS={1200 1400}
+MAXSTAM={120 150}
+MAXMANA=0
+
+tag.experience=<eval {30.0 34.0}>
+
+tag.npc_critic_chance=250                //25% chance
+tag.npc_critic_dmg=15,20                 //dmg in between
+
+tag.npc_stun_time=20                     // 2 seconds of stun
+Tag.npc_stun_chance=150                  //15%, defaultne 20%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmgr
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,60)
+tag(resist_poison,800)
+tag.resist_para=<eval {400 500}>
+tag(resist_summon,400)
+tag(resist_bleed,250)
+
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,150)
+tag(resist_blunt,-150)
+
+tag(resist_fire,300)
+tag(resist_elect,300)
+tag(resist_cold,-100)
+
+
+Macefighting={95.0 100.0}
+Parrying={95.0 100.0}
+Wrestling={95.0 100.0}
+Resist=70.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_mace_war
+
+ON=@NPCRestock
+ITEM=loot_LIZARDMAN
+ITEM=i_gold
+//ITEM=RANDOM_REAGENT,{10 15}
+
+//////////////////////////////////
+
+[CHARDEF c_lizardman_chief]
+ID=c_lizardman_mace
+NAME=Jesteri vudce
+SOUND=snd_MONSTER_LZRDMN1
+ICON=i_pet_LIZMAN
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=45
+ARMOR=25
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw,{3 5} i_hide_green
+FOODTYPE=
+//=r_dungeon,r_swamp
+//=e_carnivores3
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_leaper
+TEVENTS=e_npc_bleed
+TEVENTS=e_npc_critic                           //sance na kritik melee
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Lizardman chief {Mace}
+
+ON=@Create
+//NAME=#NAMES_LIZARDMAN
+NPC=brain_monster
+FAME=100
+KARMA={-2000 -2999}
+
+STR=600
+DEX=170
+INT=20
+
+MAXHITS={1800 1900}
+MAXSTAM={160 180}
+MAXMANA=0
+
+tag.experience=<eval {45.0 50.0}>
+
+tag.npc_bleed=300             //30%
+
+tag.npc_critic_chance=200                    // 20% chance to trigger this event
+tag.npc_critic_dmg=20,25                     // dmg in between
+
+tag.npc_port_timer=15
+tag(npc_port_distance,6)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmgr
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+tag(monstertype,humanoid,60)
+
+tag(resist_poison,800)
+tag.resist_para=<eval {200 300}>
+tag(resist_summon,400)
+tag(resist_bleed,250)
+
+tag(resist_sharp,150)
+tag(resist_slash,250)
+tag(resist_pierce,200)
+tag(resist_blunt,-100)
+
+tag(resist_fire,300)
+tag(resist_elect,300)
+tag(resist_cold,-100)
+
+
+Macefighting={100.0 105.0}
+Parrying={100.0 105.0}
+Wrestling={100.0 105.0}
+Resist=75.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_mace_war
+
+ON=@NPCRestock
+ITEM=loot_LIZARDMAN
+ITEM=i_gold
+//ITEM=RANDOM_REAGENT,{25 35}
+
+//////////////////////////////////
+
+[CHARDEF c_lizardman_mage]
+ID=c_lizardman
+NAME=Jesteri mag
+SOUND=snd_MONSTER_LZRDMN1
+ICON=i_pet_LIZMAN
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=25
+ARMOR=10
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw,{1 2} i_hide_green
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_curse                     //vsechny viditelne zrani o dmg
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Lizardman mage
+
+ON=@Create
+//NAME=#NAMES_LIZARDMAN
+NPC=brain_monster
+FAME=100
+KARMA={-2000 -2999}
+
+STR=600
+DEX=170
+INT=150
+
+MAXHITS={950 1000}
+MAXSTAM={100 120}
+MAXMANA=1000
+
+tag.experience=<eval {30.0 35.0}>
+
+tag(Poisoning_dmg,15) // affects spell_poison
+tag(Poisoning_MvM_dmg,30) // affects spell_poison
+
+tag.npc_curse_chance=200                // 20% chance to trigger this event
+tag.npc_curse_delay=15,17               // delay between another possible strike
+tag.npc_curse_dmg=30,35                 // dmg
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,60)
+
+tag(resist_poison,800)
+tag.resist_para=<eval {300 400}>
+tag(resist_summon,400)
+tag(resist_bleed,100)
+
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,150)
+tag(resist_blunt,-150)
+
+tag(resist_fire,300)
+tag(resist_elect,300)
+tag(resist_cold,-100)
+
+Parrying=100.0
+Resist=100.0
+Tactics=85.0
+Wrestling=70.0
+Macefighting=80.0
+Magery=95.0
+EI=40.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_poison
+ADDSPELL=s_lightning
+
+ON=@NPCRestock
+ITEM=loot_LIZARDMAN
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{10 20}
+
+///////////////////////////////////
+
+[CHARDEF c_lizard_king]
+ID=c_lizardman
+NAME=Lizard King
+SOUND=snd_MONSTER_LZRDMN1
+ICON=i_pet_LIZMAN
+CAN=MT_WALK|MT_USEHANDS|MT_FIRE_IMMUNE|mt_run
+
+ATTACK=70
+ARMOR=10
+MOVERATE=3
+
+RESOURCES=12 i_ribs_raw
+BLOODCOLOR=020
+
+TEVENTS=e_scales
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_critic
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Lizard King
+
+ON=@CREATE
+COLOR=0992
+NPC=brain_monster
+FAME=0
+KARMA=-3000
+
+STR=3000
+DEX=150
+INT=300
+
+MAXHITS={13000 13500}
+MAXSTAM={150 160}
+MAXMANA=0
+
+tag.experience=<eval {230.0 250.0}>
+
+tag.npc_critic_chance=250         //25% chance
+tag.npc_critic_dmg=30,35          //dmg in between
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,40)
+
+tag(resist_poison,1000)
+tag(resist_para,760)
+tag(resist_summon,950)
+tag(resist_bleed,700)
+
+tag(resist_sharp,-600)
+tag(resist_slash,-600)
+tag(resist_pierce,550)
+tag(resist_blunt,-1000)
+
+tag(resist_fire,700)
+tag(resist_elect,400)
+tag(resist_cold,200)
+
+Parrying=100.0
+Tactics=200.0
+Wrestling=150.0
+Resist=150.0
+SpiritSpeak=45.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=loot_LIZARDMAN
+
+ON=@hit
+if (RAND(10)==1)
+  dorand 4
+    sayu("Doufam, ze to neni vsecho, co umis. Hahaha!")
+    sayu("Nikdy me neporazis!")
+    sayu("Uz ted jsi mrtvola!")
+    sayu("Mas nejake posledni prani?")
+  enddo
+endif
+
+[EOF]

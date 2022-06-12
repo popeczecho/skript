@@ -1,0 +1,1265 @@
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_toad_lvl_2]
+ID=c_toad_giant
+NAME=Kvakal Hlubinny
+SOUND=snd_MONSTER_GIANTTOAD1
+ICON=i_pet_toad_giant
+ANIM=078c7f
+CAN=MT_WALK|mt_run|mt_swim
+
+ATTACK=48
+ARMOR=35
+MOVERATE=4
+
+RESOURCES=6 i_ribs_raw
+FOODTYPE=
+
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_acid_strike
+
+CATEGORY=Monsters
+SUBSECTION=Frogs
+DESCRIPTION=Toad lvl 2
+
+ON=@Create
+color={0582 0585}
+NPC=brain_monster
+FAME=200
+KARMA={-2000 -2999}
+
+STR=250
+DEX=150
+INT=40
+
+MAXHITS={1400 1500}
+MAXSTAM=140
+MAXMANA=0
+
+tag.experience=<eval {63.0 67.0}>
+
+tag.weapflag=dam_physical|dam_slashing
+
+tag.hitspeed=6
+
+tag(resist_poison,100)
+tag.resist_para=<eval {550 650}>
+tag(resist_summon,750)
+tag(resist_bleed,250)
+
+tag(resist_sharp,-150)
+tag(resist_slash,-300)
+tag(resist_pierce,150)
+tag(resist_blunt,150)
+
+tag(resist_fire,200)
+tag(resist_elect,-200)
+tag(resist_cold,-400)
+
+//typ monstra
+tag(monstertype,animal)
+
+Provocation=100.0
+Parrying={70.0 80.0}
+Tactics={90.0 110.0}
+Wrestling={100.0 110.0}
+Resist=70.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_elem
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_toad_poison]
+ID=c_toad_giant
+NAME=Kvakal Bazinny
+SOUND=snd_MONSTER_GIANTTOAD1
+ICON=i_pet_toad_giant
+ANIM=078c7f
+CAN=MT_WALK|mt_run|mt_swim
+
+ATTACK=51
+ARMOR=37
+MOVERATE=4
+
+RESOURCES=6 i_ribs_raw
+FOODTYPE=
+
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_acid_strike
+TEVENTS=e_poison_shell
+
+CATEGORY=Monsters
+SUBSECTION=Frogs
+DESCRIPTION=Toad poison
+
+ON=@Create
+color=07d5
+NPC=brain_monster
+FAME=200
+KARMA={-2000 -2999}
+
+STR=250
+DEX=140
+INT=40
+
+MAXHITS={1450 1550}
+MAXSTAM=130
+MAXMANA=0
+
+tag.experience=<eval {69.0 73.0}>
+
+tag.weapflag=dam_physical|dam_slashing
+
+tag(resist_poison,1000)
+tag.resist_para=<eval {550 650}>
+tag(resist_summon,750)
+tag(resist_bleed,250)
+
+tag(resist_sharp,-150)
+tag(resist_slash,-300)
+tag(resist_pierce,150)
+tag(resist_blunt,150)
+
+tag(resist_fire,200)
+tag(resist_elect,-200)
+tag(resist_cold,-400)
+
+//typ monstra
+tag(monstertype,animal)
+
+Provocation=100.0
+Parrying={70.0 80.0}
+Tactics={90.0 110.0}
+Wrestling={100.0 110.0}
+Resist=70.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_elem
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_toad_lvl_1]
+ID=c_toad_giant
+NAME=Kvakal Jezerni
+SOUND=snd_MONSTER_GIANTTOAD1
+ICON=i_pet_toad_giant
+ANIM=078c7f
+CAN=MT_WALK|mt_run|mt_swim
+
+ATTACK=31
+ARMOR=23
+MOVERATE=4
+
+RESOURCES=6 i_ribs_raw
+FOODTYPE=
+
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_acid_strike
+
+CATEGORY=Monsters
+SUBSECTION=Frogs
+DESCRIPTION=Toad lvl 1
+
+ON=@Create
+color={076c 076f}
+NPC=brain_monster
+FAME=200
+KARMA={-2000 -2999}
+
+STR=250
+DEX=110
+INT=40
+
+MAXHITS={790 840}
+MAXSTAM=110
+MAXMANA=0
+
+tag.experience=<eval {32.0 35.0}>
+
+tag.weapflag=dam_physical|dam_slashing
+
+tag.hitspeed=7
+
+tag.acidStrike_dmg=2
+
+tag(resist_poison,250)
+tag.resist_para=<eval {550 650}>
+tag(resist_summon,400)
+tag(resist_bleed,300)
+
+tag(resist_sharp,-150)
+tag(resist_slash,-300)
+tag(resist_pierce,150)
+tag(resist_blunt,150)
+
+tag(resist_fire,200)
+tag(resist_elect,-200)
+tag(resist_cold,-400)
+
+//typ monstra
+tag(monstertype,animal)
+
+Parrying={70.0 80.0}
+Tactics={90.0 110.0}
+Wrestling={100.0 110.0}
+Resist=70.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_elem
+ITEM=i_gold
+
+/////// KRYPTY + Katakomby ////////////
+
+[CHARDEF 125]
+DEFNAME=c_crypts_boss
+NAME=Mezius
+SOUND=snd_MONSTER_EXODUS
+ICON=i_pet_man
+CAN=MT_WALK|MT_USEHANDS|MT_RUN
+
+ATTACK=120
+ARMOR=85
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_crypts_boss
+TEVENTS=e_explosiondispell
+TEVENTS=e_npc_detect
+
+CATEGORY=Monsters
+SUBSECTION=Ettins, Ogres, Titans
+DESCRIPTION=Cyclops King
+
+ON=@Create
+NPC=BRAIN_MONSTER
+KARMA={-5000 -5999}
+FAME={100 2000}
+
+STR=1700
+DEX=700
+INT=400
+
+MAXHITS={16000 17000}
+MAXSTAM={185 225}
+MAXMANA=0
+
+tag.experience=<eval {900.0 1100.0}>
+
+tag.npc_lifeLeech=150,200
+
+tag(hitspeed,7)
+
+tag(lifeSteal_dmg,42)
+tag(lifeSteal_Hp,550)
+
+tag.npcDetect_Timer=25
+tag.npcDetect_rozsah=10
+
+tag.stam_dmg_chance=250             // 25% chance to trigger this event
+tag.stam_dmg_power=40               // takes 40 of stam
+
+tag(npc_summoning_chance,250)
+tag(npc_summoning_time,30)
+tag(npc_summoning_count,4)
+tag(npc_summoning_char[0],c_bone_dog)
+tag(npc_summoning_char[1],c_bone_dog)
+tag(npc_summoning_char[2],c_vamp_bitch)
+tag(npc_summoning_char[3],c_skull_head_mage)
+
+tag(monstertype,humanoid,50)
+tag(monstertype2,undead,50)
+
+tag.weapflag=dam_physical|dam_slashing
+
+//other resists
+tag(resist_poison,550)
+tag.resist_para=1000
+tag(resist_summon,650)
+tag(resist_bleed,600)  //krvaci
+
+tag(resist_sharp,300)
+tag(resist_slash,200)   // sekery
+tag(resist_pierce,550)
+tag(resist_blunt,-150)
+
+tag(resist_fire,600)
+tag(resist_elect,300)
+tag(resist_cold,400)
+
+Parrying={70.0 100.0}
+Wrestling={90.0 100.0}
+Swordsmanship=110.0
+Fencing=110.0
+Resist=150.0
+poisoning=140.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=RANDOM_REAGENT,{160 180}
+ITEM=RANDOM_REAGENT,{140 120}
+ITEM=i_gold
+/////////////////////////////////////
+[CHARDEF c_vamp_bitch]
+ID=c_mongbat
+NAME=Vampirek
+SOUND=snd_MONSTER_MNGBAT1
+ICON=i_pet_mongbat
+CAN=MT_WALK|MT_RUN
+
+ATTACK=55
+ARMOR=30
+MOVERATE=4
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_leaper
+TEVENTS=e_npc_bleed
+TEVENTS=e_summoneater
+
+ON=@Create
+color=098c
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=250
+DEX=350
+INT=500
+
+MAXHITS={1000 1200}
+MAXSTAM={450 500}
+MAXMANA=0
+
+tag.experience=<eval {60.0 65.0}>
+
+tag.npc_port_timer=6
+tag(npc_port_distance,8)
+
+tag.npc_bleed=600
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,450)
+tag(resist_para,1000)
+tag(resist_summon,800)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,400)
+tag(resist_slash,300)
+tag(resist_pierce,00)
+tag(resist_blunt,400)
+
+//magic resists
+tag(resist_fire,400)
+tag(resist_elect,500)
+tag(resist_cold,300)
+
+//typ monstra
+tag(monstertype,undead,60)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Tactics=100.0
+Resist=150.0
+Wrestling=1000.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_SKELETON
+ITEM=i_gold
+
+/////////////////////////////////////
+[CHARDEF 19]
+DEFNAME=c_crypts_banshee
+NAME=Banshee
+SOUND=snd_MONSTER_SUCCUBUS
+ICON=i_pet_skeleton
+CAN=MT_WALK|MT_RUN
+
+ATTACK=55
+ARMOR=50
+MOVERATE=4
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_summonhater
+TEVENTS=e_npc_curse                    //vsechny viditelne zrani o dmg
+TEVENTS=e_npc_summoning
+
+CATEGORY=Monsters
+SUBSECTION=Spiriti
+DESCRIPTION=Spirit Verite
+
+ON=@Create
+NPC=brain_monster
+FAME=125
+KARMA=-5000
+
+STR=3000
+DEX=200
+INT=260
+
+MAXHITS={3750 4000}
+MAXSTAM={115 190}
+MAXMANA=1000
+
+tag.experience=<eval {240.0 250.0}>
+
+tag.npc_curse_chance=50                // 5% chance to trigger this event
+tag.npc_curse_delay=15,20              // delay between another possible strike
+tag.npc_curse_dmg=30,35                // dmg
+
+tag(npc_summoning_chance,150)
+tag(npc_summoning_time,30)
+tag(npc_summoning_count,1)
+tag(npc_summoning_char[0],c_bone_dog)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//other resists
+tag(resist_poison,1000)    //ducha neotravis
+tag.resist_para=1000
+tag(resist_summon,450)     //indivindi podle monstra
+tag(resist_bleed,500)      //spirit vetsinou nekrvaci
+
+//weap resists
+tag(resist_sharp,500)        //odolnost na mece
+tag(resist_slash,500)        //sekyry
+tag(resist_pierce,800)        //sipky nic moc
+tag(resist_blunt,500)       //na spirity hodne drtivymi zbranemi
+
+//magic resists
+tag(resist_fire,-300)
+tag(resist_elect,900)       //zranitelnost energii
+tag(resist_cold,700)
+
+//typ monstra
+tag(monstertype,undead)
+
+//weap flags
+tag.weapflag=dam_lightning|dam_magic
+
+Parrying={55.0 65.0}
+EI=110.0
+Magery=120.0
+Resist=130.0
+Wrestling=110.0
+SpiritSpeak=45.0
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_lightning
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{30 55}
+/////////////////////////////////////
+[CHARDEF c_crypts_vamp_woman]
+ID=c_woman
+NAME=Vampire Ascendant
+ICON=i_pet_man
+CAN=MT_WALK|MT_USEHANDS|MT_RUN
+
+ATTACK=90
+ARMOR=75
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_Critic
+TEVENTS=e_npc_bleed
+TEVENTS=e_explosiondispell
+
+CATEGORY=Monsters
+SUBSECTION=Ettins, Ogres, Titans
+DESCRIPTION=Cyclops King
+
+ON=@Create
+NPC=BRAIN_MONSTER
+KARMA={-5000 -5999}
+FAME={100 2000}
+
+STR=1700
+DEX=215
+INT=80
+
+MAXHITS={2400 2600}
+MAXSTAM={185 225}
+MAXMANA=0
+
+tag.experience=<eval {200.0 220.0}>
+
+tag.npc_critic_chance=250                //25% chance
+tag.npc_critic_dmg=25,30                 //dmg in between
+
+tag(monstertype,humanoid,50)
+tag(monstertype2,undead,50)
+
+tag.weapflag=dam_physical|dam_slashing
+
+//other resists
+tag(resist_poison,550)
+tag.resist_para=<eval {650 800}>
+tag(resist_summon,650)
+tag(resist_bleed,600)  //krvaci
+
+tag(resist_sharp,300)
+tag(resist_slash,200)   // sekery
+tag(resist_pierce,550)
+tag(resist_blunt,-150)
+
+tag(resist_fire,600)
+tag(resist_elect,400)
+tag(resist_cold,300)
+
+Parrying={70.0 100.0}
+Wrestling={90.0 100.0}
+Swordsmanship=110.0
+Fencing=110.0
+Resist=150.0
+poisoning=140.0
+SpiritSpeak=60.0
+Peacemaking=100.0
+
+ITEMNewbie=i_bone_chest
+color=0672
+ITEMNewbie=i_bone_leggings
+color=0672
+ITEMNewbie=i_bone_arms
+color=0672
+ITEMNewbie=i_bone_gloves
+color=0672
+ITEMNewbie=i_bone_helmet
+color=0672
+ITEMNewbie=i_sword_broad
+color=0989
+ITEMNewbie=i_shield_buckler
+color=0989
+ITEMNewbie=i_cape
+color=098c
+ITEMNewbie=i_sash
+color=098c
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=RANDOM_REAGENT,{20 35}
+ITEM=i_gold
+
+//////////////////////////////////
+[CHARDEF c_crypts_vamp_man]
+ID=c_man
+NAME=Vampire Ascendant
+ICON=i_pet_man
+CAN=MT_WALK|MT_USEHANDS|MT_RUN
+
+ATTACK=115
+ARMOR=70
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_roundattack
+TEVENTS=e_npc_bleed
+TEVENTS=e_explosiondispell
+
+CATEGORY=Monsters
+SUBSECTION=Ettins, Ogres, Titans
+DESCRIPTION=Cyclops King
+
+ON=@Create
+NPC=BRAIN_MONSTER
+KARMA={-5000 -5999}
+FAME={100 2000}
+
+STR=1700
+DEX=215
+INT=80
+
+MAXHITS={2400 2600}
+MAXSTAM={185 225}
+MAXMANA=0
+
+tag.experience=<eval {200.0 220.0}>
+
+tag.roundattack_damage=40,45 //dmg od - do
+tag.roundattack_time=10,15   //cas od - do
+tag.roundattack_chance=100   //10.0%
+tag.pullAll_distance=7       //o kolik posun
+
+tag(monstertype,humanoid,50)
+tag(monstertype2,undead,50)
+
+tag.weapflag=dam_physical|dam_slashing
+
+//other resists
+tag(resist_poison,550)
+tag.resist_para=<eval {650 800}>
+tag(resist_summon,650)
+tag(resist_bleed,600)  //krvaci
+
+tag(resist_sharp,300)
+tag(resist_slash,200)   // sekery
+tag(resist_pierce,550)
+tag(resist_blunt,-150)
+
+tag(resist_fire,600)
+tag(resist_elect,400)
+tag(resist_cold,300)
+
+Parrying={70.0 100.0}
+Wrestling={90.0 100.0}
+Swordsmanship=110.0
+Fencing=110.0
+Resist=150.0
+SpiritSpeak=60.0
+Peacemaking=100.0
+
+ITEMNewbie=i_bone_chest
+color=0672
+ITEMNewbie=i_bone_leggings
+color=0672
+ITEMNewbie=i_bone_arms
+color=0672
+ITEMNewbie=i_bone_gloves
+color=0672
+ITEMNewbie=i_bone_helmet
+color=0672
+ITEMNewbie=i_halberd
+color=0989
+ITEMNewbie=i_cape
+color=098c
+ITEMNewbie=i_sash
+color=098c
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=RANDOM_REAGENT,{20 35}
+ITEM=i_gold
+
+/////////////////////////////////
+[events e_lifeSteal]
+on=@step
+if (act)
+  if (strlen(<tag(lifeSteal_next)>) == 0)
+    tag(lifeSteal,0) 
+  endif
+  if (<serv.time>><tag(lifeSteal_next)>)
+    if (<hits><<eval ((<maxHits>*80)/100)>)
+      f_findRandomTarget(18,<uid>,0)
+      f_lifeSteal_start(<var(findRandomTarget)>)
+  endif
+endif
+
+ON=@Created
+ON=@DrinkingPotion
+ON=@afterswing
+ON=@beforegeteffect
+ON=@beforedoeffect
+ON=@beforegetswing
+ON=@aftergetswing
+
+[function f_lifeSteal_start]
+if (strlen(<tag(lifeSteal_dmg)>) == 0)
+  tag(lifeSteal_Dmg,20) 
+endif
+if (strlen(<tag(lifeSteal_Hp)>) == 0)
+  tag(lifeSteal_HP,300) 
+endif
+tag(lifesteal_next,<eval <serv.time>+42>)
+emote("steals life energy from <argv(0).name>")
+hits = <eval <hits>+<tag(lifeSteal_HP)>>
+finduid(<argv(0)>).damage_noresponse(<tag(lifeSteal_Dmg)>,dam_god)
+finduid(<argv(0)>).f_doEffect_onTarg(i_fx_glow,<uid>)
+
+[function f_doEffect_onTarg]
+finduid(<argv(1)>).effect(0,<argv(0)>,24,16,0)
+
+////////////////////////////////////////
+////// VAMP KING ///////
+[CHARDEF c_crypts_vamp_king]
+ID=c_gargoyle
+NAME=Vampire King
+SOUND=snd_MONSTER_GARGYL1
+ICON=i_pet_GARG
+CAN=MT_WALK|MT_USEHANDS|MT_RUN
+
+ATTACK=100
+ARMOR=65
+MOVERATE=4
+
+RESOURCES=20 i_ribs_raw
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_lifeLeech
+TEVENTS=e_summoneater 
+TEVENTS=e_lifeSteal 
+TEVENTS=e_npc_summoning
+
+CATEGORY=Monsters
+SUBSECTION=Dungeons
+DESCRIPTION=Vamp king
+
+ON=@Create
+COLOR=0433
+NPC=BRAIN_MONSTER
+KARMA={-5000 -5999}
+FAME={2000 3500}
+
+STR=1700
+DEX=450
+INT=300
+
+MAXHITS={7500 7900}
+MAXSTAM={400 500}
+MAXMANA=0
+
+tag.experience=<eval {390.0 410.0}>
+
+tag(hitspeed,5)
+
+tag(monstertype,humanoid,50)
+tag(monstertype2,undead,50)
+
+tag.weapflag=dam_physical|dam_blunt
+
+tag.npc_lifeLeech=40,50
+
+tag(lifeSteal_dmg,42)
+tag(lifeSteal_Hp,600)
+
+tag(npc_summoning_chance,200)
+tag(npc_summoning_time,25)
+tag(npc_summoning_count,2)
+tag(npc_summoning_char[0],c_vamp_king)
+tag(npc_summoning_char[1],c_vampire_blood)
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {700 800}>
+tag(resist_summon,650)
+tag(resist_bleed,350)  //krvaci
+
+tag(resist_sharp,400)
+tag(resist_slash,400)   // sekery
+tag(resist_pierce,200)
+tag(resist_blunt,500)
+
+tag(resist_fire,700)
+tag(resist_elect,400)
+tag(resist_cold,550)
+
+Parrying={40.0 50.0}
+Wrestling={90.0 100.0}
+RESIST=190.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=RANDOM_REAGENT,{30 45}
+ITEM=i_gold
+
+////// VAMP KING ///////
+[CHARDEF c_crypts_vamp_lord]
+ID=c_gargoyle
+NAME=Vampire Lord
+SOUND=snd_MONSTER_GARGYL1
+ICON=i_pet_GARG
+CAN=MT_WALK|MT_USEHANDS|MT_RUN
+
+ATTACK=80
+ARMOR=65
+MOVERATE=4
+
+RESOURCES=20 i_ribs_raw
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_lifeLeech
+TEVENTS=e_summoneater
+TEVENTS=e_lifeSteal
+TEVENTS=e_npc_summoning
+
+
+CATEGORY=Monsters
+SUBSECTION=Dungeons
+DESCRIPTION=Vamp Lord
+
+ON=@Create
+COLOR=0431
+NPC=BRAIN_MONSTER
+KARMA={-5000 -5999}
+FAME={2000 3500}
+
+STR=1700
+DEX=400
+INT=300
+
+MAXHITS={3500 3900}
+MAXSTAM={400 500}
+MAXMANA=0
+
+tag.experience=<eval {200.0 220.0}>
+
+tag(hitspeed,5)
+
+tag(monstertype,humanoid,50)
+tag(monstertype2,undead,50)
+
+tag.weapflag=dam_physical|dam_blunt
+
+tag.npc_lifeLeech=40,50
+
+tag(npc_summoning_chance,200)
+tag(npc_summoning_time,25)
+tag(npc_summoning_count,1)
+tag(npc_summoning_char[0],c_vampire)
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {700 800}>
+tag(resist_summon,650)
+tag(resist_bleed,400)  //krvaci
+
+tag(resist_sharp,450)
+tag(resist_slash,450)   // sekery
+tag(resist_pierce,200)
+tag(resist_blunt,700)
+
+tag(resist_fire,700)
+tag(resist_elect,400)
+tag(resist_cold,550)
+
+Parrying={40.0 50.0}
+Wrestling={90.0 100.0}
+RESIST=190.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=RANDOM_REAGENT,{30 45}
+ITEM=i_gold
+////////////////////////////////////////
+////// VAMP KILLER ///////
+[CHARDEF 89]
+DEFNAME=c_crypts_vamp_killer
+NAME=Bloodseeker
+SOUND=snd_MONSTER_GARGYL1
+ICON=i_pet_GARG
+CAN=MT_WALK|MT_USEHANDS|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=85
+ARMOR=105
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_lifeLeech
+TEVENTS=e_npc_detect
+TEVENTS=e_speed_porting
+
+CATEGORY=Monsters
+SUBSECTION=Dungeons
+DESCRIPTION=Vamp killer
+
+ON=@Create
+NPC=BRAIN_MONSTER
+KARMA={-5000 -5999}
+FAME={1000 3000}
+
+STR=1700
+DEX=800
+INT=80
+
+MAXHITS={5800 6200}
+MAXSTAM={600 700}
+MAXMANA=0
+
+tag.experience=<eval {330.0 350.0}>
+
+tag.hitspeed=3
+
+tag(monstertype,daemon,80)
+
+tag.weapflag=dam_physical|dam_slashing
+
+tag.npc_lifeLeech=230,260
+
+tag.speedPorting_timer=6
+
+tag.npcDetect_Timer=12
+tag.npcDetect_rozsah=5
+
+//other resists
+tag(resist_poison,350)
+tag.resist_para=1000
+tag(resist_summon,650)
+tag(resist_bleed,400)  //krvaci
+
+tag(resist_sharp,450)
+tag(resist_slash,700)   // sekery
+tag(resist_pierce,700)
+tag(resist_blunt,800)
+
+tag(resist_fire,350)
+tag(resist_elect,00)
+tag(resist_cold,-300)
+
+Parrying={70.0 100.0}
+Wrestling={90.0 100.0}
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=RANDOM_REAGENT,{30 45}
+ITEM=i_gold
+
+////////////////////////////////////////
+[chardef 99]
+DEFNAME=c_mantis
+NAME=Kudlanka
+SOUND=960
+ICON=i_pet_EAGLE
+CAN=MT_RUN|MT_WALK
+
+ATTACK=77
+ARMOR=50
+MOVERATE=4
+
+FOODTYPE=t_meat_raw
+BLOODCOLOR=colors_green
+RESOURCES=10 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_acid_spit_single
+TEVENTS=e_speed_porting
+
+CATEGORY=Monsters
+SUBSECTION=Animal Monsters
+DESCRIPTION=Mantis
+
+ON=@Create
+NPC=brain_monster
+FAME=1000
+KARMA=-3000
+
+STR=2500
+DEX=350
+INT=60
+
+MAXHITS={2000 2200}
+MAXSTAM={250 300}
+MAXMANA=0
+
+tag.experience=<eval {111.0 117.0}>
+
+tag(monstertype,animal,70)
+
+tag.weapflag=dam_physical|dam_sharp
+
+tag(speedPorting_range,2)
+tag(speedPorting_timer,6)
+
+tag(resist_poison,500)
+tag.resist_para={570 610}
+tag(resist_summon,750)
+tag(resist_bleed,350)
+
+tag(resist_sharp,50)
+tag(resist_slash,100)
+tag(resist_pierce,-50)
+tag(resist_blunt,100)
+
+tag(resist_fire,300)
+tag(resist_elect,400)
+tag(resist_cold,250)
+
+Parrying=50.0
+Resist=105.0
+Wrestling=180.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{15 18}
+
+//////////////////////////////////////
+
+[chardef c_mantis_assassin]
+ID=c_mantis
+NAME=Kudlanka Lovec
+SOUND=960
+ICON=i_pet_EAGLE
+CAN=MT_RUN|MT_WALK
+
+ATTACK=85
+ARMOR=65
+MOVERATE=4
+
+FOODTYPE=t_meat_raw
+BLOODCOLOR=colors_green
+RESOURCES=10 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_acid_spit_single
+TEVENTS=e_speed_porting
+
+CATEGORY=Monsters
+SUBSECTION=Animal Monsters
+DESCRIPTION=Mantis assassin
+
+ON=@Create
+COLOR=0709
+NPC=brain_monster
+FAME=1000
+KARMA=-4000
+
+STR=2500
+DEX=350
+INT=60
+
+MAXHITS={2800 3000}
+MAXSTAM={250 300}
+MAXMANA=0
+
+tag.experience=<eval {157.0 163.0}>
+
+tag(monstertype,animal,70)
+
+tag.weapflag=dam_physical|dam_sharp
+
+tag(singleSpit_dmG,32)
+
+tag(resist_poison,500)
+tag.resist_para={650 750}
+tag(resist_summon,750)
+tag(resist_bleed,350)
+
+tag(resist_sharp,50)
+tag(resist_slash,100)
+tag(resist_pierce,-50)
+tag(resist_blunt,100)
+
+tag(resist_fire,300)
+tag(resist_elect,400)
+tag(resist_cold,250)
+
+Parrying=60.0
+Resist=125.0
+Wrestling=180.0
+Hiding=120.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{20 25}
+
+//////////////////////////////////////
+[CHARDEF 799]
+DEFNAME=c_salamander
+NAME=Salamander
+SOUND=snd_MONSTER_OPHIDIAN_WARRIOR1
+ICON=i_pet_ophid_war
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=68
+ARMOR=60
+MOVERATE=3
+
+FOODTYPE=
+BLOODCOLOR=colors_green
+RESOURCES=10 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_fire_strike
+TEVENTS=e_fire_barrage
+
+CATEGORY=Monsters
+SUBSECTION=Animal Monsters
+DESCRIPTION=Salamander
+
+ON=@Create
+NPC=brain_monster
+FAME=400
+KARMA=-3500
+
+STR=2500
+DEX=250
+INT=400
+
+MAXHITS={1800 1900}
+MAXSTAM={250 300}
+MAXMANA=0
+
+tag.experience=<eval {120.0 125.0}>
+
+tag(monstertype,daemon,80)
+
+tag.weapflag=dam_physical|dam_slashing
+
+tag(resist_poison,500)
+tag.resist_para={770 810}
+tag(resist_summon,550)
+tag(resist_bleed,450)
+
+tag(resist_sharp,300)
+tag(resist_slash,400)
+tag(resist_pierce,400)
+tag(resist_blunt,200)
+
+tag(resist_fire,400)
+tag(resist_elect,-200)
+tag(resist_cold,-250)
+
+Parrying=60.0
+Resist=75.0
+Wrestling=180.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{21 27}
+
+
+//////////////////////////////////////
+[CHARDEF 100]
+DEFNAME=c_hell_hound
+NAME=Hellhound
+SOUND=snd_MONSTER_LAVALIZARD1
+ICON=i_pet_wolf
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=70
+ARMOR=50
+MOVERATE=4
+
+FOODTYPE=
+BLOODCOLOR=colors_red
+RESOURCES=10 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_fire_strike
+
+CATEGORY=Monsters
+SUBSECTION=Animal Monsters
+DESCRIPTION=Hell hound 2
+
+ON=@Create
+color=065B
+NPC=brain_monster
+FAME=400
+KARMA=-3500
+
+STR=2500
+DEX=350
+INT=400
+
+MAXHITS={900 1000}
+MAXSTAM={250 300}
+MAXMANA=0
+
+tag.experience=<eval {59.0 63.0}>
+
+tag(monstertype,daemon,80)
+
+tag.weapflag=dam_physical|dam_slashing
+
+tag(resist_poison,500)
+tag.resist_para={770 810}
+tag(resist_summon,550)
+tag(resist_bleed,450)
+
+tag(resist_sharp,300)
+tag(resist_slash,400)
+tag(resist_pierce,400)
+tag(resist_blunt,200)
+
+tag(resist_fire,400)
+tag(resist_elect,-100)
+tag(resist_cold,-150)
+
+Parrying=60.0
+Resist=75.0
+Wrestling=180.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{14 18}
+
+[EOF]

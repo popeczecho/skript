@@ -1,0 +1,781 @@
+
+
+[ITEMDEF 04700]
+DEFNAME=i_OBSIDIAN_PLATEMAIL
+NAME=Obsidian Platemail
+
+ID=i_platemail_chest
+WEIGHT=17.0
+ARMOR=85
+REQSTR=60
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian platemail
+DESCRIPTION=Platemail chest
+RESOURCES=25 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 95.0, Tinkering 75.0
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=75
+armorcreate(obsidian,plate)
+
+[ITEMDEF 04701]
+DEFNAME=i_OBSIDIAN_PLATEMAIL_ARMS
+NAME=Obsidian Platemail Arms
+ID=i_platemail_arms
+
+ARMOR=85
+REQSTR=40
+WEIGHT=13.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian platemail
+DESCRIPTION=Platemail Arms
+RESOURCES=18 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 93.0, Tinkering 75.0
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=29
+armorcreate(obsidian,plate)
+
+[ITEMDEF 04702]
+DEFNAME=i_OBSIDIAN_PLATEMAIL_leggings
+NAME=Obsidian Platemail Legs
+ID=i_platemail_leggings
+
+ARMOR=85
+REQSTR=60
+WEIGHT=15.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian platemail
+DESCRIPTION=Platemail Legs
+RESOURCES=20 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 94.0, Tinkering 75.0
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=48
+armorcreate(obsidian,plate)
+
+[ITEMDEF 04704]
+DEFNAME=i_OBSIDIAN_PLATEMAIL_GORGET
+NAME=Obsidian Platemail Gorget
+ID=i_platemail_gorget
+
+ARMOR=85
+REQSTR=30
+WEIGHT=5.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian platemail
+DESCRIPTION=Platemail Gorget
+RESOURCES=10 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 90.0, Tinkering 75.0
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=17
+armorcreate(obsidian,plate)
+
+[ITEMDEF 04705]
+DEFNAME=i_OBSIDIAN_PLATEMAIL_GAUNTLETS
+NAME=Obsidian Platemail Gauntlets
+ID=i_platemail_gloves
+
+ARMOR=85
+REQSTR=30
+WEIGHT=4.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian platemail
+DESCRIPTION=Platemail Gauntlets
+RESOURCES=12 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 92.0, Tinkering 75.0
+
+tdata1=7//obsidian
+
+
+ON=@Create
+HITPOINTS=17
+armorcreate(obsidian,plate)
+
+[ITEMDEF 04706]
+DEFNAME=i_OBSIDIAN_FEMALE_PLATEMAIL
+NAME=Obsidian Platemail
+ID=i_armor_female_plate
+
+ARMOR=85
+REQSTR=15
+WEIGHT=10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian platemail
+DESCRIPTION=Female Platemail
+RESOURCES=22 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 90.0, Tinkering 75.0
+
+tdata1=7//obsidian
+
+
+ON=@Create
+HITPOINTS=75
+armorcreate(obsidian,plate)
+
+//////////////////////////////////////////////// HELMY
+
+[ITEMDEF 04703]
+DEFNAME=i_OBSIDIAN_PLATE_HELM
+NAME=Obsidian Plate Helm
+ID=i_platemail_helm
+
+ARMOR=85
+REQSTR=40
+WEIGHT=8.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian platemail
+DESCRIPTION=Plate Helm
+RESOURCES=15 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 95.0, Tinkering 75.0
+
+tdata1=7//obsidian
+
+
+ON=@Create
+HITPOINTS=29
+armorcreate(obsidian,plate)
+
+
+[ITEMDEF 04711]
+DEFNAME=i_OBSIDIAN_CLOSED_HELM
+NAME=Obsidian Closed Helm
+ID=i_helm_closed
+
+ARMOR=85
+REQSTR=20
+WEIGHT=8.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian platemail
+DESCRIPTION=Closed Helm
+RESOURCES=15 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 90.0, Tinkering 75.0
+
+tdata1=7//obsidian
+
+
+ON=@Create
+HITPOINTS=29
+armorcreate(obsidian,plate)
+
+[ITEMDEF 04713]
+DEFNAME=i_OBSIDIAN_BASCINET
+NAME=Obsidian Bascinet
+ID=i_bascinet
+
+ARMOR=85
+REQSTR=10
+WEIGHT=7.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian platemail
+DESCRIPTION=Bascinet
+RESOURCES=15 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 90.0, Tinkering 75.0
+
+tdata1=7//obsidian
+
+
+ON=@Create
+HITPOINTS=29
+armorcreate(obsidian,plate)
+
+[ITEMDEF 04714]
+DEFNAME=i_OBSIDIAN_NOSE_HELM
+NAME=Obsidian Nose Helm
+ID=i_helm_nose
+
+ARMOR=85
+REQSTR=0
+WEIGHT=8.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian platemail
+DESCRIPTION=Nose Helm
+
+RESOURCES=15 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 90.0, Tinkering 75.0
+
+tdata1=7//obsidian
+
+
+ON=@Create
+HITPOINTS=29
+armorcreate(obsidian,plate)
+
+
+////////////////////////////////////////////////CHAIN MAIL
+
+[ITEMDEF i_Obsidian_CHAINMAIL_gorget]
+ID=i_leather_gorget
+NAME=Obsidian Chainmail Gorget
+WEIGHT=2.0
+ARMOR=55
+REQSTR=20
+RESOURCES=10 i_ingot_Obsidian
+SKILLMAKE=Blacksmithing 65.0, Tinkering 93.0
+tdata1=7//obsidian
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian chainmail
+DESCRIPTION=Chainmail gorget
+
+ON=@Create
+HITPOINTS=12
+armorcreate(Obsidian,chain)
+
+[ITEMDEF i_Obsidian_CHAINMAIL_sleeves]
+ID=i_leather_sleeves
+NAME=Obsidian Chainmail Sleeves
+WEIGHT=2.0
+ARMOR=55
+REQSTR=20
+RESOURCES=10 i_ingot_Obsidian
+SKILLMAKE=Blacksmithing 65.0, Tinkering 93.0
+tdata1=7//obsidian
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian chainmail
+DESCRIPTION=Chainmail sleeves
+
+ON=@Create
+HITPOINTS=23
+armorcreate(Obsidian,chain)
+
+[ITEMDEF i_Obsidian_CHAINMAIL_gloves]
+ID=i_leather_gloves
+NAME=Obsidian Chainmail Gloves
+WEIGHT=2.0
+ARMOR=55
+REQSTR=20
+RESOURCES=10 i_ingot_Obsidian
+SKILLMAKE=Blacksmithing 65.0, Tinkering 93.0
+tdata1=7//obsidian
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian chainmail
+DESCRIPTION=Chainmail gloves
+
+ON=@Create
+HITPOINTS=14
+armorcreate(Obsidian,chain)
+
+[ITEMDEF 04707]
+DEFNAME=i_OBSIDIAN_CHAINMAIL_COIF
+NAME=Obsidian Chainmail Coif
+ID=i_chainmail_coif
+
+ARMOR=55
+REQSTR=20
+WEIGHT=4.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian chainmail
+DESCRIPTION=Chainmail Coif
+RESOURCES=10 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 65.0, Tinkering 93.0
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=23
+armorcreate(obsidian,chain)
+
+[ITEMDEF 04708]
+DEFNAME=i_OBSIDIAN_CHAINMAIL_LEGGINGS
+NAME=Obsidian Chainmail Leggings
+ID=i_chainmail_leggings
+
+ARMOR=55
+REQSTR=20
+WEIGHT=8.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian chainmail
+DESCRIPTION=Chainmail Leggings
+RESOURCES=18 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 65.0, Tinkering 94.0
+
+tdata1=7//obsidian
+
+
+ON=@Create
+HITPOINTS=38
+armorcreate(obsidian,chain)
+
+[ITEMDEF 04709]
+DEFNAME=i_OBSIDIAN_CHAINMAIL_TUNIC
+NAME=Obsidian Chainmail Tunic
+ID=i_chainmail_tunic
+
+ARMOR=55
+REQSTR=20
+WEIGHT=10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian chainmail
+DESCRIPTION=Chainmail Tunic
+RESOURCES=20 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 65.0, Tinkering 95.0
+
+tdata1=7//obsidian
+
+
+ON=@Create
+HITPOINTS=60
+armorcreate(obsidian,chain)
+
+//////////////////////////////////////////////RING MAIL
+
+[ITEMDEF i_Obsidian_kite_wood_shield]
+ID=i_shield_kite_wood
+NAME=Obsidian kite shield
+WEIGHT=2.0
+ARMOR=21
+REQSTR=20
+RESOURCES=10 i_ingot_Obsidian
+SKILLMAKE=Blacksmithing 65.0, Tinkering 93.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian ringmail
+DESCRIPTION=Kite wood shield
+
+tdata1=7
+
+ON=@Create
+HITPOINTS=41
+shieldcreate(Obsidian,ring)
+
+ON=@equip
+tdata1=7
+
+[ITEMDEF i_Obsidian_RINGMAIL_gorget]
+ID=i_leather_gorget
+NAME=Obsidian ringmail gorget
+WEIGHT=2.0
+ARMOR=55
+REQSTR=20
+RESOURCES=10 i_ingot_Obsidian
+SKILLMAKE=Blacksmithing 65.0, Tinkering 93.0
+tdata1=7//obsidian
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian ringmail
+DESCRIPTION=Ringmail gorget
+
+ON=@Create
+HITPOINTS=12
+armorcreate(Obsidian,ring)
+
+[ITEMDEF i_Obsidian_RINGMAIL_helm]
+ID=i_helm_open
+NAME=Obsidian Ringmail Helm
+WEIGHT=2.0
+ARMOR=55
+REQSTR=20
+RESOURCES=10 i_ingot_Obsidian
+SKILLMAKE=Blacksmithing 65.0, Tinkering 93.0
+tdata1=7//obsidian
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian ringmail
+DESCRIPTION=Ringmail helm
+
+ON=@Create
+HITPOINTS=17
+armorcreate(Obsidian,ring)
+
+[ITEMDEF 0470a]
+DEFNAME=i_OBSIDIAN_RINGMAIL_LEGGINGS
+NAME=Obsidian Ringmail Leggings
+ID=i_ringmail_leggings
+
+ARMOR=55
+REQSTR=20
+WEIGHT=10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian ringmail
+DESCRIPTION=Ringmail Leggings
+RESOURCES=16 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 65.0, Tinkering 93.0
+
+tdata1=7//obsidian
+
+
+ON=@Create
+HITPOINTS=25
+armorcreate(obsidian,ring)
+
+[ITEMDEF 0470b]
+DEFNAME=i_OBSIDIAN_RINGMAIL_SLEEVES
+NAME=Obsidian Ringmail Sleeves
+ID=i_ringmail_sleeves
+
+ARMOR=55
+REQSTR=20
+WEIGHT=8.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian ringmail
+DESCRIPTION=Ringmail Sleeves
+RESOURCES=14 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 65.0, Tinkering 91.0
+
+tdata1=7//obsidian
+
+
+ON=@Create
+HITPOINTS=17
+armorcreate(obsidian,ring)
+
+[ITEMDEF 0470c]
+DEFNAME=i_OBSIDIAN_RINGMAIL_GLOVES
+NAME=Obsidian Ringmail Gloves
+ID=i_ringmail_gloves
+
+ARMOR=55
+REQSTR=20
+WEIGHT=2.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian ringmail
+DESCRIPTION=Ringmail Gloves
+RESOURCES=10 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 65.0, Tinkering 90.0
+
+tdata1=7//obsidian
+
+
+ON=@Create
+HITPOINTS=12
+armorcreate(obsidian,ring)
+
+[ITEMDEF 0470d]
+DEFNAME=i_OBSIDIAN_RINGMAIL_TUNIC
+NAME=Obsidian Ringmail Tunic
+ID=i_ringmail_tunic
+
+ARMOR=55
+REQSTR=20
+WEIGHT=10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian ringmail
+DESCRIPTION=Ringmail Tunic
+RESOURCES=18 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 65.0, Tinkering 92.0
+
+tdata1=7//obsidian
+
+
+ON=@Create
+HITPOINTS=40
+armorcreate(obsidian,ring)
+
+/////////////////////////////////////////////SHIELDY
+
+[ITEMDEF 0470e]
+DEFNAME=i_OBSIDIAN_METAL_SHIELD
+NAME=Obsidian Metal Shield
+ID=i_shield_round_metal
+ARMOR=23
+REQSTR=15
+WEIGHT=9.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian chainmail
+DESCRIPTION=Metal Shield
+RESOURCES=14 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 93.0, Tinkering 75.0
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=50
+shieldcreate(obsidian,chain)
+
+[ITEMDEF 0470f]
+DEFNAME=i_OBSIDIAN_HEATER_SHIELD
+NAME=Obsidian Heater Shield
+ID=I_SHIELD_HEATER
+ARMOR=15
+REQSTR=30
+WEIGHT=12.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian platemail
+DESCRIPTION=Heater Shield
+RESOURCES=18 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 95.0, Tinkering 75.0
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=67
+shieldcreate(obsidian,plate)
+
+[ITEMDEF 04710]
+DEFNAME=i_OBSIDIAN_BUCKLER_SHIELD
+NAME=Obsidian Buckler
+ID=i_shield_buckler
+ARMOR=15
+REQSTR=15
+WEIGHT=5.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian studded
+DESCRIPTION=Buckler
+RESOURCES=10 i_ingot_obsidian
+SKILLMAKE=Blacksmithing 90.0, Tinkering 75.0
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=25
+shieldcreate(obsidian,studded)
+
+[ITEMDEF i_studded_cap_Obsidian]
+ID=i_leather_cap
+RESOURCES=2 i_ingot_Obsidian, i_leather_cap
+ARMOR=33
+NAME=Obsidian Studded Cap
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian Studded
+DESCRIPTION=Studded Cap
+SKILLMAKE=Tinkering 85.0, t_tinker_tools
+tdata1=1//Obsidian
+
+ON=@Create
+HITPOINTS=14
+armorcreate(Obsidian,studded)
+
+[ITEMDEF i_studded_sleeves_obsidian]
+ID=i_studded_sleeves
+RESOURCES=2 i_ingot_obsidian, i_leather_sleeves
+ARMOR=33
+NAME=obsidian Studded Sleeves
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=obsidian Studded
+DESCRIPTION=Studded Sleeves
+SKILLMAKE=Tinkering 85.0, t_tinker_tools
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=12
+armorcreate(obsidian,studded)
+
+[ITEMDEF i_studded_gloves_obsidian]
+ID=i_studded_gloves
+SKILLMAKE=Tinkering 85.0, t_tinker_tools
+RESOURCES=2 i_ingot_obsidian, i_leather_gloves
+ARMOR=33
+NAME=obsidian Studded Gloves
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=obsidian Studded
+DESCRIPTION=Studded Gloves
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=10
+armorcreate(obsidian,studded)
+
+[ITEMDEF i_studded_gorget_obsidian]
+ID=i_studded_gorget
+RESOURCES=1 i_ingot_obsidian, i_leather_gorget
+ARMOR=33
+NAME=obsidian Studded Gorget
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=obsidian Studded
+DESCRIPTION=Studded Gorget
+SKILLMAKE=Tinkering 85.0, t_tinker_tools
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=10
+armorcreate(obsidian,studded)
+
+[ITEMDEF i_studded_leggings_obsidian]
+ID=i_studded_leggings
+RESOURCES=6 i_ingot_obsidian, i_leather_leggings
+ARMOR=33
+NAME=obsidian Studded Leggings
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=obsidian Studded
+DESCRIPTION=Studded Leggings
+SKILLMAKE=Tinkering 85.0, t_tinker_tools
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=19
+armorcreate(obsidian,studded)
+
+[ITEMDEF i_studded_tunic_obsidian]
+ID=i_studded_tunic
+RESOURCES=12 i_ingot_obsidian, i_leather_tunic
+ARMOR=33
+NAME=obsidian Studded Tunic
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=obsidian Studded
+DESCRIPTION=Studded Tunic
+SKILLMAKE=Tinkering 85.0, t_tinker_tools
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=30
+armorcreate(obsidian,studded)
+
+[ITEMDEF i_armor_female_bustier_studded_obsidian]
+ID=i_armor_female_bustier_studded
+RESOURCES=12 i_ingot_obsidian, i_armor_female_bustier
+ARMOR=33
+NAME=obsidian Studded Bustier
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=obsidian Studded
+DESCRIPTION=Studded Bustier
+SKILLMAKE=Tinkering 85.0, t_tinker_tools
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=30
+armorcreate(obsidian,studded)
+
+[ITEMDEF i_armor_female_studded_obsidian]
+ID=i_armor_female_studded
+ARMOR=33
+NAME=obsidian Female Studded Armor
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=obsidian Studded
+DESCRIPTION=Studded female Armor
+SKILLMAKE=Tinkering 85.0, t_tinker_tools
+RESOURCES=12 i_ingot_obsidian, i_armor_female_leather
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=30
+armorcreate(obsidian,studded)
+
+[ITEMDEF i_bone_arms_Obsidian]
+ID=i_bone_arms
+RESOURCES=2 i_ingot_Obsidian, i_bone_arms
+NAME=Bone Arms of Obsidian
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+
+WEIGHT=3.0
+ARMOR=33
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian bone
+DESCRIPTION=Bone Arms
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=14
+armorcreate(Obsidian,studded)
+
+[ITEMDEF i_bone_chest_Obsidian]
+ID=i_bone_chest
+NAME=Bone Chest of Obsidian
+RESOURCES=12 i_ingot_Obsidian,  i_bone_chest
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+
+WEIGHT=13.0
+ARMOR=33
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian bone
+DESCRIPTION=Bone Chest
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=30
+armorcreate(Obsidian,bone)
+
+[ITEMDEF i_bone_gloves_Obsidian]
+ID=i_bone_gloves
+NAME=Bone Gloves of Obsidian
+RESOURCES=3 i_ingot_Obsidian, i_bone_gloves
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+
+WEIGHT=5.0
+ARMOR=33
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian bone
+DESCRIPTION=Bone Gloves
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=10
+armorcreate(Obsidian,bone)
+
+[ITEMDEF i_bone_helmet_Obsidian]
+ID=i_bone_helmet
+NAME=Bone Helmet of Obsidian
+RESOURCES=5 i_ingot_Obsidian, i_bone_helmet
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+
+WEIGHT=6.0
+ARMOR=33
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian bone
+DESCRIPTION=Bone Helmet
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=17
+armorcreate(Obsidian,bone)
+
+[ITEMDEF i_bone_leggings_Obsidian]
+ID=i_bone_leggings
+NAME=Bone Legs of Obsidian
+RESOURCES=6 i_ingot_Obsidian, i_bone_leggings
+SKILLMAKE=Tinkering 75.0, t_tinker_tools
+
+WEIGHT=8.0
+ARMOR=33
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Obsidian bone
+DESCRIPTION=Bone Legs
+
+tdata1=7//obsidian
+
+ON=@Create
+HITPOINTS=19
+armorcreate(Obsidian,bone)
+
+[EOF]

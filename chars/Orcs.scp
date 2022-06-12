@@ -1,0 +1,978 @@
+
+
+
+///////////////////////////////////////
+///////////////////////////////////////
+
+[CHARDEF 202]
+DEFNAME=c_vrk
+NAME= Skret
+SOUND=snd_MONSTER_TROLL1
+ICON=i_pet_ORC
+CAN=MT_WALK|MT_USEHANDS|MT_RUN
+
+ATTACK=90
+ARMOR=80
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+FOODTYPE=
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_critic
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Krokous
+
+ON=@Create
+NPC=brain_monster
+FAME={100 5000}
+KARMA=-3000
+
+STR=1000
+DEX=500
+INT=150
+
+MAXHITS={2000 2250}
+MAXSTAM={400 500}
+MAXMANA=0
+
+tag.experience=<eval {60.0 70.0}>
+
+tag.npc_critic_chance=150                    // 15% chance to trigger this event
+tag.npc_critic_dmg=15,20                     // dmg in between
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,animal)
+
+tag(resist_poison,680)
+tag.resist_para=<eval {400 550}>
+tag(resist_summon,350)
+tag(resist_bleed,100)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-100)
+tag(resist_pierce,50)
+tag(resist_blunt,-250)
+
+tag(resist_fire,400)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+Wrestling=150.0
+Fencing=200.0
+Parrying=150.0
+Resist=50.0
+SpiritSpeak=20.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_TROLL
+ITEM=i_gold
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+[CHARDEF 011]
+DEFNAME=c_orc
+NAME=Orc
+SOUND=snd_MONSTER_ORC1
+ICON=i_pet_ORC
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=22
+ARMOR=20
+MOVERATE=3
+
+RESOURCES=8 i_ribs_raw
+FOODTYPE=
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_looter
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Orc
+
+ON=@Create
+NAME=#NAMES_ORC
+NPC=brain_monster
+FAME=25
+KARMA=-3000
+
+STR=200
+DEX=90
+INT=50
+
+MAXHITS={250 350}
+MAXSTAM={90 100}
+MAXMANA=0
+
+tag.experience=<eval {12.0 15.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,60)
+
+tag(resist_poison,50)
+tag.resist_para=<eval {200 250}>
+tag(resist_summon,500)
+tag(resist_bleed,100)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-150)
+tag(resist_pierce,-50)
+tag(resist_blunt,0)
+
+tag(resist_fire,250)
+tag(resist_elect,50)
+tag(resist_cold,-150)
+
+Parrying={50.0 75.0}
+Wrestling={50.0 70.0}
+SpiritSpeak=20.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_ORC
+ITEM=i_gold
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+[CHARDEF c_orc_ranger]
+ID=c_orc
+NAME=Orc
+SOUND=snd_MONSTER_ORC1
+ICON=i_pet_ORC
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=15
+ARMOR=20
+MOVERATE=3
+
+RESOURCES=8 i_ribs_raw
+FOODTYPE=
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_looter
+TEVENTS=e_npc_sniper        //Prida dmg k utoku
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Orc
+
+ON=@Create
+NAME=#NAMES_ORC
+NPC=brain_monster
+FAME=25
+KARMA=-3000
+
+STR=200
+DEX=90
+INT=50
+
+MAXHITS={350 400}
+MAXSTAM={90 100}
+MAXMANA=0
+
+tag.experience=<eval {15.0 20.0}>
+
+tag.npc_sniper_chance=200                 //20%
+tag.npc_sniper_dmg=10                     //o 10 HP
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,60)
+
+tag(resist_poison,50)
+tag.resist_para=<eval {200 250}>
+tag(resist_summon,500)
+tag(resist_bleed,100)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-150)
+tag(resist_pierce,-50)
+tag(resist_blunt,0)
+
+tag(resist_fire,250)
+tag(resist_elect,50)
+tag(resist_cold,-150)
+
+Parrying={50.0 75.0}
+Archery={60.0 70.0}
+Wrestling={50.0 70.0}
+SpiritSpeak=20.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_bow
+ITEMNEWBIE=i_arrow,{50 75}
+
+ON=@NPCRestock
+ITEM=loot_ORC
+ITEM=i_gold
+
+/////////////////////////////////////////////
+[CHARDEF 029]
+DEFNAME=c_orc_club
+NAME=Orc
+SOUND=snd_MONSTER_ORC1
+ICON=i_pet_ORC
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=30
+ARMOR=20
+MOVERATE=3
+
+RESOURCES=8 i_ribs_raw
+FOODTYPE=
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_looter
+TEVENTS=e_npc_stun
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Orc {Club}
+
+ON=@Create
+NAME=#NAMES_ORC
+
+NPC=brain_monster
+FAME=0
+KARMA=-3000
+STR=200
+DEX=90
+INT=50
+
+MAXHITS={200 300}
+MAXSTAM={90 100}
+MAXMANA=0
+
+tag.experience=<eval 15.0 19.0}>
+
+tag.npc_stun_time=20                         // 2 seconds of stun
+Tag.npc_stun_chance=300                        //30%, defaultne 20%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,60)
+
+tag(resist_poison,50)
+tag.resist_para=<eval {200 250}>
+tag(resist_summon,500)
+tag(resist_bleed,100)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-150)
+tag(resist_pierce,-50)
+tag(resist_blunt,0)
+
+tag(resist_fire,250)
+tag(resist_elect,50)
+tag(resist_cold,-150)
+
+Macefighting={55.0 65.0}
+Parrying={50.0 75.0}
+Wrestling={50.0 70.0}
+SpiritSpeak=15.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_orc
+ITEM=i_gold
+
+//////////////////////////////////////////////
+[CHARDEF 07]
+DEFNAME=c_orc_lord
+NAME=Ork Lord
+SOUND=snd_MONSTER_ORC1
+ICON=i_pet_ORC
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=36
+ARMOR=25
+MOVERATE=3
+
+RESOURCES=8 i_ribs_raw
+FOODTYPE=
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_looter
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Ork Lord
+
+ON=@Create
+NAME=#NAMES_ORC
+
+NPC=brain_monster
+FAME=20
+KARMA=-3000
+STR=300
+DEX=160
+INT=50
+
+MAXHITS={1100 1200}
+MAXSTAM={150 160}
+MAXMANA=0
+
+tag.experience=<eval {35.0 40.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,50)
+
+tag(resist_poison,50)
+tag.resist_para=<eval {200 250}>
+tag(resist_summon,500)
+tag(resist_bleed,100)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-150)
+tag(resist_pierce,-50)
+tag(resist_blunt,0)
+
+tag(resist_fire,250)
+tag(resist_elect,50)
+tag(resist_cold,-150)
+
+Parrying={60.0 85.0}
+Swordsmanship={60.0 85.0}
+SpiritSpeak=15.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_axe_two_hand
+
+ON=@NPCRestock
+ITEM=loot_ORC
+ITEM=i_gem_diamond,{0 1}
+ITEM=i_gold
+
+
+////////////////////////////////////////////////////
+[CHARDEF c_orc_king]
+ID=c_orc_lord
+NAME=Ork Kral
+SOUND=snd_MONSTER_ORC1
+ICON=i_pet_ORC
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=55
+ARMOR=40
+MOVERATE=3
+
+RESOURCES=8 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+TEVENTS=e_npc_leaper
+TEVENTS=e_npc_critic
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Ork King
+
+ON=@Create
+NPC=brain_monster
+FAME=20
+KARMA=-3000
+
+STR=300
+DEX=220
+INT=50
+
+MAXHITS={2500 2900}
+MAXSTAM={250 260}
+MAXMANA=0
+
+tag.experience=<eval {55.0 60.0}>
+
+tag.npc_critic_chance=200               //20% chance
+tag.npc_critic_dmg=10,15                 //dmg in between
+
+tag.npc_port_timer=10
+tag.npc_port_distance=4
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,50)
+
+tag(resist_poison,50)
+tag.resist_para=<eval {400 500}>
+tag(resist_summon,500)
+tag(resist_bleed,100)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-150)
+tag(resist_pierce,-50)
+tag(resist_blunt,0)
+
+tag(resist_fire,250)
+tag(resist_elect,50)
+tag(resist_cold,-100)
+
+Parrying={80.0 95.0}
+Swordsmanship={80.0 95.0}
+Wrestling=110.0
+SpiritSpeak=20.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_axe_two_hand
+
+ON=@NPCRestock
+ITEM=loot_ORC
+ITEM=i_gold
+ITEM=i_gem_diamond,1
+
+
+////////////////////////////////////////////////////
+[CHARDEF c_orc_mage]
+ID=c_orc
+NAME=Ork mag
+SOUND=snd_MONSTER_ORC1
+ICON=i_pet_ORC
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP|MT_RUN
+
+ATTACK=30
+ARMOR=20
+MOVERATE=3
+
+RESOURCES=8 i_ribs_raw
+FOODTYPE=
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Ork Mage
+
+ON=@Create
+COLOR=colors_green
+NPC=brain_monster
+FAME=20
+KARMA=-3000
+
+STR=200
+DEX=150
+INT=70
+
+MAXHITS={800 850}
+MAXSTAM={100 110}
+MAXMANA=2000
+
+tag.experience=<eval {32.0 35.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,50)
+
+tag(resist_poison,150)
+tag.resist_para=<eval {400 500}>
+tag(resist_summon,500)
+tag(resist_bleed,100)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-150)
+tag(resist_pierce,-50)
+tag(resist_blunt,0)
+
+tag(resist_fire,250)
+tag(resist_elect,50)
+tag(resist_cold,-150)
+
+Parrying={60.0 85.0}
+Magery=80.0
+EI={40.0 55.0}
+Resist=100.0
+Wrestling=80.0
+SpiritSpeak=20.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_fireball
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_ORC
+ITEM=RANDOM_REAGENT,{10 20}
+ITEM=i_gold
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+[CHARDEF c_orc_moria]
+ID=c_orc
+NAME=Orc
+SOUND=snd_MONSTER_ORC1
+ICON=i_pet_ORC
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+ATTACK=55
+ARMOR=40
+MOVERATE=3
+RESOURCES=8 i_ribs_raw
+FOODTYPE=
+//=r_caves,r_dungeon,r_orc_camp
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+
+CATEGORY=Dungeony
+SUBSECTION=Moria
+DESCRIPTION=Orc Moria
+
+ON=@Create
+NAME=#NAMES_ORC
+COLOR=0539
+NPC=brain_monster
+FAME=20
+KARMA=-3000
+STR=200
+DEX=90
+INT=50
+
+MAXHITS={500 550}
+MAXSTAM={90 120}
+MAXMANA=0
+
+tag.experience=<eval {12.0 14.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,40)
+
+tag.resist_poison=50
+
+Parrying={50.0 75.0}
+Wrestling={50.0 70.0}
+SpiritSpeak=20.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_ORC
+ITEM=i_gold
+
+
+//////////////////////////////////////////////////////////////////////////////////////////////
+[CHARDEF c_orc_moria_straz]
+ID=c_orc
+NAME=Orc
+SOUND=snd_MONSTER_ORC1
+ICON=i_pet_ORC
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=65
+ARMOR=40
+MOVERATE=3
+
+RESOURCES=8 i_ribs_raw
+FOODTYPE=
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+
+CATEGORY=Dungeony
+SUBSECTION=Moria
+DESCRIPTION=Orc Moria - straz
+
+ON=@Create
+NAME=#NAMES_ORC
+COLOR=0539
+NPC=brain_monster
+FAME=0
+KARMA=-3000
+
+STR=200
+DEX=90
+INT=50
+
+MAXHITS={300 350}
+MAXSTAM={90 120}
+MAXMANA=0
+
+tag.experience=<eval {8.0 9.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,40)
+
+tag.resist_poison=50
+
+Parrying={50.0 75.0}
+Wrestling={50.0 70.0}
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_ORC
+ITEM=i_gold
+
+ON=@npcseenewplayer
+dorand 5
+  say("Skurta, napadli nas!")
+  say("Poplaaaach!")
+  say("Jsme prepadeni!")
+  say("Nemel si sem lezt. Ted zemres.")
+  say("Kdo ty? Ty nebyt skurta. Ty zemrit ted!")
+enddo
+
+////////////////////////////////////////////////////////////
+[CHARDEF c_orc_moria_f]
+ID=c_orc
+NAME=Orc
+SOUND=snd_MONSTER_ORC1
+ICON=i_pet_ORC
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=45
+ARMOR=40
+MOVERATE=3
+
+RESOURCES=8 i_ribs_raw
+FOODTYPE=
+//=r_caves,r_dungeon,r_orc_camp
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+
+CATEGORY=Dungeony
+SUBSECTION=Moria
+DESCRIPTION=Orc Moria - f
+
+ON=@Create
+NAME=#NAMES_ORC
+COLOR=0539
+NPC=brain_monster
+FAME=0
+KARMA=-3000
+
+STR=250
+DEX=90
+INT=50
+
+MAXHITS={400 550}
+MAXSTAM={90 120}
+MAXMANA=0
+
+tag.experience=<eval {8.0 9.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,40)
+
+tag.resist_poison=50
+
+Parrying={50.0 100.0}
+Wrestling={70.0 99.0}
+SpiritSpeak=15.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_ORC
+ITEM=i_gold
+ITEM=i_orc_skull
+
+
+/////////////////////////////////////////////////////////////////////////////////
+[CHARDEF c_orc_moria_a]
+ID=c_orc
+NAME=Orc
+SOUND=snd_MONSTER_ORC1
+ICON=i_pet_ORC
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+ATTACK=55
+ARMOR=60
+MOVERATE=3
+RESOURCES=8 i_ribs_raw
+FOODTYPE=
+//=r_caves,r_dungeon,r_orc_camp
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+
+CATEGORY=Dungeony
+SUBSECTION=Moria
+DESCRIPTION=Orc Moria - a
+
+ON=@Create
+NAME=#NAMES_ORC
+COLOR=0539
+NPC=brain_monster
+FAME=0
+KARMA=-3000
+STR=300
+DEX=140
+INT=50
+
+MAXHITS={600 750}
+MAXSTAM={140 170}
+MAXMANA=0
+
+tag.experience=<eval {8.0 9.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag(monstertype,humanoid,40)
+
+tag.resist_poison=50
+
+Parrying={50.0 100.0}
+Wrestling={70.0 99.0}
+SpiritSpeak=35.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_ORC
+ITEM=i_gold
+ITEM=i_orc_skull
+
+////////////////////////////////////////////////////
+[CHARDEF c_orc_moria_club]
+ID=c_orc_club
+NAME=Orc
+SOUND=snd_MONSTER_ORC1
+ICON=i_pet_ORC
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+ATTACK=60
+ARMOR=30
+MOVERATE=3
+RESOURCES=8 i_ribs_raw
+FOODTYPE=
+//=r_caves,r_dungeon,r_orc_camp
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+
+CATEGORY=Dungeony
+SUBSECTION=Moria
+DESCRIPTION=Orc {Club}
+
+ON=@Create
+NAME=#NAMES_ORC
+NPC=brain_monster
+FAME=0
+KARMA=-3000
+STR=200
+DEX=90
+INT=50
+MAXHITS={400 550}
+MAXSTAM={90 120}
+MAXMANA=0
+
+tag.experience=<eval {8.0 9.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,40)
+
+tag.resist_poison=50
+
+Macefighting={55.0 65.0}
+Parrying={50.0 75.0}
+Wrestling={50.0 70.0}
+SpiritSpeak=20.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_orc
+ITEM=i_gold
+
+
+///////////////////////////////////////////////////////////////////////////////
+[CHARDEF c_morijsky_skurut]
+ID=c_ogre
+NAME=Orc
+SOUND=snd_MONSTER_OGRE1
+ICON=i_pet_OGRE
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_RUN|MT_FIRE_IMMUNE
+ATTACK=70
+ARMOR=95
+MOVERATE=3
+RESDISPUP=01
+RESLEVEL=0
+RESOURCES=6 i_ribs_raw
+FOODTYPE=
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Dungeony
+SUBSECTION=Moria
+DESCRIPTION=Morijsky skurut
+
+ON=@Create
+NAME=#NAMES_OGRE
+Title=Morijsky Skurut
+NPC=brain_monster
+FAME=4500
+KARMA={-1000 -1999}
+STR=700
+DEX=300
+INT=60
+
+MAXHITS={1000 1350}
+MAXSTAM={300 360}
+MAXMANA=0
+
+tag.experience=<eval {40.0 50.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,40)
+
+tag.resist_poison=100
+
+Parrying={100.0 120.0}
+Archery={45.0 85.0}
+Wrestling={70.0 80.0}
+SpiritSpeak=45.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+/////////////////////////////////////////////////////////////////////////////
+[CHARDEF c_moria_jeskyni_obr]
+ID=c_ogre
+
+NAME=Morijsky jeskynni obr
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+CAN=MT_WALK|mt_run|mt_equip|MT_USEHANDS
+
+ATTACK=100
+ARMOR=145
+MOVERATE=3
+
+RESOURCES=8 t_magic, 1 i_srdce_obra
+FOODTYPE=
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Dungeony
+SUBSECTION=Moria
+DESCRIPTION=Morijsky jeskynni obr
+
+ON=@Create
+COLOR=0539
+NPC=brain_monster
+FAME=1
+KARMA=-3000
+
+STR=1900
+DEX=70
+INT=300
+
+MAXHITS={6000 7550}
+MAXSTAM={300 360}
+MAXMANA=0
+
+tag.experience=<eval {100.0 130.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot> dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+
+tag(monstertype,humanoid,40)
+
+tag.resist_poison=250
+
+Wrestling=110.0
+SpiritSpeak=60.0
+
+Archery={90.0 100.0} 
+
+ITEMnewbie=i_monster_create
+ITEMnewbie=i_bow_rock
+
+ON=@NPCRestock
+ITEM=i_gold
+
+[EOF]

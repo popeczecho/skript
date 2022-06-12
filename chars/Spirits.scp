@@ -1,0 +1,1235 @@
+//////////////////////////////////////////////////////////
+/////////////////// SPIRITS SPECIAL///////////////////////
+//////////////////////////////////////////////////////////
+
+[CHARDEF c_spirit_blood]
+ID=c_wisp
+NAME=Blood Spirit
+
+ATTACK=45
+ARMOR=35
+
+CAN=MT_WALK|MT_FIRE_IMMUNE|MT_USEHANDS
+FOODTYPE=t_spell
+RESOURCES=t_magic
+
+CATEGORY=Dungeony
+SUBSECTION=Etheria
+DESCRIPTION=Blood spirit
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_npc_infiniteMana
+
+ON=@Create
+NPC=brain_animal
+FAME=2000
+KARMA=-5000
+COLOR=098c
+
+STR=1000
+DEX=200
+INT=400
+
+MAXHITS={5000 5500}
+MAXSTAM={175 250}
+MAXMANA=1000
+
+tag.experience=<eval {160.0 180.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(resist_poison,-500)
+tag.resist_para=<eval {650 750}>
+tag(resist_summon,500)
+tag(resist_bleed,-400)
+
+tag(resist_sharp,150)
+tag(resist_slash,150)
+tag(resist_pierce,-150)
+tag(resist_blunt,-150)
+
+tag(resist_fire,250)
+tag(resist_elect,-400)
+tag(resist_cold,-200)
+
+//tag(resist_phys,0)
+//tag(resist_magic,0)
+//tag(resist_acid,0)
+
+//typ monstra
+tag(monstertype,spirit,60)
+
+EI=90.0
+Magery=110.0
+Resist=250.0
+Wrestling=100.0
+SpiritSpeak=50.0
+
+ITEMNEWBIE=i_light_source
+ATTR=attr_magic|attr_newbie
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_lightning
+ADDSPELL=s_paralyze
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{10 15}
+
+///////////////////////////////////////
+
+[CHARDEF c_spirit_water]
+ID=c_wisp
+NAME=Water Spirit
+
+ATTACK=45
+ARMOR=30
+
+CAN=MT_WALK|MT_FIRE_IMMUNE|MT_USEHANDS
+FOODTYPE=t_spell
+RESOURCES=t_magic
+
+CATEGORY=Dungeony
+SUBSECTION=Etheria
+DESCRIPTION=Water spirit
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_npc_infiniteMana
+
+ON=@Create
+NPC=brain_animal
+FAME=110
+KARMA=-1000
+COLOR=color_o_valorite
+
+STR=1000
+DEX=150
+INT=400
+
+MAXHITS={5000 5500}
+MAXSTAM={125 170}
+MAXMANA=1000
+
+tag.experience=<eval {160.0 200.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(resist_poison,250)
+tag.resist_para=<eval {650 750}>
+tag(resist_summon,500)
+tag(resist_bleed,-300)
+
+tag(resist_sharp,4150)
+tag(resist_slash,150)
+tag(resist_pierce,-150)
+tag(resist_blunt,-150)
+
+tag(resist_fire,750)
+tag(resist_elect,-400)
+tag(resist_cold,-600)
+
+//tag(resist_phys,0)
+//tag(resist_magic,0)
+//tag(resist_acid,0)
+
+//typ monstra
+tag(monstertype,spirit,60)
+
+EI=90.0
+Magery=100.0
+Resist=250.0
+Wrestling=100.0
+SpiritSpeak=60.0
+
+ITEMNEWBIE=i_light_source
+ATTR=attr_magic|attr_newbie
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_lightning
+ADDSPELL=s_paralyze
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{15 25}
+
+///////////////////////////////////////////////////////////
+////////////////// SPIRITS ////////////////////////////////
+///////////////////////////////////////////////////////////
+
+[CHARDEF 03a]
+DEFNAME=c_wisp
+NAME=Wisp
+SOUND=snd_MONSTER_WISP1
+ICON=i_pet_WISP
+ANIM=078c7f
+CAN=MT_WALK|MT_FIRE_IMMUNE|MT_USEHANDS
+
+ATTACK=18
+ARMOR=20
+MOVERATE=4
+
+RESOURCES=t_magic
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Spiriti
+DESCRIPTION=Wisp
+
+ON=@Create
+NPC=brain_animal
+FAME=10
+KARMA=-2000
+
+STR=400
+DEX=100
+INT=80
+
+MAXHITS={550 600}
+MAXSTAM={125 150}
+MAXMANA=300
+
+tag.experience=<eval {28.0 32.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//typ monstra
+tag(monstertype,spirit,80)
+
+
+tag.weapflag=dam_physical
+
+//other resists
+tag(resist_poison,1000)            //ducha neotravis
+tag.resist_para=<eval {200 350}>
+tag(resist_summon,250)
+tag(resist_bleed,500)              //spirit vetsinou nekrvaci
+
+//weap resists
+tag(resist_sharp,400)        //odolnost na mece
+tag(resist_slash,300)        //sekyry
+tag(resist_pierce,100)        //sipky nic moc
+tag(resist_blunt,-150)       //na spirity hodne drtivymi zbranemi
+
+//magic resists
+tag(resist_fire,600)
+tag(resist_elect,-300)       //zranitelnost energii
+tag(resist_cold,-150)
+
+Parrying=55.0
+Magery=70.0
+Resist=100.0
+Tactics=80.0
+Wrestling=80.0
+EI=50.0
+SpiritSpeak=15.0
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_fireball
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT_NECRO,{7 11}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_spirit_copper]
+ID=c_wisp
+NAME=Copper Spirit
+SOUND=snd_MONSTER_WISP1
+ICON=i_pet_wisp
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=35
+ARMOR=10
+MOVERATE=4
+
+RESOURCES=t_magic
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_spirit
+TEVENTS=e_npc_infiniteMana
+
+CATEGORY=Monsters
+SUBSECTION=Spiriti
+DESCRIPTION=Copper Spirit
+
+ON=@Create
+COLOR=color_o_copper
+NPC=brain_monster
+FAME=125
+KARMA=-1000
+
+STR=500
+DEX=200
+INT=100
+
+MAXHITS={1100 1150}
+MAXSTAM={125 150}
+MAXMANA=1000
+
+tag.experience=<eval {75.0 80.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,1000)     //ducha neotravis
+tag.resist_para=<eval {350 500}>
+tag(resist_summon,550)
+tag(resist_bleed,500)       //spirit vetsinou nekrvaci
+
+//weap resists
+tag(resist_sharp,500)        //odolnost na mece
+tag(resist_slash,400)        //sekyry
+tag(resist_pierce,150)        //sipky nic moc
+tag(resist_blunt,-150)       //na spirity hodne drtivymi zbranemi
+
+//magic resists
+tag(resist_fire,600)
+tag(resist_elect,-300)       //zranitelnost energii
+tag(resist_cold,-150)
+
+//typ monstra
+tag(monstertype,spirit,80)
+
+//weap flags
+tag.weapflag=dam_lightning|dam_magic
+
+Parrying={55.0 65.0}
+EI=70.0
+Magery=70.0
+Resist=100.0
+Wrestling=70.0
+SpiritSpeak=15.0
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_fireball
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{20 25}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_spirit_iron]
+ID=c_wisp
+NAME=Iron Spirit
+SOUND=snd_MONSTER_WISP1
+ICON=i_pet_wisp
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=40
+ARMOR=10
+MOVERATE=4
+
+RESOURCES=t_magic
+FOODTYPE=t_spell
+//=r_swamp,r_jungle,r_forests
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_spirit
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_npc_curse           //vsechny viditelne zrani o dmg
+
+CATEGORY=Monsters
+SUBSECTION=Spiriti
+DESCRIPTION=Iron Spirit
+
+ON=@Create
+COLOR=color_o_iron
+NPC=brain_monster
+FAME=125
+KARMA=-5000
+
+STR=1300
+DEX=200
+INT=140
+
+MAXHITS={1200 1300}
+MAXSTAM={125 150}
+MAXMANA=1000
+
+tag.experience=<eval {90.0 95.0}>
+
+tag.npc_curse_chance=50                // 5% chance to trigger this event
+tag.npc_curse_delay=20,25              // delay between another possible strike
+tag.npc_curse_dmg=20,25                // dmg
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,1000)     //ducha neotravis
+tag.resist_para=<eval {400 550}>
+tag(resist_summon,650)      //indivindi podle monstra
+tag(resist_bleed,500)       //spirit vetsinou nekrvaci
+
+//weap resists
+tag(resist_sharp,400)        //odolnost na mece
+tag(resist_slash,350)        //sekyry
+tag(resist_pierce,150)        //sipky nic moc
+tag(resist_blunt,-150)       //na spirity hodne drtivymi zbranemi
+
+//magic resists
+tag(resist_fire,600)
+tag(resist_elect,-300)       //zranitelnost energii
+tag(resist_cold,-100)
+
+//typ monstra
+tag(monstertype,spirit,80)
+
+//weap flags
+tag.weapflag=dam_lightning|dam_magic
+
+Parrying={55.0 65.0}
+EI=80.0
+Magery=90.0
+Resist=100.0
+Wrestling=80.0
+SpiritSpeak=20.0
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_fireball
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{25 35}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_spirit_silver]
+ID=c_wisp
+NAME=Silver Spirit
+SOUND=snd_MONSTER_WISP1
+ICON=i_pet_wisp
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=45
+ARMOR=25
+MOVERATE=4
+
+RESOURCES=t_magic
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_spirit
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_npc_curse        //vsechny viditelne zrani o dmg
+
+CATEGORY=Monsters
+SUBSECTION=Spiriti
+DESCRIPTION=Silver Spirit
+
+ON=@Create
+COLOR=color_o_silver
+NPC=brain_monster
+FAME=125
+KARMA=-5000
+
+STR=2000
+DEX=200
+INT=180
+
+MAXHITS={2050 2100}
+MAXSTAM={125 150}
+MAXMANA=1000
+
+tag.experience=<eval {140.0 150.0}>
+
+tag.npc_curse_chance=50                // 5% chance to trigger this event
+tag.npc_curse_delay=20,25              // delay between another possible strike
+tag.npc_curse_dmg=25,30                // dmg
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,1000)      //ducha neotravis
+tag.resist_para=<eval {500 650}>
+tag(resist_summon,650)       //indivindi podle monstra
+tag(resist_bleed,500)        //spirit vetsinou nekrvaci
+
+//weap resists
+tag(resist_sharp,300)        //odolnost na mece
+tag(resist_slash,300)        //sekyry
+tag(resist_pierce,150)        //sipky nic moc
+tag(resist_blunt,-200)       //na spirity hodne drtivymi zbranemi
+
+//magic resists
+tag(resist_fire,600)
+tag(resist_elect,-450)       //zranitelnost energii
+tag(resist_cold,-100)
+
+//typ monstra
+tag(monstertype,spirit,80)
+//weap flags
+tag.weapflag=dam_lightning|dam_magic
+
+Parrying={55.0 65.0}
+EI=90.0
+Magery=100.0
+Resist=90.0
+Wrestling=100.0
+SpiritSpeak=25.0
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{25 40}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_spirit_gold]
+ID=c_wisp
+NAME=Gold Spirit
+SOUND=snd_MONSTER_WISP1
+ICON=i_pet_wisp
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=50
+ARMOR=35
+MOVERATE=4
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_spirit
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_npc_curse              //vsechny viditelne zrani o dmg
+
+CATEGORY=Monsters
+SUBSECTION=Spiriti
+DESCRIPTION=Wisp
+
+ON=@Create
+COLOR=color_o_gold
+NPC=brain_monster
+FAME=125
+KARMA=-5000
+
+STR=2500
+DEX=200
+INT=220
+
+MAXHITS={2750 3000}
+MAXSTAM={125 150}
+MAXMANA=1000
+
+tag.experience=<eval {175.0 185.0}>
+
+tag.npc_curse_chance=50                // 5% chance to trigger this event
+tag.npc_curse_delay=20,25              // delay between another possible strike
+tag.npc_curse_dmg=25,30                // dmg
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,1000)    //ducha neotravis
+tag.resist_para=<eval {500 650}>
+tag(resist_summon,650)     //indivindi podle monstra
+tag(resist_bleed,500)      //spirit vetsinou nekrvaci
+
+//weap resists
+tag(resist_sharp,150)        //odolnost na mece
+tag(resist_slash,350)        //sekyry
+tag(resist_pierce,150)        //sipky nic moc
+tag(resist_blunt,-100)       //na spirity hodne drtivymi zbranemi
+
+//magic resists
+tag(resist_fire,600)
+tag(resist_elect,-450)       //zranitelnost energii
+tag(resist_cold,-100)
+
+//typ monstra
+tag(monstertype,spirit,80)
+
+//weap flags
+tag.weapflag=dam_lightning|dam_magic
+
+Parrying={55.0 65.0}
+EI=100.0
+Magery=120.0
+Resist=100.0
+Wrestling=90.0
+SpiritSpeak=35.0
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{25 40}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_spirit_verite]
+ID=c_wisp
+NAME=Verite Spirit
+SOUND=snd_MONSTER_WISP1
+ICON=i_pet_wisp
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=55
+ARMOR=40
+MOVERATE=4
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_spirit
+TEVENTS=e_npc_infiniteMana
+//TEVENTS=e_summoneater                //smaze summona, co zasahne
+TEVENTS=e_npc_curse                    //vsechny viditelne zrani o dmg
+
+CATEGORY=Monsters
+SUBSECTION=Spiriti
+DESCRIPTION=Spirit Verite
+
+ON=@Create
+COLOR=color_o_verite
+NPC=brain_monster
+FAME=125
+KARMA=-5000
+
+STR=3000
+DEX=200
+INT=260
+
+MAXHITS={7750 8000}
+MAXSTAM={115 190}
+MAXMANA=1000
+
+tag.experience=<eval {240.0 250.0}>
+
+tag.npc_curse_chance=50                // 5% chance to trigger this event
+tag.npc_curse_delay=15,20              // delay between another possible strike
+tag.npc_curse_dmg=30,35                // dmg
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//other resists
+tag(resist_poison,1000)    //ducha neotravis
+tag.resist_para=<eval {600 750}>
+tag(resist_summon,850)     //indivindi podle monstra
+tag(resist_bleed,450)      //spirit vetsinou nekrvaci
+
+//weap resists
+tag(resist_sharp,400)        //odolnost na mece
+tag(resist_slash,500)        //sekyry
+tag(resist_pierce,200)        //sipky nic moc
+tag(resist_blunt,-150)       //na spirity hodne drtivymi zbranemi
+
+//magic resists
+tag(resist_fire,600)
+tag(resist_elect,-400)       //zranitelnost energii
+tag(resist_cold,-100)
+
+//typ monstra
+tag(monstertype,spirit,80)
+//weap flags
+tag.weapflag=dam_lightning|dam_magic
+
+Parrying={55.0 65.0}
+EI=110.0
+Magery=120.0
+Resist=130.0
+Wrestling=110.0
+SpiritSpeak=45.0
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{30 55}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_spirit_valorite]
+ID=c_wisp
+NAME=Valorite Spirit
+SOUND=snd_MONSTER_WISP1
+ICON=i_pet_wisp
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=60
+ARMOR=50
+MOVERATE=4
+
+RESOURCES=t_magic
+FOODTYPE=t_spell
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_spirit
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_summoneater              //smaze summona, co zasahne
+TEVENTS=e_npc_curse                //vsechny viditelne zrani o dmg
+TEVENTS=e_summonhater
+
+CATEGORY=Monsters
+SUBSECTION=Spiriti
+DESCRIPTION=Spirit Valorite
+
+ON=@Create
+COLOR=color_o_valorite
+NPC=brain_monster
+FAME=125
+KARMA=-5000
+
+STR=4000
+DEX=200
+INT=300
+
+MAXHITS={13500 13900}
+MAXSTAM={155 190}
+MAXMANA=1000
+
+tag.experience=<eval {300.0 320.0}>
+
+tag.npc_curse_chance=50            // 5% chance to trigger this event
+tag.npc_curse_delay=15,20          // delay between another possible strike
+tag.npc_curse_dmg=35,40            // dmg
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,1000)          //ducha neotravis
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,800)           //indivindi podle monstra
+tag(resist_bleed,500)            //spirit vetsinou nekrvaci
+
+//weap resists
+tag(resist_sharp,350)            //odolnost na mece
+tag(resist_slash,550)            //sekyry
+tag(resist_pierce,300)           //sipky nic moc
+tag(resist_blunt,00)            //na spirity hodne drtivymi zbranemi
+
+//magic resists
+tag(resist_fire,600)
+tag(resist_elect,-200)       //zranitelnost energii
+tag(resist_cold,-50)
+
+//typ monstra
+tag(monstertype,spirit,60)
+
+//weap flags
+tag.weapflag=dam_lightning|dam_magic
+
+EI=120.0
+Magery=120.0
+Resist=145.0
+Wrestling=120.0
+SpiritSpeak=55.0
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_lightning
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{50 75}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_spirit_obsidian]
+ID=c_wisp
+NAME=Obsidian Spirit
+SOUND=snd_MONSTER_WISP1
+ICON=i_pet_wisp
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=65
+ARMOR=55
+MOVERATE=4
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_spirit
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_summoneater                         //smaze summona, co zasahne
+TEVENTS=e_npc_curse                           //vsechny viditelne zrani o dmg
+TEVENTS=e_summonhater
+
+CATEGORY=Monsters
+SUBSECTION=Spiriti
+DESCRIPTION=Spirit Obsidian
+
+ON=@Create
+COLOR=color_o_obsidian
+NPC=brain_monster
+FAME=125
+KARMA=-5000
+
+STR=5000
+DEX=200
+INT=340
+
+MAXHITS={15500 15900}
+MAXSTAM={175 250}
+MAXMANA=1500
+
+tag.experience=<eval {400.0 450.0}>
+
+tag.npc_curse_chance=100                // 10% chance to trigger this event
+tag.npc_curse_delay=15,20               // delay between another possible strike
+tag.npc_curse_dmg=40,50                 // dmg
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,1000)          //ducha neotravis
+tag.resist_para=<eval {800 950}>
+tag(resist_summon,900)
+tag(resist_bleed,500)           //spirit vetsinou nekrvaci
+
+//weap resists
+tag(resist_sharp,400)        //odolnost na mece
+tag(resist_slash,550)        //sekyry
+tag(resist_pierce,300)       //sipky nic moc
+tag(resist_blunt,-50)        // na spirity hodne drtivymi zbranemi
+
+//magic resists
+tag(resist_fire,800)
+tag(resist_elect,-50)
+tag(resist_cold,150)
+
+//typ monstra
+tag(monstertype,spirit,60)
+//weap flags
+tag.weapflag=dam_lightning|dam_magic
+
+EI=130.0
+Magery=120.0
+Resist=150.0
+Wrestling=120.0
+SpiritSpeak=75.0
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_lightning
+ADDSPELL=s_magic_reflection
+//addspell=s_paralyze
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{50 75}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_spirit_adamantinum]
+ID=c_wisp
+NAME=Adamantinum Spirit
+SOUND=snd_MONSTER_WISP1
+ICON=i_pet_wisp
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=75
+ARMOR=60
+MOVERATE=4
+
+RESOURCES=t_magic
+FOODTYPE=t_spell
+//=r_swamp,r_jungle,r_forests
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_spirit
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_summoneater                         //smaze summona, co zasahne
+TEVENTS=e_parakrik
+TEVENTS=e_explode
+TEVENTS=e_explosiondispell
+TEVENTS=e_phoenix_fire
+TEVENTS=e_summonhater
+
+CATEGORY=Monsters
+SUBSECTION=Spiriti
+DESCRIPTION=Spirit Adamantinum
+
+ON=@Create
+COLOR=color_o_adamantinum
+NPC=brain_monster
+FAME=125
+KARMA=-5000
+
+STR=5000
+DEX=250
+INT=380
+
+MAXHITS={19000 20000}
+MAXSTAM={225 275}
+MAXMANA=1000
+
+tag.experience=<eval {650.0 700.0}>
+
+tag(e_explosiondispell_chance,50) //5% chance
+tag(e_explosiondispell_range,6)
+tag(e_explosiondispell_time,30)
+
+Tag.explode_dmg=40
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+//other resists
+tag(resist_poison,1000)    //ducha neotravis
+tag.resist_para=<eval {880 970}>
+tag(resist_summon,950)
+tag(resist_bleed,500)     //spirit vetsinou nekrvaci
+
+//weap resists
+tag(resist_sharp,400)        //odolnost na mece
+tag(resist_slash,550)        //sekyry
+tag(resist_pierce,300)       //sipky nic moc
+tag(resist_blunt,50)        // na spirity hodne drtivymi zbranemi
+
+//magic resists
+tag(resist_fire,900)
+tag(resist_elect,-50)
+tag(resist_cold,150)
+
+//typ monstra
+tag(monstertype,spirit,40)
+
+//weap flags
+tag.weapflag=dam_lightning|dam_magic
+
+EI=108.0
+Magery=120.0
+Resist=155.0
+Wrestling=120.0
+SpiritSpeak=100.0
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_lightning
+ADDSPELL=s_explosion
+ADDSPELL=s_energy_bolt
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{50 75}
+ITEM=random_reagent,{30 40}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_spirit_mithril]
+ID=c_wisp
+NAME=Mithril Spirit
+SOUND=snd_MONSTER_WISP1
+ICON=i_pet_wisp
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=85
+ARMOR=80
+MOVERATE=4
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_spirit
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_summoneater                         //smaze summona, co zasahne
+TEVENTS=e_parakrik
+TEVENTS=e_explode
+TEVENTS=e_phoenix_fire
+TEVENTS=e_explosiondispell
+TEVENTS=e_summonhater
+
+CATEGORY=Monsters
+SUBSECTION=Spiriti
+DESCRIPTION=Spirit Mitril
+
+ON=@Create
+COLOR=color_o_mithril
+NPC=brain_monster
+FAME=125
+KARMA=-5000
+
+STR=7000
+DEX=300
+INT=450
+
+MAXHITS={30500 30900}
+MAXSTAM={250 340}
+MAXMANA=2000
+
+tag.experience=<eval {990.0 1000.0}>
+
+Tag.explode_dmg=50
+
+tag(e_explosiondispell_chance,100) //10% chance
+tag(e_explosiondispell_range,6)
+tag(e_explosiondispell_time,30)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[8]>
+
+//other resists
+tag(resist_poison,1000)     //ducha neotravis
+tag(resist_para,1000)       //indivindi podle monstra - vetsinou immune
+tag(resist_summon,1000)     //indivindi podle monstra
+tag(resist_bleed,500)      //spirit vetsinou nekrvaci
+
+//weap resists
+tag(resist_sharp,350)        //odolnost na mece
+tag(resist_slash,500)        //sekyry
+tag(resist_pierce,300)       //sipky nic moc
+tag(resist_blunt,00)        // na spirity hodne drtivymi zbranemi
+
+//magic resists
+tag(resist_fire,900)
+tag(resist_elect,-50)
+tag(resist_cold,150)
+
+//typ monstra
+tag(monstertype,spirit,40)
+
+//weap flags
+tag.weapflag=dam_lightning|dam_magic
+
+EI=110.0
+Magery=120.0
+Resist=200.0
+Wrestling=150.0
+SpiritSpeak=200.0
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_explosion
+ADDSPELL=s_lightning
+ADDSPELL=s_energy_bolt
+ADDSPELL=s_summon_elem_air
+ADDSPELL=s_summon_elem_fire
+ADDSPELL=s_magic_reflection
+//addspell=s_summon_elem_earth
+//addspell=s_summon_elem_water
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{50 75}
+ITEM=random_reagent,{50 75}
+
+////////////////////////
+[CHARDEF c_spirit_illusionist]
+ID=c_wisp
+NAME=Illusionist Spirit
+SOUND=snd_MONSTER_WISP1
+ICON=i_pet_wisp
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=80
+ARMOR=80
+MOVERATE=4
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_illusionist
+TEVENTS=e_spirit
+TEVENTS=e_npc_infiniteMana
+
+CATEGORY=Monsters
+SUBSECTION=Spiriti
+DESCRIPTION=Spirit Illusionist
+
+ON=@Create
+COLOR=098c
+NPC=brain_monster
+FAME=125
+KARMA=-5000
+
+STR=7000
+DEX=200
+INT=450
+
+MAXHITS={7000 8000}
+MAXSTAM={50 90}
+MAXMANA=1500
+
+tag.experience=<eval {400.0 450.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,800)
+tag(resist_summon,1000)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,500) //
+tag(resist_slash,500) //
+tag(resist_pierce,500) //sipky nic moc
+tag(resist_blunt,-300) // na spirity hodne drtivymi zbranemi
+
+//magic resists
+tag(resist_fire,300) // spiriti jsou zranitelni magii ale ne electem
+tag(resist_elect,800)
+tag(resist_cold,-300)
+
+//typ monstra
+tag(monstertype,spirit)
+
+//weap flags
+tag.weapflag=dam_lightning|dam_magic
+
+EI=120.0
+Magery=120.0
+Resist=200.0
+Wrestling=200.0
+SpiritSpeak=105.0
+
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_explosion
+ADDSPELL=s_summon_elem_air
+ADDSPELL=s_summon_elem_earth
+ADDSPELL=s_summon_elem_fire
+ADDSPELL=s_lightning
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{30 50}
+
+[EOF]

@@ -1,0 +1,1834 @@
+
+[CHARDEF c_guldur_zombie_poison]
+ID=c_zombie
+NAME=Runner
+SOUND=snd_MONSTER_GHOST1
+ICON=i_pet_ZOMBIE
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=20
+ARMOR=20
+MOVERATE=3
+
+RESOURCES=7 t_eerie_stuff
+BLOODCOLOR=colors_green
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_selfreser
+TEVENTS=e_undead
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Zombie Poison
+
+ON=@Create
+COLOR=02C1
+NPC=brain_monster
+FAME=50
+KARMA=-5000
+
+STR=400
+DEX=1000
+INT=20
+
+MAXHITS={1000 1400}
+MAXSTAM=40
+MAXMANA=0
+
+tag.experience=<eval {40.0 45.0}>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=360
+tag(resist_summon,150)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,-150)
+tag(resist_slash,50)
+tag(resist_pierce,-100)
+tag(resist_blunt,400)
+
+//magic resists
+tag(resist_fire,-200)
+tag(resist_elect,200)
+tag(resist_cold,1000)
+
+tag(monstertype,undead,50)
+tag(monstertype2,humanoid,50)
+
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resstimer,<eval {70 90}>)
+
+Parrying={85.0 90.0}
+Tactics={85.0 90.0}
+Wrestling={80.0 110.0}
+SpiritSpeak=30.0
+Poisoning={120.0 170.0}
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_undead_body
+ITEM=random_reagent_necro,{10 15}
+ITEM=i_gold
+ITEM=i_guldur_mince,1
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_guldur_zombie_fighter]
+ID=c_zombie
+NAME=Runner
+SOUND=snd_MONSTER_GHOST1
+ICON=i_pet_ZOMBIE
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=35
+ARMOR=25
+MOVERATE=3
+
+RESOURCES=7 t_eerie_stuff
+BLOODCOLOR=colors_green
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_selfreser
+TEVENTS=e_speed_porting
+TEVENTS=e_npc_bleed
+TEVENTS=e_undead
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Zombie Fighter
+
+ON=@Create
+COLOR=0998
+NPC=brain_monster
+FAME=50
+KARMA=-5000
+
+STR=400
+DEX=1000
+INT=20
+
+MAXHITS={1500 2000}
+MAXSTAM=40
+MAXMANA=0
+
+tag.experience=<eval {50.0 55.0}>
+
+tag.npc_bleed=300 //30.0%
+
+tag(speedPorting_timer)=4
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=360
+tag(resist_summon,150)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,-150)
+tag(resist_slash,50)
+tag(resist_pierce,-100)
+tag(resist_blunt,400)
+
+//magic resists
+tag(resist_fire,-200)
+tag(resist_elect,200)
+tag(resist_cold,1000)
+
+tag(monstertype,undead,50)
+tag(monstertype2,humanoid,50)
+
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resstimer,<eval {70 90}>)
+
+Parrying={85.0 90.0}
+Tactics={85.0 90.0}
+Wrestling={80.0 110.0}
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_undead_body
+ITEM=random_reagent_necro,{20 25}
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_guldur_zombie_evil]
+ID=c_zombie
+NAME=Runner
+SOUND=snd_MONSTER_GHOST1
+ICON=i_pet_ZOMBIE
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=45
+ARMOR=30
+MOVERATE=4
+
+RESOURCES=7 t_eerie_stuff
+BLOODCOLOR=colors_green
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_acid_spit_single
+TEVENTS=e_selfreser
+TEVENTS=e_undead
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Zombie Evil
+
+ON=@Create
+COLOR=07D6
+NPC=brain_monster
+FAME=50
+KARMA=-5000
+
+STR=400
+DEX=1000
+INT=20
+
+MAXHITS={1600 2200}
+MAXSTAM=40
+MAXMANA=0
+
+tag.experience=<eval {55.0 60.0}>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=360
+tag(resist_summon,150)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,-150)
+tag(resist_slash,50)
+tag(resist_pierce,-100)
+tag(resist_blunt,400)
+
+//magic resists
+tag(resist_fire,-200)
+tag(resist_elect,200)
+tag(resist_cold,1000)
+
+tag(monstertype,undead,50)
+tag(monstertype2,humanoid,50)
+
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resstimer,<eval {70 90}>)
+
+Parrying={85.0 90.0}
+Tactics={85.0 90.0}
+Wrestling={80.0 110.0}
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_undead_body
+ITEM=random_reagent_necro,{15 25}
+ITEM=i_gold
+ITEM=i_guldur_mince,1
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_guldur_zombie_clicker]
+ID=c_gladiator
+NAME=Clicker
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN
+
+ATTACK=40
+ARMOR=60
+MOVERATE=4
+
+RESOURCES=20 i_ribs_raw
+BLOODCOLOR=colors_green
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_npc_detect
+TEVENTS=e_npc_leaper
+TEVENTS=e_summoneater
+TEVENTS=e_npc_stun
+TEVENTS=e_acid_curse
+TEVENTS=e_selfreser
+TEVENTS=e_undead
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Zombie Clicker
+
+ON=@Create
+COLOR=0455
+NPC=brain_monster
+FAME=50
+KARMA=-5000
+
+STR=400
+DEX=600
+INT=20
+
+MAXHITS={3200 3800}
+MAXSTAM=40
+MAXMANA=0
+
+tag.experience=<eval {60.0 65.0}>
+
+tag(acid_curse_chance,15) //sance na procnuti - 15% default
+tag(acid_curse_timer,30) // za jak dlouho muze event procnout znovu - 30 sec default
+tag(acid_curse_dps,10) // kolik to da za tik - 10 dmg default
+tag(acid_curse_count,4) // kousnuti probiha kazdou druhou vterinu - 4x default na 12 poli
+
+tag.npc_stun_delay=15 //1.5 seconds delay in between 2 possible stuns
+
+tag(npc_port_distance,6)
+
+tag.weapflag=dam_physical
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=360
+tag(resist_summon,150)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,300)
+tag(resist_slash,250)
+tag(resist_pierce,300)
+tag(resist_blunt,-150)
+
+//magic resists
+tag(resist_fire,100)
+tag(resist_elect,300)
+tag(resist_cold,1000)
+
+tag(monstertype,undead,50)
+tag(monstertype2,humanoid,50)
+
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resstimer,<eval {70 90}>)
+
+Parrying={85.0 90.0}
+Tactics={90.0 100.0}
+Wrestling={100.0 130.0}
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=random_reagent{20 25}
+ITEM=i_gold
+ITEM=i_guldur_mince,1
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_guldur_zombie_stalker]
+ID=c_zombie
+NAME=Stalker
+SOUND=snd_MONSTER_GHOST1
+ICON=i_pet_ZOMBIE
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=35
+ARMOR=60
+MOVERATE=5
+
+RESOURCES=7 t_eerie_stuff
+BLOODCOLOR=colors_green
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_summoneater
+TEVENTS=e_backstub
+TEVENTS=e_selfreser
+TEVENTS=e_undead
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Zombie Stalker
+
+ON=@Create
+COLOR=0455
+NPC=brain_monster
+FAME=50
+KARMA=-5000
+
+STR=600
+DEX=600
+INT=20
+
+MAXHITS={2100 2500}
+MAXSTAM=40
+MAXMANA=0
+
+tag.experience=<eval {70.0 75.0}>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=360
+tag(resist_summon,150)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,-150)
+tag(resist_slash,50)
+tag(resist_pierce,-100)
+tag(resist_blunt,300)
+
+//magic resists
+tag(resist_fire,-200)
+tag(resist_elect,200)
+tag(resist_cold,1000)
+
+tag(monstertype,undead,50)
+tag(monstertype2,humanoid,50)
+
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resstimer,<eval {70 90}>)
+
+Parrying={85.0 90.0}
+Tactics={85.0 90.0}
+Wrestling={120.0 140.0}
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_undead_body
+ITEM=random_reagent_necro,{15 25}
+ITEM=i_gold
+ITEM=i_guldur_mince,1
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_guldur_shambler]
+ID=c_ogre
+NAME=Shambler
+SOUND=snd_MONSTER_ZOMBIE1
+ICON=i_pet_ZOMBIE
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN
+
+ATTACK=120
+ARMOR=150
+MOVERATE=6
+BLOODCOLOR=colors_green
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_summoneater
+TEVENTS=e_npc_roundattack_pullall
+TEVENTS=e_acid_expondeath
+TEVENTS=e_phoenix_fire
+TEVENTS=e_spit_acid
+TEVENTS=e_undead
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Shambler
+
+ON=@Create
+COLOR=0852
+NPC=brain_monster
+FAME=100
+KARMA=-8000
+
+STR=1600
+DEX=400
+INT=20
+
+MAXHITS={30000 31000}
+MAXSTAM=400
+MAXMANA=20
+
+tag.experience=<eval {350.0 550.0}>
+
+tag.roundattack_damage=40,50  //dmg od - do
+tag.roundattack_time=15,20    //cas od - do
+tag.roundattack_chance=400    //20.0%
+
+tag(acid_expondeath_dmg,60)
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=1000
+tag(resist_summon,600)
+tag(resist_bleed,800)
+
+//weap resists
+tag(resist_sharp,800)
+tag(resist_slash,800)
+tag(resist_pierce,450)
+tag(resist_blunt,50)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,600)
+tag(resist_cold,1000)
+
+tag(monstertype,undead,50)
+tag(monstertype2,humanoid,50)
+
+tag.weapflag=dam_physical|dam_blunt
+
+Wrestling=160.0
+Resist=200.0
+Tactics=120.0
+Parrying=150.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=random_reagent,{70 80}
+ITEM=i_gold
+ITEM=i_guldur_mince,{2 4}
+
+ON=@death
+  arg(i,0)
+  while (<arg(i)><6)
+    f_npcsummoning(1,c_guldur_had,30000,30000,0,600)
+    arg(i,#+1)
+  endwhile
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_guldur_had]
+ID=c_snake
+NAME=Cervik
+SOUND=snd_ANIMALS_SNAKE1
+ICON=i_pet_snake
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN
+
+ATTACK=50
+ARMOR=10
+MOVERATE=5
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Cervik
+
+ON=@Create
+COLOR=0852
+NPC=brain_monster
+FAME=1000
+KARMA=-5000
+
+STR=1000
+DEX=400
+INT=450
+
+MAXHITS=500
+MAXSTAM=200
+
+tag.experience=<eval {50.0 65.0}>
+
+tag.weapflag=dam_physical
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {800 950}>
+tag(resist_summon,900)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,-50)
+tag(resist_slash,300)
+tag(resist_pierce,300)
+tag(resist_blunt,800)
+
+//magic resists
+tag(resist_fire,200)
+tag(resist_elect,600)
+tag(resist_cold,1000)
+
+Poisoning=400.0
+Resist=100.0
+Wrestling=150.0
+Peacemaking=100.0
+Provocation=100.0
+SpiritSpeak=75.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{10 35}
+
+///////////////////////////////////////////////////////
+
+[CHARDEF c_guldur_zombie_mage]
+ID=c_zombie
+NAME=Zombie Mage
+SOUND=snd_MONSTER_GHOST1
+ICON=i_pet_ZOMBIE
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=50
+ARMOR=40
+MOVERATE=8
+
+RESOURCES=7 t_eerie_stuff
+BLOODCOLOR=colors_green
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_selfreser
+TEVENTS=e_summoneater
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_undead
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Zombie Mage
+
+ON=@Create
+COLOR=0985
+NPC=brain_monster
+FAME=200
+KARMA=-5000
+
+STR=200
+DEX=500
+INT=2000
+
+MAXHITS={1400 1600}
+MAXSTAM=400
+MAXMANA=2000
+
+tag.experience=<eval {135.0 155.0}>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=360
+tag(resist_summon,150)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,250)
+tag(resist_slash,300)
+tag(resist_pierce,200)
+tag(resist_blunt,700)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,400)
+tag(resist_cold,1000)
+
+tag(monstertype,undead,50)
+tag(monstertype2,humanoid,50)
+
+tag.weapflag=dam_lightning|dam_magic
+
+tag(resstimer,<eval {70 90}>)
+
+EI=110.0
+Magery=120.0
+Resist=200.0
+Wrestling=150.0
+SpiritSpeak=110.0
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_spellbook
+
+ADDSPELL=s_lightning
+ADDSPELL=s_energy_bolt
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=loot_undead_body
+ITEM=random_reagent_necro,{35 40}
+ITEM=random_reagent,{25 35}
+ITEM=i_gold
+ITEM=i_guldur_mince,1
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_guldur_zombie_archer]
+ID=c_zombie
+NAME=Zombie Archer
+SOUND=snd_MONSTER_GHOST1
+ICON=i_pet_ZOMBIE
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=55
+ARMOR=30
+MOVERATE=3
+
+RESOURCES=7 t_eerie_stuff
+BLOODCOLOR=colors_green
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_selfreser
+TEVENTS=e_npc_multishot
+TEVENTS=e_npc_sniper        //Prida dmg k utoku po rane
+TEVENTS=e_undead
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Zombie Archer
+
+ON=@Create
+COLOR=098F
+NPC=brain_monster
+FAME=240
+KARMA=-5000
+
+STR=1000
+DEX=400
+INT=0
+
+MAXHITS={1800 2000}
+MAXSTAM=240
+MAXMANA=0
+
+tag.experience=<eval {95.0 115.0}>
+
+tag.multishot_chance=850          // 85% chance pri zasahu monstra
+tag.multishot_delay=5         // prodleva nez znovu
+tag.multishot_dmg=10,15           // dmg in between 10 and 15
+
+tag.npc_sniper_chance=200         //20%
+tag.npc_sniper_dmg=15             //o 10 HP
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {200 300}>
+tag(resist_summon,650)
+tag(resist_bleed,1000)
+
+tag(resist_sharp,250)
+tag(resist_slash,300)
+tag(resist_pierce,200)
+tag(resist_blunt,700)
+
+tag(resist_fire,300)
+tag(resist_elect,400)
+tag(resist_cold,1000)
+
+//typ monstra
+tag(monstertype,undead,50)
+tag(monstertype2,humanoid,50)
+//weap flags
+tag.weapflag=dam_piercing|dam_physical
+
+tag(resstimer,<eval {45 90}>)
+
+Archery={100.0 120.0}
+Parrying={85.0 100.0}
+Tactics={100.0 125.0}
+Wrestling={95.0 100.0}
+Peacemaking=100.0
+Provocation=100.0
+SpiritSpeak=65.0
+
+ITEMnewbie=i_bow
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=RANDOM_REAGENT,{25 35}
+ITEM=i_gold
+ITEM=i_arrow,{20 30}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_guldur_eye]
+ID=c_gazer
+NAME=Undead eye
+SOUND=snd_MONSTER_GAZER1
+ICON=i_pet_GAZER
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=40
+ARMOR=40
+MOVERATE=4
+
+BLOODCOLOR=colors_green
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_speed_porting
+TEVENTS=e_selfreser
+TEVENTS=e_iron_eye
+TEVENTS=e_summoneater
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Undead eye
+
+ON=@Create
+COLOR=07FFF
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=250
+DEX=1000
+INT=500
+
+MAXHITS={3000 3300}
+MAXSTAM={380 440}
+MAXMANA=0
+
+tag.experience=<eval {90.0 110.0}>
+
+tag(npc_port_distance,8)
+
+tag(speedPorting_timer)=4
+
+//other resists
+tag(resist_poison,850)
+tag(resist_para,1000)
+tag(resist_summon,750)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,200)
+tag(resist_pierce,00)
+tag(resist_blunt,-300)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,00)
+tag(resist_cold,250)
+
+//typ monstra
+tag(monstertype,eye,50)
+tag(monstertype2,undead,50)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+tag(resstimer,<eval {45 90}>)
+
+Tactics=100.0
+Resist=250.0
+Wrestling=1000.0
+SpiritSpeak=95.0
+Provocation=100.0
+Peacemaking=100.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_guldur_bear]
+ID=c_bear_brown
+NAME=Undead Bear
+ANIM=01fff
+SOUND=snd_ANIMALS_BEAR1
+ICON=i_pet_bear
+
+CAN=MT_WALK|MT_RUN
+
+ATTACK=130
+ARMOR=90
+MOVERATE=3
+
+RESOURCES=8 i_ribs_raw
+BLOODCOLOR=colors_green
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Undead Bear
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_selfreser
+TEVENTS=e_phoenix
+TEVENTS=e_explode
+TEVENTS=e_npc_bleed
+TEVENTS=e_npc_jumper
+
+ON=@Create
+COLOR=07FFF
+NPC=brain_monster
+FAME=100
+KARMA=-5999
+
+STR=1500
+DEX=800
+INT=50
+
+MAXHITS={25000 27000}
+MAXSTAM={126 145}
+MAXMANA=0
+
+tag.experience=<eval {750.0 850.0}>
+
+tag.npc_bleed=300 //30.0%
+
+tag.explode_dmg=60
+
+tag.jump_distance=10
+tag.jump_dmg=30 
+tag.jump_stun=1 
+tag.jump_timer=20
+
+tag(resist_poison,1000)
+tag.resist_para=<eval {500 650}>
+tag(resist_summon,450)
+tag(resist_bleed,1000)
+
+tag(resist_sharp,700)
+tag(resist_slash,-100)
+tag(resist_pierce,700)
+tag(resist_blunt,1000)
+
+tag(resist_fire,600)
+tag(resist_elect,250)
+tag(resist_cold,1000)
+
+
+//typ monstra
+tag(monstertype,animal,50)
+tag(monstertype2,undead,50)
+
+//weap flags
+tag.weapflag=dam_physical
+
+Resist={95.0 115.0}
+Tactics={70.0 100.0}
+Wrestling={100.0 120.0}
+SpiritSpeak=50.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=RANDOM_REAGENT,{55 75}
+ITEM=RANDOM_REAGENT,{25 45}
+ITEM=i_gold
+
+//////////////////////////////////////////////
+
+[CHARDEF c_guldur_Razakiel]
+ID=c_test_8
+NAME=Razakiel
+SOUND=snd_MONSTER_DAEMON1
+ICON=i_pet_daemon
+ANIM=03fbc7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=130
+ARMOR=100
+MOVERATE=3
+
+RESOURCES=8 i_ribs_raw
+BLOODCOLOR=colors_green
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Razakiel
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_explode
+TEVENTS=e_phoenix
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_npc_massleap
+TEVENTS=e_npc_bleed
+
+ON=@Create
+COLOR=01B6
+NPC=brain_monster
+FAME=500
+KARMA={-5000 -6000}
+
+STR=4000
+DEX=300
+INT=1000
+
+MAXHITS={25000 27000}
+MAXSTAM={150 220}
+MAXMANA=0
+
+tag.experience=<eval {450.0 650.0}>
+
+tag.npc_bleed=300 //30.0%
+
+Tag.explode_dmg=60
+
+tag(resist_poison,1000)
+tag.resist_para=<eval {500 650}>
+tag(resist_summon,450)
+tag(resist_bleed,600)
+
+tag(resist_sharp,700)
+tag(resist_slash,150)
+tag(resist_pierce,700)
+tag(resist_blunt,1000)
+
+tag(resist_fire,600)
+tag(resist_elect,300)
+tag(resist_cold,1000)
+
+
+//typ monstra
+tag(monstertype,undead)
+
+//weap flags
+tag.weapflag=dam_lightning|dam_magic
+
+EI=110.0
+Magery=120.0
+Resist=150.0
+Wrestling=150.0
+SpiritSpeak=110.0
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_spellbook
+
+ADDSPELL=s_lightning
+ADDSPELL=s_magic_reflection
+ADDSPELL=s_paralyze
+ADDSPELL=s_chain_lightning
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=RANDOM_REAGENT,{55 75}
+ITEM=RANDOM_REAGENT,{25 45}
+ITEM=i_gold
+ITEM=i_guldur_mince,{2 5}
+
+//////////////////////////////////////////////
+
+[CHARDEF c_guldur_smrtka]
+NAME=Smrtka
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_USEHANDS
+
+ATTACK=130
+ARMOR=100
+moverate=1
+
+BLOODCOLOR=colors_green
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_summoneater              //smaze summona, co zasahne
+TEVENTS=e_npc_detect
+TEVENTS=e_phoenix
+TEVENTS=e_phoenix_fire
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_parakrik
+TEVENTS=e_npc_curse                //vsechny viditelne zrani o dmg
+TEVENTS=e_npc_summoning
+TEVENTS=e_roots
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Smrtka
+
+ON=@Create
+COLOR=07FFF
+NPC=brain_monster
+FAME=100
+KARMA=-6000
+
+STR=3000
+DEX=200
+INT=2000
+
+maxhits={30000 30000}
+maxstam={300 400}
+maxmana=3000
+
+tag(npc_summoning_chance,300)                       //30%
+tag(npc_summoning_time,30)                         //nezakouzli znovu 60 sek
+tag(npc_summoning_count,3)                         //pocet
+tag(npc_summoning_char[0],c_guldur_zombie_clicker)
+tag(npc_summoning_char[1],c_guldur_zombie_clicker)
+tag(npc_summoning_char[2],c_guldur_zombie_clicker)
+
+tag.rootdmgs=15
+tag.roottimer=3 
+
+tag.npc_curse_chance=50            // 5% chance to trigger this event
+tag.npc_curse_delay=25,30          // delay between another possible strike
+tag.npc_curse_dmg=80               // dmg
+
+
+tag.experience=<eval {1350.0 1650.0}>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,800)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,950)
+tag(resist_slash,950)
+tag(resist_pierce,950)
+tag(resist_blunt,950)
+
+//magic resists
+tag(resist_fire,150)
+tag(resist_elect,550)
+tag(resist_cold,1000)
+
+//typ monstra
+tag(monstertype,undead)
+
+//weap flags
+tag.weapflag=dam_physical
+
+WRESTLING=150.0 
+RESIST={120.0 170.0}
+TACTICS={100.0 150.0}
+PARRYING={90.0 100.0}
+MACEFIGHTING={90.0 100.0}
+FENCING={120.0 140.0}
+
+ITEMnewbie=i_deathrobe
+color=0455
+ITEMnewbie=i_scythe
+color=0990
+
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock 
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{200 300}
+ITEM=RANDOM_REAGENT_NECRO,{200 250}
+
+////////////////////////////////////////////////////////////
+
+[CHARDEF c_guldur_boss]
+NAME=Angel of Death
+ID=c_harfan_boss
+SOUND=snd_ANIMALS_EAGLE1
+ICON=i_pet_elem_earth
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+attack=130
+ARMOR=120
+moverate=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_summoneater                          //smaze summona, co zasahne
+TEVENTS=e_acid_curse
+TEVENTS=e_npc_detect
+TEVENTS=e_parakrik
+TEVENTS=e_lightnings
+TEVENTS=e_managain
+TEVENTS=e_npc_summoning
+TEVENTS=e_autoreflect
+TEVENTS=e_explosiondispell
+TEVENTS=e_npc_infiniteMana
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Boss
+
+ON=@Create
+COLOR=08B0
+NPC=brain_monster
+FAME=1000
+KARMA=-5000
+
+STR=10000
+DEX=400
+INT=500
+
+maxhits={30000 30000}
+maxstam={300 400}
+maxmana=3000
+
+tag(e_lightnings_chance,100) // 10.0% chance
+tag(e_lightnings_range,5)
+
+tag(npc_summoning_chance,150)                       //15%
+tag(npc_summoning_time,60)                         //nezakouzli znovu 60 sek
+tag(npc_summoning_count,5)                         //pocet
+tag(npc_summoning_char[0],c_guldur_zombie_archer)
+tag(npc_summoning_char[1],c_guldur_zombie_archer)
+tag(npc_summoning_char[2],c_guldur_zombie_clicker)
+tag(npc_summoning_char[3],c_guldur_zombie_evil)
+tag(npc_summoning_char[4],c_guldur_zombie_evil)
+
+
+tag(acid_curse_chance,15)            // 15% chance
+tag(acid_curse_timer,30)          // timer na znovupouziti
+tag(acid_curse_dps,10)               // dmg/tik
+tag(acid_curse_count,4)         //pocet tiku
+
+tag.experience=<eval {1900.0 2000.0}>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,1000)
+tag(resist_bleed,700)
+
+//weap resists
+tag(resist_sharp,850)
+tag(resist_slash,850)
+tag(resist_pierce,850)
+tag(resist_blunt,250)
+
+//magic resists
+tag(resist_fire,250)
+tag(resist_elect,400)
+tag(resist_cold,1000)
+
+//typ monstra
+tag(monstertype,humanoid,50)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical //ruzne
+
+WRESTLING=150.0 
+RESIST={120.0 170.0}
+TACTICS={100.0 150.0}
+PARRYING={90.0 100.0}
+MACEFIGHTING={90.0 100.0}
+FENCING={120.0 140.0}
+MAGERY=150.0
+EI=120.0
+
+ITEMNEWBIE=i_spellbook
+addspell=s_fireball
+addspell=s_lightning
+ITEMNEWBIE=i_light_source
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock 
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{200 300}
+ITEM=RANDOM_REAGENT_NECRO,{200 250}
+
+//////////////////////////////////////////////////////
+
+[CHARDEF c_guldur_boss_soul]
+NAME=Soul of Death
+ID=c_test_4
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+attack=80
+ARMOR=110
+moverate=10
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_summoneater
+TEVENTS=e_npc_detect
+TEVENTS=e_npc_curse
+TEVENTS=e_npc_summoning
+TEVENTS=e_illusionist
+TEVENTS=e_npc_massleap
+TEVENTS=e_backstub
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Duse
+
+ON=@Create
+COLOR=07FFF
+NPC=brain_monster
+FAME=1000
+KARMA=-5000
+
+STR=10000
+DEX=400
+INT=500
+
+maxhits={30000 30000}
+maxstam={300 400}
+maxmana=3000
+
+tag(npc_summoning_chance,100)                       //10%
+tag(npc_summoning_time,60)                         //nezakouzli znovu 60 sek
+tag(npc_summoning_count,2)                         //pocet
+tag(npc_summoning_char[0],c_guldur_stin)
+tag(npc_summoning_char[1],c_guldur_stin)
+
+tag.npc_curse_chance=100            // 10% chance to trigger this event
+tag.npc_curse_delay=25,30          // delay between another possible strike
+tag.npc_curse_dmg=50               // dmg
+
+tag.experience=<eval {1400.0 1500.0}>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,900)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,700)
+tag(resist_slash,900)
+tag(resist_pierce,900)
+tag(resist_blunt,550)
+
+//magic resists
+tag(resist_fire,950)
+tag(resist_elect,450)
+tag(resist_cold,450)
+
+//typ monstra
+tag(monstertype,undead,50)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical //ruzne
+
+WRESTLING=150.0 
+RESIST={120.0 170.0}
+TACTICS={150.0 180.0}
+PARRYING={90.0 100.0}
+MACEFIGHTING={90.0 100.0}
+FENCING={120.0 140.0}
+SpiritSpeak=110.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock 
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{200 300}
+ITEM=RANDOM_REAGENT_NECRO,{200 250}
+
+//////////////////////////////////////////////////////
+
+[CHARDEF c_guldur_stin]
+ID=c_mongbat
+NAME=Stin
+SOUND=snd_MONSTER_GHOST1
+ICON=i_pet_ZOMBIE
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_FIRE_IMMUNE
+
+ATTACK=30
+ARMOR=40
+MOVERATE=3
+
+RESOURCES=7 t_eerie_stuff
+BLOODCOLOR=colors_green
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_undead
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Zombie Poison
+
+ON=@Create
+COLOR=02C1
+NPC=brain_monster
+FAME=50
+KARMA=-5000
+
+STR=1500
+DEX=500
+INT=300
+
+MAXHITS={1000 1400}
+MAXSTAM=40
+MAXMANA=0
+
+tag.experience=<eval {40.0 45.0}>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=360
+tag(resist_summon,150)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,850)
+tag(resist_slash,850)
+tag(resist_pierce,850)
+tag(resist_blunt,850)
+
+//magic resists
+tag(resist_fire,700)
+tag(resist_elect,200)
+tag(resist_cold,300)
+
+tag(monstertype,undead,50)
+tag(monstertype2,humanoid,50)
+
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resstimer,<eval {70 90}>)
+
+Parrying={85.0 90.0}
+Tactics={85.0 90.0}
+Wrestling={80.0 110.0}
+SpiritSpeak=30.0
+Poisoning={120.0 170.0}
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_undead_body
+ITEM=random_reagent_necro,{10 15}
+ITEM=i_gold
+
+////////////////////////////////////////////////////////////
+
+[CHARDEF c_guldur_mozkozrout]
+ID=c_mv_banshee
+NAME=Mozkozrout
+SOUND=snd_MONSTER_SUCCUBUS
+ICON=i_pet_ZOMBIE
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=20
+ARMOR=20
+MOVERATE=10
+
+BLOODCOLOR=colors_green
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_summoneater
+TEVENTS=e_speed_porting
+TEVENTS=e_braineater
+TEVENTS=e_undead
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Mozkozrout
+
+ON=@Create
+COLOR=0986
+NPC=brain_monster
+FAME=50
+KARMA=-5000
+
+STR=400
+DEX=1400
+INT=20
+
+MAXHITS={4000 4500}
+MAXSTAM=40
+MAXMANA=0
+
+tag.experience=<eval {70.0 80.0}>
+
+tag(speedPorting_timer,2)
+tag(speedPorting_range,4)
+
+tag(braineater_chance,50)
+tag(braineater_DPS,22)
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=360
+tag(resist_summon,150)
+tag(resist_bleed,800)
+
+//weap resists
+tag(resist_sharp,150)
+tag(resist_slash,100)
+tag(resist_pierce,300)
+tag(resist_blunt,-200)
+
+//magic resists
+tag(resist_fire,-200)
+tag(resist_elect,200)
+tag(resist_cold,500)
+
+tag(monstertype,undead,80)
+
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resstimer,<eval {70 90}>)
+
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Wrestling={90.0 130.0}
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=random_reagent_necro,{10 15}
+ITEM=i_gold
+
+////////////////////////////////////////////////////////////
+
+[CHARDEF c_guldur_pes]
+ID=c_bone_dog
+NAME=Explosion Dog
+SOUND=snd_MONSTER_SUCCUBUS
+ICON=i_pet_skeleton
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=5
+ARMOR=5
+MOVERATE=10
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Pes
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_speed_porting
+TEVENTS=e_npc_stun
+TEVENTS=e_explode
+TEVENTS=e_undead
+
+ON=@Create
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=500
+DEX=2000
+INT=50
+
+MAXHITS={300 450}
+MAXSTAM={450 500}
+MAXMANA=0
+
+tag.experience=<eval {40.0 55.0}>
+
+tag(speedPorting_timer,1)
+tag(speedPorting_range,2)
+
+Tag.npc_stun_chance=300
+
+Tag.explode_dmg=90
+
+//other resists
+tag(resist_poison,850)
+tag(resist_para,1000)
+tag(resist_summon,450)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,150)
+tag(resist_slash,100)
+tag(resist_pierce,150)
+tag(resist_blunt,-100)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,100)
+tag(resist_cold,200)
+
+//typ monstra
+tag(monstertype,undead,60)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Tactics=100.0
+Resist=150.0
+Wrestling=1000.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_SKELETON
+ITEM=i_gold
+
+//////////////////////////////////////////////////////////////////////////////////
+///////////////////////////////// OLD GULDUR //////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////
+
+[CHARDEF 067]
+DEFNAME=c_dol_guldur_boss
+NAME=Skeleton Champion
+SOUND=snd_MONSTER_EXODUS
+ICON=i_pet_skeleton
+CAN=MT_WALK|MT_RUN
+
+ATTACK=115
+ARMOR=110
+MOVERATE=3
+
+RESOURCES=55 i_reag_bone
+
+CATEGORY=Dungeony
+SUBSECTION=Dol Guldur
+DESCRIPTION=Guldur boss
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_selfreser
+TEVENTS=e_undead
+TEVENTS=e_npc_summoning
+TEVENTS=e_summoneater
+TEVENTS=e_npc_stun
+TEVENTS=e_npc_roundattack_pullall
+
+
+ON=@Create
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=5000
+DEX=450
+INT=300
+
+MAXHITS={22000 24000}
+MAXSTAM={700 800}
+MAXMANA=0
+
+tag.experience=<eval {750.0 800.0}>
+
+tag(npc_summoning_chance,150)                     //15%
+tag(npc_summoning_time,50)                        //nezakouzli znovu 50 sek
+tag(npc_summoning_count,3)                        //pocet
+tag(npc_summoning_char[0],c_bone_dog)
+tag(npc_summoning_char[1],c_bone_dog)
+tag(npc_summoning_char[2],c_bone_dog)
+
+Tag.npc_stun_chance=300           //30%, defaultne 20%
+
+tag.roundattack_damage=50,60  //dmg od - do
+tag.roundattack_time=10,15    //cas od - do
+tag.roundattack_chance=300    //20.0%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[9]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,800)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,150)
+tag(resist_slash,100)
+tag(resist_pierce,150)
+tag(resist_blunt,00)
+
+//magic resists
+tag(resist_fire,350)
+tag(resist_elect,150)
+tag(resist_cold,-50)
+
+//typ monstra
+tag(monstertype,undead,50)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Parrying=120.0
+Wrestling=150.0
+Resist=200.0
+SpiritSpeak=60.0
+Provocation=100.0
+Peacemaking=100.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=random_reagent,{70 100}
+ITEM=random_reagent_necro,{50,80}
+ITEM=i_gold
+
+////////////////////////////////////////////////
+
+[CHARDEF 20]
+DEFNAME=c_bone_dog
+NAME=Bone dog
+SOUND=snd_MONSTER_SUCCUBUS
+ICON=i_pet_skeleton
+CAN=MT_WALK|MT_RUN
+
+ATTACK=55
+ARMOR=60
+MOVERATE=4
+
+CATEGORY=Dungeony
+SUBSECTION=Dol Guldur
+DESCRIPTION=Kosteny pes
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_leaper
+TEVENTS=e_npc_stun
+TEVENTS=e_selfreser
+TEVENTS=e_undead
+
+ON=@Create
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=250
+DEX=350
+INT=500
+
+MAXHITS={800 900}
+MAXSTAM={450 500}
+MAXMANA=0
+
+tag.experience=<eval {60.0 65.0}>
+
+tag.npc_port_timer=4
+tag(npc_port_distance,9)
+
+Tag.npc_stun_chance=300
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,850)
+tag(resist_para,1000)
+tag(resist_summon,450)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,150)
+tag(resist_slash,100)
+tag(resist_pierce,150)
+tag(resist_blunt,-100)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,100)
+tag(resist_cold,200)
+
+//typ monstra
+tag(monstertype,undead,60)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Tactics=100.0
+Resist=150.0
+Wrestling=1000.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_SKELETON
+ITEM=i_gold
+
+////////////////////////////////////////////////
+
+[CHARDEF c_phantom_gray_detect]
+ID=c_man
+NAME=Phantom
+SOUND=snd_MONSTER_GHOST1
+ICON=i_pet_zombie
+ANIM=07bc7f
+CAN=MT_WALK|MT_RUN|MT_SWIM|MT_GHOST|MT_USEHANDS
+
+ATTACK=10
+ARMOR=20
+MOVERATE=3
+
+RESOURCES=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_knockback
+TEVENTS=e_npc_detect
+
+CATEGORY=Dungeony
+SUBSECTION=Dol Guldur
+DESCRIPTION=Phantom detekovaci
+
+ON=@Create
+COLOR=07FFF
+NPC=brain_monster
+FAME=30
+KARMA={-2000 -3999}
+
+STR=200
+DEX=2000
+INT=45
+
+MAXHITS={100 160}
+MAXSTAM=1300
+MAXMANA=0
+
+tag.experience=<eval {5.0 6.0}>
+
+//mystik
+//tag(hypnotizable,0) //nezhypnotizujes
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+//other resists
+tag(resist_para,1000) //individualni
+//weap resists
+tag(resist_pierce,800)
+//typ monstra
+tag(monstertype,undead,80)
+//weap flags
+tag.weapflag=dam_piercing|dam_physical //ruzne
+
+Wrestling=110.0
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Wrestling={185.0 200.0}
+SpiritSpeak=25.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_deathrobe
+COLOR=096a
+ITEMNEWBIE=i_cape
+NAME=Death cloak
+COLOR=096a
+ITEMNEWBIE=i_lantern_lit
+
+ON=@NPCRestock
+ITEM=i_gold,10
+
+[EOF]

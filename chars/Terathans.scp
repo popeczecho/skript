@@ -1,0 +1,393 @@
+////////////////////////////////////////////////////////////////////////////////////////
+
+[CHARDEF 01055]
+DEFNAME=c_terathan_avenger
+NAME=Terathan Avenger
+SOUND=snd_MONSTER_TERA_WARRIOR1
+ICON=i_pet_terathan_war
+ID=c_TERATHAN_WARRIOR
+CAN=MT_WALK
+
+ATTACK=30
+ARMOR=25
+MOVERATE=4
+
+RESOURCES=10 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Terathans
+DESCRIPTION=Terathan Avenger
+
+ON=@Create
+COLOR=0712
+NPC=brain_monster
+FAME=1
+KARMA=-1000
+
+STR=1000
+DEX={166 175}
+INT=175
+
+
+MAXHITS={400 450}
+MAXSTAM={166 175}
+MAXMANA=0
+
+tag.experience=<eval {15.0 17.0}>
+
+//tag.npc_bleed=200 //20.0%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,880)
+tag.resist_para=<eval {200 330}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-50)
+tag(resist_pierce,50)
+tag(resist_blunt,-100)
+
+tag(resist_fire,100)
+tag(resist_elect,100)
+tag(resist_cold,50)
+
+Peacemaking=100.0
+Provocation=100.0
+Resist={65.0 80.0}
+Wrestling={80.0 90.0}
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+//////////////////////////////////////////////////////////////////////////
+
+[CHARDEF 046]
+DEFNAME=c_terathan_warrior
+NAME=Terathan Warrior
+SOUND=snd_MONSTER_TERA_WARRIOR1
+ICON=i_pet_terathan_war
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS
+
+ATTACK=45
+ARMOR=20
+MOVERATE=3
+
+RESOURCES=20 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+CATEGORY=Monsters
+SUBSECTION=Terathans
+DESCRIPTION=Terathan Warrior
+
+ON=@Create
+COLOR=0710
+NPC=brain_monster
+FAME=1
+KARMA={-3000 -4999}
+
+STR=1000
+DEX={106 145}
+INT=50
+
+MAXHITS={1100 1150}
+MAXSTAM={106 145}
+MAXMANA=0
+
+tag.experience=<eval {40.0 46.0}>
+
+tag.npc_bleed=200 //20.0%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,880)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,450)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-50)
+tag(resist_slash,200)
+tag(resist_pierce,-150)
+tag(resist_blunt,200)
+
+tag(resist_fire,100)
+tag(resist_elect,250)
+tag(resist_cold,-50)
+
+Peacemaking=100.0
+Provocation=100.0
+Parrying={70.0 80.0}
+Tactics={80.0 100.0}
+Wrestling={80.0 90.0}
+SpiritSpeak=50.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{8 22}
+
+///////////////////////////////////////////////////////////////////////////////////
+
+[CHARDEF 047]
+DEFNAME=c_terathan_drone
+NAME=Terathan Drone
+SOUND=snd_MONSTER_TERA_DRONE1
+ICON=i_pet_terathan_drone
+ANIM=078c7f
+CAN=MT_WALK
+
+ATTACK=40
+ARMOR=25
+MOVERATE=3
+
+RESOURCES=20 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_leaper
+
+CATEGORY=Monsters
+SUBSECTION=Terathans
+DESCRIPTION=Terathan Drone
+
+ON=@Create
+COLOR=0710
+NPC=brain_monster
+FAME=1
+KARMA={-2000 -2999}
+
+STR=1000
+DEX=250
+INT=30
+
+MAXHITS={790 850}
+MAXSTAM={196 245}
+MAXMANA=0
+
+tag.experience=<eval {34.0 38.0}>
+
+tag.npc_port_timer=15
+tag(npc_port_distance,6)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,880)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,450)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-50)
+tag(resist_slash,200)
+tag(resist_pierce,-150)
+tag(resist_blunt,200)
+
+tag(resist_fire,100)
+tag(resist_elect,250)
+tag(resist_cold,-50)
+
+Parrying={70.0 80.0}
+Tactics={30.0 50.0}
+Wrestling={80.0 90.0}
+SpiritSpeak=45.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{6 18}
+
+//////////////////////////////////////////////////////////////////////////////////////
+
+[CHARDEF 048]
+DEFNAME=c_terathan_matriarch
+NAME=Terathan Matriarch
+SOUND=snd_MONSTER_TERA_MATRIARCH1
+ICON=i_pet_terathan_queen
+ANIM=07fc7f
+CAN=MT_WALK|MT_USEHANDS|MT_FIRE_IMMUNE
+
+ATTACK=30
+ARMOR=35
+MOVERATE=3
+
+RESOURCES=20 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_phoenix_fire
+
+CATEGORY=Monsters
+SUBSECTION=Terathans
+DESCRIPTION=Terathan Matriarch
+
+ON=@Create
+COLOR=0712
+NPC=brain_monster
+FAME=1
+KARMA=-1000
+
+STR=2000
+DEX={96 115}
+INT=180
+
+MAXHITS={1800 1900}
+MAXSTAM={96 115}
+MAXMANA=1000
+
+tag.experience=<eval {60.0 65.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,880)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,550)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-50)
+tag(resist_slash,200)
+tag(resist_pierce,-150)
+tag(resist_blunt,200)
+
+tag(resist_fire,100)
+tag(resist_elect,250)
+tag(resist_cold,-50)
+
+Peacemaking=100.0
+Provocation=100.0
+Parrying={70.0 80.0}
+Magery=110.0
+EI=60.0
+Resist={90.0 100.0}
+Tactics={90.0 100.0}
+Wrestling={70.0 90.0}
+SpiritSpeak=30.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{15 35}
+
+//////////////////////////////////////////////////////////////
+
+[CHARDEF 098]
+DEFNAME=c_terathan_patriarch
+NAME=Terathan Patriarch
+SOUND=snd_MONSTER_TERA_MATRIARCH1
+ICON=i_pet_terathan_queen
+ANIM=07fc7f
+CAN=MT_WALK|MT_USEHANDS|MT_FIRE_IMMUNE
+
+ATTACK=65
+ARMOR=60
+MOVERATE=4
+
+RESOURCES=20 i_ribs_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_roundattack
+
+CATEGORY=Monsters
+SUBSECTION=Terathans
+DESCRIPTION=Terathan Patriarch
+
+ON=@Create
+COLOR=0710
+NPC=brain_monster
+FAME=1
+KARMA=-1000
+
+STR=1500
+DEX=250
+INT=100
+
+MAXHITS={2400 2500}
+MAXSTAM={96 115}
+MAXMANA=1000
+
+tag.roundattack_damage=35,50  //dmg od - do
+tag.roundattack_time=10,12    //prodleva od - do v sek
+tag.roundattack_chance=100    //20.0%
+
+
+tag.experience=<eval {90.0 100.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,880)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,450)
+tag(resist_bleed,200)
+
+tag(resist_sharp,0)
+tag(resist_slash,250)
+tag(resist_pierce,-100)
+tag(resist_blunt,250)
+
+tag(resist_fire,100)
+tag(resist_elect,250)
+tag(resist_cold,-50)
+
+
+Parrying={90.0 100.0}
+Wrestling={90.0 100.0}
+Resist=200.0
+SpiritSpeak=60.0
+Provocation=100.0
+Peacemaking=100.0
+
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{25 45}
+
+[EOF]

@@ -1,0 +1,586 @@
+///////////////////////////////////////////
+[CHARDEF c_troll_shaman]
+ID=c_troll_axe
+NAME=Troll Shaman
+SOUND=snd_MONSTER_TROLL1
+ICON=i_pet_TROLL
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=80
+ARMOR=25
+MOVERATE=4
+
+RESOURCES=t_magic
+BLOODCOLOR=colors_red
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_npc_curse
+
+CATEGORY=Monsters
+SUBSECTION=Druid Island
+DESCRIPTION=Troll Shaman
+
+ON=@Create
+COLOR=0489
+NPC=brain_monster
+FAME=125
+KARMA=-1000
+
+STR=500
+DEX=250
+INT=150
+
+MAXHITS={2500 3000}
+MAXSTAM={125 150}
+MAXMANA=1000
+
+tag.experience=<eval {75.0 85.0}>
+
+tag.npc_curse_chance=50                // 5% chance to trigger this event
+tag.npc_curse_delay=20,25              // delay between another possible strike
+tag.npc_curse_dmg=20,25              // dmg
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,700)
+tag.resist_para=<eval {350 500}>
+tag(resist_summon,800)
+tag(resist_bleed,350)
+
+//weap resists
+tag(resist_sharp,00)
+tag(resist_slash,250)
+tag(resist_pierce,-50)
+tag(resist_blunt,350)
+
+//magic resists
+tag(resist_fire,0)
+tag(resist_elect,450)
+tag(resist_cold,-100)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+
+//weap flags
+tag.weapflag=dam_lightning|dam_magic
+
+Parrying={55.0 65.0}
+EI=75.0
+Magery=1800.0
+Resist=100.0
+Wrestling=70.0
+SpiritSpeak=15.0
+Tactics={85.0 100.0}
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_greater_heal
+ADDSPELL=s_lightning
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{25 30}
+
+/////////////////////////////////////////////////////////////
+
+[CHARDEF c_troll_chief]
+ID=c_troll_axe
+NAME=Troll Chief
+SOUND=snd_MONSTER_TROLL1
+ICON=i_pet_TROLL
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_RUN|MT_FIRE_IMMUNE
+
+CATEGORY=Monsters
+SUBSECTION=Druid Island
+DESCRIPTION=Troll Shaman
+
+ATTACK=75
+ARMOR=80
+MOVERATE=3
+
+RESOURCES=15 i_ribs_raw
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_roundattack_pullall
+TEVENTS=e_npc_critic              //sance na kritik melee
+
+ON=@Create
+COLOR=06CD
+NPC=BRAIN_MONSTER
+FAME={100 2000}
+KARMA={-4000 -4999}
+
+STR=1100
+DEX=200
+INT=40
+
+MAXHITS={2600 2900}
+MAXSTAM={120 190}
+MAXMANA=0
+
+tag.experience=<eval {85.0 90.0}>
+
+tag.npc_critic_chance=250                //25% chance
+tag.npc_critic_dmg=20,25                 //dmg in between
+
+tag.roundattack_damage=40,50   //dmg od - do
+tag.roundattack_time=15,20     //prodleva od - do v sek
+tag.roundattack_chance=100     //10.0%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+tag(monstertype,humanoid,60)
+
+tag.weapflag=dam_physical|dam_blunt
+
+//other resists
+tag(resist_poison,500)
+tag.resist_para=<eval {750 900}>
+tag(resist_summon,350)
+tag(resist_bleed,200)  //krvaci
+
+tag(resist_sharp,-300)
+tag(resist_slash,200)   // sekery
+tag(resist_pierce,100)
+tag(resist_blunt,200)
+
+tag(resist_fire,100)
+tag(resist_elect,350)
+tag(resist_cold,200)
+
+Parrying=100.0
+Wrestling=120.0
+Resist=120.0
+Tactics=150.0
+SpiritSpeak=45.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_gem_diamond,{0 2}
+
+/////////////////////////////////////////////////////////////
+
+[CHARDEF c_troll_berserker]
+ID=c_troll_axe
+NAME=Troll Berserker
+SOUND=snd_MONSTER_TROLL1
+ICON=i_pet_TROLL
+ANIM=078c7f
+
+CATEGORY=Monsters
+SUBSECTION=Druid Island
+DESCRIPTION=Troll Berserker
+
+ATTACK=65
+ARMOR=65
+MOVERATE=4
+
+RESOURCES=15 i_ribs_raw
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_roundattack_pullall
+TEVENTS=e_npc_critic              //sance na kritik melee
+
+ON=@Create
+COLOR=0845
+NPC=BRAIN_MONSTER
+FAME={100 2000}
+KARMA={-4000 -4999}
+
+STR=1300
+DEX=200
+INT=40
+
+MAXHITS={1600 1700}
+MAXSTAM={120 190}
+MAXMANA=0
+
+tag.experience=<eval {79.0 86.0}>
+
+tag.npc_critic_chance=500                //25% chance
+tag.npc_critic_dmg=20,25                 //dmg in between
+
+tag.roundattack_damage=40,50   //dmg od - do
+tag.roundattack_time=15,20     //prodleva od - do v sek
+tag.roundattack_chance=100     //10.0%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+tag(monstertype,humanoid,60)
+
+tag.weapflag=dam_physical|dam_blunt
+
+//other resists
+tag(resist_poison,500)
+tag.resist_para=<eval {750 900}>
+tag(resist_summon,350)
+tag(resist_bleed,200)  //krvaci
+
+tag(resist_sharp,-300)
+tag(resist_slash,200)   // sekery
+tag(resist_pierce,100)
+tag(resist_blunt,200)
+
+tag(resist_fire,100)
+tag(resist_elect,350)
+tag(resist_cold,200)
+
+Parrying=100.0
+Wrestling=120.0
+Resist=120.0
+Tactics=150.0
+SpiritSpeak=45.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_gem_diamond,{0 2}
+
+//////////////////////////////////////////////////////
+
+[CHARDEF C_permonik4]
+ID=C_CAJUN_CHILD1
+NAME=Permonik
+SOUND=SND_ELEMENTL_ERTHEL1
+ICON=I_PET_ELEM_EARTH
+ANIM=0FFC78C7F
+CAN=MT_WALK|mt_run
+
+ATTACK=27
+ARMOR=25
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Ettins, Ogres, Titans
+DESCRIPTION=Ettin
+
+ON=@Create
+NPC=brain_monster
+FAME={100 500}
+KARMA={-2000 -2999}
+
+STR=500
+DEX=70
+INT=40
+
+MAXHITS={1500 1600}
+MAXSTAM={70 90}
+MAXMANA=0
+
+tag.experience=<eval {15.0 25.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag(monstertype,humanoid,50)
+
+tag.weapflag=dam_physical|dam_blunt
+
+//other resists
+tag(resist_poison,150)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,350)
+tag(resist_bleed,150)
+
+tag(resist_sharp,-100)
+tag(resist_slash, 0)        //sekery
+tag(resist_pierce,150)
+tag(resist_blunt,-100)
+
+tag(resist_fire,250)
+tag(resist_elect,200)
+tag(resist_cold,0)
+
+Parrying={70.0 90.0}
+Wrestling={70.0 80.0}
+SpiritSpeak=35.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+//ITEM=loot_ETTIN
+//ITEM=tm_rocks,{0 2}
+ITEM=i_gold
+
+///////////////////////////////////
+
+[CHARDEF C_permonik3]
+ID=C_CAJUN_CHILD1
+NAME=Permonik
+SOUND=SND_ELEMENTL_ERTHEL1
+ICON=I_PET_ELEM_EARTH
+ANIM=0FFC78C7F
+CAN=MT_WALK|mt_run
+
+ATTACK=25
+ARMOR=15
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+FOODTYPE=
+//=r_forests,r_mountains //=r_civilization
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Ettins, Ogres, Titans
+DESCRIPTION=Troll
+
+ON=@Create
+COLOR=099a
+NPC=brain_monster
+FAME={100 500}
+KARMA=-3000
+STR=330
+DEX=60
+INT=10
+
+MAXHITS={600 800}
+MAXSTAM={60 80}
+MAXMANA=0
+
+tag.experience=<eval {25.0 26.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,60)
+
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resist_poison,300)
+tag.resist_para=<eval {200 300}>
+tag(resist_summon,350)
+tag(resist_bleed,50)
+
+tag(resist_sharp,00)
+tag(resist_slash,-50)        //sekery
+tag(resist_pierce,-100)
+tag(resist_blunt,50)
+
+tag(resist_fire,200)
+tag(resist_elect,150)
+tag(resist_cold,100)
+
+Wrestling={70.0 80.0}
+SpiritSpeak=25.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_TROLL
+ITEM=i_gold
+ITEM=i_gem_diamond,{0 1}
+
+//////////////
+
+[CHARDEF C_permonik2]
+ID=C_CAJUN_CHILD1
+NAME=Permonik
+SOUND=SND_ELEMENTL_ERTHEL1
+ICON=I_PET_ELEM_EARTH
+ANIM=0FFC78C7F
+CAN=MT_WALK|mt_run
+
+ATTACK=35
+ARMOR=20
+MOVERATE=3
+
+RESOURCES=20 i_ribs_raw
+FOODTYPE=
+//=r_forests,r_mountains //=r_civilization
+//=c_ettin,c_ettin_axe
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_critic                           //sance na kritik melee
+
+CATEGORY=Monsters
+SUBSECTION=Ettins, Ogres, Titans
+DESCRIPTION=Ettin {Axe}
+
+ON=@Create
+COLOR=098a
+NPC=brain_monster
+FAME={100 500}
+KARMA={-2000 -2999}
+
+STR=500
+DEX=75
+INT=50
+
+MAXHITS={750 850}
+MAXSTAM={75 98}
+MAXMANA=0
+
+tag.experience=<eval {34.0 36.0}>
+
+tag.npc_critic_chance=250                //25% chance
+tag.npc_critic_dmg=15,20                 //dmg in between
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag(monstertype,humanoid,50)
+tag.weapflag=dam_physical|dam_slashing|dam_piercing
+
+//other resists
+tag(resist_poison,150)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,350)
+tag(resist_bleed,150)
+
+tag(resist_sharp,-100)
+tag(resist_slash, 0)        //sekery
+tag(resist_pierce,150)
+tag(resist_blunt,-100)
+
+tag(resist_fire,250)
+tag(resist_elect,200)
+tag(resist_cold,0)
+
+Swordsmanship={85.0 95.0}
+Parrying={80.0 90.0}
+Wrestling={80.0 90.0}
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+//ITEM=tm_rocks,{0 2}
+ITEM=loot_ETTIN
+ITEM=i_gem_diamond,{0 1}
+
+/////////////////
+
+[CHARDEF C_permonik1]
+ID=C_CAJUN_CHILD1
+NAME=Permonik
+SOUND=SND_ELEMENTL_ERTHEL1
+ICON=I_PET_ELEM_EARTH
+ANIM=0FFC78C7F
+CAN=MT_WALK|MT_USEHANDS|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=15
+ARMOR=10
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+FOODTYPE=
+//=r_forests,r_mountains //=r_civilization
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_sniper
+
+CATEGORY=Monsters
+SUBSECTION=Ettins, Ogres, Titans
+DESCRIPTION=Troll ranger
+
+ON=@Create
+COLOR=0483
+NPC=brain_monster
+FAME={100 500}
+KARMA=-3000
+
+STR=300
+DEX=60
+INT=10
+
+MAXHITS={400 450}
+MAXSTAM={60 80}
+MAXMANA=0
+
+tag.experience=<eval {20.0 21.0}>
+
+tag.npc_sniper_dmg=12                          //o 10 HP
+tag.npc_sniper_chance=300                      //30% Defaultne 20%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,60)
+
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resist_poison,300)
+tag.resist_para=<eval {200 300}>
+tag(resist_summon,350)
+tag(resist_bleed,50)
+
+tag(resist_sharp,00)
+tag(resist_slash,-50)        //sekery
+tag(resist_pierce,-100)
+tag(resist_blunt,50)
+
+tag(resist_fire,200)
+tag(resist_elect,150)
+tag(resist_cold,100)
+
+Wrestling={50.0 70.0}
+Archery={70.0 75.0}
+SpiritSpeak=25.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_bow
+ITEMNEWBIE=i_arrow,{50 75}
+
+ON=@NPCRestock
+ITEM=loot_TROLL
+ITEM=i_gold
+ITEM=i_gem_diamond,{0 1}
+
+///////////////
+
+[EOF]

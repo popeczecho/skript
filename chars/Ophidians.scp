@@ -1,0 +1,605 @@
+
+[CHARDEF 056]
+DEFNAME=c_ophidian_warrior
+NAME=Ophidian Warrior
+SOUND=snd_MONSTER_OPHIDIAN_WARRIOR1
+ICON=i_pet_ophid_war
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS
+
+ATTACK=50
+ARMOR=60
+MOVERATE=3
+
+RESOURCES=9 i_ribs_raw
+BLOODCOLOR=0996
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_stun
+
+CATEGORY=Monsters
+SUBSECTION=Ophidian
+DESCRIPTION=Ophidian Warrior
+
+ON=@Create
+COLOR=0710
+NPC=brain_monster
+FAME=1
+KARMA={-5000 -5999}
+
+STR=1500
+DEX={165 175}
+INT={46 70}
+
+MAXHITS={1500 1600}
+MAXSTAM={165 175}
+MAXMANA=0
+
+tag.experience=<eval {80.0 90.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag.weapflag=dam_physical|dam_slashing
+
+//typ monstra
+tag(monstertype,daemon,80)
+
+tag(resist_poison,700)
+tag.resist_para=<eval {500 650}>
+tag(resist_summon,350)
+tag(resist_bleed,300)
+
+tag(resist_sharp,50)
+tag(resist_slash,-150)        //sekery
+tag(resist_pierce,-50)
+tag(resist_blunt,-250)
+
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,100)
+
+Provocation=100.0
+Wrestling={90.0 100.0}
+Resist=250.0
+Swordsmanship={80.0 95.0}
+SpiritSpeak=40.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+//////////////////////////////////////////////////////////////////////////////
+
+[CHARDEF 055]
+DEFNAME=c_ophidian_mage
+NAME=Ophidian Mage
+SOUND=snd_MONSTER_OPHIDIAN_MAGE1
+ICON=i_pet_ophid_mage
+ANIM=07fc7f
+CAN=MT_WALK|MT_USEHANDS|MT_FIRE_IMMUNE
+
+ATTACK=40
+ARMOR=35
+MOVERATE=3
+
+RESOURCES=9 i_ribs_raw
+BLOODCOLOR=0996
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_explode
+TEVENTS=e_phoenix_fire
+
+CATEGORY=Monsters
+SUBSECTION=Ophidian
+DESCRIPTION=Ophidian Mage
+
+ON=@Create
+COLOR=075a
+NPC=brain_monster
+FAME=1
+KARMA=-1000
+
+STR=750
+DEX={96 120}
+INT=245
+
+
+MAXHITS={680 720}
+MAXSTAM={96 120}
+MAXMANA=500
+
+tag.experience=<eval {50.0 55.0}>
+
+tag(Poisoning_dmg,14) // affects spell_poison
+tag(Poisoning_MvM_dmg,35) // affects spell_poison
+
+Tag.explode_dmg=50
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//typ monstra
+tag(monstertype,daemon,80)
+
+tag.weapflag=dam_physical|dam_slashing
+
+tag(resist_poison,850)
+tag.resist_para=<eval {500 650}>
+tag(resist_summon,350)
+tag(resist_bleed,100)
+
+tag(resist_sharp,50)
+tag(resist_slash,-150)        //sekery
+tag(resist_pierce,-50)
+tag(resist_blunt,-250)
+
+tag(resist_fire,300)
+tag(resist_elect,300)
+tag(resist_cold,200)
+
+Parrying={85.0 95.0}
+Magery={90.0 100.0}
+EI={90.0 100.0}
+Resist=60.0
+Tactics={65.0 87.0}
+Wrestling={70.0 80.0}
+SpiritSpeak=35.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_poison
+ADDSPELL=s_lightning
+
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{5 30}
+
+/////////////////////////////////////////////////////////////////////////////////
+
+[CHARDEF 01048]
+DEFNAME=c_ophidian_knight
+NAME=Ophidian Knight
+SOUND=snd_MONSTER_OPHIDIAN_WARRIOR1
+ICON=i_pet_ophid_war
+ID=c_OPHIDIAN_WARRIOR
+CAN=MT_WALK|MT_USEHANDS|MT_FIRE_IMMUNE
+
+ATTACK=80
+ARMOR=30
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+BLOODCOLOR=0996
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+CATEGORY=Monsters
+SUBSECTION=Ophidian
+DESCRIPTION=Ophidian Knight
+
+ON=@Create
+COLOR=0712
+NPC=brain_monster
+FAME=1
+KARMA=-1000
+
+STR=1500
+DEX={155 160}
+INT={95 190}
+
+MAXHITS={2500 3000}
+MAXSTAM={155 180}
+MAXMANA={95 190}
+
+tag.experience=<eval {140.0 150.0}>
+
+tag.npc_bleed=600 //60.0%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag.weapflag=dam_physical|dam_slashing
+
+//typ monstra
+tag(monstertype,daemon,70)
+
+tag(resist_poison,750)
+tag.resist_para=<eval {600 750}>
+tag(resist_summon,550)
+tag(resist_bleed,300)
+
+tag(resist_sharp,50)
+tag(resist_slash,-150)        //sekery
+tag(resist_pierce,-50)
+tag(resist_blunt,-250)
+
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,100)
+
+Peacemaking=100.0
+Provocation=100.0
+Magery={90.0 100.0}
+EI={90.0 100.0}
+Swordsmanship={60.0 85.0}
+Resist=500.0
+SpiritSpeak=45.0
+Wrestling={80.0 90.0}
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{5 20}
+
+////////////////////////////////////////////////////////////////////////////
+
+[CHARDEF 01044]
+DEFNAME=c_ophidian_archmage
+NAME=Ophidian Archmage
+SOUND=snd_MONSTER_OPHIDIAN_MAGE1
+ICON=i_pet_ophid_mage
+ID=c_OPHIDIAN_MAGE
+CAN=MT_WALK|MT_USEHANDS|MT_FIRE_IMMUNE
+
+ATTACK=60
+ARMOR=32
+MOVERATE=3
+
+RESOURCES=8 i_ribs_raw
+BLOODCOLOR=0996
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_parakrik
+TEVENTS=e_npc_curse
+
+CATEGORY=Monsters
+SUBSECTION=Ophidian
+DESCRIPTION=Ophidian Archmage
+
+ON=@Create
+COLOR=075f
+NPC=brain_monster
+FAME=1
+KARMA=-1000
+
+STR=1500
+DEX={128 150}
+INT=350
+
+MAXHITS={1500 1600}
+MAXSTAM={128 150}
+MAXMANA=1000
+
+tag.experience=<eval {160.0 190.0}>
+
+tag.npc_curse_chance=250          // 25% chance to trigger this event
+tag.npc_curse_delay=25,30         // delay between another possible strike
+tag.npc_curse_dmg=30,35           // dmg
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//typ monstra
+tag(monstertype,daemon,70)
+
+tag.weapflag=dam_physical|dam_slashing
+
+tag(resist_poison,800)
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,550)
+tag(resist_bleed,300)
+
+tag(resist_sharp,50)
+tag(resist_slash,-150)        //sekery
+tag(resist_pierce,-50)
+tag(resist_blunt,-250)
+
+tag(resist_fire,300)
+tag(resist_elect,300)
+tag(resist_cold,200)
+
+Peacemaking=100.0
+Provocation=100.0
+Parrying={85.0 90.0}
+Magery={100.0 110.0}
+EI={90.0 100.0}
+Resist={75.0 97.0}
+Tactics={65.0 87.0}
+Wrestling={70.0 80.0}
+SpiritSpeak=40.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=RANDOM_REAGENT,{15 30}
+ITEM=i_gold
+
+//////////////////////////////////////////////////////////////////////////////
+
+[CHARDEF 057]
+DEFNAME=c_ophidian_queen
+NAME=Ophidian Queen
+SOUND=snd_MONSTER_OPHIDIAN_QUEEN1
+ICON=i_pet_ophid_queen
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_FIRE_IMMUNE
+
+ATTACK=80
+ARMOR=35
+MOVERATE=3
+
+BLOODCOLOR=0996
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_parakrik
+TEVENTS=e_explode
+TEVENTS=e_phoenix_fire
+
+CATEGORY=Monsters
+SUBSECTION=Ophidian
+DESCRIPTION=Ophidian Queen
+
+ON=@Create
+COLOR=0994
+NPC=brain_monster
+FAME=100
+KARMA=-1000
+
+STR=1500
+DEX={96 115}
+INT={365 455}
+
+MAXHITS={1500 1600}
+MAXSTAM={69 115}
+MAXMANA=1000
+
+tag.experience=<eval {160.0 180.0}>
+
+Tag.explode_dmg=60
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+tag.weapflag=dam_physical|dam_slashing
+
+//typ monstra
+tag(monstertype,daemon,70)
+
+tag(resist_poison,800)
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,750)
+tag(resist_bleed,300)
+
+tag(resist_sharp,50)
+tag(resist_slash,-150)        //sekery
+tag(resist_pierce,-50)
+tag(resist_blunt,-250)
+
+tag(resist_fire,300)
+tag(resist_elect,300)
+tag(resist_cold,200)
+
+Peacemaking=100.0
+Provocation=100.0
+Parrying={85.0 95.0}
+Magery={100.0 110.0}
+Necromancy={90.0 100.0}
+EI=90.0
+Resist={90.0 100.0}
+Tactics={50.0 70.0}
+Wrestling={80.0 90.0}
+SpiritSpeak=55.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{15 30}
+
+////////////////////////////////////////////////////////////////////////////
+
+[CHARDEF c_ophidian_king]
+ID=c_ophidian_queen
+NAME=Ophidian King
+SOUND=snd_MONSTER_OPHIDIAN_WARRIOR1
+ICON=i_pet_ophid_war
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_FIRE_IMMUNE|MT_EQUIP
+
+ATTACK=80
+ARMOR=80
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+BLOODCOLOR=0996
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_explode
+TEVENTS=e_npc_bleed
+TEVENTS=e_npc_critic
+TEVENTS=e_npc_curse_stam            //mass sani staminy
+
+CATEGORY=Monsters
+SUBSECTION=Ophidian
+DESCRIPTION=Ophidian King
+
+ON=@Create
+COLOR=0992
+NPC=brain_monster
+FAME=0
+KARMA=-8000
+
+STR=2500
+DEX=200
+INT=400
+
+MAXHITS={3500 3700}
+MAXSTAM={200 210}
+MAXMANA=0
+
+tag.experience=<eval {215.0 235.0}>
+
+Tag.explode_dmg=50
+
+tag.npc_bleed=400 //40.0%
+
+tag.npc_curse_stam_chance=250       // 25% chance to trigger this event
+tag.npc_curse_stam_delay=12,15      // delay between another possible strike
+tag.npc_curse_stam_dmg=50,60        // stam reduce in between 50 and 60
+
+tag.npc_critic_chance=250         //25% chance
+tag.npc_critic_dmg=15,20          //dmg in between
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//typ monstra
+tag(monstertype,daemon,60)
+
+tag.weapflag=dam_physical|dam_slashing
+
+tag(resist_poison,700)
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,650)
+tag(resist_bleed,300)
+
+tag(resist_sharp,50)
+tag(resist_slash,-150)        //sekery
+tag(resist_pierce,-50)
+tag(resist_blunt,-250)
+
+tag(resist_fire,300)
+tag(resist_elect,300)
+tag(resist_cold,200)
+
+Peacemaking=100.0
+Provocation=100.0
+Parrying={100.0 150.0}
+Tactics={200.0 300.0}
+Wrestling={200.0 300.0}
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+
+[CHARDEF c_blood_king] // krvava verze ophidian kinga
+NAME=Blood King
+ID=057
+CAN=MT_WALK|MT_RUN|MT_USEHANDS|MT_FIRE_IMMUNE|MT_EQUIP|MT_GHOST
+
+ATTACK=100
+ARMOR=150
+
+FOODTYPE=20 t_meat_raw
+BLOODCOLOR=0996
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_lifeLeech
+
+CATEGORY=Dungeony
+SUBSECTION=Etheria
+DESCRIPTION=Blood king
+
+ON=@CREATE
+NPC=brain_monster
+COLOR=098c
+KARMA=-8000
+FAME=100
+
+STR=5800
+DEX=200
+INT=400
+
+MAXHITS=8500
+MAXSTAM={200 220}
+MAXMANA=0
+
+tag.experience=<eval {250.0 300.0}>
+
+tag.npc_lifeLeech=50,60      //tolik si prida kazdou ranou
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//typ monstra
+tag(monstertype,daemon,60)
+
+tag(resist_poison,600)
+tag.resist_para=<eval {600 850}>
+tag(resist_summon,550)
+tag(resist_bleed,-200)
+
+tag(resist_sharp,250)
+tag(resist_slash,250)
+tag(resist_pierce,350)
+tag(resist_blunt,-150)
+
+tag(resist_fire,750)
+tag(resist_elect,200)
+tag(resist_cold,-200)
+
+//tag(resist_phys,0)
+//tag(resist_magic,0)
+//tag(resist_acid,0)
+
+SpiritSpeak=45.0
+Parrying={100 150}
+Tactics={200 220}
+Wrestling=150.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_reag_blood_vial, {20 25}
+
+[EOF]

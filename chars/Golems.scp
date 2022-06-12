@@ -1,0 +1,871 @@
+///////////////////////////////////////////////
+//////////////    GOLEMS   ////////////////////
+///////////////////////////////////////////////
+
+[CHARDEF 02f0]
+DEFNAME=c_golem_copper
+NAME=Copper Golem
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=40
+ARMOR=100
+MOVERATE=3
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_knockback
+TEVENTS=e_golem
+
+CATEGORY=Monsters
+SUBSECTION=Golems
+DESCRIPTION=Copper Golem
+
+ON=@Create
+COLOR=color_o_copper
+NPC=brain_monster
+FAME=500
+KARMA=-10000
+
+STR=500
+DEX=90
+INT=0
+
+MAXHITS={1800 1900}
+MAXSTAM={80 100}
+MAXMANA=0
+
+tag.experience=<eval {80.0 90.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,300)
+tag(resist_bleed,1000) //golem nekrvaci
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,-100)
+tag(resist_pierce,200)
+tag(resist_blunt,-400) // skalu rozbijes hlavne drtivou zbrani
+
+//magic resists
+tag(resist_fire,100)
+tag(resist_elect,-200)
+tag(resist_cold,-300)
+
+//typ monstra
+tag(monstertype,golem,80)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Tactics=100.0
+Wrestling=120.0
+Resist=180.0
+SpiritSpeak=25.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_ore_copper,{1 5}
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_golem_iron]
+ID=c_golem_copper
+NAME=Golem
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=50
+ARMOR=100
+MOVERATE=3
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_knockback
+TEVENTS=e_golem
+TEVENTS=e_npc_stun
+
+CATEGORY=Monsters
+SUBSECTION=Golems
+DESCRIPTION=Iron Golem
+
+ON=@Create
+COLOR=color_o_iron
+NPC=brain_monster
+FAME=600
+KARMA=-10000
+
+STR=1313
+DEX=110
+INT=0
+
+MAXHITS={2500 2700}
+MAXSTAM={100 120}
+MAXMANA=0
+
+tag.experience=<eval {140.0 150.0}>
+
+tag.npc_stun_time=20                         // 2 seconds of stun
+Tag.npc_stun_chance=30                         //3%, defaultne 20%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//other resists
+tag(resist_poison,1000) //golemove jsou z 99% imunni proti jedu
+tag.resist_para=<eval {500 650}>
+tag(resist_summon,600) //indivindi podle monstra
+tag(resist_bleed,1000) //golem nekrvaci
+
+//weap resists
+tag(resist_sharp,200)
+tag(resist_slash,100)
+tag(resist_pierce,350)
+tag(resist_blunt,-400) // skalu rozbijes hlavne drtivou zbrani
+
+//magic resists
+tag(resist_fire,100)
+tag(resist_elect,-800)
+tag(resist_cold,-400)
+
+//typ monstra
+tag(monstertype,golem,80)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Tactics=100.0
+Wrestling=120.0
+Resist=180.0
+SpiritSpeak=25.0
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_ore_iron,{1 4}
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_golem_silver]
+ID=c_golem_copper
+NAME=Silver Golem
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=70
+ARMOR=100
+MOVERATE=20
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_knockback
+TEVENTS=e_golem
+TEVENTS=e_npc_stun
+
+CATEGORY=Monsters
+SUBSECTION=Golems
+DESCRIPTION=Silver Golem
+
+ON=@Create
+COLOR=color_o_silver
+NPC=brain_monster
+FAME=700
+KARMA=-10000
+
+STR=2125
+DEX=200
+INT=0
+
+MAXHITS={3800 4000}
+MAXSTAM={150 200}
+MAXMANA=0
+
+tag.experience=<eval {150.0 190.0}>
+
+tag.npc_stun_time=20                 // 2 seconds of stun
+Tag.npc_stun_chance=50               //5%, defaultne 20%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,1000) //golemove jsou z 99% imunni proti jedu
+tag.resist_para=<eval {650 750}>
+tag(resist_summon,700) //indivindi podle monstra
+tag(resist_bleed,1000) //golem nekrvaci
+
+//weap resists
+tag(resist_sharp,200)
+tag(resist_slash,50)
+tag(resist_pierce,250)
+tag(resist_blunt,-300) // skalu rozbijes hlavne drtivou zbrani
+
+//magic resists
+tag(resist_fire,100)
+tag(resist_elect,-500)  //nachylnost na elektrinu
+tag(resist_cold,-300)   //nachylnost na chlad
+
+//typ monstra
+tag(monstertype,golem,80)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Tactics=100.0
+Wrestling=120.0
+Resist=180.0
+SpiritSpeak=25.0
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+//item=i_ore_silver,7
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_golem_golden]
+ID=c_golem_copper
+NAME=Gold Golem
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=80
+ARMOR=110
+MOVERATE=3
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_knockback
+TEVENTS=e_golem
+TEVENTS=e_npc_stun
+
+CATEGORY=Monsters
+SUBSECTION=Golems
+DESCRIPTION=Golden Golem
+
+ON=@Create
+COLOR=color_o_gold
+NPC=brain_monster
+FAME=800
+KARMA=-10000
+
+STR=2938
+DEX=250
+INT=0
+
+MAXHITS={4700 4900}
+MAXSTAM={140 160}
+MAXMANA=0
+
+tag.experience=<eval {220.0 290.0}>
+
+tag.npc_stun_time=20                         // 2 seconds of stun
+Tag.npc_stun_chance=75                         //7.5%, defaultne 20%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,1000) //golemove jsou z 99% imunni proti jedu
+tag.resist_para=<eval {650 750}>
+tag(resist_summon,700) //indivindi podle monstra
+tag(resist_bleed,1000) //golem nekrvaci
+
+//weap resists
+tag(resist_sharp,300)
+tag(resist_slash,200)
+tag(resist_pierce,400)
+tag(resist_blunt,-400) // skalu rozbijes hlavne drtivou zbrani
+
+//magic resists
+tag(resist_fire,400)
+tag(resist_elect,-400)  //nachylnost na elektrinu
+tag(resist_cold,-200)   //nachylnost na chlad
+
+//typ monstra
+tag(monstertype,golem,60)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Tactics=100.0
+Wrestling=120.0
+Resist=180.0
+SpiritSpeak=25.0
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+//item=i_ore_gold,6
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_golem_verite]
+ID=c_golem_copper
+NAME=Verite Golem
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=100
+ARMOR=120
+MOVERATE=3
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_knockback
+TEVENTS=e_golem
+TEVENTS=e_npc_stun
+TEVENTS=e_summonhater
+
+CATEGORY=Monsters
+SUBSECTION=Golems
+DESCRIPTION=Verite Golem
+
+ON=@Create
+COLOR=color_o_verite
+NPC=brain_monster
+FAME=900
+KARMA={-5000 -9000}
+
+STR=3750
+DEX=350
+INT=0
+
+MAXHITS={5400 5700}
+MAXSTAM={200 240}
+MAXMANA=0
+
+tag.experience=<eval {300.0 350.0}>
+
+tag.npc_stun_time=20                         // 2 seconds of stun
+Tag.npc_stun_chance=100                        //10%, defaultne 20%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,1000) //golemove jsou z 99% imunni proti jedu
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,800) //indivindi podle monstra
+tag(resist_bleed,1000) //golem nekrvaci
+
+//weap resists
+tag(resist_sharp,500)
+tag(resist_slash,450)
+tag(resist_pierce,600)
+tag(resist_blunt,100)  // skalu rozbijes hlavne drtivou zbrani
+
+//magic resists
+tag(resist_fire,600)
+tag(resist_elect,-50)  //nachylnost na elektrinu
+tag(resist_cold,150)   //nachylnost na chlad
+
+//typ monstra
+tag(monstertype,golem,60)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Tactics=100.0
+Wrestling=120.0
+Resist=180.0
+SpiritSpeak=35.0
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_ore_verite,{1 3}
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_golem_valorite]
+ID=c_golem_copper
+NAME=Valorite Golem
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=110
+ARMOR=130
+MOVERATE=3
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_knockback
+TEVENTS=e_golem
+TEVENTS=e_npc_stun
+TEVENTS=e_summonhater
+
+CATEGORY=Monsters
+SUBSECTION=Golems
+DESCRIPTION=Valorite Golem
+
+ON=@Create
+COLOR=color_o_valorite
+NPC=brain_monster
+FAME=1000
+KARMA={-6000 -10000}
+
+STR=4500
+DEX=350
+INT=0
+
+MAXHITS={9000 10500}
+MAXSTAM={280 350}
+MAXMANA=0
+
+tag.experience=<eval {430.0 450.0}>
+
+tag.npc_stun_time=20             // 2 seconds of stun
+Tag.npc_stun_chance=150          //15%, defaultne 20%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,1000) //golemove jsou z 99% imunni proti jedu
+tag.resist_para=<eval {850 950}>
+tag(resist_summon,800) //indivindi podle monstra
+tag(resist_bleed,1000) //golem nekrvaci
+
+//weap resists
+tag(resist_sharp,500)
+tag(resist_slash,450)
+tag(resist_pierce,600)
+tag(resist_blunt,100)  // skalu rozbijes hlavne drtivou zbrani
+
+//magic resists
+tag(resist_fire,600)
+tag(resist_elect,-50)  //nachylnost na elektrinu
+tag(resist_cold,150)   //nachylnost na chlad
+
+//typ monstra
+tag(monstertype,golem,60)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Tactics=100.0
+Wrestling=120.0
+Resist=180.0
+SpiritSpeak=45.0
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_ore_valorite,{1 2}
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_golem_obsidian]
+ID=c_golem_copper
+NAME=Obsidian Golem
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=140
+ARMOR=140
+MOVERATE=3
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_knockback
+TEVENTS=e_golem
+TEVENTS=e_npc_stun
+TEVENTS=e_summonhater
+
+CATEGORY=Monsters
+SUBSECTION=Golems
+DESCRIPTION=Obsidian Golem
+
+ON=@Create
+COLOR=color_o_obsidian
+NPC=brain_monster
+FAME=1100
+KARMA={-7500 -10000}
+
+STR=5375
+DEX=400
+INT=0
+
+MAXHITS={13000 14500}
+MAXSTAM={340 390}
+MAXMANA=0
+
+tag.experience=<eval {700.0 750.0}>
+tag.npc_stun_time=20                         // 2 seconds of stun
+Tag.npc_stun_chance=200                        //20%, defaultne 20%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,1000)     //golemove jsou z 99% imunni proti jedu
+tag(resist_para,1000)       //indivindi podle monstra - vetsinou immune
+tag(resist_summon,850)      //indivindi podle monstra
+tag(resist_bleed,1000)      //golem nekrvaci
+
+//weap resists
+tag(resist_sharp,500)
+tag(resist_slash,450)
+tag(resist_pierce,600)
+tag(resist_blunt,100)  // skalu rozbijes hlavne drtivou zbrani
+
+//magic resists
+tag(resist_fire,600)
+tag(resist_elect,-50)  //nachylnost na elektrinu
+tag(resist_cold,150)   //nachylnost na chlad
+
+//typ monstra
+tag(monstertype,golem,50)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Tactics=100.0
+Wrestling=120.0
+Resist=200.0
+SpiritSpeak=60.0
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_ore_obsidian,1
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_golem_adamantinum]
+ID=c_golem_copper
+NAME=Adamantinum Golem
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=145
+ARMOR=150
+MOVERATE=3
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_pushall
+TEVENTS=e_npc_reactivearmor
+TEVENTS=e_golem
+TEVENTS=e_parakrik
+
+CATEGORY=Monsters
+SUBSECTION=Golems
+DESCRIPTION=Admantinum Golem
+
+ON=@Create
+COLOR=color_o_adamantinum
+NPC=brain_monster
+FAME=1200
+KARMA={-7500 -10000}
+
+STR=6188
+DEX=400
+INT=0
+
+MAXHITS={19000 19600}
+MAXSTAM={370 420}
+MAXMANA=0
+
+tag.experience=<eval {800.0 850.0}>
+
+tag(e_pushall_time,10)
+tag(e_pushall_chance,500) // 50.0%
+
+tag.hit_damage=85
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//other resists
+tag(resist_poison,1000)    //golemove jsou z 99% imunni proti jedu
+tag(resist_para,1000)      //indivindi podle monstra - vetsinou immune
+tag(resist_summon,950)     //indivindi podle monstra
+tag(resist_bleed,1000)     //golem nekrvaci
+
+//weap resists
+tag(resist_sharp,700)
+tag(resist_slash,550)
+tag(resist_pierce,800)
+tag(resist_blunt,200)  // skalu rozbijes hlavne drtivou zbrani
+
+//magic resists
+tag(resist_fire,800)
+tag(resist_elect,-50)  //nachylnost na elektrinu
+tag(resist_cold,150)   //nachylnost na chlad
+
+//typ monstra
+tag(monstertype,golem,40)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Tactics=100.0
+Wrestling=120.0
+Resist=250.0
+SpiritSpeak=125.0
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_ore_adamantinum,1
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_golem_shadow]
+ID=c_golem_copper
+NAME=Shadow Golem
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=150
+ARMOR=150
+MOVERATE=3
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_pushall
+TEVENTS=e_npc_reactivearmor
+TEVENTS=e_golem
+TEVENTS=e_parakrik
+
+CATEGORY=Monsters
+SUBSECTION=Golems
+DESCRIPTION=Shadow Golem
+
+ON=@Create
+COLOR=color_o_shadow
+NPC=brain_monster
+FAME=1500
+KARMA={-7500 -10000}
+
+STR=6500
+DEX=500
+INT=0
+
+MAXHITS={25000 26000}
+MAXSTAM={510 540}
+MAXMANA=0
+
+tag.experience=<eval {900.0 950.0}>
+
+tag(e_pushall_time,10)
+tag(e_pushall_chance,200) // 20.0%
+
+tag.hit_damage=90
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,1000)    //golemove jsou z 99% imunni proti jedu
+tag(resist_para,1000)      //indivindi podle monstra - vetsinou immune
+tag(resist_summon,950)     //indivindi podle monstra
+tag(resist_bleed,1000)     //golem nekrvaci
+
+//weap resists
+tag(resist_sharp,700)
+tag(resist_slash,550)
+tag(resist_pierce,800)
+tag(resist_blunt,200)  // skalu rozbijes hlavne drtivou zbrani
+
+//magic resists
+tag(resist_fire,800)
+tag(resist_elect,-50)  //nachylnost na elektrinu
+tag(resist_cold,150)   //nachylnost na chlad
+
+//typ monstra
+tag(monstertype,golem,40)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Tactics=100.0
+Wrestling=120.0
+Resist=250.0
+SpiritSpeak=150.0
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_ore_shadow,1
+//ITEM=i_ore_shadow,{0 1}
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_golem_mithril]
+ID=c_golem_copper
+NAME=Mithril Golem
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=190
+ARMOR=200
+MOVERATE=3
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_reactivearmor
+TEVENTS=e_golem
+TEVENTS=e_summoneater                         //smaze summona, co zasahne
+TEVENTS=e_pushall
+TEVENTS=e_parakrik
+TEVENTS=e_npc_multishot                        //vsechny viditelne zrani o dmg
+
+CATEGORY=Monsters
+SUBSECTION=Golems
+DESCRIPTION=Mithril Golem
+
+ON=@Create
+COLOR=color_o_mithril
+NPC=brain_monster
+FAME=1500
+KARMA={-7500 -10000}
+
+STR=7000
+DEX=600
+INT=0
+
+MAXHITS={30500 30900}
+MAXSTAM={630 660}
+MAXMANA=0
+
+tag.experience=<eval {1100.0 1200.0}>
+
+tag.multishot_chance=300                       // 30% chance pri zasahu monstra
+tag.multishot_delay=10,15                      // prodleva nez znovu
+tag.multishot_dmg=50,60                        // dmg in between
+
+tag(kudlyimmune,2000000000)
+
+tag(e_pushall_time,10)
+tag(e_pushall_chance,500) // 50.0%
+
+tag.hit_damage=100
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+//other resists
+tag(resist_poison,1000)    //golemove jsou z 99% imunni proti jedu
+tag(resist_para,1000)      //indivindi podle monstra - vetsinou immune
+tag(resist_summon,1000)    //indivindi podle monstra
+tag(resist_bleed,1000)     //golem nekrvaci
+
+//weap resists
+tag(resist_sharp,700)
+tag(resist_slash,550)
+tag(resist_pierce,800)
+tag(resist_blunt,200)  // skalu rozbijes hlavne drtivou zbrani
+
+//magic resists
+tag(resist_fire,800)
+tag(resist_elect,-50)  //nachylnost na elektrinu
+tag(resist_cold,150)   //nachylnost na chlad
+
+//typ monstra
+tag(monstertype,golem,30)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Tactics=100.0
+Wrestling=120.0
+Resist=250.0
+SpiritSpeak=200.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_ore_mithril,1
+ITEM=i_gold
+
+[EOF]

@@ -1,0 +1,632 @@
+
+[CHARDEF c_nexmir_warrior_male]
+NAME=Nexmirias Warrior
+ID=c_man
+CAN=MT_WALK|mt_run
+
+ATTACK=90
+ARMOR=60
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_monster
+TEVENTS=e_looter
+TEVENTS=e_npc_warcry
+TEVENTS=e_humanoid
+
+CATEGORY=Dungeony
+SUBSECTION=Neximirias
+DESCRIPTION=Warrior Man
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+Title=Prosty vesnican
+COLOR=colors_skin
+NPC=brain_monster
+FAME=100
+KARMA=-5000
+
+STR=3500
+DEX=300
+INT=100
+
+MAXHITS={2800 3200}
+MAXSTAM={200 250}
+MAXMANA=0
+
+tag.experience=<eval {130.0 150.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(resist_poison,700)
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,750)
+tag(resist_bleed,700)
+
+tag(resist_sharp,150)
+tag(resist_slash,150)
+tag(resist_pierce,-100)
+tag(resist_blunt,-150)
+
+tag(resist_fire,300)
+tag(resist_elect,350)
+tag(resist_cold,150)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Provocation=100.0
+Peacemaking=100.0
+Tactics=110.0
+Wrestling=100.0
+Swordsmanship=100.0
+Wrestling=120.0
+Fencing=100.0
+Tactics=100.0
+SpiritSpeak=65.0
+
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_beard_mustache
+ITEMNEWBIE=i_copper_kite_wood_shield
+COLOR=099A
+ITEMNEWBIE=i_axe_exec_copper
+COLOR=099A
+ITEMNEWBIE=i_backpack
+ITEMNEWBIE=i_skull_cap
+COLOR=0310
+ITEMNEWBIE=i_bone_leggings
+COLOR=0310
+ITEMNEWBIE=i_cape
+COLOR=0310
+ITEMNEWBIE=i_sandals
+ITEMNEWBIE=i_jester_suit
+COLOR=0847
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_reag_blood_moss {10 20}
+
+////////////////////////////////////////////////////
+
+[CHARDEF c_nexmir_warrior_female]
+NAME=Nexmirias Warrior
+ID=c_woman
+CAN=MT_WALK|mt_run
+
+ATTACK=50
+ARMOR=60
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_monster
+TEVENTS=e_looter
+TEVENTS=e_npc_warcry
+TEVENTS=e_humanoid
+
+CATEGORY=Dungeony
+SUBSECTION=Neximirias
+DESCRIPTION=Warrior female
+
+ON=@Create
+NAME=#NAMES_HUMANFEMALE
+Title=Prosty vesnican
+COLOR=colors_skin
+NPC=brain_monster
+FAME=100
+KARMA=-5000
+
+STR=3500
+DEX=300
+INT=100
+
+MAXHITS={2800 3200}
+MAXSTAM={250 300}
+MAXMANA=0
+
+tag.experience=<eval {110.0 130.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//other resists
+tag(resist_poison,700)
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,750)
+tag(resist_bleed,700)
+
+tag(resist_sharp,150)
+tag(resist_slash,150)
+tag(resist_pierce,-100)
+tag(resist_blunt,-150)
+
+tag(resist_fire,300)
+tag(resist_elect,350)
+tag(resist_cold,150)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Provocation=100.0
+Peacemaking=100.0
+Tactics=110.0
+Wrestling=100.0
+Macefighting={90.0 100.0}
+Wrestling=120.0
+Fencing=100.0
+Tactics=100.0
+SpiritSpeak=55.0
+
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_hair_long
+COLOR=035
+ITEMNEWBIE=i_earrings_gold
+ITEMNEWBIE=i_COPPER_BUCKLER_SHIELD
+COLOR=099A
+ITEMNEWBIE=i_hat_floppy
+COLOR=0598
+ITEMNEWBIE=i_studded_gorget_copper
+COLOR=097F
+ITEMNEWBIE=i_armor_female_studded_copper
+COLOR=097F
+ITEMNEWBIE=i_club_copper
+COLOR=05E5
+ITEMNEWBIE=i_kilt
+COLOR=0598
+ITEMNEWBIE=i_cape
+COLOR=059B
+ITEMNEWBIE=i_boots_calf
+COLOR=0598
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_reag_blood_moss {10 20}
+
+/////////////////////////////////////////////////////////
+
+[CHARDEF c_nexmir_mage_male]
+NAME=Nexmirias Mage
+ID=C_man
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=70
+ARMOR=40
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_monster
+TEVENTS=e_looter
+TEVENTS=e_humanoid
+
+CATEGORY=Dungeony
+SUBSECTION=Neximirias
+DESCRIPTION=Mage male
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+Title=Prosty vesnican
+COLOR=colors_skin
+NPC=brain_monster
+FAME=100
+KARMA=-5000
+
+STR=1000
+DEX=300
+INT=270
+
+MAXHITS={2800 3200}
+MAXSTAM={100 120}
+MAXMANA=1200
+
+tag.experience=<eval {110.0 130.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//other resists
+tag(resist_poison,700)
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,750)
+tag(resist_bleed,700)
+
+tag(resist_sharp,150)
+tag(resist_slash,150)
+tag(resist_pierce,-100)
+tag(resist_blunt,-150)
+
+tag(resist_fire,300)
+tag(resist_elect,350)
+tag(resist_cold,150)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+//weap flags
+tag.weapflag=dam_elect|dam_magic
+
+Provocation=100.0
+Peacemaking=100.0
+Parrying={90.0 100.0}
+Resist={120.0 170.0}
+Macefighting={90.0 100.0}
+Tactics=110.0
+Magery=100.0
+EI=90.0
+SpiritSpeak=60.0
+
+ITEMNEWBIE=i_beard_mustache
+
+ITEMNEWBIE=random_male_hair
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_hat_straw
+ITEMNEWBIE=i_hammer_pick_copper
+COLOR=0985
+ITEMNEWBIE=i_COPPER_PLATEMAIL_GAUNTLETS
+COLOR=06AD
+ITEMNEWBIE=i_COPPER_PLATEMAIL_leggings
+COLOR=06AD
+ITEMNEWBIE=i_COPPER_PLATEMAIL_GORGET
+COLOR=06AD
+ITEMNEWBIE=i_cape
+COLOR=011F
+ITEMNEWBIE=i_shirt_plain
+COLOR=011F
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+ADDSPELL=s_greater_heal
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_reag_blood_moss {10 25}
+
+///////////////////////////////////////////////////////
+
+[CHARDEF c_nexmir_mage_female]
+NAME=Nexmirias Mage
+ID=C_WOMAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=70
+ARMOR=40
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_monster
+TEVENTS=e_looter
+
+CATEGORY=Dungeony
+SUBSECTION=Neximirias
+DESCRIPTION=Mage female
+
+ON=@Create
+NAME=#NAMES_HUMANFEMALE
+Title=Prosty vesnican
+COLOR=colors_skin
+NPC=brain_monster
+FAME=100
+KARMA=-5000
+
+STR=1000
+DEX=300
+INT=270
+
+MAXHITS={2800 3200}
+MAXSTAM={100 120}
+MAXMANA=1200
+
+tag.experience=<eval {110.0 130.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//other resists
+tag(resist_poison,700)
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,750)
+tag(resist_bleed,700)
+
+tag(resist_sharp,150)
+tag(resist_slash,150)
+tag(resist_pierce,-100)
+tag(resist_blunt,-150)
+
+tag(resist_fire,300)
+tag(resist_elect,350)
+tag(resist_cold,150)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+//weap flags
+tag.weapflag=dam_elect|dam_magic
+
+Provocation=100.0
+Peacemaking=100.0
+Parrying={90.0 100.0}
+Resist={120.0 170.0}
+Macefighting={90.0 100.0}
+Tactics=110.0
+Magery=100.0
+EI=90.0
+SpiritSpeak=65.0
+
+ITEMNEWBIE=i_hair_ponytail
+COLOR=0470
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_staff_quarter_copper
+COLOR=01C4
+ITEMNEWBIE=i_armor_female_skirt
+COLOR=083F
+ITEMNEWBIE=i_earrings_gold
+ITEMNEWBIE=i_necklace_gold
+ITEMNEWBIE=i_cape
+COLOR=0841
+ITEMNEWBIE=i_hat_wide_brim
+COLOR=06CE
+ITEMNEWBIE=i_shoes_plain
+COLOR=06D1
+ITEMNEWBIE=i_doublet
+COLOR=0845
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_lightning
+ADDSPELL=s_greater_heal
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_reag_blood_moss {10 25}
+
+////////////////////////////////////////////////////////////
+
+[CHARDEF c_nexmir_archer_male]
+NAME=Nexmirias Archer
+ID=C_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=60
+ARMOR=40
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_monster
+TEVENTS=e_looter
+TEVENTS=e_npc_multishot
+
+CATEGORY=Dungeony
+SUBSECTION=Neximirias
+DESCRIPTION=Archer male
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+Title=Prosty vesnican
+COLOR=colors_skin
+NPC=brain_monster
+FAME=100
+KARMA=-5000
+
+STR=1000
+DEX=250
+INT=100
+
+MAXHITS={2800 3200}
+MAXSTAM={100 120}
+MAXMANA=0
+
+tag.experience=<eval {110.0 130.0}>
+
+tag.multishot_chance=250          // 25% chance pri zasahu monstra
+tag.multishot_delay=15,20         // prodleva nez znovu
+tag.multishot_dmg=30,40           // dmg in between 30 and 40
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+tag.weapflag=dam_physical
+
+//other resists
+tag(resist_poison,700)
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,750)
+tag(resist_bleed,700)
+
+tag(resist_sharp,150)
+tag(resist_slash,150)
+tag(resist_pierce,-100)
+tag(resist_blunt,-150)
+
+tag(resist_fire,300)
+tag(resist_elect,350)
+tag(resist_cold,150)
+
+Provocation=100.0
+Peacemaking=100.0
+Fencing={105.0 120.0}
+Parrying={90.0 100.0}
+Swordsmanship={105.0 120.0}
+Wrestling={150.0 200.0}
+Archery={110.0 120.0}
+Macefighting={150.0 200.0}
+Resist={120.0 150.0}
+Tactics=110.0
+SpiritSpeak=55.0
+
+ITEMNEWBIE=i_beard_mustache
+
+ITEMNEWBIE=i_bow
+ITEMNEWBIE=i_boots_calf
+COLOR=02F1
+ITEMNEWBIE=i_mask_deer
+ITEMNEWBIE=i_bone_arms
+COLOR=0772
+ITEMNEWBIE=i_COPPER_RINGMAIL_GLOVES
+COLOR=099A
+ITEMNEWBIE=i_cape
+COLOR=02F1
+ITEMNEWBIE=i_surcoat
+COLOR=02F1
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_reag_serpent_scale {10 25}
+
+//////////////////////////////////////////////////////
+
+[CHARDEF c_nexmir_archer_female]
+NAME=Nexmirias Archer
+ID=c_woman
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=60
+ARMOR=40
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_monster
+TEVENTS=e_looter
+TEVENTS=e_npc_multishot
+
+CATEGORY=Dungeony
+SUBSECTION=Neximirias
+DESCRIPTION=Archer female
+
+ON=@Create
+NAME=#NAMES_HUMANFEMALE
+Title=Prosty vesnican
+COLOR=colors_skin
+NPC=brain_monster
+FAME=100
+KARMA=-5000
+
+STR=1000
+DEX=250
+INT=100
+
+MAXHITS={2800 3200}
+MAXSTAM={100 120}
+MAXMANA=0
+
+tag.experience=<eval {110.0 130.0}>
+
+tag.multishot_chance=250          // 25% chance pri zasahu monstra
+tag.multishot_delay=15,20         // prodleva nez znovu
+tag.multishot_dmg=30,40           // dmg in between 30 and 40
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//other resists
+tag(resist_poison,700)
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,750)
+tag(resist_bleed,700)
+
+tag(resist_sharp,150)
+tag(resist_slash,150)
+tag(resist_pierce,-100)
+tag(resist_blunt,-150)
+
+tag(resist_fire,300)
+tag(resist_elect,350)
+tag(resist_cold,150)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+//weap flags
+tag.weapflag=dam_elect|dam_magic
+
+Provocation=100.0
+Peacemaking=100.0
+Fencing={105.0 120.0}
+Parrying={90.0 100.0}
+Swordsmanship={105.0 120.0}
+Wrestling={150.0 200.0}
+Archery={110.0 120.0}
+Macefighting={150.0 200.0}
+Resist={120.0 150.0}
+Tactics=110.0
+SpiritSpeak=60.0
+
+ITEMNEWBIE=i_hair_2_pigtails
+COLOR=01b5
+ITEMNEWBIE=i_bracelet_gold
+ITEMNEWBIE=i_hat_feather
+COLOR=0291
+ITEMNEWBIE=i_studded_leggings
+COLOR=046D
+ITEMNEWBIE=i_doublet
+COLOR=0291
+ITEMNEWBIE=i_studded_sleeves_copper
+COLOR=046D
+ITEMNEWBIE=i_pitchfork_copper
+COLOR=0999
+ITEMNEWBIE=i_cape
+COLOR=0291
+ITEMNEWBIE=i_sandals
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_reag_serpent_scale {10 25}
+
+[EOF]

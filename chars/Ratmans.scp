@@ -1,0 +1,486 @@
+////////////////////////////////////////////////////////////
+///////////////////   RATMANS   ////////////////////////////
+////////////////////////////////////////////////////////////
+
+[CHARDEF 02a]
+DEFNAME=c_ratman
+NAME=Krysak
+SOUND=snd_MONSTER_RATMAN1
+ICON=i_pet_RATMAN
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=10
+ARMOR=10
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw,2 i_fur_light
+FOODTYPE=
+//=r_caves,r_dungeon,r_swamp,r_desert
+//=c_ratman,c_ratman_sword,c_ratman_mace
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Rat Man
+
+ON=@Create
+NAME=#NAMES_RATMAN
+COLOR=08000|RAND{COLOR_DYE_HIGH} // shirt color
+NPC=brain_monster
+FAME=1
+KARMA={-2000 -2999}
+
+STR=600
+DEX=90
+INT=10
+
+MAXHITS={340 390}
+MAXSTAM={90 100}
+MAXMANA=0
+
+tag.experience=<eval {12.0 16.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,60)
+
+tag(resist_poison,900)
+tag.resist_para=<eval {100 200}>
+tag(resist_summon,200)
+tag(resist_bleed,-100)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-50)
+tag(resist_pierce,100)
+tag(resist_blunt,50)
+
+tag(resist_fire,0)
+tag(resist_elect,150)
+tag(resist_cold,300)
+
+Parrying=50.0
+Wrestling=75.0
+Resist=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{5 10}
+
+////////////////////////////////////////////////////
+
+[CHARDEF 02c]
+DEFNAME=c_ratman_mace
+NAME=Krysak
+SOUND=snd_MONSTER_RATMAN1
+ICON=i_pet_RATMAN
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=25
+ARMOR=10
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw, 2 i_fur_light
+FOODTYPE=
+//=r_caves,r_dungeon,r_swamp,r_desert
+//=c_ratman,c_ratman_sword,c_ratman_mace
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_stun
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Rat Man
+
+ON=@Create
+NAME=#NAMES_RATMAN
+COLOR=08000|RAND{COLOR_DYE_HIGH} // shirt color
+NPC=brain_monster
+FAME=1
+KARMA={-2000 -2999}
+
+STR=600
+DEX=90
+INT=10
+
+MAXHITS={490 590}
+MAXSTAM={90 100}
+MAXMANA=0
+
+tag.experience=<eval {16.0 18.0}>
+
+tag.npc_stun_time=10                         // 1 seconds of stun
+Tag.npc_stun_chance=200                      //20%, defaultne 20%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,60)
+
+tag(resist_poison,900)
+tag.resist_para=<eval {100 200}>
+tag(resist_summon,200)
+tag(resist_bleed,-100)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-50)
+tag(resist_pierce,100)
+tag(resist_blunt,50)
+
+tag(resist_fire,0)
+tag(resist_elect,150)
+tag(resist_cold,300)
+Macefighting=80.0
+Parrying=55.0
+Wrestling=80.0
+Resist=65.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=I_CLUB
+ITEM=RANDOM_REAGENT,{5 9}
+
+////////////////////////////////////////////////////////////
+
+[CHARDEF c_ratman_ranger]
+ID=c_ratman
+NAME=Krysak
+SOUND=snd_MONSTER_RATMAN1
+ICON=i_pet_RATMAN
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=20
+ARMOR=10
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw,2 i_fur_light
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_sniper        //Prida dmg k utoku po rane
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Rat Man
+
+ON=@Create
+NAME=#NAMES_RATMAN
+COLOR=08000|RAND{COLOR_DYE_HIGH} // shirt color
+NPC=brain_monster
+FAME=1
+KARMA={-2000 -2999}
+
+STR=600
+DEX=90
+INT=10
+
+MAXHITS={340 390}
+MAXSTAM={90 100}
+MAXMANA=0
+
+tag.experience=<eval {15.0 18.0}>
+
+tag.npc_sniper_chance=200         //20%
+tag.npc_sniper_dmg=10             //o 10 HP
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,60)
+
+tag(resist_poison,900)
+tag.resist_para=<eval {100 200}>
+tag(resist_summon,200)
+tag(resist_bleed,-100)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-50)
+tag(resist_pierce,100)
+tag(resist_blunt,50)
+
+tag(resist_fire,0)
+tag(resist_elect,150)
+tag(resist_cold,300)
+
+Parrying=50.0
+Archery={70.0 80.0}
+Wrestling=75.0
+Resist=60.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_bow
+ITEMNEWBIE=i_arrow,{50 75}
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{5 11}
+
+/////////////////////////////////////////////////
+
+[CHARDEF 02d]
+DEFNAME=c_ratman_sword
+NAME=Krysak
+SOUND=snd_MONSTER_RATMAN1
+ICON=i_pet_RATMAN
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=30
+ARMOR=10
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw,2 i_fur_light
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_critic                           //sance na kritik melee
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Rat Man - sword
+
+ON=@Create
+NAME=#NAMES_RATMAN
+COLOR=08000|RAND{COLOR_DYE_HIGH} // shirt color
+NPC=brain_monster
+FAME=1
+KARMA={-2000 -2999}
+
+STR=600
+DEX=90
+INT=10
+
+MAXHITS={600 650}
+MAXSTAM={190 200}
+MAXMANA=0
+
+tag.experience=<eval {19.0 21.0}>
+
+tag.npc_critic_chance=150                    // 15% chance to trigger this event
+tag.npc_critic_dmg=15,20                     // dmg in between
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,60)
+
+tag(resist_poison,900)
+tag.resist_para=<eval {100 200}>
+tag(resist_summon,200)
+tag(resist_bleed,-100)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-50)
+tag(resist_pierce,100)
+tag(resist_blunt,50)
+
+tag(resist_fire,0)
+tag(resist_elect,150)
+tag(resist_cold,300)
+
+Swordsmanship=90.0
+Macefighting=80.0
+Parrying=55.0
+Wrestling=80.0
+Resist=70.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_sword_long
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{5 11}
+
+////////////////////////////////////////////////
+
+[CHARDEF c_ratman_mage]
+ID=c_ratman
+NAME=Krysak mag
+SOUND=snd_MONSTER_RATMAN1
+ICON=i_pet_RATMAN
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=20
+ARMOR=15
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw,2 i_fur_light
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Rat Man Mage
+
+ON=@Create
+COLOR=08000|RAND{COLOR_DYE_HIGH} // shirt color
+NPC=brain_monster
+FAME=1
+KARMA={-2000 -2999}
+
+STR=600
+DEX=150
+INT=150
+
+MAXHITS={500 600}
+MAXSTAM={150 160}
+MAXMANA=400
+
+tag.experience=<eval {25.0 29.0}>
+
+tag(Poisoning_dmg,12) // affects spell_poison
+tag(Poisoning_MvM_dmg,35) // affects spell_poison
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,60)
+
+tag(resist_poison,900)
+tag.resist_para=<eval {100 200}>
+tag(resist_summon,200)
+tag(resist_bleed,-100)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-50)
+tag(resist_pierce,100)
+tag(resist_blunt,50)
+
+tag(resist_fire,50)
+tag(resist_elect,200)
+tag(resist_cold,350)
+
+Parrying=100.0
+Resist=100.0
+Tactics=85.0
+Wrestling=50.0
+Macefighting=80.0
+Magery=80.0
+EI=40.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_poison
+ADDSPELL=s_lightning
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{10 15}
+
+////////////////////////////////////////////////
+
+[CHARDEF c_ratman_chief]
+ID=c_ratman_sword
+NAME=Krysak Vudce
+SOUND=snd_MONSTER_RATMAN1
+ICON=i_pet_RATMAN
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=35
+ARMOR=15
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw,2 i_fur_light
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_stun
+TEVENTS=e_npc_leaper
+TEVENTS=e_npc_critic                     //sance na kritik melee
+
+CATEGORY=Monsters
+SUBSECTION=Rats, Lizards, Orcs
+DESCRIPTION=Rat Man Chief
+
+ON=@Create
+COLOR=08000|RAND{COLOR_DYE_HIGH} // shirt color
+NPC=brain_monster
+FAME=1
+KARMA={-2000 -2999}
+
+STR=600
+DEX=150
+INT=10
+
+MAXHITS={1600 1700}
+MAXSTAM={130 150}
+MAXMANA=0
+
+tag.experience=<eval {33.0 39.0}>
+
+tag.npc_critic_chance=250                //25% chance
+tag.npc_critic_dmg=15,20                 //dmg in between
+
+tag.npc_port_timer=20
+tag(npc_port_distance,6)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,humanoid,50)
+
+tag(resist_poison,900)
+tag.resist_para=<eval {300 400}>
+tag(resist_summon,200)
+tag(resist_bleed,-100)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-50)
+tag(resist_pierce,100)
+tag(resist_blunt,50)
+
+tag(resist_fire,0)
+tag(resist_elect,150)
+tag(resist_cold,300)
+
+Swordsmanship=105.0
+Parrying=95.0
+Wrestling=95.0
+Resist=85.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_sword_long
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{15 20}
+
+[EOF]

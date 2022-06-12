@@ -1,0 +1,2438 @@
+/////////////////////////////////////////////////////
+///////////////// neni realizovano //////////////////
+/////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////
+/////////////////////  TO WORK  //////////////////////////////
+//////////////////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////
+
+[CHARDEF c_daemon_fireps]
+ID=c_daemon_mage1
+NAME=Daemon ohne
+SOUND=snd_MONSTER_DAEMON1
+ICON=i_pet_daemon
+ANIM=03fbc7f
+CAN=MT_WALK|MT_FIRE_IMMUNE|mt_run|mt_usehands
+
+ATTACK=120
+ARMOR=85
+MOVERATE=3
+
+RESOURCES=9 i_ribs_raw, 8 i_reag_daemon_bone
+FOODTYPE=15 t_meat_raw
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+TEVENTS=e_phoenix
+TEVENTS=e_phoenix_fire
+TEVENTS=e_npc_stun
+TEVENTS=e_npc_multishot
+TEVENTS=e_explode
+
+ON=@Create
+NPC=brain_monster
+COLOR=0981
+FAME=1500
+KARMA={-5000 -6000}
+
+STR=8000
+DEX=300
+INT=200
+
+MAXHITS={3000 3200}
+MAXMANA=1000
+
+tag.experience=<eval {225.0 250.0}>
+
+Tag.explode_dmg=40
+
+tag.multishot_chance=250                       // 25% chance pri zasahu monstra
+tag.multishot_delay=15,20                      // prodleva nez znovu
+tag.multishot_dmg=30,40                        // dmg in between 30 and 40
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+tag.npc_bleed=400 //40.0%
+
+//typ monstra
+tag(monstertype,daemon,60)
+
+tag(resist_poison,1000)
+tag(resist_para,560)
+tag(resist_summon,950)
+tag(resist_bleed,800)
+
+tag(resist_sharp,850)
+tag(resist_slash,250)
+tag(resist_pierce,650)
+tag(resist_blunt,550)
+
+tag(resist_fire,900)
+tag(resist_elect,400)
+tag(resist_cold,150)
+
+//tag(resist_phys,0)
+//tag(resist_magic,0)
+//tag(resist_acid,0)
+
+Parrying={95.0 100.0}
+Tactics={85.0 120.0}
+Wrestling={95.0 100.0}
+SpiritSpeak=95.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Demon summoned
+
+[CHARDEF 19]
+DEFNAME=c_mv_banshee
+NAME=Banshee
+SOUND=snd_MONSTER_SUCCUBUS
+ICON=i_pet_skeleton
+CAN=MT_WALK|MT_RUN
+
+ATTACK=55
+ARMOR=60
+MOVERATE=4
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Kostlivec
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_leaper
+TEVENTS=e_npc_stun
+TEVENTS=e_selfreser
+TEVENTS=e_undead
+
+ON=@Create
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=250
+DEX=350
+INT=500
+
+MAXHITS={800 900}
+MAXSTAM={450 500}
+MAXMANA=0
+
+tag.experience=<eval {60.0 65.0}>
+
+tag.npc_port_timer=4
+tag(npc_port_distance,9)
+
+Tag.npc_stun_chance=300
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,850)
+tag(resist_para,1000)
+tag(resist_summon,450)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,150)
+tag(resist_slash,100)
+tag(resist_pierce,150)
+tag(resist_blunt,-100)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,100)
+tag(resist_cold,200)
+
+//typ monstra
+tag(monstertype,undead,60)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Tactics=100.0
+Resist=150.0
+Wrestling=1000.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_SKELETON
+ITEM=i_gold
+
+[CHARDEF 27]
+DEFNAME=c_test_8
+NAME=Ravager
+SOUND=snd_MONSTER_GARGYL1
+ICON=i_pet_GARG
+ANIM=03fbc7f
+CAN=MT_WALK|MT_USEHANDS
+
+ATTACK=28
+ARMOR=26
+MOVERATE=3
+
+RESOURCES=5 i_ribs_raw
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+CATEGORY=Monsters
+SUBSECTION=Caves
+DESCRIPTION=Gargoyle
+
+ON=@Create
+NPC=brain_monster
+FAME=1000
+KARMA={-1000 -1500}
+
+STR={155 190}
+DEX={76 95}
+INT={81 105}
+
+MAXHITS={325 375}
+MAXSTAM={255 285}
+MAXMANA=0
+
+tag.experience=<eval {25.0 28.0}>
+
+tag.npc_bleed=200 //20.0%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,880)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,150)
+tag(resist_bleed,100)
+
+tag(resist_sharp,00)
+tag(resist_slash,00)        //sekery
+tag(resist_pierce,50)
+tag(resist_blunt,00)
+
+tag(resist_fire,100)
+tag(resist_elect,100)
+tag(resist_cold,200)
+
+Parrying={35.0 45.0}
+Resist=50.0
+Tactics={60.0 70.0}
+Wrestling={80.0 90.0}
+SpiritSpeak=20.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_GARGOYLE
+ITEM=i_gold
+///////////////////////////////////
+[CHARDEF 124]
+DEFNAME=c_test_4
+NAME=Hustoprisnak
+SOUND=snd_MONSTER_GARGYL1
+ICON=i_pet_GARG
+ANIM=03fbc7f
+CAN=MT_WALK|MT_USEHANDS
+
+ATTACK=28
+ARMOR=26
+MOVERATE=3
+
+RESOURCES=5 i_ribs_raw
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+CATEGORY=Monsters
+SUBSECTION=Caves
+DESCRIPTION=Gargoyle
+
+ON=@Create
+NPC=brain_monster
+FAME=1000
+KARMA={-1000 -1500}
+
+STR={155 190}
+DEX={76 95}
+INT={81 105}
+
+MAXHITS={325 375}
+MAXSTAM={255 285}
+MAXMANA=0
+
+tag.experience=<eval {25.0 28.0}>
+
+tag.npc_bleed=200 //20.0%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,880)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,150)
+tag(resist_bleed,100)
+
+tag(resist_sharp,00)
+tag(resist_slash,00)        //sekery
+tag(resist_pierce,50)
+tag(resist_blunt,00)
+
+tag(resist_fire,100)
+tag(resist_elect,100)
+tag(resist_cold,200)
+
+Parrying={35.0 45.0}
+Resist=50.0
+Tactics={60.0 70.0}
+Wrestling={80.0 90.0}
+SpiritSpeak=20.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_GARGOYLE
+ITEM=i_gold
+
+[CHARDEF c_hcn_undead_rat]
+ID=0D7
+NAME=Pachnouci krysa
+CAN=MT_WALK
+ATTACK=75
+ARMOR=45
+RESOURCES=10 t_eerie_stuff
+FOODTYPE=20 t_meat_raw
+
+BLOODCOLOR=colors_green
+TEVENTS=e_hcn_teleToTarget
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_selfreser
+
+ON=@Create
+NPC=brain_monster
+COLOR=0774
+STR=600
+DEX=180
+INT=80
+MAXHITS={100 120}
+tag.experience=<eval {15.0 20.0}>
+
+tag(npc_port_distance,8)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+//resists
+tag(resist_poison,1000) //nemrtveho neotravis
+tag(resist_bleed,1000) //individualni - spis ne, nemrtvi nekrvaceji
+tag(resist_summon,600)
+tag(resist_para,100)
+
+tag(resist_sharp,400)
+tag(resist_slash,500)
+tag(resist_pierce,-150)
+tag(resist_blunt,850)
+
+tag(resist_fire,850)
+tag(resist_elect,850)
+tag(resist_cold,850)
+
+Parrying={95.0 100.0}
+Tactics={85.0 120.0}
+Wrestling={95.0 100.0}
+SpiritSpeak=45.0
+
+FAME=80
+KARMA=-{4000 4999}
+ITEMnewbie=i_monster_create
+ITEMnewbie=i_hcn_PlayerToTagTimer
+
+ON=@NPCRestock
+ITEM=loot_undead_body
+ITEM=loot_undead
+ITEM=random_reagent,{20 32}
+ITEM=i_gold
+
+//CATEGORY=Dungy
+//SUBSECTION=HCN
+//DESCRIPTION=Undead krysa
+
+[CHARDEF c_hcn_snake]
+ID=c_snake
+NAME=Had
+SOUND=snd_MONSTER_SEASERP1
+ICON=i_pet_snake
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN
+
+ATTACK=140
+ARMOR=70
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_hcn_NPCPoison
+
+//CATEGORY=Dungy
+//SUBSECTION=HCN
+//DESCRIPTION=Had malej
+
+ON=@Create
+NAME=Had
+COLOR=0989
+NPC=brain_monster
+FAME=1000
+KARMA=-5000
+STR=7000
+DEX=400
+INT=450
+
+MAXHITS=500
+HITS=500
+MAXSTAM=200
+
+tag.experience=<eval {40.0 50.0}>
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+//resists
+tag(resist_poison,1000) //nemrtveho neotravis
+tag(resist_bleed,1000) //individualni - spis ne, nemrtvi nekrvaceji
+tag(resist_summon,600)
+tag(resist_para,100)
+
+tag(resist_sharp,400)
+tag(resist_slash,500)
+tag(resist_pierce,900)
+tag(resist_blunt,850)
+
+tag(resist_fire,200)
+tag(resist_elect,850)
+tag(resist_cold,850)
+
+tag.weapflag=dam_physical
+
+tag.jed_sila(14)
+
+Resist=100.0
+Wrestling=200.0
+Peacemaking=100.0
+Provocation=100.0
+SpiritSpeak=75.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{25 35}
+
+
+///////////////////
+// M U M M I E S //
+///////////////////
+
+[CHARDEF c_hcn_mummy_level_1]
+ID=154
+NAME=Mummy
+SOUND=snd_MONSTER_ZOMBIE1
+ICON=i_pet_ZOMBIE
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_FIRE_IMMUNE
+ATTACK=70
+ARMOR=80
+
+MOVERATE=3
+
+
+RESOURCES=10 t_eerie_stuff
+
+//=r_dungeon,r_spooky
+//=t_TRAP,c_man
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_selfreser
+TEVENTS=e_undead
+
+
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Mummy
+
+ON=@Create
+COLOR=0481
+NPC=brain_monster
+FAME=20
+KARMA={-2000 -3999}
+STR=280
+DEX=130
+INT=40
+
+
+MAXHITS={1000 1150}
+MAXSTAM=120
+MAXMANA=0
+
+tag.experience=<eval {65.0 80.0}>
+
+//mystik
+//tag(hypnotizable,0) //nemrtveho nezhypnotizujes
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+//resists
+tag(resist_poison,1000) //nemrtveho neotravis
+tag(resist_bleed,1000) //individualni - spis ne, nemrtvi nekrvaceji
+tag(resist_summon,950)
+tag(resist_para,360)
+
+tag(resist_sharp,650)
+tag(resist_slash,650)
+tag(resist_pierce,400)
+tag(resist_blunt,850)
+
+tag(resist_fire,-400)
+tag(resist_elect,-100)
+tag(resist_cold,200)
+//typ monstra
+tag(monstertype,undead,80)
+//weap flags
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resstimer,<eval {70 90}>)
+
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Wrestling={85.0 100.0}
+SpiritSpeak={10.0 15.0} // <-- intentionaly low SS as this monster type is supposed to boost mystik's damage
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_undead_body
+ITEM=loot_undead
+ITEM=random_reagent_necro,{4 10}
+ITEM=i_gold
+
+//////////////////////////////////////////////////////////
+
+[CHARDEF c_hcn_mummy_level_2] //extremely resistant level, but it should be destroyed through electrical damage
+ID=154
+NAME=Mummy
+SOUND=snd_MONSTER_ZOMBIE1
+ICON=i_pet_ZOMBIE
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_FIRE_IMMUNE
+
+ATTACK=80
+ARMOR=85
+MOVERATE=3
+
+RESOURCES=10 t_eerie_stuff
+
+//=r_dungeon,r_spooky
+//=t_TRAP,c_man
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_selfreser
+TEVENTS=e_undead
+TEVENTS=e_hcn_madnessAbility
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Mummy
+
+ON=@Create
+COLOR=0482
+NPC=brain_monster
+FAME=20
+KARMA={-2000 -3999}
+
+STR=350
+DEX=130
+INT=40
+
+MAXHITS={1000 1100}
+MAXSTAM=120
+MAXMANA=0
+
+tag.experience=<eval {150.0 180.0}>
+
+tag.hcn_madnessAbilityChance=20 // == 2% chance
+tag.hcn_madnessAbilityStrength=250 // == 25% dmg
+//mystik
+//tag(hypnotizable,0) //nemrtveho nezhypnotizujes
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+//resists
+tag(resist_poison,1000) //nemrtveho neotravis
+tag(resist_bleed,1000) //individualni - spis ne, nemrtvi nekrvaceji
+tag(resist_summon,990)
+tag(resist_para,460)
+
+tag(resist_sharp,935)
+tag(resist_slash,935)
+tag(resist_pierce,930)
+tag(resist_blunt,900)
+
+tag(resist_fire,850)
+tag(resist_elect,-150)
+tag(resist_cold,700)
+
+//typ monstra
+tag(monstertype,undead,60)
+//weap flags
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resstimer,<eval {70 90}>)
+
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Wrestling={85.0 100.0}
+SpiritSpeak={40.0 50.0} // <-- intentionaly low SS as this monster type is supposed to boost mystik's damage
+
+ITEMnewbie=i_monster_create
+
+
+ON=@NPCRestock
+ITEM=loot_undead_body
+ITEM=loot_undead
+ITEM=random_reagent_necro,{4 10}
+ITEM=i_gold
+
+//////////////////////////////////////////////////////////
+
+[CHARDEF c_hcn_mummy_level_3]
+ID=154
+NAME=Mummy
+SOUND=snd_MONSTER_ZOMBIE1
+ICON=i_pet_ZOMBIE
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_FIRE_IMMUNE
+
+ATTACK=100
+ARMOR=95
+MOVERATE=5
+
+RESOURCES=10 t_eerie_stuff
+
+//=r_dungeon,r_spooky
+//=t_TRAP,c_man
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_selfreser
+TEVENTS=e_undead
+TEVENTS=e_hcn_madnessAbility
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Mummy
+
+ON=@Create
+COLOR=0483
+NPC=brain_monster
+FAME=20
+KARMA={-2000 -3999}
+
+STR=350
+DEX=130
+INT=40
+
+MAXHITS={3000 3500}
+MAXSTAM=120
+MAXMANA=0
+
+tag.experience=<eval {290.0 320.0}>
+
+tag.hcn_madnessAbilityChance=200 // == 20% chance
+tag.hcn_madnessAbilityStrength=400 // == 40% dmg
+//mystik
+//tag(hypnotizable,0) //nemrtveho nezhypnotizujes
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+//resists
+tag(resist_poison,1000) //nemrtveho neotravis
+tag(resist_bleed,1000) //individualni - spis ne, nemrtvi nekrvaceji
+tag(resist_summon,950)
+tag(resist_para,500)
+
+tag(resist_sharp,850)
+tag(resist_slash,950)
+tag(resist_pierce,450)
+tag(resist_blunt,850)
+
+tag(resist_fire,200)
+tag(resist_elect,500)
+tag(resist_cold,-600)
+
+//typ monstra
+tag(monstertype,undead,60)
+//weap flags
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resstimer,<eval {70 90}>)
+
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Wrestling={85.0 100.0}
+SpiritSpeak={65.0 70.0} // <-- intentionaly low SS as this monster type is supposed to boost mystik's damage
+
+ITEMnewbie=i_monster_create
+
+
+ON=@NPCRestock
+ITEM=loot_undead_body
+ITEM=loot_undead
+ITEM=random_reagent_necro,{4 10}
+ITEM=i_gold
+
+//////////////////////////////////////////////////////////
+
+[CHARDEF c_hcn_mummy_level_4]
+ID=154
+NAME=Mummy
+SOUND=snd_MONSTER_ZOMBIE1
+ICON=i_pet_ZOMBIE
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_FIRE_IMMUNE
+
+ATTACK=130
+ARMOR=120
+MOVERATE=8
+
+RESOURCES=10 t_eerie_stuff
+
+//=r_dungeon,r_spooky
+//=t_TRAP,c_man
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_selfreser
+TEVENTS=e_undead
+TEVENTS=e_hcn_madnessAbility // should be devastating in small rooms
+TEVENTS=e_npc_leaper //just slightly improves the monster's speed
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Mummy
+
+ON=@Create
+COLOR=0484
+NPC=brain_monster
+FAME=20
+KARMA={-2000 -3999}
+
+STR=350
+DEX=130
+INT=40
+
+MAXHITS={12000 13000}
+MAXSTAM=120
+MAXMANA=0
+
+tag.experience=<eval {750.0 850.0}>
+
+tag.hcn_madnessAbilityChance=666 // == 2/3 chance
+tag.hcn_madnessAbilityStrength=650 // == 65% dmg
+tag(npc_port_distance,2)
+
+//mystik
+//tag(hypnotizable,0) //nemrtveho nezhypnotizujes
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[9]>
+//resists
+tag(resist_poison,1000) //nemrtveho neotravis
+tag(resist_bleed,1000) //individualni - spis ne, nemrtvi nekrvaceji
+tag(resist_summon,950)
+tag(resist_para,560)
+
+tag(resist_sharp,950)
+tag(resist_slash,900)
+tag(resist_pierce,500)
+tag(resist_blunt,850)
+
+tag(resist_fire,-400)
+tag(resist_elect,500)
+tag(resist_cold,200)
+
+//typ monstra
+tag(monstertype,undead,50)
+//weap flags
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resstimer,<eval {70 90}>)
+
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Wrestling={85.0 100.0}
+SpiritSpeak={80.0 90.0} // <-- intentionaly low SS as this monster type is supposed to boost mystik's damage
+
+ITEMnewbie=i_monster_create
+
+
+ON=@NPCRestock
+ITEM=loot_undead_body
+ITEM=loot_undead
+ITEM=random_reagent_necro,{4 10}
+ITEM=i_gold
+
+///////////////////
+// W R A I T H S //
+///////////////////
+
+[CHARDEF c_hcn_wraith_level_1]
+ID=c_spectre
+NAME=Prizrak
+SOUND=snd_MONSTER_GHOST1
+ICON=i_pet_GHOUL
+CAN=MT_WALK|MT_USEHANDS|MT_FIRE_IMMUNE
+ATTACK=55
+ARMOR=80
+
+MOVERATE=3
+
+
+RESOURCES=10 t_eerie_stuff
+
+//=r_dungeon,r_spooky
+//=t_TRAP,c_man
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_selfreser
+TEVENTS=e_undead
+TEVENTS=e_hcn_teleToTarget
+TEVENTS=e_q026_hcnPoisoning_NPC
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Mummy
+
+ON=@Create
+COLOR=0481
+NPC=brain_monster
+FAME=20
+KARMA={-2000 -3999}
+STR=280
+DEX=130
+INT=40
+
+
+MAXHITS={600 650}
+MAXSTAM=120
+MAXMANA=0
+
+tag.experience=<eval {50.0 60.0}>
+
+tag(npc_port_distance,3)
+//mystik
+//tag(hypnotizable,0) //nemrtveho nezhypnotizujes
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+//resists
+tag(resist_poison,1000) //nemrtveho neotravis
+tag(resist_bleed,1000) //individualni - spis ne, nemrtvi nekrvaceji
+tag(resist_summon,950)
+tag(resist_para,700)
+
+tag(resist_sharp,900)
+tag(resist_slash,950)
+tag(resist_pierce,950)
+tag(resist_blunt,850)
+
+tag(resist_fire,900)
+tag(resist_elect,-200)
+tag(resist_cold,500)
+//typ monstra
+tag(monstertype,undead,80)
+//weap flags
+tag.weapflag=dam_physical|dam_sharp
+
+tag(resstimer,<eval {70 90}>)
+
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Wrestling={85.0 100.0}
+SpiritSpeak={20.0 25.0}
+Hiding={100.0 110.0}
+Stealth={120.0 130.0}
+Provocation={65.0 85.0}
+Peacemaking={85.0 90.0}
+
+ITEMnewbie=i_monster_create
+
+
+ON=@NPCRestock
+ITEM=loot_undead_body
+ITEM=loot_undead
+ITEM=random_reagent_necro,{4 10}
+ITEM=i_gold
+
+//////////////////////////////////////////////////////////
+
+[CHARDEF c_hcn_wraith_level_2]
+ID=c_spectre
+NAME=Prizrak
+SOUND=snd_MONSTER_GHOST1
+ICON=i_pet_GHOUL
+CAN=MT_WALK|MT_USEHANDS|MT_FIRE_IMMUNE
+
+ATTACK=56
+ARMOR=85
+MOVERATE=3
+
+RESOURCES=10 t_eerie_stuff
+
+//=r_dungeon,r_spooky
+//=t_TRAP,c_man
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_selfreser
+TEVENTS=e_undead
+TEVENTS=e_hcn_teleToTarget
+TEVENTS=e_q026_hcnPoisoning_NPC
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Mummy
+
+ON=@Create
+COLOR=0482
+NPC=brain_monster
+FAME=20
+KARMA={-2000 -3999}
+
+STR=350
+DEX=130
+INT=40
+
+MAXHITS={1000 1100}
+MAXSTAM=120
+MAXMANA=0
+
+tag.experience=<eval {140.0 155.0}>
+
+tag(npc_port_distance,4)
+//mystik
+//tag(hypnotizable,0) //nemrtveho nezhypnotizujes
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+//resists
+tag(resist_poison,1000) //nemrtveho neotravis
+tag(resist_bleed,1000) //individualni - spis ne, nemrtvi nekrvaceji
+tag(resist_summon,990)
+tag(resist_para,750)
+
+tag(resist_sharp,935)
+tag(resist_slash,935)
+tag(resist_pierce,960)
+tag(resist_blunt,875)
+
+tag(resist_fire,900)
+tag(resist_elect,-150)
+tag(resist_cold,550)
+
+//typ monstra
+tag(monstertype,undead,60)
+//weap flags
+tag.weapflag=dam_physical|dam_sharp
+
+tag(resstimer,<eval {70 90}>)
+
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Wrestling={85.0 100.0}
+SpiritSpeak={45.0 55.0}
+Hiding={110.0 130.0}
+Stealth={130.0 150.0}
+Provocation={85.0 92.0}
+Peacemaking={90.0 95.0}
+
+ITEMnewbie=i_monster_create
+
+
+ON=@NPCRestock
+ITEM=loot_undead_body
+ITEM=loot_undead
+ITEM=random_reagent_necro,{4 10}
+ITEM=i_gold
+
+//////////////////////////////////////////////////////////
+
+[CHARDEF c_hcn_wraith_level_3]
+ID=c_spectre
+NAME=Prizrak
+SOUND=snd_MONSTER_GHOST1
+ICON=i_pet_GHOUL
+CAN=MT_WALK|MT_USEHANDS|MT_FIRE_IMMUNE
+
+ATTACK=80
+ARMOR=95
+MOVERATE=5
+
+RESOURCES=10 t_eerie_stuff
+
+//=r_dungeon,r_spooky
+//=t_TRAP,c_man
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_selfreser
+TEVENTS=e_undead
+TEVENTS=e_hcn_teleToTarget
+TEVENTS=e_q026_hcnPoisoning_NPC
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Mummy
+
+ON=@Create
+COLOR=0483
+NPC=brain_monster
+FAME=20
+KARMA={-2000 -3999}
+
+STR=350
+DEX=130
+INT=40
+
+MAXHITS={2000 2200}
+MAXSTAM=120
+MAXMANA=0
+
+tag.experience=<eval {250.0 270.0}>
+
+tag(npc_port_distance,5)
+//mystik
+//tag(hypnotizable,0) //nemrtveho nezhypnotizujes
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//resists
+tag(resist_poison,1000) //nemrtveho neotravis
+tag(resist_bleed,1000) //individualni - spis ne, nemrtvi nekrvaceji
+tag(resist_summon,950)
+tag(resist_para,800)
+
+tag(resist_sharp,935)
+tag(resist_slash,935)
+tag(resist_pierce,960)
+tag(resist_blunt,900)
+
+tag(resist_fire,900)
+tag(resist_elect,-150)
+tag(resist_cold,600)
+
+//typ monstra
+tag(monstertype,undead,60)
+//weap flags
+tag.weapflag=dam_physical|dam_sharp
+
+tag(resstimer,<eval {70 90}>)
+
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Wrestling={85.0 100.0}
+SpiritSpeak={85.0 90.0}
+Hiding={140.0 150.0}
+Stealth={150.0 200.0}
+Provocation={92.0 97.0}
+Peacemaking={85.0 90.0}
+
+ITEMnewbie=i_monster_create
+
+
+ON=@NPCRestock
+ITEM=loot_undead_body
+ITEM=loot_undead
+ITEM=random_reagent_necro,{4 10}
+ITEM=i_gold
+
+//////////////////////////////////////////////////////////
+
+[CHARDEF c_hcn_wraith_level_4]
+ID=c_spectre
+NAME=Prizrak
+SOUND=snd_MONSTER_GHOST1
+ICON=i_pet_GHOUL
+CAN=MT_WALK|MT_USEHANDS|MT_FIRE_IMMUNE
+
+ATTACK=130
+ARMOR=120
+MOVERATE=8
+
+RESOURCES=10 t_eerie_stuff
+
+//=r_dungeon,r_spooky
+//=t_TRAP,c_man
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_selfreser
+TEVENTS=e_undead
+TEVENTS=e_hcn_teleToTarget
+TEVENTS=e_q026_hcnPoisoning_NPC
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Mummy
+
+ON=@Create
+COLOR=0484
+NPC=brain_monster
+FAME=20
+KARMA={-2000 -3999}
+
+STR=350
+DEX=130
+INT=40
+
+MAXHITS={10000 11000}
+MAXSTAM=120
+MAXMANA=0
+
+tag.experience=<eval {400.0 450.0}>
+
+tag(npc_port_distance,6)
+
+//mystik
+//tag(hypnotizable,0) //nemrtveho nezhypnotizujes
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[8]>
+//resists
+tag(resist_poison,1000) //nemrtveho neotravis
+tag(resist_bleed,1000) //individualni - spis ne, nemrtvi nekrvaceji
+tag(resist_summon,950)
+tag(resist_para,850)
+
+tag(resist_sharp,935)
+tag(resist_slash,935)
+tag(resist_pierce,960)
+tag(resist_blunt,900)
+
+tag(resist_fire,950)
+tag(resist_elect,-150)
+tag(resist_cold,650)
+
+//typ monstra
+tag(monstertype,undead,60)
+//weap flags
+tag.weapflag=dam_physical|dam_sharp
+
+tag(resstimer,<eval {70 90}>)
+
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Wrestling={85.0 100.0}
+SpiritSpeak={100.0 110.0}
+Hiding={160.0 180.0}
+Stealth={150.0 200.0}
+Provocation=100.0
+Peacemaking=100.0
+
+ITEMnewbie=i_monster_create
+
+
+ON=@NPCRestock
+ITEM=loot_undead_body
+ITEM=loot_undead
+ITEM=random_reagent_necro,{4 10}
+ITEM=i_gold
+
+
+////////////////////////////
+//     B O S S E S ! !    //
+//     (c) GM Yavanna     //
+////////////////////////////
+
+[CHARDEF c_hcn_boss_lvl1_lavaRoom]
+ID=c_excelent
+NAME=Lavozrout
+CAN=MT_WALK|mt_run
+ATTACK=400
+ARMOR=140
+//RESOURCES=1 i_ore_mithril
+BLOODCOLOR=color_o_adamantinum
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_parakrik
+TEVENTS=e_summonfrenzy
+
+CATEGORY=Monsters
+SUBSECTION=Special
+DESCRIPTION=Excelent
+
+ON=@Create
+COLOR=098e
+NPC=brain_monster
+FAME=250
+KARMA=-5000
+STR=20000
+DEX=500
+INT=600
+MAXHITS={3500 4000}
+MAXSTAM={600 700}
+MAXMANA=0
+
+tag.experience=<eval {1800.0 2000.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[10]>
+
+tag(monstertype,reaper,40)
+tag(monstertype2,undead,40)
+
+tag.weapflag=dam_blunt|dam_physical
+
+tag(resist_poison,1000)
+tag(resist_bleed,1000)
+tag(resist_summon,1000)
+tag(resist_para,1000)
+
+tag(resist_sharp,750)
+tag(resist_slash,750)
+tag(resist_pierce,680)
+tag(resist_blunt,450)
+
+tag(resist_fire,1000)
+tag(resist_elect,-2000)
+tag(resist_cold,-10000)
+
+Wrestling=140.0
+Resist=250.0
+SpiritSpeak=210.0
+Hiding={180.0 200.0}
+Stealth={150.0 200.0}
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+//////////////////////////////////////////////////////
+//               N I G H T M A R E                  //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF c_nightmare]
+ID=c_horse_brown_dk
+NAME=Nightmare
+SOUND=snd_ANIMALS_HORSE1
+ICON=i_pet_horse_brown_dk
+CAN=MT_WALK|MT_FIRE_IMMUNE
+
+ATTACK=80
+ARMOR=80
+MOVERATE=5
+
+RESOURCES=15 i_ribs_raw
+FOODTYPE=64 i_ribs_raw
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_ovinovac
+TEVENTS=e_parakrik
+
+CATEGORY=Monsters
+SUBSECTION=Animal Monsters
+DESCRIPTION=Nightmare
+
+ON=@Create
+COLOR=colors_black
+NPC=brain_monster
+FAME=1000
+KARMA={-600 -900}
+
+STR=1000
+DEX=200
+INT=100
+
+MAXHITS={1000 1100}
+MAXSTAM={250 350}
+MAXMANA=0
+
+tag.experience=<eval {90.0 95.0}>
+
+tag(calmable,30)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//typ monstra
+tag(monstertype,animal,60)
+tag(monstertype2,undead,60)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,650)
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,550)
+tag(resist_bleed,200)
+
+tag(resist_sharp,50)
+tag(resist_slash,50)
+tag(resist_pierce,450)
+tag(resist_blunt,00)
+
+tag(resist_fire,800)
+tag(resist_elect,400)
+tag(resist_cold,-200)
+
+Parrying={55.0 95.0}
+Tactics={98.0 100.0}
+Wrestling=150.0
+Resist=150.0
+Taming={130.0 135.0}
+AnimalLore=99.9
+SpiritSpeak=40.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+///////////////////  DEADLY ITEMS  ////////////////////////
+///////////////////////////////////////////////////////////
+
+[CHARDEF 026A]  //mec
+DEFNAME=c_item_sword
+NAME=Mec
+SOUND=snd_WEAPONS_SWORD1
+ICON=i_pet_WISP
+//ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=90
+ARMOR=80
+MOVERATE=4
+
+BLOODCOLOR=0980
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_critic              //sance na kritik melee
+TEVENTS=e_npc_bleed
+TEVENTS=e_summoneater
+
+CATEGORY=Monsters
+SUBSECTION=Special
+DESCRIPTION=Zive predmety - Mec
+
+ON=@Create
+COLOR=0980
+NPC=brain_monster
+FAME=250
+KARMA=-6000
+
+STR=3000
+DEX=500
+INT=00
+
+MAXHITS={5000 6000}
+MAXSTAM={450 520}
+MAXMANA=0
+
+tag.experience=<eval {150.0 170.0}>
+
+tag.npc_critic_chance=250         //25% chance
+tag.npc_critic_dmg=20,25          //dmg in between
+
+tag.npc_bleed=300             //30%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {850 950}>
+tag(resist_summon,1000)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,550)
+tag(resist_slash,550)
+tag(resist_pierce,750)
+tag(resist_blunt,500)
+
+//magic resists
+tag(resist_fire,50)
+tag(resist_elect,-500)
+tag(resist_cold,-200)
+
+//typ monstra
+tag(monstertype,golem,60)
+//weap flags
+tag.weapflag=dam_sharp|dam_physical
+
+Peacemaking=100.0
+Wrestling=160.0
+Tactics=120.0
+Parrying=150.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF 03E1]
+DEFNAME=c_item_shield_chaos
+NAME=Stit
+SOUND=snd_WEAPONS_HVYSWRD1
+ICON=i_pet_WISP
+//ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=70
+ARMOR=150
+MOVERATE=4
+
+BLOODCOLOR=0980
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_autoreflect
+
+CATEGORY=Monsters
+SUBSECTION=Special
+DESCRIPTION=Zive predmety - chaos stit
+
+ON=@Create
+COLOR=0980
+NPC=brain_monster
+FAME=250
+KARMA=-6000
+
+STR=3000
+DEX=200
+INT=00
+
+MAXHITS={10000 11000}
+MAXSTAM={150 170}
+MAXMANA=0
+
+tag.experience=<eval {150.0 170.0}>
+
+tag.npc_critic_chance=250         //25% chance
+tag.npc_critic_dmg=20,25          //dmg in between
+
+tag.npc_bleed=300             //30%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {850 950}>
+tag(resist_summon,1000)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,250)
+tag(resist_slash,250)
+tag(resist_pierce,850)
+tag(resist_blunt,00)
+
+//magic resists
+tag(resist_fire,250)
+tag(resist_elect,-500)
+tag(resist_cold,-200)
+
+//typ monstra
+tag(monstertype,golem,60)
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Peacemaking=100.0
+Wrestling=160.0
+Tactics=120.0
+Parrying=150.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF 0286]
+DEFNAME=c_item_hammer
+NAME=Kladivo
+SOUND=snd_WEAPONS_BLUNT01
+ICON=i_pet_WISP
+//ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=100
+ARMOR=80
+MOVERATE=4
+
+BLOODCOLOR=0980
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_critic              //sance na kritik melee
+TEVENTS=e_npc_stun
+TEVENTS=e_summoneater
+
+CATEGORY=Monsters
+SUBSECTION=Special
+DESCRIPTION=Zive predmety - Mec
+
+ON=@Create
+COLOR=0980
+NPC=brain_monster
+FAME=250
+KARMA=-6000
+
+STR=3000
+DEX=500
+INT=00
+
+MAXHITS={5000 6000}
+MAXSTAM={450 520}
+MAXMANA=0
+
+tag.experience=<eval {150.0 170.0}>
+
+tag.npc_critic_chance=250         //25% chance
+tag.npc_critic_dmg=15,20          //dmg in between
+
+tag.npc_stun_time=20              //2 seconds of stun
+Tag.npc_stun_chance=400           //30%, defaultne 20%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {850 950}>
+tag(resist_summon,1000)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,550)
+tag(resist_slash,550)
+tag(resist_pierce,750)
+tag(resist_blunt,500)
+
+//magic resists
+tag(resist_fire,50)
+tag(resist_elect,-500)
+tag(resist_cold,-200)
+
+//typ monstra
+tag(monstertype,golem,60)
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Peacemaking=100.0
+Wrestling=160.0
+Tactics=120.0
+Parrying=150.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF 0263]
+DEFNAME=c_item_lba
+NAME=Sekyra
+SOUND=snd_WEAPONS_AXE01
+ICON=i_pet_WISP
+//ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=90
+ARMOR=50
+MOVERATE=4
+
+BLOODCOLOR=0980
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_critic              //sance na kritik melee
+TEVENTS=e_npc_bleed
+TEVENTS=e_summoneater
+
+CATEGORY=Monsters
+SUBSECTION=Special
+DESCRIPTION=Zive predmety - LBA
+
+ON=@Create
+COLOR=0980
+NPC=brain_monster
+FAME=250
+KARMA=-6000
+
+STR=3000
+DEX=300
+INT=00
+
+MAXHITS={5000 6000}
+MAXSTAM={250 320}
+MAXMANA=0
+
+tag.experience=<eval {190.0 200.0}>
+
+tag.npc_critic_chance=500         //50% chance
+tag.npc_critic_dmg=30,35          //dmg in between
+
+tag.npc_bleed=100             //10%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {850 950}>
+tag(resist_summon,1000)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,550)
+tag(resist_slash,550)
+tag(resist_pierce,750)
+tag(resist_blunt,500)
+
+//magic resists
+tag(resist_fire,50)
+tag(resist_elect,-500)
+tag(resist_cold,-200)
+
+//typ monstra
+tag(monstertype,golem,60)
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Peacemaking=100.0
+Wrestling=160.0
+Tactics=120.0
+Parrying=150.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF 03A1]
+DEFNAME=c_item_helm
+NAME=Helma
+SOUND=snd_WEAPONS_HVYSWRD1
+ICON=i_pet_WISP
+//ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=70
+ARMOR=150
+MOVERATE=4
+
+BLOODCOLOR=0980
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_odinvis_krik
+
+CATEGORY=Monsters
+SUBSECTION=Special
+DESCRIPTION=Zive predmety - Helma
+
+ON=@Create
+COLOR=0980
+NPC=brain_monster
+FAME=250
+KARMA=-6000
+
+STR=3000
+DEX=200
+INT=00
+
+MAXHITS={10000 11000}
+MAXSTAM={150 170}
+MAXMANA=0
+
+tag.experience=<eval {150.0 170.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {850 950}>
+tag(resist_summon,1000)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,250)
+tag(resist_slash,250)
+tag(resist_pierce,-500)
+tag(resist_blunt,00)
+
+//magic resists
+tag(resist_fire,250)
+tag(resist_elect,-500)
+tag(resist_cold,-200)
+
+//typ monstra
+tag(monstertype,golem,60)
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Peacemaking=100.0
+Wrestling=160.0
+Tactics=120.0
+Parrying=150.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF 0268]
+DEFNAME=c_item_hxb
+NAME=Kuse
+SOUND=snd_WEAPONS_CROSSBOW
+ICON=i_pet_WISP
+//ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=40
+ARMOR=70
+MOVERATE=3
+
+BLOODCOLOR=0980
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_npc_sniper
+TEVENTS=e_npc_multishot
+
+CATEGORY=Monsters
+SUBSECTION=Special
+DESCRIPTION=Zive predmety - HxB
+
+ON=@Create
+COLOR=0980
+NPC=brain_monster
+FAME=250
+KARMA=-6000
+
+STR=3000
+DEX=200
+INT=00
+
+MAXHITS={5000 6000}
+MAXSTAM={150 170}
+MAXMANA=0
+
+tag.experience=<eval {150.0 170.0}>
+
+tag.multishot_chance=250          // 25% chance pri zasahu monstra
+tag.multishot_delay=15,20         // prodleva nez znovu
+tag.multishot_dmg=30,40           // dmg in between 30 and 40
+
+tag.npc_sniper_dmg=15             //o 15 HP
+tag.npc_sniper_chance=300         //30% Defaultne 20%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {850 950}>
+tag(resist_summon,1000)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,-500)
+tag(resist_slash,-500)
+tag(resist_pierce,-200)
+tag(resist_blunt,00)
+
+//magic resists
+tag(resist_fire,-500)
+tag(resist_elect,500)
+tag(resist_cold,200)
+
+//typ monstra
+tag(monstertype,golem,60)
+//weap flags
+tag.weapflag=dam_piercing|dam_physical
+
+Peacemaking=100.0
+Wrestling=160.0
+Archery={100.0 110.0}
+Tactics=120.0
+Parrying=150.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_bow
+ITEMNEWBIE=i_arrow,{50 75}
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF 027F]
+DEFNAME=c_item_spear
+NAME=Ostep
+SOUND=snd_WEAPONS_SWISH01
+ICON=i_pet_WISP
+//ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=40
+ARMOR=50
+MOVERATE=4
+
+BLOODCOLOR=0980
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_leaper
+TEVENTS=e_npc_bleed
+TEVENTS=e_summoneater
+
+CATEGORY=Monsters
+SUBSECTION=Special
+DESCRIPTION=Zive predmety - LBA
+
+ON=@Create
+COLOR=0980
+NPC=brain_monster
+FAME=250
+KARMA=-6000
+
+STR=1000
+DEX=1000
+INT=00
+
+MAXHITS={5000 6000}
+MAXSTAM={550 620}
+MAXMANA=0
+
+tag.experience=<eval {60.0 70.0}>
+
+tag.npc_bleed=800     //80.0%
+tag(npc_port_distance,9)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {850 950}>
+tag(resist_summon,1000)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,-150)
+tag(resist_slash,-150)
+tag(resist_pierce,150)
+tag(resist_blunt,200)
+
+//magic resists
+tag(resist_fire,50)
+tag(resist_elect,-500)
+tag(resist_cold,-200)
+
+//typ monstra
+tag(monstertype,golem,60)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Peacemaking=100.0
+Wrestling=160.0
+Tactics=120.0
+Parrying=150.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+
+
+///////////////////////////////////////////////////////////
+///////////////// nevyuzite asi ///////////////////////////
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_kralovna_nemrtvych]
+NAME=Lady Velera
+ID=C_woman
+ICON=i_pet_woman
+CAN=MT_WALK|MT_run|MT_EQUIP|MT_FEMALE
+
+ATTACK=121
+ARMOR=120
+MOVERATE=4
+
+BLOODCOLOR=00
+
+TEVENTS=e_undead
+TEVENTS=e_humanoid
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+TEVENTS=e_summoneater_vamp
+TSPEECH=spk_human_prime //spk_kralovna_nemrtvych
+
+CATEGORY=Monsters
+SUBSECTION=Special
+DESCRIPTION=Kralovna Nemrtvych
+
+ON=@Create
+
+COLOR=07FFF
+NPC=brain_Human
+KARMA=-6000
+FAME=1000
+
+STR=1000
+DEX=600
+INT=800
+
+MAXHITS={25000 28000}
+MAXSTAM={150 200}
+MAXMANA=400
+
+tag.experience=<eval {500.0 550.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+//other resists
+tag(resist_poison,200)
+tag.resist_para=<eval {650 750}>
+tag(resist_summon,700)
+tag(resist_bleed,550)
+
+//weap resists
+tag(resist_sharp,800)
+tag(resist_slash,800)
+tag(resist_pierce,600)
+tag(resist_blunt,500)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,800)
+tag(resist_cold,950)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+
+//weap flags
+tag.weapflag=dam_piercing|dam_physical
+
+Macefighting=150.0
+Tactics=100.0
+Resist={1000.0 1001.0}
+Magery=500.0
+EI=200.0
+SpiritSpeak=105.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_greater_heal
+ADDSPELL=s_flamestrike
+ADDSPELL=s_mana_drain
+ADDSPELL=s_mind_blast
+ADDSPELL=s_summon_daemon
+
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_sandals
+ITEMNEWBIE=i_staff_gnarled
+COLOR=07FFF
+ITEMNEWBIE=i_bone_chest
+COLOR=07FFF
+ITEMNEWBIE=i_bone_arms
+COLOR=07FFF
+ITEMNEWBIE=i_bone_leggings
+COLOR=07FFF
+ITEMNEWBIE=i_bone_gloves
+COLOR=07FFF
+ITEMNEWBIE=i_hair_long
+COLOR=07FFF
+ITEM=i_npc_mount
+tag.mount=i_mt_horse_gray
+tag.mountcolor=07FFF
+
+ON=@NPCRestock
+ITEM=loot_human
+ITEM=i_gold
+
+ON=@npcseenewplayer
+dorand 2
+  say("Zemri, cerve!")
+  say("Priprav se na smrt!")
+enddo
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_demon_lord]
+DEFNAME=c_demon_lord
+ID=c_m_balron_lbr
+NAME=Maarg
+SOUND=snd_MONSTER_DAEMON1
+ICON=i_pet_daemon_gate_lbr
+CAN=MT_WALK|MT_RUN|MT_FIRE_IMMUNE
+
+ATTACK=150
+ARMOR=100
+MOVERATE=4
+
+RESOURCES=50 i_reag_daemon_bone
+FOODTYPE=
+BLOODCOLOR=00
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_demon_lord
+TEVENTS=e_summoneater
+TEVENTS=e_daemon
+TEVENTS=e_npc_curse                     //vsechny viditelne zrani o dmg
+
+CATEGORY=Monsters
+SUBSECTION=Special
+DESCRIPTION=Demon Lord Boss
+
+ON=@Create
+COLOR=00
+NPC=brain_monster
+FAME=150
+KARMA=-2000
+
+STR=250
+DEX=200
+INT=500
+
+MAXHITS={30000 32000}
+MAXSTAM={160 200}
+MAXMANA=0
+
+tag.experience=<eval {800.0 850.0}>
+
+tag.npc_curse_chance=250                // 25% chance to trigger this event
+tag.npc_curse_delay=15,17               // delay between another possible strike
+tag.npc_curse_dmg=30,35                 // dmg
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[9]>
+
+tag(resist_poison,1000)
+tag.resist_para=<eval {800 950}>
+tag(resist_summon,950)
+tag(resist_bleed,400)
+
+tag(resist_sharp,250)
+tag(resist_slash,250)        //sekery
+tag(resist_pierce,450)
+tag(resist_blunt,50)
+
+tag(resist_fire,800)
+tag(resist_elect,400)
+tag(resist_cold,-200)
+
+Tactics=100.0
+Resist=150.0
+Wrestling=120.0
+SpiritSpeak=145.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_nemrtvy_strazce]
+NAME=Nemrtvy Strazce
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP|MT_MALE
+
+ATTACK=150
+ARMOR=90
+MOVERATE=4
+
+RESOURCES=
+FOODTYPE=
+BLOODCOLOR=00
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+TSPEECH=spk_human_prime
+TEVENTS=e_humanoid
+
+CATEGORY=Monsters
+SUBSECTION=Special
+DESCRIPTION=Nemrtvy Strazce
+
+ON=@Create
+COLOR=07FFF
+NPC=brain_Human
+KARMA=-6000
+FAME=2000
+
+STR=2000
+DEX=400
+INT=0
+
+MAXHITS={25000 27000}
+MAXSTAM={340 350}
+
+tag.experience=<eval {500.0 550.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[8]>
+
+tag(resist_poison,300)
+tag.resist_para=<eval {800 950}>
+tag(resist_summon,950)
+tag(resist_bleed,600)
+
+tag(resist_sharp,250)
+tag(resist_slash,250)        //sekery
+tag(resist_pierce,450)
+tag(resist_blunt,50)
+
+tag(resist_fire,800)
+tag(resist_elect,400)
+tag(resist_cold,-200)
+
+Swordsmanship=150.0
+Tactics=100.0
+Resist={50.0 60.0}
+SpiritSpeak=95.0
+Wrestling=150.0
+
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_axe_two_hand
+COLOR=07FFF
+ITEMNEWBIE=i_platemail_gloves
+COLOR=07FFF
+ITEMNEWBIE=i_platemail_leggings
+COLOR=07FFF
+ITEMNEWBIE=i_platemail_chest
+COLOR=07FFF
+ITEMNEWBIE=i_platemail_arms
+COLOR=07FFF
+ITEMNEWBIE=i_platemail_gorget
+COLOR=07FFF
+ITEMNEWBIE=i_platemail_helm
+COLOR=07FFF
+
+ON=@NPCRestock
+ITEM=loot_human
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+[CHARDEF c_sluzebnice_kristalu]
+
+NAME=Sluzebnice Kristalu
+ID=C_woman
+ICON=i_pet_woman
+CAN=MT_WALK|MT_run|MT_EQUIP|MT_female
+
+ATTACK=80
+ARMOR=140
+MOVERATE=4
+
+RESOURCES=
+FOODTYPE=
+BLOODCOLOR=098b
+
+TEVENTS=e_humanoid
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+TEVENTS=e_summoneater
+TEVENTS=e_npc_curse                     //vsechny viditelne zrani o dmg
+TSPEECH=spk_human_prime
+
+CATEGORY=Monsters
+SUBSECTION=Special
+DESCRIPTION=Sluzebnice Kristalu
+
+ON=@Create
+COLOR=00
+NPC=brain_Human
+KARMA=-6000
+FAME=1000
+
+STR=1000
+DEX=200
+INT=800
+
+MAXHITS={4000 4200}
+MAXSTAM={100 120}
+MAXMANA=500
+
+tag.experience=<eval {300.0 360.0}>
+
+tag.npc_curse_chance=250                // 25% chance to trigger this event
+tag.npc_curse_delay=10,12               // delay between another possible strike
+tag.npc_curse_dmg=20,25                 // dmg
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+tag(resist_poison,1000)
+tag.resist_para=<eval {850 950}>
+tag(resist_summon,950)
+tag(resist_bleed,600)
+
+tag(resist_sharp,50)
+tag(resist_slash,50)        //sekery
+tag(resist_pierce,450)
+tag(resist_blunt,-250)
+
+tag(resist_fire,500)
+tag(resist_elect,400)
+tag(resist_cold,-200)
+
+Wrestling=150.0
+Tactics=1000
+Resist={1200 1300}
+Magery=500.0
+EI=100.0
+SpiritSpeak=75.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_greater_heal
+ADDSPELL=s_summon_daemon
+
+COLOR=0640
+NAME=Kristalova Kniha
+ITEMNEWBIE=i_dress_plain
+COLOR=08ae
+ITEMNEWBIE=i_sandals
+ITEMNEWBIE=i_hair_long
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_human
+ITEM=i_gold
+
+ON=@npcseenewplayer
+dorand 2
+  say("Vetrelci musi byt zniceni!")
+  say("Chrante obetiny! Znicte vetrelce!")
+enddo
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_sluzebnik_kristalu]
+
+NAME=Sluzebnik Kristalu
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run|MT_EQUIP|MT_MALE
+
+ATTACK=80
+ARMOR=140
+MOVERATE=4
+
+RESOURCES=
+FOODTYPE=
+BLOODCOLOR=098b
+
+TEVENTS=e_humanoid
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+TEVENTS=e_summoneater
+TEVENTS=e_npc_curse                     //vsechny viditelne zrani o dmg
+TSPEECH=spk_human_prime
+
+CATEGORY=Monsters
+SUBSECTION=Special
+DESCRIPTION=Sluzebnice Kristalu
+
+ON=@Create
+
+COLOR=00
+NPC=brain_Human
+KARMA=-6000
+FAME=1000
+
+STR=1000
+DEX=700
+INT=800
+
+MAXHITS={4000 4200}
+MAXSTAM={100 120}
+MAXMANA=500
+
+tag.experience=<eval {300.0 360.0}>
+
+tag.npc_curse_chance=250                // 25% chance to trigger this event
+tag.npc_curse_delay=15,17               // delay between another possible strike
+tag.npc_curse_dmg=30,35                 // dmg
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+tag(resist_poison,1000)
+tag.resist_para=<eval {850 950}>
+tag(resist_summon,950)
+tag(resist_bleed,600)
+
+tag(resist_sharp,50)
+tag(resist_slash,50)        //sekery
+tag(resist_pierce,450)
+tag(resist_blunt,-250)
+
+tag(resist_fire,500)
+tag(resist_elect,400)
+tag(resist_cold,-200)
+
+Wrestling=150.0
+Tactics=1000
+Resist={1200 1300}
+Magery=500.0
+EI=100.0
+SpiritSpeak=80.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_greater_heal
+ADDSPELL=s_summon_daemon
+COLOR=0640
+NAME=Kristalova Kniha
+
+ITEMNEWBIE=i_rob
+COLOR=08ae
+ITEMNEWBIE=i_sandals
+ITEMNEWBIE=i_hair_long
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_human
+ITEM=i_gold
+
+ON=@npcseenewplayer
+dorand 2
+  say("Vetrelci musi byt zniceni!")
+  say("Chrante obetiny! Znicte vetrelce!")
+enddo
+
+[EOF]

@@ -1,0 +1,725 @@
+[ITEMDEF i_armor_check]
+ID=2
+
+[DEFNAMES armortypes]
+armortype_plate		1
+armortype_ring		2
+armortype_chain		3
+armortype_bone		4
+armortype_studded	5
+
+[ITEMDEF 04560]
+DEFNAME=i_COPPER_PLATEMAIL_ARMS
+NAME=Copper Platemail Arms
+ID=i_platemail_arms
+ARMOR=60
+REQSTR=40
+WEIGHT=19.0
+tdata2=armortype_plate
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper platemail
+DESCRIPTION=Platemail Arms
+RESOURCES=18 i_ingot_copper
+SKILLMAKE=Blacksmithing 40.0, Tinkering 30.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=7
+armorcreate(copper,plate)
+
+[ITEMDEF 04561]
+DEFNAME=i_COPPER_PLATEMAIL_leggings
+NAME=Copper Platemail Legs
+ID=i_platemail_leggings
+ARMOR=60
+REQSTR=60
+WEIGHT=21.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper platemail
+DESCRIPTION=Platemail Legs
+RESOURCES=20 i_ingot_copper
+SKILLMAKE=Blacksmithing 42.0, Tinkering 30.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=12
+armorcreate(copper,plate)
+
+[ITEMDEF 04563]
+DEFNAME=i_COPPER_PLATEMAIL_GORGET
+NAME=Copper Platemail Gorget
+ID=i_platemail_gorget
+ARMOR=60
+REQSTR=30
+WEIGHT=6.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper platemail
+DESCRIPTION=Platemail Gorget
+RESOURCES=10 i_ingot_copper
+SKILLMAKE=Blacksmithing 37.0, Tinkering 30.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=4
+armorcreate(copper,plate)
+
+[ITEMDEF 04564]
+DEFNAME=i_COPPER_PLATEMAIL_GAUNTLETS
+NAME=Copper Platemail Gauntlets
+ID=i_platemail_gloves
+ARMOR=60
+REQSTR=30
+WEIGHT=5.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper platemail
+DESCRIPTION=Platemail Gauntlets
+RESOURCES=12 i_ingot_copper
+SKILLMAKE=Blacksmithing 39.0, Tinkering 30.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=4
+armorcreate(copper,plate)
+
+[ITEMDEF 04565]
+DEFNAME=i_COPPER_PLATEMAIL
+NAME=Copper Platemail
+ID=i_platemail_chest
+ARMOR=60
+REQSTR=60
+WEIGHT=24.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper platemail
+DESCRIPTION=Platemail chest
+RESOURCES=25 i_ingot_copper
+SKILLMAKE=Blacksmithing 45.0, Tinkering 30.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=18
+armorcreate(copper,plate)
+
+[ITEMDEF 04577]
+DEFNAME=i_COPPER_FEMALE_PLATEMAIL
+NAME=Copper Platemail
+ID=i_armor_female_plate
+ARMOR=60
+REQSTR=15
+WEIGHT=14.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper platemail
+DESCRIPTION=Female Platemail
+RESOURCES=22 i_ingot_copper
+SKILLMAKE=Blacksmithing 37.0, Tinkering 30.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=18
+armorcreate(copper,plate)
+
+[ITEMDEF 04562]
+DEFNAME=i_COPPER_PLATE_HELM
+NAME=Copper Plate Helm
+ID=i_platemail_helm
+ARMOR=60
+REQSTR=40
+WEIGHT=11.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper platemail
+DESCRIPTION=Plate Helm
+RESOURCES=15 i_ingot_copper
+SKILLMAKE=Blacksmithing 45.0, Tinkering 30.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=7
+armorcreate(copper,plate)
+
+[ITEMDEF 0458b]
+DEFNAME=i_COPPER_CLOSED_HELM
+NAME=Copper Closed Helm
+ID=i_helm_closed
+ARMOR=60
+REQSTR=20
+WEIGHT=11.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper platemail
+DESCRIPTION=Closed Helm
+RESOURCES=15 i_ingot_copper
+SKILLMAKE=Blacksmithing 37.0, Tinkering 30.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=7
+armorcreate(copper,plate)
+
+[ITEMDEF 0458d]
+DEFNAME=i_COPPER_BASCINET
+NAME=Copper Bascinet
+ID=i_bascinet
+ARMOR=60
+REQSTR=20
+WEIGHT=9.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper platemail
+DESCRIPTION=Bascinet
+RESOURCES=15 i_ingot_copper
+SKILLMAKE=Blacksmithing 37.0, Tinkering 30.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=7
+armorcreate(copper,plate)
+
+[ITEMDEF 0458e]
+DEFNAME=i_COPPER_NOSE_HELM
+NAME=Copper Nose Helm
+ID=i_helm_nose
+ARMOR=60
+REQSTR=20
+WEIGHT=11.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper platemail
+DESCRIPTION=Nose Helm
+RESOURCES=15 i_ingot_copper
+SKILLMAKE=Blacksmithing 37.0, Tinkering 30.0
+
+tdata1=1//copper
+
+
+ON=@Create
+HITPOINTS=7
+armorcreate(copper,plate)
+
+/////////////////////////////////////////////// CHAIN MAIL
+
+[ITEMDEF i_copper_CHAINMAIL_gorget]
+ID=i_leather_gorget
+NAME=Copper Chainmail Gorget
+WEIGHT=2.0
+ARMOR=30
+REQSTR=20
+RESOURCES=10 i_ingot_copper
+SKILLMAKE=Blacksmithing 33.0, Tinkering 35.0
+tdata1=1//copper
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper chainmail
+DESCRIPTION=Chainmail gorget
+
+ON=@Create
+HITPOINTS=3
+armorcreate(copper,chain)
+
+[ITEMDEF i_copper_CHAINMAIL_sleeves]
+ID=i_leather_sleeves
+NAME=Copper Chainmail Sleeves
+WEIGHT=2.0
+ARMOR=30
+REQSTR=20
+RESOURCES=10 i_ingot_copper
+SKILLMAKE=Blacksmithing 33.0, Tinkering 35.0
+tdata1=1//copper
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper chainmail
+DESCRIPTION=Chainmail Sleeves
+
+ON=@Create
+HITPOINTS=6
+armorcreate(copper,chain)
+
+[ITEMDEF i_copper_CHAINMAIL_gloves]
+ID=i_leather_gloves
+NAME=Copper Chainmail Gloves
+WEIGHT=2.0
+ARMOR=30
+REQSTR=20
+RESOURCES=10 i_ingot_copper
+SKILLMAKE=Blacksmithing 33.0, Tinkering 35.0
+tdata1=1//copper
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper chainmail
+DESCRIPTION=Chainmail gloves
+
+ON=@Create
+HITPOINTS=3
+armorcreate(copper,chain)
+
+[ITEMDEF 04578]
+DEFNAME=i_COPPER_CHAINMAIL_COIF
+NAME=Copper Chainmail Coif
+ID=i_chainmail_coif
+ARMOR=30
+REQSTR=20
+WEIGHT=7.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper chainmail
+DESCRIPTION=Chainmail Coif
+RESOURCES=10 i_ingot_copper
+SKILLMAKE=Blacksmithing 33.0, Tinkering 35.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=6
+armorcreate(copper,chain)
+
+[ITEMDEF 04579]
+DEFNAME=i_COPPER_CHAINMAIL_LEGGINGS
+NAME=Copper Chainmail Leggings
+ID=i_chainmail_leggings
+ARMOR=30
+REQSTR=20
+WEIGHT=11.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper chainmail
+DESCRIPTION=Chainmail Leggings
+RESOURCES=18 i_ingot_copper
+SKILLMAKE=Blacksmithing 33.0, Tinkering 35.0
+tdata1=1//copper
+
+
+ON=@Create
+HITPOINTS=9
+armorcreate(copper,chain)
+
+[ITEMDEF 04580]
+DEFNAME=i_COPPER_CHAINMAIL_TUNIC
+NAME=Copper Chainmail Tunic
+ID=i_chainmail_tunic
+ARMOR=30
+REQSTR=20
+WEIGHT=16.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper chainmail
+DESCRIPTION=Chainmail Tunic
+RESOURCES=20 i_ingot_copper
+SKILLMAKE=Blacksmithing 33.0, Tinkering 35.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=14
+armorcreate(copper,chain)
+
+////////////////////////////////////////// RING MAIL
+
+[ITEMDEF i_copper_kite_wood_shield]
+ID=i_shield_kite_wood
+NAME=Copper kite shield
+WEIGHT=2.0
+ARMOR=21
+REQSTR=20
+RESOURCES=10 i_ingot_copper
+SKILLMAKE=Blacksmithing 30.0, Tinkering 30.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper ringmail
+DESCRIPTION=Kite wood shield
+
+tdata1=1
+
+ON=@Create
+HITPOINTS=10
+shieldcreate(copper,ring)
+
+
+[ITEMDEF i_copper_RINGMAIL_gorget]
+ID=i_leather_gorget
+NAME=Copper ringmail gorget
+WEIGHT=2.0
+ARMOR=30
+REQSTR=20
+RESOURCES=10 i_ingot_copper
+SKILLMAKE=Blacksmithing 30.0, Tinkering 30.0
+tdata1=1//copper
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper ringmail
+DESCRIPTION=Ringmail Gorget
+
+ON=@Create
+HITPOINTS=3
+armorcreate(copper,ring)
+
+[ITEMDEF i_copper_RINGMAIL_helm]
+ID=i_helm_open
+NAME=Copper Ringmail Helm
+WEIGHT=2.0
+ARMOR=30
+REQSTR=20
+RESOURCES=10 i_ingot_copper
+SKILLMAKE=Blacksmithing 30.0, Tinkering 30.0
+tdata1=1//copper
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper ringmail
+DESCRIPTION=Ringmail helmet
+
+ON=@Create
+HITPOINTS=4
+armorcreate(copper,ring)
+
+[ITEMDEF 0457a]
+DEFNAME=i_COPPER_RINGMAIL_LEGGINGS
+NAME=Copper Ringmail Leggings
+ID=i_ringmail_leggings
+ARMOR=30
+REQSTR=20
+WEIGHT=16.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper ringmail
+DESCRIPTION=Ringmail Leggings
+RESOURCES=16 i_ingot_copper
+SKILLMAKE=Blacksmithing 30.0, Tinkering 30.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=6
+armorcreate(copper,ring)
+
+[ITEMDEF 0457b]
+DEFNAME=i_COPPER_RINGMAIL_SLEEVES
+NAME=Copper Ringmail Sleeves
+ID=i_ringmail_sleeves
+ARMOR=30
+REQSTR=20
+WEIGHT=14.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper ringmail
+DESCRIPTION=Ringmail Sleeves
+RESOURCES=14 i_ingot_copper
+SKILLMAKE=Blacksmithing 30.0, Tinkering 30.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=4
+armorcreate(copper,ring)
+
+[ITEMDEF 0457c]
+DEFNAME=i_COPPER_RINGMAIL_GLOVES
+NAME=Copper Ringmail Gloves
+ID=i_ringmail_gloves
+ARMOR=30
+REQSTR=20
+WEIGHT=2.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper ringmail
+DESCRIPTION=Ringmail Gloves
+RESOURCES=10 i_ingot_copper
+SKILLMAKE=Blacksmithing 30.0, Tinkering 30.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=3
+armorcreate(copper,ring)
+
+[ITEMDEF 0457d]
+DEFNAME=i_COPPER_RINGMAIL_TUNIC
+NAME=Copper Ringmail Tunic
+ID=i_ringmail_tunic
+ARMOR=30
+REQSTR=20
+WEIGHT=16.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper ringmail
+DESCRIPTION=Ringmail Tunic
+RESOURCES=18 i_ingot_copper
+SKILLMAKE=Blacksmithing 30.0, Tinkering 30.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=10
+armorcreate(copper,ring)
+
+///////////////////////////////////////////////////// SHIELDY
+
+[ITEMDEF 0457e]
+DEFNAME=i_COPPER_BUCKLER_SHIELD
+NAME=Copper Buckler
+ID=i_shield_buckler
+ARMOR=8
+REQSTR=15
+WEIGHT=8.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper studded
+DESCRIPTION=Buckler
+RESOURCES=10 i_ingot_copper
+SKILLMAKE=Blacksmithing 30.0, Tinkering 30.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=6
+shieldcreate(copper,studded)
+
+[ITEMDEF 0457f]
+DEFNAME=i_COPPER_METAL_SHIELD
+NAME=Copper Metal Shield
+ID=i_shield_round_metal
+ARMOR=11
+REQSTR=15
+WEIGHT=12.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper chainmail
+DESCRIPTION=Metal Shield
+RESOURCES=14 i_ingot_copper
+SKILLMAKE=Blacksmithing 40.0, Tinkering 30.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=12
+shieldcreate(copper,chain)
+
+[ITEMDEF 04581]
+DEFNAME=i_COPPER_HEATER_SHIELD
+NAME=Copper Heater Shield
+ID=I_SHIELD_HEATER
+ARMOR=3
+REQSTR=30
+WEIGHT=15.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper platemail
+DESCRIPTION=Heater Shield
+RESOURCES=18 i_ingot_copper
+SKILLMAKE=Blacksmithing 45.0, Tinkering 30.0
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=16
+shieldcreate(copper,plate)
+
+[ITEMDEF i_studded_cap_copper]
+ID=i_leather_cap
+RESOURCES=2 i_ingot_copper, i_leather_cap
+ARMOR=8
+NAME=copper Studded Cap
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper Studded
+DESCRIPTION=Studded Sleeves
+SKILLMAKE=Tinkering 45.0, t_tinker_tools
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=2
+armorcreate(copper,studded)
+
+[ITEMDEF i_studded_sleeves_copper]
+ID=i_studded_sleeves
+RESOURCES=2 i_ingot_copper, i_leather_sleeves
+ARMOR=8
+NAME=copper Studded Sleeves
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper Studded
+DESCRIPTION=Studded Sleeves
+SKILLMAKE=Tinkering 45.0, t_tinker_tools
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=3
+armorcreate(copper,studded)
+
+[ITEMDEF i_studded_gloves_copper]
+ID=i_studded_gloves
+SKILLMAKE=Tinkering 45.0, t_tinker_tools
+RESOURCES=2 i_ingot_copper, i_leather_gloves
+ARMOR=8
+NAME=copper Studded Gloves
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper Studded
+DESCRIPTION=Studded Gloves
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=2
+armorcreate(copper,studded)
+
+[ITEMDEF i_studded_gorget_copper]
+ID=i_studded_gorget
+RESOURCES=1 i_ingot_copper, i_leather_gorget
+ARMOR=8
+NAME=copper Studded Gorget
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper Studded
+DESCRIPTION=Studded Gorget
+SKILLMAKE=Tinkering 45.0, t_tinker_tools
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=2
+armorcreate(copper,studded)
+
+[ITEMDEF i_studded_leggings_copper]
+ID=i_studded_leggings
+RESOURCES=6 i_ingot_copper, i_leather_leggings
+ARMOR=8
+NAME=copper Studded Leggings
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper Studded
+DESCRIPTION=Studded Leggings
+SKILLMAKE=Tinkering 45.0, t_tinker_tools
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=5
+armorcreate(copper,studded)
+
+[ITEMDEF i_studded_tunic_copper]
+ID=i_studded_tunic
+RESOURCES=12 i_ingot_copper, i_leather_tunic
+ARMOR=8
+NAME=copper Studded Tunic
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper Studded
+DESCRIPTION=Studded Tunic
+SKILLMAKE=Tinkering 45.0, t_tinker_tools
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=7
+armorcreate(copper,studded)
+
+[ITEMDEF i_armor_female_bustier_studded_copper]
+ID=i_armor_female_bustier_studded
+RESOURCES=12 i_ingot_copper, i_armor_female_bustier
+ARMOR=8
+NAME=copper Studded Bustier
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper Studded
+DESCRIPTION=Studded Bustier
+SKILLMAKE=Tinkering 45.0, t_tinker_tools
+tdata1=1//copper
+
+ON=@Create
+HITPOINTS=7
+armorcreate(copper,studded)
+
+[ITEMDEF i_armor_female_studded_copper]
+ID=i_armor_female_studded
+ARMOR=8
+NAME=copper Female Studded Armor
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper Studded
+DESCRIPTION=Studded Armor
+SKILLMAKE=Tinkering 45.0, t_tinker_tools
+RESOURCES=12 i_ingot_copper, i_armor_female_leather
+tdata1=1
+
+ON=@Create
+HITPOINTS=7
+armorcreate(copper,studded)
+//////////////////////////////
+[ITEMDEF i_bone_arms_Copper]
+ID=i_bone_arms
+RESOURCES=2 i_ingot_Copper, i_bone_arms
+NAME=Bone Arms of Copper
+SKILLMAKE=Tinkering 40.0, t_tinker_tools
+
+WEIGHT=4.0
+ARMOR=8
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper bone
+DESCRIPTION=Bone Arms
+tdata1=1//Copper
+
+ON=@Create
+HITPOINTS=3
+armorcreate(copper,bone)
+
+[ITEMDEF i_bone_chest_Copper]
+ID=i_bone_chest
+NAME=Bone Chest of Copper
+RESOURCES=12 i_ingot_Copper,  i_bone_chest
+SKILLMAKE=Tinkering 40.0, t_tinker_tools
+
+WEIGHT=15.0
+ARMOR=8
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper bone
+DESCRIPTION=Bone Chest
+tdata1=1//Copper
+ON=@Create
+HITPOINTS=7
+armorcreate(copper,bone)
+
+[ITEMDEF i_bone_gloves_Copper]
+ID=i_bone_gloves
+NAME=Bone Gloves of Copper
+RESOURCES=3 i_ingot_Copper, i_bone_gloves
+SKILLMAKE=Tinkering 40.0, t_tinker_tools
+
+WEIGHT=5.0
+ARMOR=8
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper bone
+DESCRIPTION=Bone Gloves
+tdata1=1//Copper
+
+ON=@Create
+HITPOINTS=2
+armorcreate(copper,bone)
+
+[ITEMDEF i_bone_helmet_Copper]
+ID=i_bone_helmet
+NAME=Bone Helmet of Copper
+RESOURCES=5 i_ingot_Copper, i_bone_helmet
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper bone
+DESCRIPTION=Bone Helmet
+SKILLMAKE=Tinkering 40.0, t_tinker_tools
+
+WEIGHT=6.0
+ARMOR=8
+REQSTR=40
+tdata1=1//Copper
+
+ON=@Create
+HITPOINTS=4
+armorcreate(copper,bone)
+
+[ITEMDEF i_bone_leggings_Copper]
+ID=i_bone_leggings
+NAME=Bone Legs of Copper
+RESOURCES=6 i_ingot_Copper, i_bone_leggings
+SKILLMAKE=Tinkering 40.0, t_tinker_tools
+
+WEIGHT=10.0
+ARMOR=8
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Copper bone
+DESCRIPTION=Bone Legs
+tdata1=1//Copper
+
+ON=@Create
+HITPOINTS=5
+armorcreate(copper,bone)
+
+[EOF]

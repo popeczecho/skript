@@ -1,0 +1,1137 @@
+[CHARDEF c_kobka_mage]
+NAME=Carodej
+ID=C_man
+
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+attack=140
+ARMOR=45
+moverate=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_npc_detect
+TEVENTS=e_looter 
+TEVENTS=e_selfreser
+
+CATEGORY=Dungeony
+SUBSECTION=Kobka
+DESCRIPTION=Carodej
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+COLOR=07FFF
+NPC=brain_monster
+FAME=100
+KARMA=-5000
+
+STR=1000
+DEX=1000
+INT=290
+
+maxhits={9500 10000}
+maxstam={100 120}
+maxmana=1500
+
+tag.experience=<eval {250.0 300.0}>
+tag(monstertype,humanoid)
+
+tag.weapflag=dam_slashing|dam_physical //ruzne
+
+//other resists
+tag(resist_poison,450)
+tag.resist_para=<eval {600 750}>
+tag(resist_summon,900)
+tag(resist_bleed,600)
+//weap resists
+tag(resist_sharp,200)
+tag(resist_slash,200)
+tag(resist_pierce,-200)
+tag(resist_blunt,500)
+//magic resists
+tag(resist_fire,400)
+tag(resist_elect,400)
+tag(resist_cold,200)
+
+//typ monstra
+tag(monstertype,humanoid)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical //ruzne
+
+WRESTLING=150.0 
+RESIST=100.0
+TACTICS={100.0 150.0}
+PARRYING={90.0 100.0}
+MACEFIGHTING={90.0 100.0}
+MAGERY=450.0
+EI=130.0
+PROVOCATION=100.0
+PEACEMAKING=100.0
+SpiritSpeak=40.0
+
+ITEMNEWBIE=i_spellbook
+addspell=s_harm
+addspell=s_fireball
+addspell=s_lightning
+addspell=s_greater_heal 
+addspell=s_paralyze
+
+
+ITEMnewbie=i_staff_gnarled
+color=0455
+name=Staff
+ITEMnewbie=i_bone_helmet
+color=099B
+ITEMnewbie=i_bone_gloves
+color=099B
+ITEMnewbie=i_bone_chest
+color=099B
+ITEMnewbie=i_bone_leggings
+color=099B
+ITEMnewbie=i_bone_arms
+color=099B
+ITEMnewbie=i_robe
+color=0455
+
+ITEMnewbie=i_monster_create  //Todle vzdy posledni v equipovani monstra. Nastavuje mnoho vlastnosti monster
+
+ON=@NPCRestock 
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{30 35}
+ITEM=RANDOM_REAGENT_NECRO,{30 35}
+
+////////////////////////////////////////////////////////////
+
+[CHARDEF c_kobka_archer]
+NAME=Lovec
+ID=C_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=100
+ARMOR=50
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_summoneater
+TEVENTS=e_looter
+TEVENTS=e_npc_multishot
+TEVENTS=e_selfreser
+
+CATEGORY=Dungeony
+SUBSECTION=Kobka
+DESCRIPTION=Lovec
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+COLOR=07FFF
+NPC=brain_monster
+FAME=100
+KARMA=-5000
+
+STR=1000
+DEX=190
+INT=100
+
+MAXHITS={11000 12500}
+MAXSTAM={100 120}
+MAXMANA=0
+
+tag.experience=<eval {300.0 350.0}>
+
+tag.multishot_chance=250          // 25% chance pri zasahu monstra
+tag.multishot_delay=15,20         // prodleva nez znovu
+tag.multishot_dmg=30,40           // dmg in between 30 and 40
+
+
+tag.weapflag=dam_physical
+
+//other resists
+tag(resist_poison,450)
+tag.resist_para=<eval {600 750}>
+tag(resist_summon,900)
+tag(resist_bleed,600)
+//weap resists
+tag(resist_sharp,200)
+tag(resist_slash,200)
+tag(resist_pierce,-200)
+tag(resist_blunt,500)
+//magic resists
+tag(resist_fire,500)
+tag(resist_elect,150)
+tag(resist_cold,200)
+
+Provocation=100.0
+Peacemaking=100.0
+Fencing={105.0 120.0}
+Parrying={90.0 100.0}
+Swordsmanship={105.0 120.0}
+Wrestling={150.0 200.0}
+Archery={130.0 140.0}
+Macefighting={150.0 200.0}
+Resist={120.0 150.0}
+Tactics=100.0
+SpiritSpeak=55.0
+
+ITEMNEWBIE=i_crossbow_heavy
+color=0455
+ITEMnewbie=i_bone_helmet
+color=099B
+ITEMnewbie=i_bone_gloves
+color=099B
+ITEMnewbie=i_bone_chest
+color=099B
+ITEMnewbie=i_bone_leggings
+color=099B
+ITEMnewbie=i_bone_arms
+color=099B
+ITEMnewbie=i_cape
+color=0455
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{25 35}
+
+//////////////////////////////////////////////////////////////
+[CHARDEF c_kobka_hlidac]
+NAME=Hlidac
+ID=C_man
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+attack=140
+ARMOR=60
+moverate=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_parakrik
+TEVENTS=e_selfreser
+
+CATEGORY=Dungeony
+SUBSECTION=Kobka
+DESCRIPTION=Hlidac
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+COLOR=07FFF
+NPC=brain_monster
+FAME=500
+KARMA=-5000
+
+STR=1000
+DEX=500
+INT=500
+
+maxhits={11500 11600}
+maxstam={240 260}
+maxmana=1200
+
+tag.experience=<eval {350.0 400.0}>
+
+//other resists
+tag(resist_poison,250)
+tag(resist_para,800)
+tag(resist_summon,750)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,750)
+tag(resist_pierce,400)
+tag(resist_blunt,400)
+
+//magic resists
+tag(resist_fire,800)
+tag(resist_elect,300)
+tag(resist_cold,800)
+
+//typ monstra
+tag(monstertype,humanoid)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+WRESTLING=150.0 
+RESIST={120.0 170.0}
+TACTICS={100.0 150.0}
+PARRYING={90.0 100.0}
+MACEFIGHTING=150.0
+FENCING=150
+SWORDSMANSHIP=150.0
+PROVOCATION=100.0
+PEACEMAKING=100.0
+SpiritSpeak=100.0
+
+ITEMnewbie=i_spear
+color=0455
+ITEMnewbie=i_bone_helmet
+color=099B
+ITEMnewbie=i_bone_gloves
+color=099B
+ITEMnewbie=i_bone_chest
+color=099B
+ITEMnewbie=i_bone_leggings
+color=099B
+ITEMnewbie=i_bone_arms
+color=099B
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock 
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{25 35}
+
+//////////////////////////////////////////////////////////////
+[CHARDEF c_kobka_bojovnik]
+NAME=Bojovnik
+ID=C_man
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+attack=160
+ARMOR=70
+moverate=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_parakrik
+TEVENTS=e_selfreser
+
+CATEGORY=Dungeony
+SUBSECTION=Kobka
+DESCRIPTION=Bojovnik
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+COLOR=07FFF
+NPC=brain_monster
+FAME=500
+KARMA=-5000
+
+STR=1000
+DEX=500
+INT=500
+
+maxhits={15000 18000}
+maxstam={240 260}
+maxmana=120
+
+tag.experience=<eval {700.0 750.0}>
+
+//other resists
+tag(resist_poison,250)
+tag(resist_para,800)
+tag(resist_summon,750)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,750)
+tag(resist_pierce,400)
+tag(resist_blunt,400)
+
+//magic resists
+tag(resist_fire,800)
+tag(resist_elect,300)
+tag(resist_cold,800)
+
+//typ monstra
+tag(monstertype,humanoid)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+WRESTLING=150.0 
+RESIST={140.0 190.0}
+TACTICS={100.0 120.0}
+PARRYING={90.0 100.0}
+MACEFIGHTING=190.0
+SWORDSMANSHIP=190.0
+PROVOCATION=100.0
+PEACEMAKING=100.0
+SpiritSpeak=100.0
+
+ITEMnewbie=i_mace_war
+color=0455
+ITEMnewbie=i_bone_helmet
+color=099B
+ITEMnewbie=i_bone_gloves
+color=099B
+ITEMnewbie=i_bone_chest
+color=099B
+ITEMnewbie=i_bone_leggings
+color=099B
+ITEMnewbie=i_bone_arms
+color=099B
+ITEMnewbie=i_sash
+color=0455
+ITEMnewbie=i_shield_order
+color=0455
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock 
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{100 250}
+
+///////////////////////////////////////////////
+
+[CHARDEF c_kobka_valecnik_elitni]
+NAME=Elitni Valecnik
+ID=C_man
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_USEHANDS
+
+attack=110
+ARMOR=130
+moverate=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_parakrik
+TEVENTS=e_npc_bleed
+TEVENTS=e_npc_roundattack_pullall
+TEVENTS=e_summonhater
+TEVENTS=e_selfreser
+
+CATEGORY=Dungeony
+SUBSECTION=Kobka
+DESCRIPTION=Elitni Valecnik
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+COLOR=07FFF
+NPC=brain_monster
+FAME=500
+KARMA=-5000
+
+STR=3000
+DEX=300
+INT=100
+
+maxhits={19000 20000}
+maxstam={360 380}
+maxmana=0
+
+tag.experience=<eval {750.0 800.0}>
+
+tag.roundattack_damage=40,50  //dmg od - do
+tag.roundattack_time=15,20    //cas od - do
+tag.roundattack_chance=400    //20.0%
+
+tag.npc_bleed=300 //30.0%
+
+//other resists
+tag(resist_poison,250)
+tag(resist_para,800)
+tag(resist_summon,700)
+tag(resist_bleed,400)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,750)
+tag(resist_pierce,400)
+tag(resist_blunt,400)
+
+//magic resists
+tag(resist_fire,800)
+tag(resist_elect,100)
+tag(resist_cold,400)
+
+//typ monstra
+tag(monstertype,humanoid)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+WRESTLING=150.0 
+RESIST={140.0 190.0}
+TACTICS={100.0 120.0}
+PARRYING={90.0 100.0}
+MACEFIGHTING=190.0
+SWORDSMANSHIP=190.0
+PROVOCATION=100.0
+PEACEMAKING=100.0
+SpiritSpeak=100.0
+
+ITEMnewbie=i_axe_double
+color=0455
+ITEMnewbie=i_bone_helmet
+color=0455
+ITEMnewbie=i_bone_gloves
+color=099B
+ITEMnewbie=i_bone_chest
+color=099B
+ITEMnewbie=i_bone_leggings
+color=099B
+ITEMnewbie=i_bone_arms
+color=099B
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock 
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{100 250}
+
+///////////////////////////////////////////////
+
+[CHARDEF c_kobka_samuraj]
+NAME=Samuraj
+ID=C_man
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+attack=155
+ARMOR=60
+moverate=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_summoneater
+TEVENTS=e_parakrik
+TEVENTS=e_explode
+TEVENTS=e_phoenix_fire
+TEVENTS=e_fire
+TEVENTS=e_selfreser
+
+CATEGORY=Dungeony
+SUBSECTION=Kobka
+DESCRIPTION=Samuraj
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+COLOR=07FFF
+NPC=brain_monster
+FAME=1000
+KARMA=-5000
+
+STR=1000
+DEX=3500
+INT=500
+
+maxhits={14500 15500}
+maxstam={290 300}
+maxmana=120
+
+tag.experience=<eval {500.0 600.0}>
+Tag.explode_dmg=60
+
+//other resists
+tag(resist_poison,350)
+tag(resist_para,800)
+tag(resist_summon,750)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,250)
+tag(resist_pierce,300)
+tag(resist_blunt,600)
+
+//magic resists
+tag(resist_fire,1000)
+tag(resist_elect,300)
+tag(resist_cold,-450)
+
+//typ monstra
+tag(monstertype,humanoid)
+tag(monstertype2,fire)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+WRESTLING=150.0 
+RESIST={120.0 170.0}
+TACTICS={100.0 150.0}
+MACEFIGHTING=180.0
+FENCING=180.0
+PROVOCATION=100.0
+PEACEMAKING=100.0
+SpiritSpeak=145.0
+
+ITEMnewbie=i_katana
+color=0455
+ITEMnewbie=i_bone_helmet
+color=099B
+ITEMnewbie=i_bone_gloves
+color=099B
+ITEMnewbie=i_bone_chest
+color=099B
+ITEMnewbie=i_bone_leggings
+color=099B
+ITEMnewbie=i_bone_arms
+color=099B
+ITEMnewbie=i_sash
+color=0455
+ITEMnewbie=i_cape
+color=0455
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock 
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{30 50}
+
+///////////////////////////////////////////////////////////////
+
+[CHARDEF c_kobka_zjeveni]
+NAME=Zjeveni
+ID=C_man
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+attack=130
+ARMOR=20
+moverate=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_summoneater
+TEVENTS=e_backstub
+TEVENTS=e_selfreser
+TEVENTS=e_speed_porting
+TEVENTS=e_duplicator
+
+CATEGORY=Dungeony
+SUBSECTION=Kobka
+DESCRIPTION=Zjeveni
+
+ON=@Create
+COLOR=07FFF
+NPC=brain_monster
+FAME=1000
+KARMA=-5000
+
+STR=800
+DEX=1800
+INT=100
+
+maxhits={4000 4800}
+maxstam={290 300}
+maxmana=00
+
+tag.experience=<eval {250.0 300.0}>
+
+tag(npc_port_distance,4)
+tag(speedPorting_timer,4)
+
+tag.backstub_damageReducer=200 // 20% efficiency of the backstub damage boost
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,600)
+tag(resist_summon,450)
+tag(resist_bleed,800)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,250)
+tag(resist_pierce,300)
+tag(resist_blunt,600)
+
+//magic resists
+tag(resist_fire,-200)
+tag(resist_elect,100)
+tag(resist_cold,150)
+
+tag.dupecount=1
+
+//typ monstra
+tag(monstertype,undead)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+WRESTLING=120.0 
+RESIST={120.0 150.0}
+TACTICS={100.0 120.0}
+MACEFIGHTING=120.0
+FENCING=120.0
+PROVOCATION=100.0
+PEACEMAKING=100.0
+SpiritSpeak=145.0
+
+ITEMnewbie=i_katana
+color=098B
+ITEMnewbie=i_bandana
+color=098B
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock 
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{30 50}
+
+/////////////////////////////////////////////////////////
+
+[CHARDEF c_kobka_boss]
+
+NAME=Strazce Kobky
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+attack=140
+ARMOR=140
+moverate=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_summoneater                          //smaze summona, co zasahne
+TEVENTS=e_potiondrinker
+TEVENTS=e_npc_detect
+TEVENTS=e_phoenix
+TEVENTS=e_phoenix_fire
+TEVENTS=e_npc_roundattack_pullall
+TEVENTS=e_parakrik
+TEVENTS=e_lightnings
+TEVENTS=e_managain
+TEVENTS=e_npc_summoning
+
+CATEGORY=Dungeony
+SUBSECTION=Kobka
+DESCRIPTION=Strazce Kobky
+
+ON=@Create
+COLOR=07FFF
+NPC=brain_monster
+FAME=100
+KARMA=-5000
+
+STR=10000
+DEX=400
+INT=500
+
+maxhits={30000 30000}
+maxstam={300 400}
+maxmana=3000
+
+tag(e_lightnings_chance,100) // 10.0% chance
+tag(e_lightnings_range,5)
+
+tag(npc_summoning_chance,50)                       //5%
+tag(npc_summoning_time,90)                         //nezakouzli znovu 60 sek
+tag(npc_summoning_count,2)                         //pocet
+tag(npc_summoning_char[0],c_kobka_mage)
+tag(npc_summoning_char[1],c_kobka_bojovnik)
+
+tag.roundattack_damage=40,45  //dmg od - do
+tag.roundattack_time=15,17    //prodleva od - do v sek
+tag.roundattack_chance=200    //20.0%
+
+tag.experience=<eval {1800.0 1900.0}>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,1000)
+tag(resist_bleed,675)
+
+//weap resists
+tag(resist_sharp,200)
+tag(resist_slash,800)
+tag(resist_pierce,400)
+tag(resist_blunt,800)
+
+//magic resists
+tag(resist_fire,900)
+tag(resist_elect,200)
+tag(resist_cold,450)
+
+//typ monstra
+tag(monstertype,humanoid,60)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical //ruzne
+
+WRESTLING=150.0 
+RESIST={120.0 170.0}
+TACTICS={100.0 150.0}
+PARRYING={90.0 100.0}
+MACEFIGHTING={90.0 100.0}
+FENCING={120.0 140.0}
+MAGERY=400.0
+EI=120.0
+PROVOCATION=100.0
+PEACEMAKING=100.0
+
+ITEMNEWBIE=i_spellbook
+addspell=s_fireball
+addspell=s_lightning
+
+ITEMNEWBIE=i_light_source
+
+ITEMnewbie=i_sword_long
+color=0984
+ITEMnewbie=i_bone_helmet
+color=0981
+ITEMnewbie=i_bone_gloves
+color=0455
+ITEMnewbie=i_bone_chest
+color=0455
+ITEMnewbie=i_boots_thigh
+color=0455
+ITEMnewbie=i_bone_arms
+color=0455
+ITEMnewbie=i_cape
+color=0455
+ITEMnewbie=i_ring_gold
+color=000
+ITEMnewbie=i_earrings_gold
+color=000
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock 
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{200 300}
+ITEM=RANDOM_REAGENT_NECRO,{200 250}
+ITEM=i_kobka_klic_boss
+
+//////////////////////////////////////////////////////
+
+[CHARDEF c_kobka_brouk]
+
+ID=c_beetle_giant
+NAME=Scarabeus
+SOUND=snd_MONSTER_TERA_DRONE1
+ICON=i_pet_terathan_drone
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN
+
+ATTACK=80
+ARMOR=20
+MOVERATE=4
+
+RESOURCES=10 i_ribs_raw
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_npc_bleed
+
+CATEGORY=Dungeony
+SUBSECTION=Kobka
+DESCRIPTION=Scarabeus
+
+ON=@Create
+COLOR=0985
+NPC=brain_monster
+FAME=1
+KARMA={-3000 -4999}
+
+STR=1000
+DEX=250
+INT=0
+
+MAXHITS={2200 2500}
+MAXSTAM={200 250}
+MAXMANA=0
+
+tag.experience=<eval {70.0 90.0}>
+
+tag.npc_bleed=200 //20.0%
+
+//typ monstra
+tag(monstertype,animal)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,1000)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,250)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-100)
+tag(resist_pierce,150)
+tag(resist_blunt,100)
+
+tag(resist_fire,200)
+tag(resist_elect,400)
+tag(resist_cold,400)
+
+Parrying=100.0
+Resist=80.0
+Tactics=100.0
+Wrestling=80.0
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=RANDOM_REAGENT,{20 30}
+ITEM=i_gold
+
+////////////////////////////////////////////
+
+[CHARDEF c_kobka_tarantule]
+ID=c_spider_giant
+NAME=Pisecna Tarantule
+SOUND=snd_MONSTER_GISPIDR1
+ICON=i_pet_SPIDER_GIANT
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN
+
+ATTACK=60
+ARMOR=60
+MOVERATE=5
+
+RESOURCES=10 i_ribs_raw, 5 i_reag_spider_silk
+BLOODCOLOR=colors_green
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_npc_massleap
+TEVENTS=e_backstub
+
+CATEGORY=Dungeony
+SUBSECTION=Kobka
+DESCRIPTION=Pisecna Tarantule
+
+ON=@Create
+COLOR=04A5
+NPC=brain_monster
+FAME=1
+KARMA=-1500
+
+STR=2000
+DEX=500
+INT=300
+
+MAXHITS={8500 9500}
+MAXSTAM={500 550}
+MAXMANA=0
+
+tag.experience=<eval {300.0 350.0}>
+
+tag.npc_critic_chance=250         //25% chance
+tag.npc_critic_dmg=20,25          //dmg in between
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {700 800}>
+tag(resist_summon,550)
+tag(resist_bleed,450)
+
+tag(resist_sharp,200)
+tag(resist_slash,-200)        //sekery
+tag(resist_pierce,-200)
+tag(resist_blunt,200)
+
+tag(resist_fire,-200)
+tag(resist_elect,200)
+tag(resist_cold,200)
+
+//typ monstra
+tag(monstertype,spider)
+
+//weap flags
+tag.weapflag=dam_piercing|dam_physical
+
+Tactics=250.0
+Wrestling=120.0
+Poisoning=200.0
+SpiritSpeak=55.0
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_SPIDER
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////////////
+
+[CHARDEF c_kobka_strazce_pisku]
+ID=c_ghost
+NAME=Pisecny Strazce
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_water
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=90
+ARMOR=120
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_npc_curse_mana            //mass sani many
+TEVENTS=e_npc_summoning             //zmizej az za 2 hodky
+TEVENTS=e_npc_stun
+TEVENTS=e_summoneater
+
+CATEGORY=Dungeony
+SUBSECTION=Kobka
+DESCRIPTION=Pisecny Strazce
+
+ON=@Create
+COLOR=0712
+NPC=brain_monster
+FAME=250
+KARMA=-5000
+
+STR=2500
+DEX=250
+INT=350
+
+MAXHITS={17000 18500}
+MAXSTAM={200 220}
+MAXMANA=00
+
+tag.experience=<eval {350.0 380.0}>
+
+tag.npc_curse_mana_chance=250       // 25% chance to trigger this event
+tag.npc_curse_mana_delay=15,20      // delay between another possible strike
+tag.npc_curse_mana_dmg=50,60        // mana reduce in between 50 and 60
+
+tag.stam_dmg_chance=250             // 25% chance to trigger this event
+tag.stam_dmg_power=40               // takes 40 of stam
+
+tag(npc_summoning_chance,500)      //50%
+tag(npc_summoning_time,60)        //nezakouzli znovu 30 sek
+tag(npc_summoning_count,3)        //pocet
+tag(npc_summoning_char[0],c_kobka_elem_sand)
+tag(npc_summoning_char[1],c_kobka_elem_sand)
+tag(npc_summoning_char[2],c_kobka_elem_sand)
+
+tag.npc_stun_time=10              //1 seconds of stun
+Tag.npc_stun_chance=200           //30%, defaultne 20%
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,850)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,400)
+tag(resist_slash,100)
+tag(resist_pierce,-200)
+tag(resist_blunt,-500)
+
+//magic resists
+tag(resist_fire,-300)
+tag(resist_elect,200)
+tag(resist_cold,200)
+
+//typ monstra
+tag(monstertype,humanoid)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Resist=150.0
+Wrestling={110.0 120.0}
+//Magery=110.0
+EI={90.0 100.0}
+Parrying=110.0
+Provocation=100
+SpiritSpeak=65.0
+
+ITEMNEWBIE=i_light_source
+ITEMNEWBIE=i_spellbook
+addspell=s_magic_reflection
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{45 65}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_kobka_elem_sand]
+ID=c_elem_air_m
+NAME=Pisecny Elemental
+SOUND=snd_ELEMENTL_AIRELEM1
+ICON=i_pet_elem_air
+CAN=MT_WALK|mt_run
+
+ATTACK=80
+ARMOR=40
+MOVERATE=3
+
+BLOODCOLOR={0984 0985}
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_npc_reactivearmor
+TEVENTS=e_elem_terror
+
+CATEGORY=Dungeony
+SUBSECTION=Kobka
+DESCRIPTION=Pisecny Elemental
+
+ON=@Create
+COLOR=04A5
+NPC=brain_monster
+FAME=20
+KARMA={-500 -1500}
+
+STR={600 700}
+DEX={230 300}
+INT=50
+
+MAXHITS={1800 2200}
+MAXSTAM={280 320}
+MAXMANA=0
+
+tag.experience=<eval {75.0 95.0}>
+tag.death_damage=<eval {30 40}>
+
+//other resists
+tag(resist_poison,1000) //elementala neotravis
+tag(resist_para,1000) // nejde parnout
+tag(resist_summon,400) //summony nenici
+tag(resist_bleed,1000) //nekrvaci
+
+//weap resists
+tag(resist_sharp,500)
+tag(resist_slash,500)
+tag(resist_pierce,500)
+tag(resist_blunt,500)
+
+//magic resists
+tag(resist_fire,-200)
+tag(resist_elect,300)
+tag(resist_cold,100)
+
+//typ monstra
+tag(monstertype,air) //u elemu ruzne
+//weap flags
+tag.weapflag=dam_lightning|dam_magic  //ruzne
+
+Wrestling=120.0
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+SpiritSpeak=35.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_elem
+ITEM=i_gold
+
+[EOF]

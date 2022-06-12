@@ -1,0 +1,323 @@
+/////////////////////////////////////////////
+///// waterman - vodni verze minotaura //////
+/////////////////////////////////////////////
+
+[CHARDEF c_wasserman] //Boss Etheria
+ID=c_minotaur
+NAME=Vodni prisera
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+ANIM=079c7f
+
+ATTACK=100
+ARMOR=80
+
+CAN=MT_WALK|mt_run
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_summoneater_vamp
+TEVENTS=e_npc_stun
+TEVENTS=e_npc_detect
+
+CATEGORY=Dungeony
+SUBSECTION=Etheria
+DESCRIPTION=Boss
+
+ON=@Create
+NPC=brain_monster
+FAME=300
+KARMA={-1000 -2500}
+COLOR=0984
+
+STR=5500
+DEX=280
+INT=190
+
+MAXHITS=13500
+MAXSTAM={200 250}
+MAXMANA=0
+
+tag.experience=<eval {450.0 500.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[8]>
+
+//typ monstra
+tag(monstertype,humanoid,60)
+
+tag(resist_poison,400)
+tag.resist_para=<eval {700 800}>
+tag(resist_summon,950)
+tag(resist_bleed,-200)
+
+tag(resist_sharp,-150)
+tag(resist_slash,-150)
+tag(resist_pierce,-400)
+tag(resist_blunt,350)
+
+tag(resist_fire,750)
+tag(resist_elect,200)
+tag(resist_cold,-400)
+
+//tag(resist_phys,0)
+//tag(resist_magic,0)
+//tag(resist_acid,0)
+
+SpiritSpeak=95.0
+Wrestling=120.0
+Resist=150.0
+Parrying=120.0
+Tactics=120.0
+
+ITEMnewbie=i_monster_create
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{35 55}
+
+///////////////////////////////////////
+[CHARDEF c_crunch_kryska]
+ID=0D7
+NAME=Infikovana krysa
+CAN=MT_WALK
+
+ATTACK=45
+ARMOR=25
+
+RESOURCES=10 t_eerie_stuff
+FOODTYPE=20 t_meat_raw
+
+CATEGORY=Dungeony
+SUBSECTION=Etheria
+DESCRIPTION=Infikovana krysa
+
+BLOODCOLOR=colors_green
+TEVENTS=e_undead
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_monster
+COLOR=098c
+FAME=80
+KARMA=-{4000 4999}
+
+STR=600
+DEX=180
+INT=80
+
+MAXHITS={700 800}
+MAXSTAM={120 130}
+MAXMANA=0
+
+tag.experience=<eval {30.0 40.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,900)
+tag.resist_para=<eval {250 350}>
+tag(resist_summon,250)
+tag(resist_bleed,100)
+
+tag(resist_sharp,-150)
+tag(resist_slash,-150)        //sekery
+tag(resist_pierce,150)
+tag(resist_blunt,-350)
+
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,200)
+
+Parrying={95.0 100.0}
+Tactics={85.0 120.0}
+Wrestling={85.0 95.0}
+SpiritSpeak=45.0
+Poisoning={70.0 120.0}
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=random_reagent,{5 10}
+ITEM=i_gold
+
+//////////////////////////////////////////////
+
+[CHARDEF c_crunch_vodnizaba]
+ID=050
+NAME=Vodni ropucha
+CAN=MT_WALK|MT_USEHANDS
+
+ATTACK=55
+ARMOR=25
+
+RESOURCES=10 t_eerie_stuff
+FOODTYPE=20 t_meat_raw
+BLOODCOLOR=colors_green
+
+CATEGORY=Dungeony
+SUBSECTION=Etheria
+DESCRIPTION=Vodni zaba
+
+TEVENTS=e_undead
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_critic
+
+ON=@Create
+NPC=brain_monster
+COLOR=0984
+FAME=80
+KARMA={-4000 -4999}
+
+STR=630
+DEX=200
+INT=80
+
+MAXHITS={1200 1350}
+MAXSTAM={150 180}
+MAXMANA=0
+
+tag.experience=<eval {45.0 55.0}>
+
+tag.npc_critic_chance=250                //25% chance
+tag.npc_critic_dmg=15,20                 //dmg in between
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,750)
+tag.resist_para=<eval {250 350}>
+tag(resist_summon,250)
+tag(resist_bleed,100)
+
+tag(resist_sharp,-150)
+tag(resist_slash,-150)        //sekery
+tag(resist_pierce,250)
+tag(resist_blunt,-350)
+
+tag(resist_fire,-400)
+tag(resist_elect,-200)
+tag(resist_cold,200)
+
+Parrying={95.0 100.0}
+Tactics={85.0 120.0}
+Wrestling={95.0 100.0}
+SpiritSpeak=40.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=random_reagent,{10 22}
+ITEM=i_gold
+
+////////////////////////////////////////////
+
+[CHARDEF c_crunch_prisluhovac]
+NAME=Krvavy prisluhovac
+ID=C_MAN
+CAN=MT_WALK|MT_run|MT_MALE
+
+ATTACK=60
+ARMOR=45
+
+CATEGORY=Dungeony
+SUBSECTION=Etheria
+DESCRIPTION=Krvavy prisluhovac
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_looter
+TEVENTS=e_npc_critic
+TSPEECH=spk_crunch_prisluhovac
+
+ON=@Create
+NPC=brain_monster
+NAME=#NAMES_HUMANMALE
+Title=Krvavy prisluhovac
+KARMA=-6000
+FAME=100
+
+STR={1050 1250}
+DEX=250
+INT=100
+
+MAXHITS={1200 1500}
+MAXSTAM={175 200}
+MAXMANA=0
+
+tag.experience=<eval {60.0 70.0}>
+
+tag.npc_critic_chance=250                //25% chance
+tag.npc_critic_dmg=20,25                 //dmg in between
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//other resists
+tag(resist_poison,650)
+tag.resist_para=<eval {350 480}>
+tag(resist_summon,750)
+tag(resist_bleed,-400)
+
+tag(resist_sharp,150)
+tag(resist_slash,150)        //sekery
+tag(resist_pierce,250)
+tag(resist_blunt,-350)
+
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,200)
+
+Resist=90.0
+Tactics=100.0
+Parrying=100.0
+Swordsmanship=100.0
+Wrestling={90.0 100.0}
+SpiritSpeak=50.0
+
+//ITEM=i_npc_mount
+ITEMNEWBIE=random_male_hair
+COLOR=00832
+ITEMNEWBIE=random_facial_hair
+COLOR=098c
+ITEMNEWBIE=i_platemail_chest
+COLOR=098c
+NAME=Brneni krvaveho prisluhovace
+ITEMNEWBIE=i_platemail_leggings
+COLOR=098c
+NAME=Brneni krvaveho prisluhovace
+ITEMNEWBIE=i_platemail_arms
+COLOR=098c
+NAME=Brneni krvaveho prisluhovace
+ITEMNEWBIE=i_platemail_gloves
+COLOR=098c
+NAME=Brneni krvaveho prisluhovace
+ITEMNEWBIE=i_platemail_gorget
+COLOR=098c
+NAME=Brneni krvaveho prisluhovace
+ITEMNEWBIE=i_shield_heater
+COLOR=098c
+NAME=Brneni krvaveho prisluhovace
+ITEMNEWBIE=i_sword_viking
+COLOR=098c
+NAME=mec krvaveho prisluhovace
+
+ON=@NPCRestock
+ITEM=i_gold
+
+[SPEECH spk_crunch_prisluhovac]
+ON=*lol*
+say("Zadne lol, zemres, <src.name>!")
+ON=*ress*
+say("Vysaju z tebe tvou krev, <src.name>!")
+ON=*boost*
+say("Zadny boost ti nepomuze k preziti!")
+
+[EOF]

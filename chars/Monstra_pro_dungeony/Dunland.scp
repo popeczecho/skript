@@ -1,0 +1,373 @@
+[CHARDEF 181]
+defname=c_daerond
+NAME=Daerond
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+CAN=MT_WALK|mt_run|MT_USEHANDS
+
+ATTACK=50
+ARMOR=80
+MOVERATE=3
+
+BLOODCOLOR=098b
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_magical_hit
+TEVENTS=e_rock_throwing_small
+
+CATEGORY=Monsters
+SUBSECTION=Daeronds
+DESCRIPTION=Basic melee
+
+ON=@Create
+NPC=brain_monster
+FAME=15
+KARMA=-3500
+
+STR={800 850}
+DEX=210
+INT=80
+
+MAXHITS={1300 1400}
+MAXSTAM=150
+MAXMANA=0
+
+tag.experience=<eval {60.0 65.0}>
+
+//other resists
+tag(resist_poison,200)
+tag(resist_para,550)
+tag(resist_summon,900)
+tag(resist_bleed,-200)
+
+//weap resists
+tag(resist_sharp,150)
+tag(resist_slash,600)
+tag(resist_pierce,-100)
+tag(resist_blunt,700)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,700)
+tag(resist_cold,100)
+
+//typ monstra
+tag(monstertype,element) //u elemu ruzne
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical //ruzne
+
+Wrestling=110.0
+Parrying=100.0
+Tactics=100.0
+Resist=110.0
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_elem
+ITEM=i_gold
+
+///////////////////////////////////////
+[CHARDEF c_daerond_archer]
+ID=c_daerond
+NAME=Daerond strelec
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+CAN=MT_WALK|mt_run|MT_USEHANDS
+
+ATTACK=50
+ARMOR=60
+MOVERATE=3
+
+BLOODCOLOR=098b
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_magical_hit
+
+CATEGORY=Monsters
+SUBSECTION=Daeronds
+DESCRIPTION=Archer
+
+ON=@Create
+NPC=brain_monster
+FAME=15
+KARMA=-3500
+
+STR={800 850}
+DEX=200
+INT=80
+
+MAXHITS={1100 1200}
+MAXSTAM=150
+MAXMANA=0
+
+tag.experience=<eval {62.0 67.0}>
+
+//other resists
+tag(resist_poison,200)
+tag(resist_para,1000)
+tag(resist_summon,900)
+tag(resist_bleed,-200)
+
+//weap resists
+tag(resist_sharp,150)
+tag(resist_slash,600)
+tag(resist_pierce,-100)
+tag(resist_blunt,700)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,700)
+tag(resist_cold,100)
+
+//typ monstra
+tag(monstertype,element)
+
+//weap flags
+tag.weapflag=dam_pierce|dam_physical
+
+Wrestling=110.0
+Archery=110.0
+Parrying=100.0
+Tactics=100.0
+Resist=100.0
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEMNEWBIE=i_bow
+ITEMNEWBIE=i_arrow,{50 75}
+
+///////////////////////////////////////
+[CHARDEF 96]
+DEFNAME=c_daerond_warrior
+NAME=Daerond Warrior
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+CAN=MT_WALK|mt_run
+
+ATTACK=65
+ARMOR=100
+MOVERATE=3
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_magical_hit
+TEVENTS=e_summonhater
+
+CATEGORY=Monsters
+SUBSECTION=Daeronds
+DESCRIPTION=Warrior
+
+ON=@Create
+NPC=brain_monster
+FAME=900
+KARMA={-5000 -9000}
+
+STR=3750
+DEX=350
+INT=80
+
+MAXHITS={3200 3500}
+MAXSTAM={200 240}
+MAXMANA=0
+
+tag.experience=<eval {170.0 180.0}>
+
+//other resists
+tag(resist_poison,200)
+tag(resist_para,1000)
+tag(resist_summon,900)
+tag(resist_bleed,-200)
+
+//weap resists
+tag(resist_sharp,150)
+tag(resist_slash,600)
+tag(resist_pierce,-100)
+tag(resist_blunt,700)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,700)
+tag(resist_cold,100)
+
+//typ monstra
+tag(monstertype,element)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Tactics=100.0
+Wrestling=120.0
+Resist=210.0
+SpiritSpeak=35.0
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////
+[CHARDEF c_daerond_warrior_elite]
+id=c_daerond_warrior
+NAME=Daerond Warrior
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=85
+ARMOR=110
+MOVERATE=3
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_magical_hit
+TEVENTS=e_summonhater
+
+CATEGORY=Monsters
+SUBSECTION=Daeronds
+DESCRIPTION=Elite warrior
+
+ON=@Create
+color=0879
+NPC=brain_monster
+FAME=900
+KARMA={-5000 -9000}
+
+STR=3750
+DEX=350
+INT=80
+
+MAXHITS={4800 5100}
+MAXSTAM={200 240}
+MAXMANA=0
+
+tag.experience=<eval {270.0 280.0}>
+
+//other resists
+tag(resist_poison,200)
+tag(resist_para,1000)
+tag(resist_summon,900)
+tag(resist_bleed,-200)
+
+//weap resists
+tag(resist_sharp,150)
+tag(resist_slash,600)
+tag(resist_pierce,-100)
+tag(resist_blunt,700)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,700)
+tag(resist_cold,100)
+
+//typ monstra
+tag(monstertype,element)
+
+//weap flags
+tag.weapflag=dam_slashing|dam_physical
+
+Tactics=100.0
+Wrestling=120.0
+Resist=210.0
+SpiritSpeak=35.0
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////
+[CHARDEF c_daerond_shaman] 
+ID=c_daerond
+NAME=Daerond Shaman
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+CAN=MT_WALK
+
+ATTACK=30
+ARMOR=60
+MOVERATE=3
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_magical_hit
+TEVENTS=e_summonhater
+TEVENTS=e_summoneater
+TEVENTS=e_npc_detect
+
+CATEGORY=Monsters
+SUBSECTION=Daeronds
+DESCRIPTION=Shaman
+
+ON=@Create
+color=0547
+NPC=brain_monster
+FAME=900
+KARMA={-5000 -9000}
+
+STR=500
+DEX=100
+INT=150
+
+MAXHITS=4000
+MAXSTAM=100
+MAXMANA=0
+
+tag.experience=120.0
+
+tag(npcDetect_timer,4)
+
+//other resists
+tag(resist_poison,400)
+tag(resist_para,1000)
+tag(resist_summon,500)
+tag(resist_bleed,300)
+
+//weap resists
+tag(resist_sharp,00)
+tag(resist_slash,00)
+tag(resist_pierce,00)
+tag(resist_blunt,00)
+
+//magic resists
+tag(resist_fire,00)
+tag(resist_elect,00)
+tag(resist_cold,00)
+
+//typ monstra
+tag(monstertype,element)
+
+//weap flags
+tag.weapflag=dam_magic|dam_fire
+
+Tactics=100.0
+Wrestling=120.0
+Resist=100.0
+SpiritSpeak=35.0
+MAGERY=300.0
+EI=60.0
+
+ITEMNEWBIE=i_spellbook
+addspell s_lightning
+addspell s_fireball
+ADDSPELL=s_magic_reflection
+addspell=s_paralyze
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+[EOF]

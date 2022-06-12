@@ -1,0 +1,1206 @@
+[CHARDEF c_zombie_apok_norm]
+ID=c_zombie
+ANIM=078c7f
+NAME=Zombie
+SOUND=snd_MONSTER_GHOST1
+ICON=i_pet_ZOMBIE
+CAN=MT_WALK|MT_RUN
+
+ATTACK=8
+ARMOR=5
+MOVERATE=4
+
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_leaper
+
+ON=@Create
+COLOR=099A
+NPC=brain_monster
+FAME=1500
+KARMA={-5000 -6000}
+
+STR=250
+DEX=300
+INT=100
+
+MAXHITS={60 70}
+MAXSTAM={300 450}
+MAXMANA=0
+
+tag.experience=<eval {3.0 5.0}>
+
+tag(npc_port_distance,9)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,950)
+tag(resist_bleed,300)
+
+tag(resist_sharp,100)
+tag(resist_slash,100)
+tag(resist_pierce,100)
+tag(resist_blunt,200)
+
+tag(resist_fire,100)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+Parrying={95.0 100.0}
+Tactics={85.0 120.0}
+Wrestling={125.0 150.0}
+SpiritSpeak=55.0
+Provocation=100.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+////////////////////////
+[CHARDEF c_zombie_apok_toxic]
+ID=c_zombie
+ANIM=078c7f
+NAME=Zombie
+SOUND=snd_MONSTER_GHOST1
+ICON=i_pet_ZOMBIE
+CAN=MT_WALK|MT_RUN
+
+ATTACK=8
+ARMOR=5
+MOVERATE=4
+
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_leaper
+
+ON=@Create
+COLOR=0AB
+NPC=brain_monster
+FAME=1500
+KARMA={-5000 -6000}
+
+STR=250
+DEX=300
+INT=100
+
+MAXHITS={60 75}
+MAXSTAM={300 450}
+MAXMANA=0
+
+tag.experience=<eval {4.0 6.0}>
+
+tag(npc_port_distance,9)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,950)
+tag(resist_bleed,300)
+
+tag(resist_sharp,100)
+tag(resist_slash,100)
+tag(resist_pierce,100)
+tag(resist_blunt,200)
+
+tag(resist_fire,100)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+Parrying={95.0 100.0}
+Tactics={85.0 120.0}
+Wrestling={125.0 150.0}
+SpiritSpeak=55.0
+Provocation=100.0
+Poisoning={70.0 80.0}
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+//////////////////////////
+[CHARDEF c_zombie_apok_basher]
+ID=c_zombie
+ANIM=078c7f
+NAME=Zombie
+SOUND=snd_MONSTER_GHOST1
+ICON=i_pet_ZOMBIE
+CAN=MT_WALK|MT_RUN
+
+ATTACK=8
+ARMOR=5
+MOVERATE=4
+
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_leaper
+TEVENTS=e_npc_stun
+
+ON=@Create
+COLOR=0989
+NPC=brain_monster
+FAME=1500
+KARMA={-5000 -6000}
+
+STR=250
+DEX=300
+INT=100
+
+MAXHITS={60 75}
+MAXSTAM={300 450}
+MAXMANA=0
+
+tag.npc_stun_time=10                         // 1 seconds of stun
+Tag.npc_stun_chance=150                      //10%, defaultne 20%
+tag.experience=<eval {4.0 6.0}>
+
+tag(npc_port_distance,9)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,950)
+tag(resist_bleed,300)
+
+tag(resist_sharp,100)
+tag(resist_slash,100)
+tag(resist_pierce,100)
+tag(resist_blunt,200)
+
+tag(resist_fire,100)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+Parrying={95.0 100.0}
+Tactics={85.0 120.0}
+Wrestling={125.0 150.0}
+SpiritSpeak=55.0
+Provocation=100.0
+Poisoning={70.0 80.0}
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+
+[CHARDEF c_mad_king] // event
+ID=c_liche_king
+NAME=Sileny Kral
+SOUND=snd_MONSTER_LICHE1
+ICON=i_pet_LICH
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=70
+ARMOR=80
+MOVERATE=4
+
+BLOODCOLOR=0481
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_spirit
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_summoneater                         //smaze summona, co zasahne
+TEVENTS=e_parakrik
+TEVENTS=e_phoenix_fire
+TEVENTS=e_explosiondispell
+TEVENTS=e_summonhater
+
+//CATEGORY=Monsters
+//SUBSECTION=event
+//DESCRIPTION=mad king
+
+ON=@Create
+COLOR=0481
+NPC=brain_monster
+FAME=125
+KARMA=-5000
+
+STR=7000
+DEX=300
+INT=450
+
+MAXHITS={30500 30900}
+MAXSTAM={250 340}
+MAXMANA=2000
+
+tag.experience=<eval {990.0 1000.0}>
+
+Tag.explode_dmg=50
+
+tag(e_explosiondispell_chance,100) //10% chance
+tag(e_explosiondispell_range,6)
+tag(e_explosiondispell_time,30)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[8]>
+
+//other resists
+tag(resist_poison,500)
+tag(resist_para,1000)
+tag(resist_summon,1000)
+tag(resist_bleed,150)
+
+//weap resists
+tag(resist_sharp,100)
+tag(resist_slash,300)
+tag(resist_pierce,250)
+tag(resist_blunt,200)
+
+//magic resists
+tag(resist_fire,300)
+tag(resist_elect,100)
+tag(resist_cold,700)
+
+//typ monstra
+tag(monstertype,spirit,40)
+
+//weap flags
+tag.weapflag=dam_lightning|dam_magic
+
+EI=110.0
+Magery=120.0
+Resist=200.0
+Wrestling=150.0
+SpiritSpeak=200.0
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_explosion
+ADDSPELL=s_lightning
+ADDSPELL=s_energy_bolt
+ADDSPELL=s_summon_elem_air
+ADDSPELL=s_summon_elem_fire
+ADDSPELL=s_magic_reflection
+//addspell=s_summon_elem_earth
+//addspell=s_summon_elem_water
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{50 75}
+ITEM=random_reagent,{50 75}
+
+[CHARDEF c_mad_king_guard_3] // event
+DEFNAME=c_mlaticka_mad
+ID=c_test_6
+NAME=Straz
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+CAN=MT_WALK|mt_run
+
+ATTACK=110
+ARMOR=120
+MOVERATE=4
+
+RESOURCES=10 i_ribs_raw
+BLOODCOLOR=-1
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_snowmonster
+TEVENTS=e_npc_critic
+TEVENTS=e_parakrik
+TEVENTS=e_summonhater
+TEVENTS=e_npc_roundattack_pullall
+
+//CATEGORY=Dungy
+//SUBSECTION=Ledova jeskyne
+//DESCRIPTION=Snow Gladiator Lord
+
+ON=@Create
+COLOR=0481
+NPC=brain_monster
+FAME=1000
+KARMA=-10000
+
+STR=9000
+DEX=200
+INT=130
+
+MAXHITS={20500 21000}
+MAXSTAM={250 300}
+MAXMANA=0
+
+tag.experience=<eval {850.0 900.0}>
+
+tag.npc_critic_chance=250         //25% chance
+tag.npc_critic_dmg=20,25          //dmg in between
+
+tag.roundattack_damage=50,60  //dmg od - do
+tag.roundattack_time=10,15    //cas od - do
+tag.roundattack_chance=300    //20.0%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,500) //na humanoidy silny
+tag.resist_para=<eval {800 925}>
+tag(resist_summon,700) //individualni
+tag(resist_bleed,400) //individualni
+
+//weap resists
+tag(resist_sharp,250)
+tag(resist_slash,150)
+tag(resist_pierce,-150)
+tag(resist_blunt,100)
+
+//magic resists
+tag(resist_fire,-500)
+tag(resist_elect,-200)
+tag(resist_cold,800)
+
+//typ monstra
+tag(monstertype,snow)
+tag(monstertype2,humanoid,60)
+//weap flags
+tag.weapflag=dam_blunt|dam_physical|dam_cold
+
+Wrestling=120.0
+Resist=100.0
+Tactics=100.0
+Parrying=100.0
+SpiritSpeak=105.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+[CHARDEF c_mad_king_guard_2] // event
+ID=c_test_4
+NAME=Straz
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+CAN=MT_WALK|mt_run
+
+ATTACK=100
+ARMOR=70
+MOVERATE=4
+
+RESOURCES=12 i_ribs_raw, 12 i_reag_daemon_bone
+BLOODCOLOR=0481
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_summoneater         //smaze summona, co zasahne
+TEVENTS=e_daemon
+TEVENTS=e_npc_bleed
+
+//CATEGORY=Monsters
+//SUBSECTION=Special
+//DESCRIPTION=Minotaur Strazce
+
+ON=@Create
+COLOR=098c
+NPC=brain_monster
+FAME=1
+KARMA={-2000 -2500}
+
+STR=6900
+DEX=440
+INT=50
+
+MAXHITS={12500 13500}
+MAXSTAM={380 400}
+MAXMANA=0
+
+tag.experience=<eval {450.0 500.0}>
+
+tag.npc_bleed=400 //40.0%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+tag(monstertype,humanoid,60)
+
+tag.weapflag=dam_physical|dam_blunt
+
+//other resists
+tag(resist_poison,600)
+tag.resist_para=<eval {850 950}>
+tag(resist_summon,600)
+tag(resist_bleed,400)
+
+//weap resists
+tag(resist_sharp,-350)
+tag(resist_slash,-250)
+tag(resist_pierce,-100)
+tag(resist_blunt,650)
+
+//magic resists
+tag(resist_fire,250)
+tag(resist_elect,250)
+tag(resist_cold,100)
+
+Resist=175.0
+Wrestling=150.0
+Parrying=150.0
+Tactics=150.0
+SpiritSpeak=75.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+////////////////////      SNOW    /////////////////////////
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_elem_snow_mad]
+ID=c_elem_earth_m
+NAME=Elemental Snehu
+SOUND=snd_ELEMENTL_AIRELEM1
+ICON=i_pet_elem_earth
+CAN=mt_walk|mt_run
+
+ATTACK=40
+ARMOR=50
+MOVERATE=4
+
+BLOODCOLOR=color_snow
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_snowmonster
+
+//CATEGORY=Monsters
+//SUBSECTION=Elementals
+//DESCRIPTION=Snow Elemental
+
+ON=@Create
+COLOR=color_snow
+NPC=brain_monster
+FAME=10
+KARMA={-4000 -4999}
+
+STR={590 610}
+DEX=100
+INT=5
+
+MAXHITS={600 700}
+MAXSTAM={55 75}
+MAXMANA=0
+
+tag.experience=<eval {35.0 40.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {200 350}>
+tag(resist_summon,450)
+tag(resist_bleed,650)
+
+//weap resists
+tag(resist_sharp,50)
+tag(resist_slash,-200)
+tag(resist_pierce,0)
+tag(resist_blunt,300)
+
+//magic resists
+tag(resist_fire,-700)
+tag(resist_elect,300)
+tag(resist_cold,1000)
+
+//typ monstra
+tag(monstertype,snow)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Wrestling={90.0 100.0}
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Resist={50.0 100.0}
+SpiritSpeak=35.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_elem
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_elem_snow_elder_mad]
+ID=c_elem_earth_m
+NAME=Elemental Snehu
+SOUND=snd_ELEMENTL_AIRELEM1
+ICON=i_pet_elem_earth
+CAN=mt_walk|mt_run
+
+ATTACK=70
+ARMOR=60
+MOVERATE=3
+
+BLOODCOLOR=color_snow
+
+TEVENTS=e_monster
+TEVENTS=e_character
+//TEVENTS=e_npc_reactivearmor
+TEVENTS=e_snowmonster
+//TEVENTS=e_npc_stun
+TEVENTS=e_npc_roundattack
+
+//CATEGORY=Monsters
+//SUBSECTION=Elementals
+//DESCRIPTION=Snow Elemental Elder
+
+ON=@Create
+COLOR=color_snow
+NPC=brain_monster
+FAME=10
+KARMA={-4000 -4999}
+
+STR={590 610}
+DEX={105 130}
+INT=5
+
+MAXHITS={1500 1800}
+MAXSTAM={80 110}
+MAXMANA=0
+
+tag.experience=<eval {85.0 90.0}>
+
+tag.roundattack_damage=20,25    //dmg od - do
+tag.roundattack_time=10,12      //prodleva od - do
+tag.roundattack_chance=400      //40%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {200 350}>
+tag(resist_summon,450)
+tag(resist_bleed,650)
+
+//weap resists
+tag(resist_sharp,300)
+tag(resist_slash,-300)
+tag(resist_pierce,50)
+tag(resist_blunt,400)
+
+//magic resists
+tag(resist_fire,-800)
+tag(resist_elect,600)
+tag(resist_cold,1000)
+
+//typ monstra
+tag(monstertype,snow)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+tag.hit_damage=<eval {5 20}>
+
+Wrestling={95.0 100.0}
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Resist={85.0 100.0}
+SpiritSpeak=40.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_elem
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_elem_snow_terror_mad]
+ID=c_elem_earth_m
+NAME=Elemental Snehu
+SOUND=snd_ANIMALS_ALIGATR1
+ICON=i_pet_elem_earth
+CAN=mt_walk|mt_run
+
+ATTACK=100
+ARMOR=25
+MOVERATE=3
+
+BLOODCOLOR=color_snow
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_elem_terror
+TEVENTS=e_snowmonster
+//TEVENTS=e_npc_stun
+//TEVENTS=e_npc_roundattack
+
+//CATEGORY=Monsters
+//SUBSECTION=Elementals
+//DESCRIPTION=Snow Elemental Terror
+
+ON=@Create
+COLOR=color_snow
+NPC=brain_monster
+FAME=10
+KARMA={-4000 -4999}
+
+STR={590 610}
+DEX={105 135}
+INT=5
+
+MAXHITS={2300 2600}
+MAXSTAM={105 115}
+MAXMANA=0
+
+tag.experience=<eval {80.0 90.0}>
+
+tag.death_damage=<eval {45 55}>
+
+tag.roundattack_damage=40,60    //dmg od - do
+tag.roundattack_time=10,15      //prodleva od - do
+tag.roundattack_chance=300      //30%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {200 350}>
+tag(resist_summon,450)
+tag(resist_bleed,650)
+
+//weap resists
+tag(resist_sharp,300)
+tag(resist_slash,-300)
+tag(resist_pierce,50)
+tag(resist_blunt,400)
+
+//magic resists
+tag(resist_fire,-800)
+tag(resist_elect,600)
+tag(resist_cold,1000)
+
+//typ monstra
+tag(monstertype,snow)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Wrestling={95.0 100.0}
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Resist={85.0 100.0}
+SpiritSpeak=45.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_light_source
+
+ON=@NPCRestock
+ITEM=loot_elem
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+///////////////////////   ICE  ///////////////////////////
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_elem_ice_mad]
+ID=c_elem_earth_m
+NAME=Elemental Ledu
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+CAN=MT_WALK|mt_run
+
+ATTACK=75
+ARMOR=20
+MOVERATE=4
+
+BLOODCOLOR=colors_blue
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_snowmonster
+
+//CATEGORY=Monsters
+//SUBSECTION=Elementals
+//DESCRIPTION=Ice Elemental
+
+ON=@Create
+COLOR=color_ice
+NPC=brain_monster
+FAME=15
+KARMA=-3500
+
+STR={650 660}
+DEX={100 105}
+INT=5
+
+MAXHITS={1000 1100}
+MAXSTAM={60 75}
+MAXMANA=0
+
+tag.experience=<eval {80.0 85.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,600)
+tag(resist_summon,350)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,150)
+tag(resist_slash,50)
+tag(resist_pierce,200)
+tag(resist_blunt,-300)
+
+//magic resists
+tag(resist_fire,-700)
+tag(resist_elect,-200)
+tag(resist_cold,1000)
+
+//typ monstra
+tag(monstertype,snow)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Wrestling={90.0 100.0}
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Resist={85.0 100.0}
+SpiritSpeak=35.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_elem
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_elem_ice_elder_mad]
+ID=c_elem_earth_m
+NAME=Elemental Ledu
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+CAN=MT_WALK|mt_run
+
+ATTACK=100
+ARMOR=40
+MOVERATE=3
+
+BLOODCOLOR=colors_blue
+
+TEVENTS=e_monster
+TEVENTS=e_character
+//TEVENTS=e_npc_reactivearmor
+TEVENTS=e_snowmonster
+TEVENTS=e_npc_roundattack
+//TEVENTS=e_npc_stun
+
+//CATEGORY=Monsters
+//SUBSECTION=Elementals
+//DESCRIPTION=Ice Elemental Elder
+
+ON=@Create
+COLOR=color_ice
+NPC=brain_monster
+FAME=15
+KARMA=-3500
+
+STR={650 660}
+DEX={120 145}
+INT=5
+
+MAXHITS={1500 1900}
+MAXSTAM={60 80}
+MAXMANA=0
+
+tag.experience=<eval {90.0 105.0}>
+
+tag.roundattack_damage=50,60    //dmg od - do
+tag.roundattack_time=10,15      //prodleva od - do
+tag.roundattack_chance=200      //20%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,1000)
+tag(resist_para,600)
+tag(resist_summon,350)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,600)
+tag(resist_slash,200)
+tag(resist_pierce,650)
+tag(resist_blunt,-500)
+
+//magic resists
+tag(resist_fire,-700)
+tag(resist_elect,-200)
+tag(resist_cold,1000)
+
+//typ monstra
+tag(monstertype,snow)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+tag.hit_damage=<eval {10 25}>
+
+Wrestling={95.0 100.0}
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Resist={85.0 100.0}
+SpiritSpeak=35.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_elem
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_elem_ice_terror_mad]
+ID=c_elem_earth_m
+NAME=Elemental Ledu
+SOUND=snd_ANIMALS_ALIGATR1
+ICON=i_pet_elem_earth
+CAN=MT_WALK|mt_run
+
+ATTACK=120
+ARMOR=20
+MOVERATE=3
+
+BLOODCOLOR=colors_blue
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_elem_terror
+TEVENTS=e_snowmonster
+//TEVENTS=e_npc_roundattack
+//TEVENTS=e_npc_stun
+
+//CATEGORY=Monsters
+//SUBSECTION=Elementals
+//DESCRIPTION=Ice Elemental Terror
+
+ON=@Create
+COLOR=color_ice
+NPC=brain_monster
+FAME=15
+KARMA=-3500
+
+STR={650 660}
+DEX={120 145}
+INT=5
+
+MAXHITS={2300 2600}
+MAXSTAM={100 120}
+MAXMANA=0
+
+tag.experience=<eval {100.0 110.0}>
+
+tag.death_damage=<eval {65 75}>
+
+tag.roundattack_damage=60,65    //dmg od - do
+tag.roundattack_time=10,15      //prodleva od - do
+tag.roundattack_chance=300      //30%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,1000) //indivindi podle monstra
+tag(resist_para,1000) //indivindi podle monstra
+tag(resist_summon,350) //indivindi podle monstra
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,600)
+tag(resist_slash,200)
+tag(resist_pierce,650)
+tag(resist_blunt,-500)
+
+//magic resists
+tag(resist_fire,-700)
+tag(resist_elect,-200)
+tag(resist_cold,1000)
+
+//typ monstra
+tag(monstertype,snow)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Wrestling={100.0 110.0}
+Parrying={105.0 110.0}
+Tactics={85.0 100.0}
+Resist={85.0 100.0}
+SpiritSpeak=45.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_light_source
+
+ON=@NPCRestock
+ITEM=loot_elem
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_elem_ice_mage_mad]
+NAME=Ice Elemental
+ID=c_elem_earth_m
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+CAN=MT_WALK|mt_run
+
+ATTACK=50
+ARMOR=55
+MOVERATE=3
+
+BLOODCOLOR=097f
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_snowmonster
+TEVENTS=e_npc_curse
+
+//CATEGORY=Dungy
+//SUBSECTION=Ledova jeskyne
+//DESCRIPTION=Ice Elemental (mage)
+
+ON=@Create
+COLOR=0480
+NPC=brain_monster
+FAME=20
+KARMA=-3000
+
+STR={800 850}
+DEX={90 95}
+INT=100
+
+MAXHITS={4000 4550}
+MAXSTAM={105 125}
+MAXMANA=1000
+
+tag.experience=<eval {105.0 110.0}>
+
+tag.npc_curse_chance=250          // 25% chance to trigger this event
+tag.npc_curse_delay=25,30         // delay between another possible strike
+tag.npc_curse_dmg=20,25           // dmg
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,1000) //indivindi podle monstra
+tag.resist_para=<eval {500 650}>
+tag(resist_summon,650) //indivindi podle monstra
+tag(resist_bleed,550) //snih nejak moc nekrvaci
+
+//weap resists
+tag(resist_sharp,00)
+tag(resist_slash,00)
+tag(resist_pierce,650)
+tag(resist_blunt,-300)
+
+//magic resists
+tag(resist_fire,-500)
+tag(resist_elect,200)
+tag(resist_cold,800)
+
+//typ monstra
+tag(monstertype,snow)
+//weap flags
+tag.weapflag=dam_blunt|dam_physical|dam_cold
+
+Wrestling={80.0 90.0}
+Resist=200.0
+Tactics={85.0 100.0}
+Parrying={80.0 95.0}
+Magery=110.0
+EI=90.0
+SpiritSpeak=35.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_magic_reflection
+ADDSPELL=s_lightning
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT_NECRO,{5 10}
+
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_elem_ice_archer_mad]
+NAME=Ice Elemental
+ID=c_elem_earth_m
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+CAN=MT_WALK|mt_run|mt_equip|MT_USEHANDS
+
+ATTACK=35
+ARMOR=40
+MOVERATE=4
+
+BLOODCOLOR=-1
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_snowmonster
+TEVENTS=e_npc_sniper
+
+//CATEGORY=Dungy
+//SUBSECTION=Ledova jeskyne
+//DESCRIPTION=Ice Elemental (archer)
+
+ON=@Create
+COLOR=0480
+NPC=brain_monster
+FAME=15
+KARMA=-3000
+
+STR={800 850}
+DEX={120 125}
+INT={30 55}
+
+MAXHITS={4000 4500}
+MAXSTAM={165 175}
+MAXMANA=0
+
+tag.experience=<eval {100.0 115.0}>
+
+tag.npc_sniper_dmg=10             //o 10 HP
+tag.npc_sniper_chance=300         //30% Defaultne 20%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,1000) //indivindi podle monstra
+tag.resist_para=<eval {500 650}>
+tag(resist_summon,450) //indivindi podle monstra
+tag(resist_bleed,350) //snih nejak moc nekrvaci
+
+//weap resists
+tag(resist_sharp,00)
+tag(resist_slash,00)
+tag(resist_pierce,250)
+tag(resist_blunt,-200)
+
+//magic resists
+tag(resist_fire,-500)
+tag(resist_elect,200)
+tag(resist_cold,800)
+
+//typ monstra
+tag(monstertype,snow)
+//weap flags
+tag.weapflag=dam_piercing|dam_physical|dam_cold
+
+Wrestling={90.0 100.0}
+Resist=200.0
+Tactics={85.0 100.0}
+Parrying={80.0 95.0}
+SpiritSpeak=40.0
+
+Archery={100.0 110.0}
+
+ITEMnewbie=i_monster_create
+ITEMnewbie=i_bow_rock
+
+ON=@NPCRestock
+if (<eval {0 1000}> < 250)
+ITEM=
+ITEM=i_gold
+ITEM=tm_rocks
+ITEM=tm_rocks
+ITEM=tm_rocks
+ITEM=tm_rocks
+
+[ITEMDEF i_mad_esence]
+// WORMS HEART
+DEFNAME=i_ledova_esence
+TYPE=T_normal
+VALUE=3
+CAN_PILE=1
+WEIGHT=0.0
+CATEGORY=PROVISIONS - Alchemy & MAGIC
+SUBSECTION=REAGENTS - PAGAN
+DESCRIPTION=event reg
+
+ON=@create
+COLOR=0480
+NAME=Ledova Esence
+
+ON=@userdclick
+src.sysMessage("Hmm ... chladne. Ale k cemu to je ?")
+
+[EOF]

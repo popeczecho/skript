@@ -1,0 +1,4559 @@
+/////////////// NEUTRAL ANIMALS ////////////////////
+//////////////   - NO MOUNTS    ///////////////////
+///////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////
+//                    B I R D S                     //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 05]
+DEFNAME=c_eagle
+NAME=Orel
+SOUND=snd_ANIMALS_EAGLE1
+ICON=i_pet_EAGLE
+ANIM=03a0c1f
+CAN=MT_WALK
+
+ATTACK=8
+ARMOR=5
+MOVERATE=3
+
+RESOURCES=30 i_feather, 1 I_BIRD_RAW
+FOODTYPE=5 t_fruit,t_meat_raw
+
+DESCRIPTION=Eagle
+SUBSECTION=Air {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+FAME=50
+KARMA={-100 -199}
+
+tag.experience=<eval {3.0 4.0}>
+
+tag.resist_poison=900
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+STR={20 25}
+DEX=50
+INT=10
+
+MAXHITS={45 60}
+MAXSTAM={200 250}
+MAXMANA=0
+
+Parrying={25.0 40.0}
+Resist={57.3 67.3}
+Tactics={25 30}
+Wrestling={73.9 82.3}
+SpiritSpeak=15.0
+Taming={33.0 37.5}
+AnimalLore=30.0
+
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////
+
+[CHARDEF 06]
+DEFNAME=c_bird
+
+NAME=Ptacek
+SOUND=snd_ANIMALS_FRSTBRD1
+ICON=i_pet_BIRD
+ANIM=03e007f
+CAN=MT_WALK
+ATTACK=1
+ARMOR=0
+MOVERATE=3
+RESOURCES=1 I_BIRD_RAW,10 i_feather
+FOODTYPE=3 t_crops, 6 t_fruit, 3 t_grain
+
+DESCRIPTION=Bird
+SUBSECTION=Air {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+COLOR=colors_bird
+FAME=30
+KARMA={-1 -99}
+
+STR=10
+DEX={25 35}
+INT=10
+
+MAXHITS={10 19}
+MAXSTAM={25 35}
+MAXMANA=0
+
+Parrying=50.0
+Resist={4.0 5.0}
+Tactics={4.0 6.0}
+Wrestling={4.2 6.4}
+SpiritSpeak=10.0
+
+tag.experience=<eval {1.0 2.0}>
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[1]>
+
+//typ monstra
+tag(monstertype,animal)
+
+ITEMnewbie=i_monster_create
+//////////////////////////////////
+[CHARDEF 01026]
+DEFNAME=C_BIRD_CROW
+NAME=Ptacek
+ID=c_BIRD
+SOUND=snd_ANIMALS_CROW1
+ICON=i_pet_BIRD
+
+ATTACK=1
+ARMOR=0
+MOVERATE=3
+
+RESOURCES=1 I_BIRD_RAW, 10 i_feather
+CAN=MT_WALK
+FOODTYPE=25 t_crops, 25 t_grain
+
+DESCRIPTION=Crow
+SUBSECTION=Air {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+COLOR=colors_black
+
+STR={1 9}
+DEX={25 35}
+INT=10
+
+MAXHITS={10 29}
+MAXSTAM={25 35}
+MAXMANA=0
+
+Parrying=50.0
+Resist={4.0 5.0}
+Tactics={4.0 6.0}
+Wrestling={24.2 26.4}
+Taming=10.0
+AnimalLore={45.0 50.0}
+SpiritSpeak=10.0
+
+FAME=30
+KARMA={-1 -99}
+
+tag.experience=<eval {1.0 1.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[1]>
+
+//typ monstra
+tag(monstertype,animal)
+
+//str
+NPC=brain_animal
+
+FAME=10
+KARMA={-1 -99}
+
+ITEMnewbie=i_monster_create
+
+
+///////////////////////
+
+[CHARDEF 01027]
+DEFNAME=C_BIRD_MAGPIE
+NAME=Ptacek
+ID=c_BIRD
+SOUND=snd_ANIMALS_FRSTBRD1
+ICON=i_pet_BIRD
+
+ATTACK=1
+ARMOR=0
+MOVERATE=3
+
+RESOURCES=1 I_BIRD_RAW,10 i_feather
+CAN=MT_WALK
+FOODTYPE=25 t_fruit,25 t_crops, 25 t_grain
+
+DESCRIPTION=Magpie
+SUBSECTION=Air {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+COLOR=colors_black
+STR={10 29}
+DEX={25 35}
+INT=10
+
+MAXHITS={10 29}
+MAXSTAM={25 35}
+MAXMANA=0
+
+tag.experience=<eval {1.0 1.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[1]>
+
+//typ monstra
+tag(monstertype,animal)
+
+Parrying=50.0
+Resist={4.0 5.0}
+Tactics={4.0 6.0}
+Wrestling={24.2 26.4}
+Taming=10.0
+AnimalLore={45.0 50.0}
+SpiritSpeak=10.0
+
+NPC=brain_animal
+
+FAME=30
+KARMA={-1 -99}
+
+ITEMnewbie=i_monster_create
+
+///////////////////////
+
+[CHARDEF 01060]
+DEFNAME=C_BIRD_TROPICAL
+NAME=Ptacek
+ID=c_BIRD
+SOUND=snd_ANIMALS_PARROT1
+ICON=i_pet_BIRD
+
+ATTACK=1
+ARMOR=0
+MOVERATE=3
+
+RESOURCES=1 I_BIRD_RAW, 10 i_feather
+CAN=MT_WALK
+FOODTYPE=3 t_crops, 6 t_fruit
+
+DESCRIPTION=Tropical Bird
+SUBSECTION=Air {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+COLOR=colors_bird
+STR={1 9}
+DEX={26 35}
+INT=10
+
+MAXHITS={1 9}
+MAXSTAM={26 35}
+MAXMANA=0
+
+Parrying=50.0
+Resist={4.0 5.0}
+Tactics={4.0 6.0}
+Wrestling={4.2 6.4}
+Taming=10.0
+AnimalLore={25.0 50.0}
+SpiritSpeak=10.0
+
+tag.experience=<eval {1.0 1.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+NPC=brain_animal
+
+FAME=10
+KARMA={-1 -99}
+
+ITEMnewbie=i_monster_create
+
+////////////////////////////////////////////
+
+[CHARDEF 01061]
+DEFNAME=C_BIRD_RAVEN
+NAME=Ptacek
+ID=c_BIRD
+SOUND=snd_ANIMALS_RAVEN1
+ICON=i_pet_RAVEN
+
+ATTACK=1
+ARMOR=0
+MOVERATE=3
+
+RESOURCES=1 I_BIRD_RAW, 15 i_feather
+
+CAN=MT_WALK
+FOODTYPE=15 t_crops, 15 t_grain
+
+DESCRIPTION=Raven
+SUBSECTION=Air {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+COLOR=colors_black
+STR={1 9}
+DEX={25 35}
+INT=10
+
+MAXHITS={20 39}
+MAXSTAM={25 35}
+MAXMANA=0
+
+Parrying=50.0
+Resist={4.0 5.0}
+Tactics={4.0 6.0}
+Wrestling={54.2 56.4}
+Taming=15.0
+AnimalLore={30.0 50.0}
+SpiritSpeak=10.0
+
+tag.experience=<eval {1.0 1.0}>
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//typ monstra
+tag(monstertype,animal)
+
+NPC=brain_animal
+
+FAME=5
+KARMA={-1 -99}
+
+ITEMnewbie=i_monster_create
+
+///////////////////////
+
+[CHARDEF C_BIRD_JUNGLE]
+
+NAME=Ptacek
+ID=c_BIRD
+SOUND=snd_ANIMALS_JUNGBRD1
+ICON=i_pet_BIRD
+
+ATTACK=1
+ARMOR=0
+MOVERATE=3
+RESOURCES=1 I_BIRD_RAW, 10 i_feather
+
+CAN=MT_WALK
+FOODTYPE=3 t_crops, 6 t_fruit
+
+DESCRIPTION=Tropical Bird
+SUBSECTION=Air {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NAME=Ptacek
+COLOR=colors_bird
+STR={1 9}
+DEX={26 35}
+INT=10
+
+MAXHITS={1 9}
+MAXSTAM={25 35}
+MAXMANA=0
+
+Parrying=50.0
+Resist={4.0 5.0}
+Tactics={4.0 6.0}
+Wrestling={4.2 6.4}
+Taming=30.1
+AnimalLore={45.0 50.0}
+SpiritSpeak=10.0
+
+tag.experience=<eval {1.0 1.0}>
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+NPC=brain_animal
+
+FAME=10
+KARMA={-1 -99}
+
+ITEMnewbie=i_monster_create
+//////////////////////////////////////////////////////
+//                  F E R R E T                     //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 290]
+DEFNAME=c_ferret
+NAME=Fretka
+SOUND=snd_ANIMALS_RABBIT3
+ICON=i_pet_ferret
+
+ATTACK=10
+ARMOR=10
+MOVERATE=3
+
+RESOURCES=3 i_ribs_raw
+CAN=MT_WALK
+FOODTYPE=15 t_meat_raw
+
+DESCRIPTION=Ferret
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+
+STR={150 180}
+DEX={200 250}
+INT=10
+
+MAXHITS={180 200}
+MAXSTAM={260 280}
+MAXMANA=0
+
+tag.experience=<eval {4.0 5.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[1]>
+
+//typ monstra
+tag(monstertype,animal)
+
+tag(resist_poison,400)
+tag.resist_para=<eval {200 350}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,00)
+tag(resist_slash,00)
+tag(resist_pierce,100)
+tag(resist_blunt,00)
+
+tag(resist_fire,00)
+tag(resist_elect,100)
+tag(resist_cold,200)
+
+Resist=10
+Tactics=20
+Wrestling=50
+SpiritSpeak=10.0
+Taming={43.0 47.5}
+AnimalLore={50.0 60.0}
+
+ITEMnewbie=i_monster_create
+//////////////////////////////////////////////////////
+//                S Q U I R R E L                   //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 221]
+DEFNAME=c_squirrel
+NAME=Veverka
+SOUND=snd_ANIMALS_RABBIT3
+ICON=i_pet_squirrel
+
+ATTACK=8
+ARMOR=8
+MOVERATE=3
+
+RESOURCES=3 i_ribs_raw
+CAN=MT_WALK
+FOODTYPE=15 t_meat_raw
+
+DESCRIPTION=Squirrel
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+
+STR={150 180}
+DEX={180 200}
+INT=10
+
+MAXHITS={140 160}
+MAXSTAM={200 225}
+MAXMANA=0
+
+tag.experience=<eval {3.0 4.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[1]>
+
+//typ monstra
+tag(monstertype,animal)
+
+tag(resist_poison,400)
+tag.resist_para=<eval {200 350}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,00)
+tag(resist_slash,00)
+tag(resist_pierce,100)
+tag(resist_blunt,00)
+
+tag(resist_fire,00)
+tag(resist_elect,100)
+tag(resist_cold,200)
+
+Resist=10
+Tactics=20
+Wrestling=50
+SpiritSpeak=10.0
+Taming={40.0 44.5}
+AnimalLore={50.0 60.0}
+
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////////////
+//                    G O A T                       //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 01010]
+DEFNAME=c_a_mountain_goat
+NAME=Horska koza
+ID=c_GOAT
+SOUND=snd_ANIMALS_GOAT1
+ICON=i_pet_GOAT
+CAN=MT_WALK
+
+ATTACK=4
+ARMOR=16
+MOVERATE=3
+
+RESOURCES=16 i_ribs_raw,12 i_hide
+FOODTYPE=5 t_foliage, 64 t_grass
+
+DESCRIPTION=Mountain Goat
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+COLOR=color_snow
+NPC=brain_animal
+FAME=40
+KARMA={-199 -299}
+
+STR={34 55}
+DEX={56 75}
+INT={16 30}
+
+MAXHITS={134 155}
+MAXSTAM={56 75}
+MAXMANA=0
+
+tag.experience=<eval {2.0 4.0}>
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[1]>
+
+//typ monstra
+tag(monstertype,animal)
+
+Parrying={45.0 55.0}
+Resist={25.0 30.0}
+Tactics={29.0 44.0}
+Wrestling={29.0 44.0}
+Taming={21.0 26.0}
+AnimalLore=25.0
+SpiritSpeak=10.0
+
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////////////
+//                J A C K R A B B I T               //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 01029]
+DEFNAME=c_a_jackrabbit
+NAME=Zajic
+ID=c_RABBIT
+SOUND=snd_ANIMALS_RABBIT3
+ICON=i_pet_RABBIT_2
+
+ATTACK=5
+ARMOR=4
+MOVERATE=3
+
+RESOURCES=1 i_ribs_raw
+CAN=MT_WALK
+FOODTYPE=55 t_crops, 55 t_foliage, 64 t_grass
+
+DESCRIPTION=Jackrabbit
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+COLOR=colors_brown
+NPC=brain_animal
+FAME=10
+KARMA={-1 -99}
+
+STR=15
+DEX=25
+INT=10
+
+MAXHITS=15
+MAXSTAM=25
+MAXMANA=0
+
+Parrying=50.0
+Resist=5.0
+Tactics=5.0
+Wrestling=6.5
+SpiritSpeak=15.0
+Taming=10.0
+AnimalLore={15.0 25.0}
+
+tag.experience=<eval {1.0 2.0}>
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+tag(resist_poison,900)
+tag.resist_para=<eval {100 150}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,00)
+tag(resist_slash,00)
+tag(resist_pierce,100)
+tag(resist_blunt,00)
+
+tag(resist_fire,200)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////////////
+//                     R A T S                      //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 0D7]
+//RAT {GIANT}
+DEFNAME=c_rat_giant
+NAME="Potkan"
+SOUND=snd_MONSTER_GRAT1
+ICON=i_pet_RAT_2
+ANIM=01fff
+
+ATTACK=10
+ARMOR=12
+MOVERATE=3
+
+RESOURCES=2 i_ribs_raw,1 i_fur_dark
+CAN=MT_WALK|MT_RUN
+FOODTYPE=15 t_FISH,12 t_meat_raw
+
+DESCRIPTION=Giant Rat
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_monster
+FAME=200
+KARMA={-1000 -1999}
+
+STR={32 70}
+DEX={100 105}
+INT={16 29}
+
+MAXHITS={102 115}
+MAXSTAM={100 111}
+MAXMANA=0
+
+tag.experience=<eval {3.0 4.0}>
+tag(resist_poison,980)
+
+tag(calmable,3)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+Parrying={45.0 55.0}
+Resist={45.9 59.4}
+Tactics={75.2 79.3}
+Wrestling={90.0 95.0}
+Poisoning={70.0 85.0}
+SpiritSpeak=10.0
+Taming={33.0 35.0}
+
+FAME=200
+KARMA={-1000 -1999}
+
+//ALIGNMENT=EVIL
+ITEMnewbie=i_monster_create
+
+/////////////////////////
+
+[CHARDEF 01030]
+DEFNAME=c_a_rat_sewer
+NAME=Krysa
+ID=c_rat
+SOUND=snd_ANIMALS_RAT1
+ICON=i_pet_RAT
+
+ATTACK=7
+ARMOR=6
+MOVERATE=3
+
+RESOURCES=1 i_ribs_raw
+CAN=MT_WALK
+FOODTYPE=5 t_food
+
+DESCRIPTION=kanalova krysa
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+COLOR=colors_brown
+NPC=brain_animal
+FAME=1
+KARMA={-1 -99}
+
+STR=19
+DEX=25
+INT=10
+
+MAXHITS=40
+MAXSTAM=25
+MAXMANA=0
+
+
+//ALIGNMENT=EVIL
+tag.experience=<eval {1.0 2.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//typ monstra
+tag(monstertype,animal)
+
+Parrying=5.0
+Resist=5.0
+Tactics=5.0
+Wrestling=35.9
+Taming=16.0
+SpiritSpeak=15.0
+
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////////////
+//                  S N A K E S                     //
+//                                                  //
+//////////////////////////////////////////////////////
+[CHARDEF 034]
+DEFNAME=c_snake
+NAME=Had
+SOUND=snd_ANIMALS_SNAKE1
+ICON=i_pet_SNAKE
+ANIM=078c7f
+
+ATTACK=4
+ARMOR=15
+MOVERATE=3
+
+RESOURCES=1 i_ribs_raw, 1 i_reag_serpent_scale
+CAN=MT_WALK
+FOODTYPE=t_meat_raw
+
+DESCRIPTION=Snake
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+COLOR=colors_snake
+
+tag.experience=<eval {1.0 2.0}>
+tag.resist_poison=1000
+
+//typ monstra
+tag(monstertype,animal)
+
+STR={40 61}
+DEX={16 25}
+INT=10
+
+MAXHITS={23 31}
+MAXSTAM={26 25}
+MAXMANA=0
+
+Parrying={15.0 25.0}
+Resist={14.8 19.9}
+Tactics={20.6 31.4}
+Wrestling={63.3 83.7}
+Poisoning={40.0 50.0}
+
+Taming=59.1
+FAME=20
+KARMA={-99 -199}
+
+ITEMnewbie=i_monster_create
+
+///////////////////////
+
+[CHARDEF 01013]
+DEFNAME=c_ice_snake
+NAME=Ledovy had
+ID=c_SNAKE
+SOUND=snd_ANIMALS_SNAKE1
+ATTACK=7
+ARMOR=30
+MOVERATE=3
+
+RESOURCES=1 i_ribs_raw
+CAN=MT_WALK
+
+CATEGORY=Animals
+SUBSECTION=Land {Wild}
+DESCRIPTION=Ice Snake
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_monster
+COLOR=color_ice
+
+STR={42 54}
+DEX={38 44}
+INT={26 30}
+
+MAXHITS={42 54}
+MAXSTAM={36 44}
+MAXMANA=0
+
+tag.experience=<eval {3.0 4.0}>
+tag.resist_poison=1000
+
+//typ monstra
+tag(monstertype,animal)
+
+Parrying={15.0 25.0}
+Resist={15.2 19.4}
+Tactics={42.5 50.0}
+Wrestling={64.4 83.3}
+
+FAME=75
+KARMA={-300 -499}
+
+ITEMnewbie=i_monster_create
+
+///////////////////////
+
+[CHARDEF 01014]
+DEFNAME=c_lava_snake
+NAME=Lavovy had
+ID=c_SNAKE
+SOUND=snd_ANIMALS_SNAKE1
+
+ATTACK=4
+ARMOR=24
+MOVERATE=3
+
+RESOURCES=1 i_ribs_raw, 1 i_hide
+CAN=MT_WALK|MT_FIRE_IMMUNE
+
+DESCRIPTION=Lava Snake
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_monster
+COLOR=colors_lava
+
+STR={46 51}
+DEX={18 25}
+INT=10
+
+MAXHITS={46 51}
+MAXSTAM={18 25}
+MAXMANA=0
+
+Parrying={15.0 25.0}
+Resist={15.8 19.7}
+Tactics={16.7 27.8}
+Wrestling={25.0 34.1}
+
+tag.resist_poison=1000
+tag.experience=<eval {3.0 4.0}>
+
+//typ monstra
+tag(monstertype,animal)
+
+FAME=40
+KARMA={-300 -599}
+
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////////////
+//                  G O R I L L A                   //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 01d]
+DEFNAME=c_gorilla
+NAME=Gorila
+SOUND=snd_ANIMALS_GORILLA1
+ICON=i_pet_GORILLA
+ANIM=079c7f
+
+ATTACK=8
+ARMOR=15
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw,1 i_fur_dark, 10 i_hide
+CAN=MT_WALK
+FOODTYPE=25 t_crops,25 t_fruit, 25 t_grain
+
+DESCRIPTION=Gorilla
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+
+tag.experience=<eval {6.0 7.0}>
+
+tag(calmable,4)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+FAME=175
+KARMA=-1
+
+STR={165 188}
+DEX={136 155}
+INT=50
+
+MAXHITS={255 275}
+MAXSTAM={236 255}
+MAXMANA=0
+
+tag.resist_poison=620
+
+Parrying={43.0 53.0}
+Resist={45.2 59.3}
+Tactics={45.6 54.4}
+Wrestling={70.7 79.6}
+SpiritSpeak=20.0
+
+//typ monstra
+tag(monstertype,animal)
+
+Taming={36.0 39.0}
+AnimalLore=30.0
+
+ITEMnewbie=i_monster_create
+
+
+//////////////////////////////////////////////////////
+//                  D O L P H I N                   //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 097]
+DEFNAME=c_dolphin
+NAME=Delfin
+SOUND=snd_ANIMALS_DOLPHIN1
+ICON=i_pet_DOLPHIN
+ANIM=019f
+
+ATTACK=3
+ARMOR=16
+MOVERATE=3
+
+RESOURCES=4 i_ribs_raw, 4 i_hide
+CAN=MT_SWIM
+FOODTYPE=5 t_FISH
+
+DESCRIPTION=Dolphin
+SUBSECTION=Sea {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+
+tag.experience=<eval {1.0 1.0}>
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+STR={24 42}
+DEX={73 83}
+INT={97 110}
+
+MAXHITS={300 400}
+MAXSTAM={73 83}
+MAXMANA=0
+
+//typ monstra
+tag(monstertype,animal)
+
+Parrying={65.0 75.0}
+Resist={15.1 18.8}
+Tactics={20.8 26.2}
+Wrestling={50.0 55.5}
+SpiritSpeak=20.0
+//Taming={87.0 95.0}
+Peacemaking=0.1
+Fishing=95.0
+AnimalLore=100.0
+
+tag.resist_poison=950
+
+FAME=200
+KARMA=10
+
+//ALIGNMENT=NEUTRAL
+
+//Animals
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////////////
+//                     C A T                        //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 0c9]
+DEFNAME=c_cat
+NAME=Kocka
+ANIM=017ff
+SOUND=snd_ANIMALS_CAT1
+ICON=i_pet_CAT
+//double check this color def
+
+ATTACK=1
+ARMOR=4
+MOVERATE=3
+
+RESOURCES=1 i_ribs_raw
+
+CAN=MT_WALK|MT_RUN
+FOODTYPE=5 t_meat_raw, 5 t_FISH
+
+DESCRIPTION=Cat
+SUBSECTION=Land {Domestic}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+COLOR=colors_animal
+
+STR=10
+DEX=35
+INT=10
+
+MAXHITS=100
+MAXSTAM=35
+MAXMANA=0
+
+Parrying=2.5
+Resist=5.0
+Tactics=4.0
+Wrestling=76.0
+Taming=10.1
+
+//typ monstra
+tag(monstertype,animal)
+
+FAME=10
+KARMA={1 99}
+
+tag.experience=<eval {1.0 2.0}>
+
+tag.resist_poison=970
+
+//ALIGNMENT=NEUTRAL
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_cat_gut
+
+//////////////////////////////////////////////////////
+//                     P I G                        //
+//                                                  //
+//////////////////////////////////////////////////////
+[CHARDEF 0cb]
+//Pig_Small
+DEFNAME=c_pig
+NAME=Prase
+SOUND=snd_ANIMALS_PIG1
+ICON=i_pet_PIG
+CAN=MT_WALK|MT_RUN
+
+ATTACK=2
+ARMOR=12
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+FOODTYPE=55 t_fruit, 55 t_crops, 55 t_grain, 55 t_garbage
+
+ANIM=01fff
+DESCRIPTION=Pig
+SUBSECTION=Land {Domestic}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+FAME=10
+KARMA={-1 -99}
+//ALIGNMENT=NEUTRAL
+
+STR=20
+DEX=20
+INT=10
+
+MAXHITS=100
+MAXSTAM=20
+MAXMANA=0
+
+Parrying=5.0
+Resist=5.0
+Tactics=5.0
+Wrestling=6.9
+SpiritSpeak=10.0
+Taming={14.0 18.0}
+AnimalLore=15.1
+
+//typ monstra
+tag(monstertype,animal)
+
+tag.experience=<eval {1.0 2.0}>
+
+tag.resist_poison=970
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[1]>
+
+ITEMnewbie=i_monster_create
+
+
+//////////////////////////////////////////////////////
+//                  R A B B I T                     //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 0CD]
+DEFNAME=c_rabbit
+NAME=Kralik
+SOUND=snd_ANIMALS_RABBIT3
+ICON=i_pet_RABBIT_2
+CAN=MT_WALK|MT_RUN
+ANIM=01fff
+
+ATTACK=1
+ARMOR=6
+MOVERATE=3
+
+RESOURCES=1 i_ribs_raw,1 i_fur_light
+FOODTYPE=25 t_crops,25 t_foliage, 35 t_grass
+
+DESCRIPTION=Rabbit
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+FAME=10
+KARMA={-1 -99}
+//ALIGNMENT=NEUTRAL
+COLOR={ colors_animal 1 color_none 1 }
+
+STR=10
+DEX={26 38}
+INT={10 14}
+
+MAXHITS=100
+MAXSTAM={26 38}
+MAXMANA=0
+
+Parrying=35.0
+Resist=35.0
+Tactics=35.0
+Wrestling={55.7 66.1}
+SpiritSpeak=15.0
+Taming={12.0 14.0}
+
+tag.experience=<eval {1.0 2.0}>
+
+tag.resist_poison=970
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+ITEMnewbie=i_monster_create
+
+
+//////////////////////////////////////////////////////
+//                    S H E E P                     //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 0CF]
+//Sheep {wooly}
+DEFNAME=c_sheep_woolly
+NAME=Ovce
+SOUND=snd_ANIMALS_SHEEP1
+ICON=i_pet_SHEEP_WOOLY
+
+ATTACK=2
+ARMOR=6
+MOVERATE=3
+
+RESOURCES=5 i_ribs_raw, 1 i_hide
+
+CAN=MT_WALK|MT_RUN
+FOODTYPE=5 t_crops, 5 t_grain, 64 t_grass
+
+ANIM=01fff
+DESCRIPTION=Sheep
+SUBSECTION=Land {Domestic}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+
+FAME=10
+KARMA={-1 -99}
+COLOR={ colors_white 9 color_gray_lt 1 }
+
+STR=19
+DEX=25
+INT=10
+
+MAXHITS=100
+MAXSTAM=75
+MAXMANA=0
+
+Parrying=25.0
+Resist=25.0
+Tactics=26.0
+Wrestling=46.8
+SpiritSpeak=10.0
+
+tag.experience=<eval {1.0 2.0}>
+
+//typ monstra
+tag(monstertype,animal)
+
+tag.resist_poison=970
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[1]>
+
+ITEMnewbie=i_monster_create
+
+
+//////////////////////////////////////////////////////
+//                 C H I C K E N                    //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 0D0]
+DEFNAME=c_chicken
+NAME=Slepice
+SOUND=snd_ANIMALS_CHICKEN1
+ICON=i_pet_CHICKEN
+ANIM=01fff
+
+ATTACK=1
+ARMOR=2
+MOVERATE=3
+
+RESOURCES=5 i_feather,1 I_BIRD_RAW
+CAN=MT_WALK|MT_RUN
+FOODTYPE=5 t_grain
+
+DESCRIPTION=Chicken
+SUBSECTION=Air {Domestic}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+
+STR=10
+DEX=15
+INT=10
+
+MAXHITS=45
+MAXSTAM=15
+MAXMANA=0
+
+Parrying=11.5
+Resist=14.0
+Tactics=15.0
+Wrestling=35.5
+SpiritSpeak=10.0
+Taming={10.0 12.3}
+
+tag.experience=<eval {1.0 2.0}>
+
+tag.resist_poison=980
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[1]>
+
+//typ monstra
+tag(monstertype,animal)
+
+FAME=10
+KARMA={-1 -99}
+
+//ALIGNMENT=NEUTRAL
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////////////
+//                     G O A T                      //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 0d1]
+DEFNAME=c_goat
+
+NAME=Koza
+ANIM=01fff
+SOUND=snd_ANIMALS_GOAT1
+ICON=i_pet_GOAT
+
+ATTACK=2
+ARMOR=16
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw,4 i_hide
+CAN=MT_WALK|MT_RUN
+FOODTYPE=5 t_fruit, 5 t_leather, 64 t_grass, 5 t_garbage
+
+DESCRIPTION=Goat
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+
+STR={34 56}
+DEX={56 74}
+INT={16 30}
+
+MAXHITS={74 85}
+MAXSTAM={56 74}
+MAXMANA=0
+
+Parrying=50.0
+Resist={25.3 30.0}
+Tactics={31.1 41.6}
+Wrestling={36.0 43.2}
+SpiritSpeak=10.0
+Taming={35.0 39.0}
+AnimalLore=40.0
+
+tag.experience=<eval {1.0 2.0}>
+tag.resist_poison=970
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+FAME=20
+KARMA={-1 -99}
+
+ITEMnewbie=i_monster_create
+
+
+////////////////////////////////////////////////////
+/////////////// AGGRESSIVE ANIMALS /////////////////
+//////////////                    //////////////////
+///////////////////////////////////////////////////
+
+//////////////////////////////////////////////////////
+//               L I O N , C O U G A R              //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF C_A_Lion]
+ID=c_PANTHER
+SOUND=snd_ANIMALS_LION1
+NAME=Horsky lev
+ICON=i_pet_PANTHER
+CAN=MT_WALK|MT_RUN
+
+ATTACK=35
+ARMOR=25
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw,2 i_fur_dark
+
+FOODTYPE=6 t_FISH,15 t_meat_raw
+
+DESCRIPTION=Lion
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_NPC_Bleed
+
+
+ON=@Create
+NPC=brain_monster
+FAME=10
+KARMA={-1000 -1500}
+COLOR=0099b
+STR={461 485}
+DEX={386 405}
+INT={26 50}
+
+MAXHITS={430 460}
+MAXSTAM={386 405}
+MAXMANA=0
+
+tag.experience=<eval {28.0 33.0}>
+
+tag.npc_bleed=300 //30.0%
+
+tag(calmable,16)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//typ monstra
+tag(monstertype,animal)
+
+tag(resist_poison,850)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-150)
+tag(resist_pierce,-150)
+tag(resist_blunt,100)
+
+tag(resist_fire,200)
+tag(resist_elect,100)
+tag(resist_cold,-100)
+
+Parrying={85.0 95.0}
+Resist={85.0 90.0}
+Tactics={80.0 85.0}
+Wrestling={90.0 95.0}
+Taming={78.0 82.0}
+AnimalLore=80
+SpiritSpeak=65.0
+
+ITEMnewbie=i_monster_create
+
+///////////////////////////////////////////////////
+
+[CHARDEF 003f]
+DEFNAME=c_a_cougar
+NAME=Jaguar
+SOUND=snd_ANIMALS_COUGAR1
+ICON=i_pet_PANTHER
+CAN=MT_WALK|MT_RUN
+
+ATTACK=26
+ARMOR=26
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw,2 i_fur_dark
+FOODTYPE=15 t_meat_raw
+
+DESCRIPTION=Cougar
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+ON=@Create
+NPC=brain_monster
+FAME=10
+KARMA={-1000 -1500}
+
+STR={56 80}
+DEX={66 85}
+INT={26 47}
+
+MAXHITS={290 320}
+MAXSTAM={166 185}
+MAXMANA=0
+
+tag.experience=<eval {18.0 22.0}>
+
+tag.npc_bleed=300 //30.0%
+
+tag(calmable,14)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+tag(resist_poison,900)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,00)
+tag(resist_slash,00)
+tag(resist_pierce,00)
+tag(resist_blunt,00)
+
+tag(resist_fire,200)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+Parrying={55.0 65.0}
+Resist={17.7 62.8}
+Tactics={45.3 59.3}
+Wrestling={49.9 62.8}
+Taming={76.5 81.5}
+AnimalLore={35.0 45.0}
+SpiritSpeak=15.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+
+//////////////////////////////////////////////////////
+//                  W O L V E S                     //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 0e1]
+//Timber Wolf
+DEFNAME=c_wolf
+NAME=Vlk
+SOUND=snd_ANIMALS_WOLF1
+ICON=i_pet_wolf
+ANIM=017ff
+
+ATTACK=11
+ARMOR=11
+MOVERATE=3
+
+RESOURCES=3 i_ribs_raw,1 i_fur_dark
+CAN=MT_WALK|MT_RUN
+FOODTYPE=15 t_meat_raw
+
+DESCRIPTION=Timber Wolf
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_monster
+FAME=10
+KARMA={-1000 -1500}
+
+tag.experience=<eval {7.0 9.0}>
+
+tag(calmable,6)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+STR={56 79}
+DEX={56 75}
+INT=10
+
+MAXHITS={150 170}
+MAXSTAM={100 125}
+MAXMANA=0
+
+Parrying={43.0 55.0}
+Resist={28.2 42.0}
+Tactics={25 40.0}
+Wrestling={80.0 88.8}
+AnimalLore=35.0
+Taming={40.0 43.0}
+SpiritSpeak=15.0
+
+tag(resist_poison,200)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-100)
+tag(resist_slash,150)
+tag(resist_pierce,-50)
+tag(resist_blunt,50)
+
+tag(resist_fire,00)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+
+//ALIGNMENT=NEUTRAL
+ITEMnewbie=i_monster_create
+//////////////////////
+[CHARDEF 01031]
+DEFNAME=c_a_wolf_gray
+NAME=Sedy vlk
+ID=c_wolf
+SOUND=snd_ANIMALS_WOLF1
+ICON=i_pet_wolf_gray
+
+ATTACK=16
+ARMOR=14
+MOVERATE=3
+
+RESOURCES=5 i_ribs_raw, 1 i_fur_light
+CAN=MT_WALK
+FOODTYPE=15 t_meat_raw
+
+DESCRIPTION=Gray Wolf
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_monster
+FAME=10
+KARMA={-1000 -1500}
+COLOR=colors_gray
+
+STR={150 180}
+DEX={150 175}
+INT=10
+
+MAXHITS={250 270}
+MAXSTAM={200 225}
+MAXMANA=0
+
+tag.experience=<eval {15.0 17.0}>
+
+tag(calmable,8)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[1]>
+
+//typ monstra
+tag(monstertype,animal)
+
+tag(resist_poison,200)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-100)
+tag(resist_slash,150)
+tag(resist_pierce,-50)
+tag(resist_blunt,50)
+
+tag(resist_fire,00)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+Parrying=50
+Resist=60
+Tactics=50
+Wrestling=50
+SpiritSpeak=10.0
+Taming={52.0 54.5}
+AnimalLore={55.0 65.0}
+
+ITEMnewbie=i_monster_create
+
+///////////////////////////////////////////
+
+[CHARDEF 022]
+DEFNAME=C_A_WOLF_WHITE
+NAME=Bily vlk
+SOUND=snd_ANIMALS_WOLF1
+ICON=i_pet_wolf_gray
+
+ATTACK=20
+ARMOR=16
+MOVERATE=3
+
+CAN=MT_WALK
+RESOURCES=5 i_ribs_raw, 1 i_fur_light,{0 1} i_hide_white
+FOODTYPE=15 t_meat_raw
+
+ANIM=0ffffff
+
+CATEGORY=Animals
+SUBSECTION=Land {Wild}
+DESCRIPTION=White Wolf
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_monster
+FAME=10
+KARMA={-1000 -1500}
+COLOR=colors_white
+
+STR={156 180}
+DEX={256 275}
+INT=10
+
+MAXHITS={300 320}
+MAXSTAM={256 275}
+MAXMANA=0
+
+tag.experience=<eval {19.0 22.0}>
+
+tag(calmable,10)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[1]>
+
+//typ monstra
+tag(monstertype,animal)
+
+Parrying=55.0
+Resist=65.0
+Tactics=55.0
+Wrestling=55.0
+SpiritSpeak=10.0
+Taming={54.5 59.5}
+AnimalLore={65.0 75.0}
+
+tag(resist_poison,200)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-100)
+tag(resist_slash,150)
+tag(resist_pierce,-50)
+tag(resist_blunt,50)
+
+tag(resist_fire,-100)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+ITEMnewbie=i_monster_create
+
+///////////////////////
+
+[CHARDEF 01015]
+DEFNAME=c_a_direwolf
+NAME=Lity vlk
+ID=c_wolf
+
+ATTACK=12
+ARMOR=13
+MOVERATE=5
+
+RESOURCES=5 i_ribs_raw, 1 i_fur_dark
+CAN=MT_WALK
+FOODTYPE=6 t_FISH,15 t_meat_raw
+
+DESCRIPTION=Dire Wolf
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+FAME=150
+KARMA={-600 -999}
+
+tag.experience=<eval {10.0 13.0}>
+
+tag(calmable,10)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+STR={93 119}
+DEX={180 200}
+INT=10
+
+MAXHITS={180 200}
+MAXSTAM={180 222}
+MAXMANA=0
+
+Parrying=60.0
+Resist=95.0
+Tactics=80.0
+Wrestling=90.0
+SpiritSpeak=10.0
+Taming={59.5 64.5}
+AnimalLore={85.0 90.0}
+
+tag(resist_poison,200)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-100)
+tag(resist_slash,150)
+tag(resist_pierce,-50)
+tag(resist_blunt,50)
+
+tag(resist_fire,00)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+ITEMnewbie=i_monster_create
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_vlkodaf]
+ID=c_wolf
+NAME=Vlkodav
+SOUND=snd_ANIMALS_WOLF1
+ICON=i_pet_wolf
+CAN=MT_WALK|MT_run
+
+ATTACK=45
+ARMOR=60
+MOVERATE=5
+
+RESOURCES=4 i_ribs_raw
+FOODTYPE=55 t_FISH,64 t_meat_raw
+BLOODCOLOR=colors_lava
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+CATEGORY=Monsters
+SUBSECTION=Animal Monsters
+DESCRIPTION=Vlkodav
+
+ON=@Create
+COLOR=0979
+NPC=brain_monster
+FAME={100 500}
+KARMA=-10000
+
+STR=250
+DEX=130
+INT=10
+
+MAXHITS={400 500}
+MAXSTAM={140 150}
+MAXMANA=0
+
+tag.experience=<eval {35.0 40.0}>
+
+tag.npc_bleed=400 //40.0%
+
+tag(calmable,20)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,animal)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,750)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,250)
+tag(resist_bleed,200)
+
+tag(resist_sharp,00)
+tag(resist_slash,100)
+tag(resist_pierce,50)
+tag(resist_blunt,100)
+
+tag(resist_fire,00)
+tag(resist_elect,50)
+tag(resist_cold,200)
+
+Parrying=80.0
+Resist=80.0
+Tactics=80.0
+Wrestling=90.0
+Taming=95.0
+SpiritSpeak=25.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_drapac]
+ID=c_wolf
+NAME=Drapac
+SOUND=snd_ANIMALS_WOLF1
+ICON=i_pet_wolf
+CAN=MT_WALK|MT_run
+
+ATTACK=55
+ARMOR=60
+MOVERATE=5
+
+RESOURCES=4 i_ribs_raw
+FOODTYPE=55 t_FISH,64 t_meat_raw
+BLOODCOLOR=colors_lava
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+CATEGORY=Monsters
+SUBSECTION=Animal Monsters
+DESCRIPTION=Drapac
+
+ON=@Create
+COLOR=0980
+NPC=brain_monster
+FAME={100 500}
+KARMA=-2000
+
+STR=520
+DEX=200
+INT=130
+
+MAXHITS={600 700}
+MAXSTAM={200 220}
+MAXMANA=0
+
+tag.experience=<eval {45.0 50.0}>
+
+tag.npc_bleed=300 // 30.0%
+
+tag(calmable,22)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag(monstertype,animal)
+
+tag.weapflag=dam_sharp|dam_physical
+
+tag(resist_poison,-100)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,250)
+tag(resist_bleed,00)
+
+tag(resist_sharp,50)
+tag(resist_slash,200)
+tag(resist_pierce,00)
+tag(resist_blunt,100)
+
+tag(resist_fire,50)
+tag(resist_elect,100)
+tag(resist_cold,250)
+
+Parrying=100.0
+Resist=80.0
+Tactics=100.0
+Wrestling=100.0
+Taming=99.0
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_drapac_blood]
+ID=c_wolf
+NAME=Krvavy Drapac
+SOUND=snd_ANIMALS_WOLF1
+ICON=i_pet_wolf
+CAN=MT_WALK|MT_run
+
+ATTACK=75
+ARMOR=65
+MOVERATE=5
+
+RESOURCES=4 i_ribs_raw
+FOODTYPE=55 t_FISH,64 t_meat_raw
+BLOODCOLOR=colors_lava
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+CATEGORY=Monsters
+SUBSECTION=Animal Monsters
+DESCRIPTION=Krvavy Drapac
+
+ON=@Create
+COLOR=098c
+NPC=brain_monster
+FAME={200 750}
+KARMA=-3000
+
+STR=750
+DEX=355
+INT=150
+
+MAXHITS={900 1000}
+MAXSTAM={240 320}
+MAXMANA=0
+
+tag.experience=<eval {75.0 85.0}>
+
+tag.npc_bleed=500 //50.0%
+
+tag(calmable,24)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+tag(monstertype,animal)
+
+tag.weapflag=dam_sharp|dam_physical
+
+tag(resist_poison,-780)
+tag.resist_para=<eval {400 550}>
+tag(resist_summon,250)
+tag(resist_bleed,-400)
+
+tag(resist_sharp,50)
+tag(resist_slash,200)
+tag(resist_pierce,50)
+tag(resist_blunt,100)
+
+tag(resist_fire,200)
+tag(resist_elect,300)
+tag(resist_cold,100)
+
+Parrying=100.0
+Resist=80.0
+Tactics=100.0
+Wrestling=100.0
+Taming={100.1 110.0}
+AnimalLore=99.0
+SpiritSpeak=55.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_reag_blood_vial, {2 5}
+
+//////////////////////////////////////////////////////
+//                 H E L L H O U N D                //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF c_hellhound]
+ID=c_wolf
+NAME=Hell Hound
+SOUND=snd_ANIMALS_WOLF1
+ICON=i_pet_wolf
+CAN=MT_WALK|MT_run
+
+ATTACK=35
+ARMOR=30
+MOVERATE=5
+
+RESOURCES=4 i_ribs_raw
+BLOODCOLOR=colors_lava
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Animal Monsters
+DESCRIPTION=Hell Hound
+
+ON=@Create
+COLOR=colors_red
+NPC=brain_monster
+FAME=1000
+KARMA=-3000
+
+STR=450
+DEX=80
+INT=10
+
+MAXHITS={300 350}
+MAXSTAM={80 120}
+MAXMANA=0
+
+tag.experience=<eval {18.0 23.0}>
+
+tag(calmable,20)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,animal,60)
+tag(monstertype2,undead,60)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,900)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,250)
+tag(resist_bleed,200)
+
+tag(resist_sharp,50)
+tag(resist_slash,50)
+tag(resist_pierce,50)
+tag(resist_blunt,50)
+
+tag(resist_fire,800)
+tag(resist_elect,100)
+tag(resist_cold,-400)
+
+Parrying={63.0 75.0}
+Resist=80.0
+Tactics={50.0 70.0}
+Wrestling={60.0 80.0}
+Taming=95.0
+SpiritSpeak=25.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_reag_sulfur_ash,{1 5}
+ITEM=i_gold
+
+//////////////////////////////////////////////////////
+//               S N O W  L E O P A R D             //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 041]
+DEFNAME=C_A_SNOW_LEOPARD
+NAME=Snezny leopard
+SOUND=snd_ANIMALS_PANTHER1
+ICON=i_pet_PANTHER
+CAN=MT_WALK|MT_RUN
+
+ATTACK=40
+ARMOR=30
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw, 1 i_fur_light, {0 1} i_hide_white
+FOODTYPE=15 t_meat_raw
+
+CATEGORY=Animals
+SUBSECTION=Land {Wild}
+DESCRIPTION=Snow Leopard
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+ON=@Create
+NPC=brain_monster
+FAME=10
+KARMA={-1000 -1500}
+COLOR=0482
+
+STR={250 280}
+DEX={267 285}
+INT=10
+
+MAXHITS={300 330}
+MAXSTAM={267 285}
+MAXMANA=0
+
+tag.experience=<eval {26.0 33.0}>
+
+tag.npc_bleed=100 //10.0%
+
+tag(calmable,18)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+Parrying={55.0 65.0}
+Resist={25.2 34.8}
+Tactics={45.6 59.8}
+Wrestling={60.0 70.0}
+SpiritSpeak=15.0
+Taming={80.0 84.5}
+AnimalLore={85.0 95.0}
+
+tag(resist_poison,800)
+tag.resist_para=<eval {200 350}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,00)
+tag(resist_slash,00)
+tag(resist_pierce,100)
+tag(resist_blunt,00)
+
+tag(resist_fire,200)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////////////
+//               P H O E N I X E S                  //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF c_m_phoenix]
+ID=c_EAGLE
+NAME=Phoenix
+SOUND=snd_ANIMALS_EAGLE1
+ICON=i_pet_EAGLE
+CAN=MT_RUN|MT_WALK|MT_FIRE_IMMUNE
+
+ATTACK=55
+ARMOR=65
+MOVERATE=4
+
+RESOURCES=1 I_BIRD_RAW, 20 i_feather
+FOODTYPE=6 t_FISH, 15 t_meat_raw
+BLOODCOLOR=colors_lava
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Animal Monsters
+DESCRIPTION=Phoenix
+
+ON=@Create
+EVENTS=e_npc_leaper
+COLOR=colors_lava
+NPC=brain_monster
+FAME=1000
+KARMA=-2000
+
+STR={900 1000}
+DEX={250 300}
+INT=100
+
+MAXHITS={2900 3090}
+MAXSTAM={250 300}
+MAXMANA=0
+
+tag.experience=<eval {70.0 80.0}>
+
+tag.npc_port_timer=10
+tag(npc_port_distance,6)
+
+tag(calmable,26)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag(monstertype,animal)
+
+tag.weapflag=dam_sharp|dam_physical
+
+tag(resist_poison,250)
+tag.resist_para=<eval {550 650}>
+tag(resist_summon,650)
+tag(resist_bleed,-200)
+
+tag(resist_sharp,50)
+tag(resist_slash,00)
+tag(resist_pierce,-100)
+tag(resist_blunt,00)
+
+tag(resist_fire,-200)
+tag(resist_elect,300)
+tag(resist_cold,100)
+
+Resist=140.0
+Tactics={80.0 90.0}
+Wrestling={95.0 100.0}
+Taming={125.0 150.0}
+AnimalLore=95.0
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_m_phoenix_poison]
+ID=c_EAGLE
+NAME=Phoenix
+SOUND=snd_ANIMALS_EAGLE1
+ICON=i_pet_EAGLE
+CAN=MT_RUN|MT_WALK|MT_FIRE_IMMUNE
+
+ATTACK=65
+ARMOR=65
+MOVERATE=4
+
+RESOURCES=1 I_BIRD_RAW, 20 i_feather
+FOODTYPE=6 t_FISH, 15 t_meat_raw
+BLOODCOLOR=colors_lava
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_speed_porting
+
+CATEGORY=Monsters
+SUBSECTION=Animal Monsters
+DESCRIPTION=Poison Phoenix
+
+ON=@Create
+COLOR=097f
+NPC=brain_monster
+FAME=1000
+KARMA=-2500
+
+STR=2500
+DEX=300
+INT={50 65}
+
+MAXHITS={5000 5500}
+MAXSTAM={250 300}
+MAXMANA=0
+
+tag.experience=<eval {180.0 220.0}>
+
+tag(speedPorting_timer)=2
+
+tag(calmable,28)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+tag(monstertype,animal)
+
+tag.weapflag=dam_sharp|dam_physical
+
+tag(resist_poison,1000)
+tag.resist_para=<eval {700 800}>
+tag(resist_summon,850)
+tag(resist_bleed,-200)
+
+tag(resist_sharp,150)
+tag(resist_slash,150)
+tag(resist_pierce,-100)
+tag(resist_blunt,100)
+
+tag(resist_fire,200)
+tag(resist_elect,400)
+tag(resist_cold,200)
+
+Resist={130.0 160.0}
+Wrestling={100.0 110.0}
+Poisoning=200.0
+Taming={135.0 170.0}
+AnimalLore=100.0
+SpiritSpeak=55.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+/////////////////////////////
+[CHARDEF c_m_phoenix_fire]
+
+ID=c_EAGLE
+NAME=Phoenix
+SOUND=snd_ANIMALS_EAGLE1
+ICON=i_pet_EAGLE
+CAN=MT_RUN|MT_WALK
+
+ATTACK=100
+ARMOR=55
+MOVERATE=4
+
+RESOURCES=1 I_BIRD_RAW, 30 i_feather
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_phoenix_fire
+TEVENTS=e_phoenix
+TEVENTS=e_fire
+
+CATEGORY=Dungeony
+SUBSECTION=Pevnost Strachu
+DESCRIPTION=Fire Phoenix
+
+ON=@Create
+COLOR=0981
+NPC=brain_monster
+FAME=1000
+KARMA=-2500
+
+STR=2500
+DEX=300
+INT={50 65}
+
+MAXHITS={7000 8000}
+MAXSTAM={400 420}
+MAXMANA=0
+
+tag.experience=<eval {400.0 450.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[8]>
+
+//other resists
+tag(resist_poison,500)
+tag(resist_para,1000)
+tag(resist_summon,550)
+tag(resist_bleed,400)
+
+//weap resists
+tag(resist_sharp,450)
+tag(resist_slash,650)        //sekery
+tag(resist_pierce,550)
+tag(resist_blunt,150)
+
+//magic resists
+tag(resist_fire,1000)
+tag(resist_elect,500)
+tag(resist_cold,-450)
+
+//typ monstra
+tag(monstertype,animal,60)
+tag(monstertype2,fire)
+
+//weap flags
+tag.weapflag=dam_fire|dam_magic
+
+Resist={100.0 120.0}
+Wrestling={120.0 160.0}
+SpiritSpeak=75.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+//////////////////////////////////////////////////////
+//                  P A N T H E R                   //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 0d6]
+//Panther
+DEFNAME=c_panther
+NAME=Panter
+SOUND=snd_ANIMALS_PANTHER1
+ICON=i_pet_PANTHER
+ANIM=017ff
+
+ATTACK=33
+ARMOR=24
+MOVERATE=3
+
+RESOURCES=5 i_ribs_raw,1 i_fur_dark, 2 i_hide
+CAN=MT_WALK|MT_RUN
+FOODTYPE=15 t_meat_raw,t_fish
+
+DESCRIPTION=Panther
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+ON=@Create
+NPC=brain_monster
+FAME=10
+KARMA={-1000 -1500}
+COLOR=colors_black
+
+tag.experience=<eval {19.0 24.0}>
+tag.npc_bleed=300 //30.0%
+
+tag(calmable,15)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//typ monstra
+tag(monstertype,animal)
+
+STR={61 85}
+DEX={187 202}
+INT={26 50}
+
+MAXHITS={340 370}
+MAXSTAM={187 202}
+MAXMANA=0
+
+tag(resist_poison,950)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,00)
+tag(resist_slash,00)
+tag(resist_pierce,00)
+tag(resist_blunt,00)
+
+tag(resist_fire,200)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+Parrying={55.0 65.0}
+Resist={15.5 29.2}
+Tactics={50.1 65.0}
+Wrestling={53.9 67.7}
+SpiritSpeak=15.0
+Taming={75.0 79.0}
+AnimalLore=80.0
+
+
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////////////
+//                     C O W                        //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 0d8]
+//Cow {Black and White}
+DEFNAME=c_cow_bw
+NAME=Krava
+SOUND=snd_ANIMALS_COW1
+ICON=i_pet_COW
+ANIM=017ff
+
+ATTACK=5
+ARMOR=10
+MOVERATE=3
+
+RESOURCES=20 i_ribs_raw,10 i_hide
+CAN=MT_WALK|MT_RUN|MT_FEMALE
+FOODTYPE=64 t_grass,25 t_grain, 25 I_HAY
+
+DESCRIPTION=Cow {Black and White}
+SUBSECTION=Land {Domestic}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_stun
+
+ON=@Create
+NPC=brain_animal
+
+tag.experience=<eval {3.0 4.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[1]>
+
+STR=30
+DEX=15
+INT=10
+
+MAXHITS=100
+MAXSTAM=15
+MAXMANA=0
+
+Parrying=35.5
+Resist=35.5
+Tactics=35.5
+Wrestling=38.1
+SpiritSpeak=10.0
+
+tag(resist_poison,970)
+
+//typ monstra
+tag(monstertype,animal)
+
+FAME=10
+KARMA={-1 -99}
+
+//ALIGNMENT=NEUTRAL
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////////////
+//                     D O G                        //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 0D9]
+//Dog
+DEFNAME=c_dog
+NAME=Pes
+SOUND=snd_ANIMALS_DOG1
+ICON=i_pet_DOG
+CAN=MT_WALK|MT_RUN
+ANIM=017ff
+
+ATTACK=8
+ARMOR=12
+MOVERATE=3
+
+RESOURCES=2 i_ribs_raw, 2 i_hide
+FOODTYPE=100 t_meat_raw
+
+DESCRIPTION=Dog
+SUBSECTION=Land {Domestic}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+FAME=10
+KARMA={-1 -99}
+//ALIGNMENT=NEUTRAL
+
+tag.experience=2.0
+tag(resist_poison,500)
+
+tag(calmable,1)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[1]>
+
+STR={27 37}
+DEX={132 143}
+INT={30 36}
+
+MAXHITS={75 85}
+MAXSTAM={131 143}
+MAXMANA=0
+
+Parrying={28.0 53.0}
+Resist={22.8 46.4}
+Tactics={21.0 27.7}
+Wrestling={53.5 70.7}
+SpiritSpeak=10.0
+Taming={29.0 31.0}
+
+//typ monstra
+tag(monstertype,animal)
+
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////////////
+//                    S H E E P                     //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 0df]
+DEFNAME=c_sheep_shorn
+NAME="ostrihana ovce"
+SOUND=snd_ANIMALS_SHEEP1
+ICON=i_pet_SHEEP
+ANIM=01fff
+
+ATTACK=2
+ARMOR=6
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw, 3 i_hide
+CAN=MT_WALK|MT_RUN
+FOODTYPE=5 t_crops, 5 t_grain, 64 t_grass
+
+DESCRIPTION=Lamb
+SUBSECTION=Land {Domestic}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+FAME=10
+KARMA={-1 -99}
+//ALIGNMENT=NEUTRAL
+COLOR={ colors_white 9 color_gray_lt 1 }
+
+STR=19
+DEX=25
+INT=10
+
+MAXHITS=19
+MAXSTAM=25
+MAXMANA=0
+
+Parrying=5.0
+Resist=5.0
+Tactics=6.0
+Wrestling=6.8
+SpiritSpeak=15.0
+
+tag.experience=<eval {1.0 2.0}>
+tag(resist_poison,970)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////////////
+//                     C O W                        //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 0e7]
+//Cow {Light Brown}
+DEFNAME=c_cow_brown
+NAME=Krava
+SOUND=snd_ANIMALS_COW1
+ICON=i_pet_COW
+ANIM=017ff
+
+ATTACK=5
+ARMOR=10
+MOVERATE=3
+
+RESOURCES=20 i_ribs_raw,10 i_hide
+CAN=MT_WALK|MT_RUN|MT_FEMALE
+FOODTYPE=64 t_grass, 25 t_grain, 25 I_HAY
+
+DESCRIPTION=Cow {Brown and White}
+SUBSECTION=Land {Domestic}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+
+tag.experience=<eval {3.0 4.0}>
+
+tag(resist_poison,970)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+STR=30
+DEX=15
+INT=10
+
+MAXHITS=100
+MAXSTAM=15
+MAXMANA=0
+
+Parrying=35.5
+Resist=35.5
+Tactics=35.5
+Wrestling=48.1
+SpiritSpeak=10.0
+
+FAME=10
+KARMA={-10 -99}
+
+//ALIGNMENT=NEUTRAL
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////////////
+//                   B U L L                        //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 0e8]
+//Bull {Light Brown}
+DEFNAME=c_bull_brown_lt
+NAME=Byk
+SOUND=snd_ANIMALS_BULL1
+ICON=i_pet_BULL
+ANIM=017ff
+
+ATTACK=8
+ARMOR=10
+MOVERATE=3
+
+RESOURCES=30 i_ribs_raw,15 i_hide
+CAN=MT_WALK|MT_RUN
+FOODTYPE=25 t_grain, 25 I_HAY, 64 t_grass
+
+DESCRIPTION=Bull {Brown}
+SUBSECTION=Land {Domestic}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_stun
+
+ON=@Create
+NPC=brain_animal
+FAME=50
+KARMA=0
+//ALIGNMENT=NEUTRAL
+COLOR={ colors_brown 1 color_none 1 }
+
+tag.experience=<eval {8.0 9.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+STR={100 150}
+DEX={100 125}
+INT={10 15}
+
+MAXHITS={150 170}
+MAXSTAM={100 125}
+MAXMANA=0
+
+Parrying={43.0 55.0}
+Resist={45.6 50.0}
+Tactics={69.4 85.0}
+Wrestling={65.0 80.0}
+AnimalLore=45.0
+SpiritSpeak=15.0
+
+tag(resist_poison,950)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,00)
+tag(resist_slash,00)
+tag(resist_pierce,00)
+tag(resist_blunt,00)
+
+tag(resist_fire,200)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+ITEMnewbie=i_monster_create
+
+////////////////////////////////////////////
+
+[CHARDEF 0e9]
+//Bull2 {dark brown}
+DEFNAME=c_bull_brown_dk
+NAME=Byk
+SOUND=snd_ANIMALS_BULL1
+ICON=i_pet_BULL
+ANIM=017ff
+
+ATTACK=8
+ARMOR=10
+MOVERATE=3
+
+RESOURCES=30 i_ribs_raw,15 i_hide
+CAN=MT_WALK|MT_RUN
+FOODTYPE=25 t_grain, 25 I_HAY, 64 t_grass
+
+DESCRIPTION=Bull {Brown}
+SUBSECTION=Land {Domestic}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+FAME=50
+KARMA=0
+//ALIGNMENT=NEUTRAL
+COLOR={ colors_brown 1 color_none 1 }
+
+tag.experience=<eval {7.0 8.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+STR={80 130}
+DEX={100 125}
+INT={10 15}
+
+MAXHITS={150 170}
+MAXSTAM={100 125}
+MAXMANA=0
+
+Parrying={43.0 55.0}
+Resist={45.6 50.0}
+Tactics={69.4 85.0}
+Wrestling={65.0 80.0}
+AnimalLore=45.0
+SpiritSpeak=15.0
+
+tag(resist_poison,950)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,00)
+tag(resist_slash,00)
+tag(resist_pierce,00)
+tag(resist_blunt,00)
+
+tag(resist_fire,200)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////////////
+//                      S T A G                     //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 0EA]
+//Hart or Stag
+DEFNAME=c_stag
+NAME=Jelen
+SOUND=snd_ANIMALS_DEER3
+ICON=i_pet_DEER
+ANIM=01fff
+
+ATTACK=6
+ARMOR=6
+MOVERATE=3
+
+RESOURCES=15 i_ribs_raw,10 i_hide
+CAN=MT_WALK|MT_RUN
+FOODTYPE=25 t_crops, 64 t_grass
+
+DESCRIPTION=Hart
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+tag.experience=<eval {4.0 5.0}>
+
+tag(resist_poison,200)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+STR={50 100}
+DEX={70 100}
+INT={27 56}
+
+MAXHITS={130 150}
+MAXSTAM={147 174}
+MAXMANA=0
+
+Parrying={25.0 43.0}
+Resist={28.4 42.8}
+Tactics={30.0 35.0}
+Wrestling={55.6 58.3}
+SpiritSpeak=10.0
+Taming={42.5 46.5}
+AnimalLore={65.6 75.3}
+
+FAME=40
+KARMA={-99 -199}
+
+//ALIGNMENT=NEUTRAL
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////////////
+//                      H I N D                     //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 0ED]
+//Deer {Hind}
+DEFNAME=c_doe
+NAME=Srnec
+SOUND=snd_ANIMALS_DEER3
+ICON=i_pet_DEER
+ANIM=01fff
+
+ATTACK=5
+ARMOR=5
+MOVERATE=3
+
+RESOURCES=20 i_ribs_raw,10 i_hide
+CAN=MT_WALK|MT_RUN
+FOODTYPE=25 t_crops, 64 t_grass
+
+DESCRIPTION=Hind
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+tag.experience=<eval {3.0 4.0}>
+tag(resist_poison,150)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+STR={50 100}
+DEX={100 110}
+INT={17 46}
+
+MAXHITS={90 110}
+MAXSTAM={150 200}
+MAXMANA=0
+
+Parrying=52.0
+Resist=55.0
+Tactics=32.0
+Wrestling={57.8 79.7}
+SpiritSpeak=10.0
+AnimalLore={55.6 65.3}
+Taming={39.5 44.5}
+
+FAME=35
+KARMA={-40 -199}
+
+//ALIGNMENT=NEUTRAL
+ITEMnewbie=i_monster_create
+
+[CHARDEF 0ee]
+//Rat {Town}
+DEFNAME=c_rat
+//DEFNAME2=TOWN_RAT
+NAME=Krysa
+ANIM=01fff
+SOUND=snd_ANIMALS_RAT1
+ICON=i_pet_RAT
+
+ATTACK=2
+ARMOR=6
+MOVERATE=3
+
+RESOURCES=1 i_ribs_raw, 1 i_hide
+CAN=MT_WALK|MT_RUN
+FOODTYPE=5 t_food,t_garbage
+
+DESCRIPTION=Rat
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+
+COLOR=colors_brown
+tag.experience=<eval {1.0 1.0}>
+
+//typ monstra
+tag(monstertype,animal)
+
+STR=10
+DEX=35
+INT=10
+
+MAXHITS=30
+MAXSTAM=35
+MAXMANA=0
+
+Wrestling=55.0
+Tactics=24.0
+Resist=25.0
+SpiritSpeak=10.0
+Taming={15.0 20.0}
+
+FAME=15
+KARMA={-1 -99}
+
+//ALIGNMENT=NEUTRAL
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////////////
+//                     B E A R S                    //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 0D3]
+DEFNAME=c_bear_brown
+
+NAME=Medved
+ANIM=01fff
+SOUND=snd_ANIMALS_BEAR1
+ICON=i_pet_bear
+
+ATTACK=9
+ARMOR=13
+MOVERATE=3
+
+RESOURCES=8 i_ribs_raw,2 i_fur_dark, 4 i_hide
+CAN=MT_WALK|MT_RUN
+FOODTYPE=5 t_FISH, 15 t_meat_raw
+
+DESCRIPTION=Brown Bear
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_monster
+FAME=10
+KARMA={-1000 -1500}
+COLOR=colors_brown
+
+tag.experience=<eval {6.0 8.0}>
+
+tag(calmable,6)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+STR={100 150}
+DEX={126 145}
+INT={23 47}
+
+MAXHITS={180 200}
+MAXSTAM={126 145}
+MAXMANA=0
+
+Parrying={38.0 55.0}
+Resist={25.0 35.0}
+Tactics={70.0 100.0}
+Wrestling={75.0 90.0}
+SpiritSpeak=15.0
+Taming={43.5 46.5}
+AnimalLore=35.0
+
+tag(resist_poison,400)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,450)
+tag(resist_bleed,200)
+
+tag(resist_sharp,100)
+tag(resist_slash,-150)
+tag(resist_pierce,50)
+tag(resist_blunt,100)
+
+tag(resist_fire,200)
+tag(resist_elect,-50)
+tag(resist_cold,100)
+
+ITEMnewbie=i_monster_create
+
+//////////////////////////////////////////////
+
+[CHARDEF 01056]
+DEFNAME=c_bear_black
+NAME=Medved
+ID=c_Bear_Brown
+SOUND=snd_ANIMALS_BEAR1
+ICON=i_pet_bear_black
+
+ATTACK=10
+ARMOR=15
+MOVERATE=3
+
+RESOURCES=8 i_ribs_raw,2 i_fur_dark, 4 i_hide
+FOODTYPE=6 t_FISH, 15 t_meat_raw
+CAN=MT_WALK|MT_RUN
+
+DESCRIPTION=Black Bear
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_monster
+FAME=10
+KARMA={-1000 -1500}
+COLOR=colors_black
+
+tag.experience=<eval {10.0 11.0}>
+
+tag(calmable,8)
+
+//typ monstra
+tag(monstertype,animal)
+
+STR={100 150}
+DEX={126 145}
+INT={23 47}
+
+MAXHITS={240 270}
+MAXSTAM={126 145}
+MAXMANA=0
+
+Parrying={38.0 55.0}
+Resist={25.0 35.0}
+Tactics={70.0 100.0}
+Wrestling={75.0 90.0}
+SpiritSpeak=15.0
+Taming={48.0 52.0}
+AnimalLore=35.0
+
+tag(resist_poison,400)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,450)
+tag(resist_bleed,200)
+
+tag(resist_sharp,100)
+tag(resist_slash,-150)
+tag(resist_pierce,50)
+tag(resist_blunt,100)
+
+tag(resist_fire,200)
+tag(resist_elect,-50)
+tag(resist_cold,100)
+
+ITEMnewbie=i_monster_create
+
+///////////////////////////////////////
+
+[CHARDEF 0D4]
+//GrizzlyBear
+DEFNAME=c_bear_grizzly
+NAME=Grizzly
+SOUND=snd_ANIMALS_GRIZZLY1
+ICON=i_pet_Grizzly
+ANIM=01fff
+CAN=MT_WALK|MT_RUN
+
+ATTACK=15
+ARMOR=18
+MOVERATE=4
+
+RESOURCES=10 i_ribs_raw,2 i_fur_light,8 i_hide
+FOODTYPE=6 t_FISH,15 t_meat_raw
+
+DESCRIPTION=Grizzly Bear
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+ON=@Create
+NPC=brain_monster
+FAME=10
+KARMA={-1000 -1500}
+
+STR=110
+DEX=120
+INT=50
+
+MAXHITS={340 370}
+MAXSTAM=100
+MAXMANA=0
+
+tag.experience=<eval {22.0 26.0}>
+
+tag.npc_bleed=200 //20.0%
+
+tag(calmable,10)
+
+//typ monstra
+tag(monstertype,animal)
+
+Parrying={60.0 75.0}
+Resist=50.0
+Tactics=50.0
+Wrestling=85.0
+SpiritSpeak=15.0
+Taming={63.0 67.0}
+AnimalLore=84.4
+
+tag(resist_poison,400)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,450)
+tag(resist_bleed,200)
+
+tag(resist_sharp,100)
+tag(resist_slash,-150)
+tag(resist_pierce,50)
+tag(resist_blunt,100)
+
+tag(resist_fire,200)
+tag(resist_elect,-50)
+tag(resist_cold,100)
+
+ITEMnewbie=i_monster_create
+
+////////////////////////////////////////////////////
+
+[CHARDEF 0D5]
+//PolarBear
+DEFNAME=c_bear_polar
+NAME=Ledni medved
+ANIM=01fff
+SOUND=snd_ANIMALS_BEAR1
+ICON=i_pet_bear_polar
+
+ATTACK=33
+ARMOR=27
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw,4 i_fur_light,{1 2} i_hide_white
+CAN=MT_WALK|MT_RUN
+FOODTYPE=6 t_FISH,15 t_meat_raw
+
+DESCRIPTION=Polar Bear
+SUBSECTION=Land {Wild}
+CATEGORY=Animals
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_stun
+TEVENTS=e_npc_bleed
+
+ON=@Create
+NPC=brain_monster
+FAME=100
+KARMA={-1000 -1500}
+COLOR=colors_white
+
+STR=150
+DEX=150
+INT=50
+
+MAXHITS={550 590}
+MAXSTAM=100
+MAXMANA=0
+
+tag.experience=<eval {28.0 33.0}>
+
+tag.npc_bleed=200 //20.0%
+
+tag(calmable,12)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//typ monstra
+tag(monstertype,animal)
+
+tag(resist_poison,400)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,450)
+tag(resist_bleed,200)
+
+tag(resist_sharp,100)
+tag(resist_slash,-150)
+tag(resist_pierce,50)
+tag(resist_blunt,100)
+
+tag(resist_fire,200)
+tag(resist_elect,-50)
+tag(resist_cold,100)
+
+Parrying={10.0 25.0}
+Resist={45.1 59.3}
+Tactics={60.7 88.7}
+Wrestling={91.7 92.7}
+SpiritSpeak=10.0
+
+Taming={68.4 72.8}
+AnimalLore=75.1
+
+ITEMnewbie=i_monster_create
+///////////////////////////////////
+[CHARDEF c_pet_medved]
+ID= c_bear_grizzly
+NAME=Medved Jeskynni
+SOUND=snd_ANIMALS_GRIZZLY1
+ICON=i_pet_Grizzly
+ANIM=01fff
+CAN=MT_WALK|MT_RUN
+
+ATTACK=55
+ARMOR=75
+MOVERATE=4
+
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+CATEGORY=Monsters
+SUBSECTION=Animal Monsters
+DESCRIPTION=Jeskyni medved
+
+ON=@Create
+COLOR=0483
+NPC=brain_monster
+FAME=1000
+KARMA=-2500
+
+STR=2500
+DEX=250
+INT={50 65}
+
+MAXHITS={5400 5700}
+MAXSTAM={250 300}
+MAXMANA=0
+
+tag.experience=<eval {180.0 220.0}>
+
+tag.npc_bleed=300 //500%
+
+tag(calmable,30)
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+tag(monstertype,animal)
+
+tag.weapflag=dam_sharp|dam_physical
+
+tag(resist_poison,600)
+tag.resist_para=<eval {700 800}>
+tag(resist_summon,550)
+tag(resist_bleed,00)
+
+tag(resist_sharp,200)
+tag(resist_slash,00)
+tag(resist_pierce,100)
+tag(resist_blunt,-100)
+
+tag(resist_fire,100)
+tag(resist_elect,100)
+tag(resist_cold,300)
+
+Resist={80.0 90.0}
+Wrestling={100.0 110.0}
+Taming={140.0 160.0}
+AnimalLore=100.0
+SpiritSpeak=55.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+//////////////////////////////////////////////////////
+//                  H E L L C A T S                 //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF c_hellcat]
+ID=c_panther
+NAME=Hellcat
+SOUND=snd_ANIMALS_PANTHER1
+ICON=i_pet_panther_2
+CAN=MT_WALK|MT_RUN
+
+ATTACK=21
+ARMOR=15
+MOVERATE=4
+
+RESOURCES=5 i_ribs_raw,1 i_fur_dark
+BLOODCOLOR=colors_lava
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_backstub
+
+CATEGORY=Monsters
+SUBSECTION=Animal Monsters
+DESCRIPTION=Hellcat
+
+ON=@Create
+COLOR=colors_red
+NPC=brain_monster
+FAME=1000
+KARMA={-1000 -1999}
+
+STR=150
+DEX={75 95}
+INT={70 150}
+
+MAXHITS={600 700}
+MAXSTAM={80 120}
+MAXMANA=0
+
+tag.experience=<eval {35.0 38.0}>
+tag.backstub_damageReducer=500            //redukce dmg na 50%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag(monstertype,animal)
+
+tag.weapflag=dam_sharp|dam_physical
+
+tag(resist_poison,800)
+tag.resist_para=<eval {500 650}>
+tag(resist_summon,650)
+tag(resist_bleed,300)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-50)        //sekery
+tag(resist_pierce,250)
+tag(resist_blunt,-50)
+
+tag(resist_fire,800)
+tag(resist_elect,400)
+tag(resist_cold,-400)
+
+Parrying={53.0 75.0}
+Tactics={59.0 78.0}
+Wrestling={75.0 85.0}
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_reag_sulfur_ash,{1 5}
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_hellcat_pred]
+ID=c_panther
+NAME=Predator Hellcat
+SOUND=snd_animals_panther1
+ICON=i_pet_panther_2
+CAN=MT_WALK|MT_RUN
+
+ATTACK=30
+ARMOR=15
+MOVERATE=5
+
+RESOURCES=4 i_ribs_raw,1 i_fur_dark
+BLOODCOLOR=colors_lava
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_backstub
+
+CATEGORY=Monsters
+SUBSECTION=Animal Monsters
+DESCRIPTION=Predator Hellcat
+
+ON=@Create
+COLOR=colors_red
+NPC=brain_monster
+FAME=1000
+KARMA=-3000
+
+STR=250
+DEX={96 115}
+INT={76 100}
+
+MAXHITS={1100 1250}
+MAXSTAM={80 130}
+MAXMANA=0
+
+tag.experience=<eval {40.0 45.0}>
+tag.backstub_damageReducer=500            //redukce dmg na 50%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//typ monstra
+tag(monstertype,animal)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,700)
+tag.resist_para=<eval {600 750}>
+tag(resist_summon,250)
+tag(resist_bleed,200)
+
+tag(resist_sharp,50)
+tag(resist_slash,50)
+tag(resist_pierce,150)
+tag(resist_blunt,50)
+
+tag(resist_fire,800)
+tag(resist_elect,200)
+tag(resist_cold,-400)
+
+Parrying={55.0 65.0}
+Tactics={50.0 65.0}
+Wrestling={90.0 95.0}
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_reag_sulfur_ash,{1 5}
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_hellcat_blood]
+ID=c_panther
+NAME=Blody Hellcat
+SOUND=snd_ANIMALS_WOLF1
+ICON=i_pet_panther_2
+CAN=MT_WALK|MT_RUN
+
+ATTACK=35
+ARMOR=65
+MOVERATE=5
+
+RESOURCES=6 i_ribs_raw
+BLOODCOLOR=colors_lava
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_backstub
+
+CATEGORY=Monsters
+SUBSECTION=Animal Monsters
+DESCRIPTION=Bloody Hellcat
+
+ON=@Create
+COLOR=098c
+NPC=brain_monster
+FAME={200 750}
+KARMA=-3000
+
+STR=750
+DEX=355
+INT=150
+
+MAXHITS={1400 1500}
+MAXSTAM={240 320}
+MAXMANA=0
+
+tag.experience=<eval {70.0 72.0}>
+tag.backstub_damageReducer=500            //redukce dmg na 50%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//typ monstra
+tag(monstertype,animal)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,600)
+tag.resist_para=<eval {400 550}>
+tag(resist_summon,250)
+tag(resist_bleed,-500)
+
+tag(resist_sharp,50)
+tag(resist_slash,50)
+tag(resist_pierce,250)
+tag(resist_blunt,50)
+
+tag(resist_fire,800)
+tag(resist_elect,100)
+tag(resist_cold,-400)
+
+Parrying=100.0
+Resist=80.0
+Tactics=100.0
+Wrestling=100.0
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+//////////////////////////////////////////////////////
+//                  C O R P S E R S                 //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 08]
+DEFNAME=c_corpser
+NAME=Corpser
+SOUND=snd_MONSTER_CORPSR1
+ICON=i_pet_CORPSER
+ANIM=06147f
+CAN=MT_NONMOVER
+
+ATTACK=20
+ARMOR=19
+MOVERATE=4
+
+RESOURCES=10 t_eerie_stuff
+BLOODCOLOR=colors_lava
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_ovinovac
+
+CATEGORY=Monsters
+SUBSECTION=nevim
+DESCRIPTION=Corpser
+
+ON=@Create
+NPC=brain_monster
+FAME=1000
+KARMA={-999 -2000}
+
+STR={155 180}
+DEX={26 45}
+INT={26 40}
+
+MAXHITS={590 690}
+MAXSTAM={20 50}
+MAXMANA=0
+
+tag.experience=<eval {23.0 24.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,animal)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,850)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,450)
+tag(resist_bleed,-200)
+
+tag(resist_sharp,50)
+tag(resist_slash,-250)        //sekery
+tag(resist_pierce,50)
+tag(resist_blunt,350)
+
+tag(resist_fire,100)
+tag(resist_elect,200)
+tag(resist_cold,200)
+
+Parrying={15.0 25.0}
+Tactics={45.0 60.0}
+Wrestling=70.0
+Hiding={100.0 120.0}
+Stealth={100.0 120.0}
+SpiritSpeak=25.0
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_reag_executioners_cap,{5 15}
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_corpser_older]
+ID=c_CORPSER
+NAME=Corpser Older
+SOUND=snd_MONSTER_CORPSR1
+ICON=i_pet_CORPSER
+CAN=MT_WALK|MT_SWIM|MT_FIRE_IMMUNE
+
+ATTACK=40
+ARMOR=35
+MOVERATE=4
+
+RESOURCES=10 t_eerie_stuff
+BLOODCOLOR=colors_lava
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_ovinovac
+
+CATEGORY=Monsters
+SUBSECTION=nevim
+DESCRIPTION=Corpser older
+
+ON=@Create
+COLOR=01e9
+NPC=brain_monster
+FAME=1000
+KARMA={-5000 -5999}
+
+STR=780
+DEX=125
+INT=120
+
+MAXHITS={1200 1400}
+MAXSTAM={80 110}
+MAXMANA={200 250}
+
+tag.experience=<eval {48.0 53.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag(monstertype,animal)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,800)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,450)
+tag(resist_bleed,400)
+
+tag(resist_sharp,150)
+tag(resist_slash,-250)        //sekery
+tag(resist_pierce,350)
+tag(resist_blunt,350)
+
+tag(resist_fire,-200)
+tag(resist_elect,400)
+tag(resist_cold,400)
+
+Parrying={15.0 25.0}
+Tactics={45.0 60.0}
+Wrestling=120.0
+Hiding={150.0 180.0}
+Stealth={100.0 120.0}
+Resist=150.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_reag_executioners_cap,{5 15}
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_swamp_tentacles]
+ID=c_CORPSER
+NAME=Swamp Tentacles
+SOUND=snd_MONSTER_CORPSR1
+ICON=i_pet_CORPSER
+CAN=MT_WALK
+
+ATTACK=30
+ARMOR=15
+MOVERATE=4
+
+RESOURCES=5 t_eerie_stuff
+BLOODCOLOR=colors_lava
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_ovinovac
+TEVENTS=e_npc_stun
+
+CATEGORY=Monsters
+SUBSECTION=nevim
+DESCRIPTION=Swamp Tentacles
+
+ON=@Create
+COLOR=colors_green
+NPC=brain_monster
+FAME=1000
+KARMA={-1000 -5000}
+
+STR=150
+DEX={66 85}
+INT={66 80}
+
+MAXHITS={150 200}
+MAXSTAM={50 90}
+MAXMANA=0
+
+tag.experience=<eval {8.0 12.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag(monstertype,animal)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,970)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,350)
+tag(resist_bleed,-200)
+
+tag(resist_sharp,00)
+tag(resist_slash,-400)
+tag(resist_pierce,00)
+tag(resist_blunt,300)
+
+tag(resist_fire,-200)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+Parrying={15.0 25.0}
+Tactics={65.0 80.0}
+Wrestling={95.0 100.0}
+SpiritSpeak=20.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_reag_executioners_cap,{5 10}
+ITEM=i_gold
+
+//////////////////////////////////////////////////////
+//                 A L I G A T O R                  //
+//                                                  //
+//////////////////////////////////////////////////////
+[CHARDEF c_aligator_level_1]
+ID=c_alligator
+NAME="Krokodyl"
+SOUND=snd_ANIMALS_ALIGATR1
+ICON=i_pet_CROC
+CAN=mt_walk|mt_run
+ATTACK=35
+ARMOR=30
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw, 12 i_hide
+FOODTYPE=5 t_meat_raw
+
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+CATEGORY=Monsters
+SUBSECTION=Animals
+DESCRIPTION=Aligator - lbr level 1
+
+ON=@create
+NPC=brain_monster
+FAME={100 500}
+KARMA=-3000
+STR=300
+DEX=350
+INT=10
+
+MAXHITS={300 350}
+MAXSTAM={60 80}
+MAXMANA=0
+
+tag.experience=<eval {15.0 18.0}>
+
+tag.npc_bleed=450 //45.0%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[1]>
+
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resist_poison,950) //studenokrevneho otravis tezko
+tag(resist_bleed,0) //individualni - spis ne, nemrtvi nekrvaceji
+tag(resist_summon,600)
+tag(resist_para,100)
+
+tag(resist_sharp,300)
+tag(resist_slash,300)
+tag(resist_pierce,350)
+tag(resist_blunt,650)
+
+tag(resist_fire,-400)
+tag(resist_elect,-500)
+tag(resist_cold,0)
+
+Wrestling={50.0 70.0}
+SpiritSpeak=15.0
+Hiding=100.0
+Stealth=120.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_SWAMP
+ITEM=i_gold
+
+/////////////////////////////////////////////////////////////////
+[CHARDEF c_aligator_level_2]
+ID=c_alligator
+NAME="Krokodyl"
+SOUND=snd_ANIMALS_ALIGATR1
+ICON=i_pet_CROC
+CAN=mt_walk|mt_run
+ATTACK=50
+ARMOR=50
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw, 12 i_hide
+FOODTYPE=5 t_meat_raw
+
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+CATEGORY=Monsters
+SUBSECTION=Animals
+DESCRIPTION=Aligator - lbr level 2
+
+ON=@create
+NPC=brain_monster
+FAME={100 500}
+KARMA=-3000
+STR=800
+DEX=660
+INT=10
+
+MAXHITS={450 550}
+MAXSTAM={60 80}
+MAXMANA=0
+
+tag.experience=<eval {26.0 32.0}>
+
+tag.npc_bleed=600 //60.0%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resist_poison,950) //studenokrevneho otravis tezko
+tag(resist_bleed,0) //individualni - spis ne, nemrtvi nekrvaceji
+tag(resist_summon,600)
+tag(resist_para,200)
+
+tag(resist_sharp,350)
+tag(resist_slash,350)
+tag(resist_pierce,450)
+tag(resist_blunt,700)
+
+tag(resist_fire,-350)
+tag(resist_elect,-450)
+tag(resist_cold,50)
+
+Wrestling={70.0 80.0}
+SpiritSpeak=25.0
+Hiding=110.0
+Stealth=125.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_SWAMP
+ITEM=i_gold
+
+///////////////////////////////////////////////////
+
+[CHARDEF c_aligator_level_3]
+ID=c_alligator
+NAME="Krokodyl"
+SOUND=snd_ANIMALS_ALIGATR1
+ICON=i_pet_CROC
+CAN=mt_walk|mt_run
+ATTACK=80
+ARMOR=70
+MOVERATE=3
+
+RESOURCES=6 i_ribs_raw, 12 i_hide
+FOODTYPE=5 t_meat_raw
+
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+
+CATEGORY=Monsters
+SUBSECTION=Animals
+DESCRIPTION=Aligator - lbr level 3
+
+ON=@create
+NPC=brain_monster
+FAME={100 500}
+KARMA=-3000
+STR=800
+DEX=660
+INT=10
+
+MAXHITS={650 700}
+MAXSTAM={60 80}
+MAXMANA=0
+
+tag.experience=<eval {45.0 50.0}>
+
+tag.npc_bleed=900 //90.0%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resist_poison,950) //studenokrevneho otravis tezko
+tag(resist_bleed,0) //individualni - spis ne, nemrtvi nekrvaceji
+tag(resist_summon,700)
+tag(resist_para,300)
+
+tag(resist_sharp,400)
+tag(resist_slash,400)
+tag(resist_pierce,550)
+tag(resist_blunt,770)
+
+tag(resist_fire,-300)
+tag(resist_elect,-400)
+tag(resist_cold,150)
+
+Wrestling={85.0 90.0}
+SpiritSpeak=35.0
+Hiding=120.0
+Stealth=140.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_SWAMP
+ITEM=i_gold
+
+[CHARDEF c_aligator]//spatne
+ID=c_alligator
+NAME="Krokodyl"
+SOUND=snd_ANIMALS_ALIGATR1
+ICON=i_pet_CROC
+CAN=mt_walk|mt_run
+
+ATTACK=9
+ARMOR=30
+MOVERATE=3
+
+RESOURCES=5 i_ribs_raw, 4 i_hide
+FOODTYPE=5 t_meat_raw
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Animals
+DESCRIPTION=Aligator - lbr
+
+ON=@create
+NPC=brain_monster
+
+STR={225 250}
+DEX={156 175}
+INT={90 156}
+
+MAXHITS={225 300}
+MAXSTAM={156 175}
+MAXMANA={90 156}
+
+Parrying={48.0 82.0}
+Resist={55.0 70.0}
+Tactics={60.0 80.0}
+Wrestling={60.0 80.0}
+SpiritSpeak=25.0
+
+FAME={2990 5990}
+KARMA={-6000 -7909}
+
+tag.experience=<eval {5.0 8.0}>
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//typ monstra
+tag(monstertype,animal)
+
+tag(resist_poison,950)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,00)
+tag(resist_slash,00)
+tag(resist_pierce,200)
+tag(resist_blunt,00)
+
+tag(resist_fire,200)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+ITEMnewbie=i_monster_create
+
+/////////////////////////////////////
+
+[CHARDEF 0CA]//spatne
+DEFNAME=c_alligator
+NAME=Alligator
+SOUND=snd_ANIMALS_ALIGATR1
+ANIM=01fff
+ICON=i_pet_CROC
+
+ATTACK=18
+ARMOR=15
+
+RESOURCES=4 i_ribs_raw
+CAN=MT_WALK|MT_RUN|MT_SWIM
+FOODTYPE=5 t_meat_raw,t_fish
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+ON=@Create
+NPC=brain_animal
+
+STR=100
+DEX=25
+INT=10
+
+MAXHITS={250 3000}
+MAXSTAM=175
+
+tag.experience=<eval {3.0 6.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//typ monstra
+tag(monstertype,animal)
+
+Parrying={39.0 73.0}
+Resist={25.0 40.0}
+Tactics={40.0 60.0}
+Wrestling={70.0 80.0}
+Fishing=40.0
+SpiritSpeak=20.0
+
+tag(resist_poison,950)
+tag.resist_para=<eval {300 450}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,200)
+tag(resist_slash,00)
+tag(resist_pierce,200)
+tag(resist_blunt,00)
+
+tag(resist_fire,200)
+tag(resist_elect,100)
+tag(resist_cold,100)
+
+FAME=20
+KARMA={-1300 -3500}
+
+ALIGNMENT=EVIL
+ITEMnewbie=i_monster_create
+//////////////////////////////////////////////////////
+//                   F R O G S                      //
+//                                                  //
+//////////////////////////////////////////////////////
+
+[CHARDEF 051]
+DEFNAME=c_bullfrog
+NAME=Bull Frog
+SOUND=snd_MONSTER_BULLFROG1
+ICON=i_pet_bullfrog
+ANIM=078c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=13
+ARMOR=8
+MOVERATE=4
+
+RESOURCES=2 i_ribs_raw,4 i_hide
+FOODTYPE=
+BLOODCOLOR=colors_green
+
+TEVENTS=e_character
+TEVENTS=e_monster
+
+CATEGORY=Monsters
+SUBSECTION=Frogs
+DESCRIPTION=Bull Frog
+
+ON=@Create
+
+NPC=brain_animal
+FAME=100
+KARMA={-2000 -2999}
+
+STR=150
+DEX={50 55}
+INT={11 20}
+
+MAXHITS={120 140}
+MAXSTAM={50 55}
+MAXMANA=0
+
+tag.experience=<eval {5.0 6.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[1]>
+
+tag.weapflag=dam_physical
+
+tag.resist_poison=1000
+
+//typ monstra
+tag(monstertype,animal)
+
+Parrying={38.0 72.0}
+Tactics={40.0 60.0}
+Wrestling={40.0 60.0}
+SpiritSpeak=5.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF 050]
+
+DEFNAME=c_toad_giant
+NAME=Kvakal
+SOUND=snd_MONSTER_GIANTTOAD1
+ICON=i_pet_toad_giant
+ANIM=078c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=18
+ARMOR=22
+MOVERATE=4
+
+RESOURCES=6 i_ribs_raw
+FOODTYPE=
+
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+
+CATEGORY=Monsters
+SUBSECTION=Frogs
+DESCRIPTION=Giant Toad
+
+ON=@Create
+
+NPC=brain_monster
+FAME=100
+KARMA={-2000 -2999}
+
+STR=250
+DEX=80
+INT=30
+
+MAXHITS={270 320}
+MAXSTAM={60 100}
+MAXMANA=0
+
+tag.experience=<eval {16.0 18.0}>
+
+tag.weapflag=dam_physical|dam_slashing
+
+//typ monstra
+tag(monstertype,animal)
+
+tag(resist_poison,250)
+tag.resist_para=<eval {550 650}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-150)
+tag(resist_slash,-300)
+tag(resist_pierce,150)
+tag(resist_blunt,150)
+
+tag(resist_fire,200)
+tag(resist_elect,-200)
+tag(resist_cold,-400)
+
+
+Parrying={38.0 72.0}
+Tactics={40.0 60.0}
+Wrestling={40.0 60.0}
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_BULLFROG
+ITEM=i_gold
+
+[EOF]

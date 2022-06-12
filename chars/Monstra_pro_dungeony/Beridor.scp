@@ -1,0 +1,737 @@
+///////////////////////////////////////////////////////////
+///////////////////   BERIDOR   ///////////////////////////
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_beridor_war]
+ID=c_man
+NAME=Necromancer
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run
+
+ATTACK=60
+ARMOR=80
+MOVERATE=3
+
+RESOURCES=6 i_reag_bone
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_necroslave
+TEVENTS=e_npc_critic
+
+CATEGORY=Dungeony
+SUBSECTION=Beridor
+DESCRIPTION=War male
+
+ON=@Create
+NAME=#NAMES_HUMANfeMALE
+Title=The Necromant
+COLOR=0400
+NPC=brain_human
+FAME={100 2000}
+KARMA=-5000
+
+STR=1500
+DEX=250
+INT=100
+
+MAXHITS=2000
+MAXSTAM=200
+MAXMANA=0
+
+tag.experience=<eval {100.0 110.0}>
+
+tag.npc_critic_chance=250         //25% chance
+tag.npc_critic_dmg=20,25          //dmg in between
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,50)
+tag(monstertype2,undead,50)
+
+tag(resstimer,18)
+
+tag(resist_poison,650)
+tag.resist_para=<eval {500 750}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-100)        //sekery
+tag(resist_pierce,-350)
+tag(resist_blunt,-50)
+
+tag(resist_fire,200)
+tag(resist_elect,-200)
+tag(resist_cold,100)
+
+Parrying={90.0 100.0}
+Wrestling={90.0 100.0}
+Resist=100.0
+SpiritSpeak=45.0
+Fencing={70.0 80.0}
+Swordsmanship={70.0 80.0}
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_axe_exec
+COLOR=098A
+ITEMNEWBIE=i_sandals
+COLOR=098A
+ITEMNEWBIE=i_cape
+COLOR=098A
+ITEMNEWBIE=i_bone_gloves
+COLOR=098a
+ITEMNEWBIE=i_bone_helmet
+COLOR=098A
+ITEMNEWBIE=i_bone_arms
+COLOR=098A
+ITEMNEWBIE=i_bone_leggings
+COLOR=098A
+ITEMNEWBIE=i_bone_chest
+COLOR=098A
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_beridor_war_f]
+ID=c_woman
+NAME=Necromancer
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run
+
+ATTACK=55
+ARMOR=60
+MOVERATE=3
+
+RESOURCES=6 i_reag_bone
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_necroslave
+TEVENTS=e_summoneater
+
+CATEGORY=Dungeony
+SUBSECTION=Beridor
+DESCRIPTION=War female
+
+ON=@Create
+NAME=#NAMES_HUMANfeMALE
+Title=The Necromant
+COLOR=0421
+NPC=brain_human
+FAME=125
+KARMA=-5000
+
+STR=1500
+DEX=400
+INT=100
+
+MAXHITS={1800 1900}
+MAXSTAM={300 400}
+MAXMANA=0
+
+tag.experience=<eval {80.0 85.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,50)
+tag(monstertype2,undead,50)
+
+tag(resstimer,18)
+
+tag(resist_poison,650)
+tag.resist_para=<eval {500 750}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-100)        //sekery
+tag(resist_pierce,-350)
+tag(resist_blunt,-50)
+
+tag(resist_fire,200)
+tag(resist_elect,-200)
+tag(resist_cold,100)
+
+Peacemaking=100.0
+Tactics={90.0 100.0}
+Wrestling={90.0 100.0}
+SpiritSpeak=45.0
+Fencing={50.0 55.0}
+Swordsmanship={50.0 55.0}
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_kryss
+COLOR=098A
+ITEMNEWBIE=i_copper_kite_wood_shield
+COLOR=098A
+ITEMNEWBIE=i_cape
+COLOR=0845
+ITEMNEWBIE=i_bone_gloves
+COLOR=098a
+ITEMNEWBIE=i_bone_helmet
+COLOR=098A
+ITEMNEWBIE=i_bone_arms
+COLOR=098A
+ITEMNEWBIE=i_boots_thigh
+COLOR=098A
+ITEMNEWBIE=i_IRON_FEMALE_PLATEMAIL
+COLOR=098A
+ITEMNEWBIE=i_armor_female_shorts
+COLOR=098A
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_beridor_archer]
+ID=c_man
+NAME=Necromancer
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run
+
+ATTACK=25
+ARMOR=40
+MOVERATE=3
+
+RESOURCES=6 i_reag_bone
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_necroslave
+TEVENTS=e_npc_sniper
+
+CATEGORY=Dungeony
+SUBSECTION=Beridor
+DESCRIPTION=Archer male
+
+ON=@Create
+NAME=#NAMES_HUMANfeMALE
+Title=The Necromant
+COLOR=03FF
+NPC=brain_human
+FAME=190
+KARMA=-5000
+
+STR=1000
+DEX=270
+INT=0
+
+MAXHITS={1900 2000}
+MAXSTAM={220 280}
+MAXMANA=0
+
+tag.experience=<eval {115.0 120.0}>
+
+tag.npc_sniper_dmg=20             //o 20 HP
+tag.npc_sniper_chance=300         //30% Defaultne 20%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,50)
+tag(monstertype2,undead,50)
+
+tag(resstimer,18)
+
+tag(resist_poison,600)
+tag.resist_para=<eval {500 750}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-100)        //sekery
+tag(resist_pierce,-350)
+tag(resist_blunt,-50)
+
+tag(resist_fire,200)
+tag(resist_elect,-200)
+tag(resist_cold,100)
+
+Archery={90.0 100.0}
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Wrestling={85.0 100.0}
+Peacemaking=90.0
+Provocation=90.0
+SpiritSpeak=45.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_chainmail_tunic
+COLOR=0845
+ITEMNEWBIE=i_bow
+COLOR=098A
+ITEMNEWBIE=i_sash
+COLOR=098A
+ITEMNEWBIE=i_platemail_gorget
+COLOR=098A
+ITEMNEWBIE=i_COPPER_CHAINMAIL_LEGGINGS
+COLOR=0845
+ITEMNEWBIE=i_boots_calf
+COLOR=098A
+ITEMNEWBIE=i_cape
+COLOR=098A
+ITEMNEWBIE=i_bone_gloves
+COLOR=098A
+ITEMNEWBIE=i_bone_arms
+COLOR=098A
+ITEMNEWBIE=i_helm_orc
+COLOR=098A
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_arrow,{40 60}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_beridor_archer_f]
+ID=c_woman
+NAME=Necromancer
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run
+
+ATTACK=35
+ARMOR=30
+MOVERATE=3
+
+RESOURCES=6 i_reag_bone
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_necroslave
+TEVENTS=e_npc_multishot
+
+CATEGORY=Dungeony
+SUBSECTION=Beridor
+DESCRIPTION=Archer female
+
+ON=@Create
+NAME=#NAMES_HUMANfeMALE
+Title=The Necromant
+COLOR=040e
+NPC=brain_human
+FAME=140
+KARMA=-5000
+
+STR=1000
+DEX=250
+INT=0
+
+MAXHITS={1900 2000}
+MAXSTAM={220 280}
+MAXMANA=0
+
+tag.experience=<eval {105.0 110.0}>
+
+tag.multishot_chance=250          // 25% chance pri zasahu monstra
+tag.multishot_delay=15,20         // prodleva nez znovu
+tag.multishot_dmg=30,40           // dmg in between 30 and 40
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[3]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,50)
+tag(monstertype2,undead,50)
+
+tag(resstimer,18)
+
+tag(resist_poison,600)
+tag.resist_para=<eval {500 750}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-100)        //sekery
+tag(resist_pierce,-350)
+tag(resist_blunt,-50)
+
+tag(resist_fire,200)
+tag(resist_elect,-200)
+tag(resist_cold,100)
+
+Archery={80.0 90.0}
+Parrying={85.0 100.0}
+Tactics={85.0 100.0}
+Wrestling={85.0 100.0}
+Peacemaking=90.0
+Provocation=90.0
+SpiritSpeak=45.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_cape
+COLOR=0845
+ITEMNEWBIE=i_bow
+COLOR=098A
+ITEMNEWBIE=i_necklace_gold_beads
+COLOR=098A
+ITEMNEWBIE=i_bone_gloves
+COLOR=0845
+ITEMNEWBIE=i_armor_female_bustier
+COLOR=0845
+ITEMNEWBIE=i_sandals
+COLOR=0845
+ITEMNEWBIE=i_armor_female_skirt
+COLOR=0845
+ITEMNEWBIE=i_bonnet
+COLOR=0845
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_arrow,{20 40}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_beridor_mage]
+ID=c_man
+NAME=Necromancer
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run
+
+ATTACK=35
+ARMOR=25
+MOVERATE=4
+
+RESOURCES=6 i_reag_bone
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_necroslave
+TEVENTS=e_summoneater
+TEVENTS=e_npc_curse
+
+CATEGORY=Dungeony
+SUBSECTION=Beridor
+DESCRIPTION=Mage male
+
+ON=@Create
+NAME=#NAMES_HUMANfeMALE
+Title=The Necromant
+COLOR=0414
+NPC=brain_human
+FAME=125
+KARMA=-5000
+
+STR=800
+DEX=100
+INT=300
+
+MAXHITS={1700 1800}
+MAXSTAM=100
+MAXMANA=450
+
+tag.experience=<eval {110.0 130.0}>
+
+tag.npc_curse_chance=250          // 25% chance to trigger this event
+tag.npc_curse_delay=15,20         // delay between another possible strike
+tag.npc_curse_dmg=30,35           // dmg
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,50)
+tag(monstertype2,undead,50)
+
+tag(resstimer,18)
+
+tag(resist_poison,650)
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,550)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-100)        //sekery
+tag(resist_pierce,-350)
+tag(resist_blunt,-50)
+
+tag(resist_fire,700)
+tag(resist_elect,-200)
+tag(resist_cold,400)
+
+EI=90.0
+Magery=120.0
+Resist=150.0
+Wrestling=100.0
+Peacemaking=100.0
+SpiritSpeak=45.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_tunic
+COLOR=098A
+ITEMNEWBIE=i_cape
+COLOR=098A
+ITEMNEWBIE=i_bone_arms
+COLOR=098A
+ITEMNEWBIE=i_bone_leggings
+COLOR=098A
+ITEMNEWBIE=i_bone_gloves
+COLOR=098A
+ITEMNEWBIE=i_mask_blue
+COLOR=098A
+ITEMNEWBIE=i_spellbook
+COLOR=098A
+ADDSPELL=s_harm
+ADDSPELL=s_lightning
+ADDSPELL=s_paralyze
+ITEMNEWBIE=i_spellbook
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{15 25}
+ITEM=random_reagent_necro,{10 20}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_beridor_mage_f]
+ID=c_woman
+NAME=Necromancer
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run
+
+ATTACK=35
+ARMOR=30
+MOVERATE=4
+
+RESOURCES=6 i_reag_bone
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_necroslave
+TEVENTS=e_summoneater
+TEVENTS=e_lightnings
+
+CATEGORY=Dungeony
+SUBSECTION=Beridor
+DESCRIPTION=Mage female
+
+ON=@Create
+NAME=#NAMES_HUMANfeMALE
+Title=The Necromant
+COLOR=0418
+NPC=brain_human
+FAME=125
+KARMA=-5000
+
+STR=700
+DEX=100
+INT=340
+
+MAXHITS={1600 1800}
+MAXSTAM=100
+MAXMANA=450
+
+tag.experience=<eval {100.0 110.0}>
+
+tag(e_lightnings_chance,100)   //10%
+tag(e_lightnings_range,5)     // kolik blesku v linii
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,50)
+tag(monstertype2,undead,50)
+
+tag(resstimer,18)
+
+tag(resist_poison,650)
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,550)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-100)        //sekery
+tag(resist_pierce,-350)
+tag(resist_blunt,-50)
+
+tag(resist_fire,700)
+tag(resist_elect,-200)
+tag(resist_cold,400)
+
+EI=90.0
+Magery=110.0
+Resist=250.0
+Wrestling=100.0
+Peacemaking=100.0
+SpiritSpeak=45.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_necklace_gold
+COLOR=098A
+ITEMNEWBIE=i_cape
+COLOR=0845
+ITEMNEWBIE=i_armor_female_skirt
+COLOR=098A
+ITEMNEWBIE=i_armor_female_leather
+COLOR=098A
+ITEMNEWBIE=i_helm_orc
+COLOR=098A
+ITEMNEWBIE=i_bone_gloves
+COLOR=098A
+ITEMNEWBIE=i_bone_arms
+COLOR=098A
+ITEMNEWBIE=i_boots_calf
+COLOR=0845
+ITEMNEWBIE=i_spellbook
+COLOR=098A
+ADDSPELL=s_harm
+ADDSPELL=s_lightning
+ADDSPELL=s_paralyze
+ITEMNEWBIE=i_staff_gnarled
+COLOR=0845
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{15 25}
+ITEM=random_reagent_necro,{10 20}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_beridor_necro]
+ID=c_man
+NAME=Arghelior
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run
+
+ATTACK=90
+ARMOR=80
+MOVERATE=4
+
+RESOURCES=6 i_reag_bone
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_beridornecro
+TEVENTS=e_summoneater
+TEVENTS=e_npc_stun
+//TEVENTS=e_npc_leaper
+TEVENTS=e_npc_detect
+TEVENTS=e_parakrik
+TEVENTS=e_explosiondispell
+TEVENTS=e_npc_summoning
+
+CATEGORY=Dungeony
+SUBSECTION=Beridor
+DESCRIPTION=Hlavni nekromant
+
+ON=@Create
+NAME=Arghelior
+Title=The Necromant
+COLOR=040B
+NPC=brain_human
+FAME=125
+KARMA=-10000
+
+STR=700
+DEX=200
+INT=475
+
+MAXHITS=30000
+MAXSTAM=150
+MAXMANA=5000
+
+tag.experience=<eval {1400.0 1550.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[8]>
+
+//monstertype
+tag(monstertype,undead,60)
+
+tag(e_explosiondispell_chance,500)                    //50%
+tag(e_explosiondispell_range,5)
+tag(e_explosiondispell_time,20)
+
+tag(npc_summoning_chance,50) //5.0% chance
+tag(npc_summoning_time,60)
+tag(npc_summoning_count,3)
+tag(npc_summoning_char[0],c_mahat_boss_leaper)
+tag(npc_summoning_char[1],c_mahat_boss_leaper)
+tag(npc_summoning_char[2],c_mahat_boss_etheric)
+
+tag.cnt=0
+
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,1000)
+tag(resist_bleed,1000)
+
+tag(resist_sharp,850)
+tag(resist_slash,850)
+tag(resist_pierce,500)
+tag(resist_blunt,150)
+
+tag(resist_fire,-50)                 //undead
+tag(resist_elect,300)
+tag(resist_cold,750)
+
+
+EI=130.0
+Magery=120.0
+Resist=150.0
+Wrestling=100.0
+Peacemaking=100.0
+SpiritSpeak=100.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_robe
+COLOR=0989
+ITEMNEWBIE=i_cape
+COLOR=098C
+ITEMNEWBIE=i_bone_gloves
+COLOR=098A
+ITEMNEWBIE=i_bone_helmet
+COLOR=098A
+ITEMNEWBIE=i_spellbook
+COLOR=098A
+ADDSPELL=s_harm
+ADDSPELL=s_lightning
+
+//addspell=s_paralyze
+//addspell=s_reveal
+//addspell=s_clumsy
+//addspell=s_fire_field
+ITEMNEWBIE=i_staff_gnarled
+COLOR=0845
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{50 75}
+ITEM=random_reagent_necro,{60 100}
+
+[EOF]

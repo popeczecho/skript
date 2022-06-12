@@ -1,0 +1,362 @@
+/////////////////////////////////////////////
+/////////// BOSS PRO ARTA RHUT /////////////
+////////////////////////////////////////////
+[CHARDEF c_artaRhut_boss]
+ID=c_ghost
+NAME=Prastary summoner
+SOUND=snd_ELEMENTL_FIRELEM1
+ICON=i_pet_elem_water
+CAN=MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=60
+ARMOR=140
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_detect
+TEVENTS=e_phoenix
+TEVENTS=e_summoneater
+TEVENTS=e_summonhater
+TEVENTS=e_npc_detect
+TEVENTS=e_explosiondispell
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_npc_RandomSummoning
+
+CATEGORY=Monsters
+SUBSECTION=Dungeony
+DESCRIPTION=Arta Rhut Boss
+
+ON=@Create
+color=0988
+NPC=brain_monster
+FAME=250
+KARMA=-5000
+
+STR=2500
+DEX=290
+INT=350
+
+MAXHITS=30000
+MAXSTAM=700
+MAXMANA=1000
+
+tag.experience=<eval {1600.0 1700.0}>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,900)
+tag(resist_bleed,850)
+
+//weap resists
+tag(resist_sharp,700)
+tag(resist_slash,850)
+tag(resist_pierce,300)
+tag(resist_blunt,700)
+
+//magic resists
+tag(resist_fire,750)
+tag(resist_elect,400)
+tag(resist_cold,550)
+
+//typ monstra
+tag(monstertype,humanoid,40)
+
+//weap flags
+tag.weapflag=dam_magic|dam_fire
+
+Resist=150.0
+EI=110.0
+Magery=150.0
+Tactics={100.0 150.0}
+Parrying={90.0 100.0}
+Macefighting=150.0
+Wrestling=150.0
+fencing=150.0
+swordsmanship=150.0
+Provocation=100.0
+Peacemaking=100.0
+SpiritSpeak=200.0
+Poisoning=400.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_fireball
+ADDSPELL=s_magic_reflection
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+/////////////////////////////////////////////////////
+
+[CHARDEF c_rindewolf]
+ID=c_man
+NAME=Rindewolf
+ICON=i_pet_MAN
+CAN=mt_walk|mt_usehands|mt_run
+
+ATTACK=65
+ARMOR=55
+MOVERATE=3
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_summoneater                 //smaze summona, co zasahne
+TEVENTS=e_npc_curse                   //vsechny viditelne zrani o dmg
+TEVENTS=e_npc_detect
+TEVENTS=e_magical_hit
+
+CATEGORY=Monsters
+SUBSECTION=Dungeony
+DESCRIPTION=Arta Rhut Strazce
+
+ON=@Create
+NPC=brain_monster
+FAME={100 2000}
+KARMA=-3000
+
+STR=1500
+DEX=250
+INT=220
+
+MAXHITS={2900 3200}
+MAXSTAM={155 200}
+MAXMANA=2250
+
+tag.experience=<eval {140.0 150.0}>
+
+tag.npc_curse_chance=250                // 25% chance to trigger this event
+tag.npc_curse_delay=15,20               // delay between another possible strike
+tag.npc_curse_dmg=30,35                 // dmg
+
+tag(monstertype,humanoid,60)
+
+tag.weapflag=dam_lightning|dam_magic
+
+//other resists
+tag(resist_poison,550)
+tag.resist_para=<eval {800 880}>
+tag(resist_summon,700)
+tag(resist_bleed,350)
+
+tag(resist_sharp,-50)
+tag(resist_slash, 150)
+tag(resist_pierce,-150)
+tag(resist_blunt,50)
+
+tag(resist_fire,500)
+tag(resist_elect,400)
+tag(resist_cold,200)
+
+Parrying=100.0
+Resist=200.0
+Wrestling=90.0
+Magery=100.0
+EI=55.0
+SpiritSpeak=65.0
+Provocation=100.0
+
+ITEMNEWBIE=i_spellbook
+addspell s_lightning
+addspell s_fireball
+ADDSPELL=s_magic_reflection
+//addspell=s_paralyze
+
+ITEMNEWBIE=i_HAIR_long
+ITEMNEWBIE=i_beard_long
+ITEMNEWBIE=i_staff_quarter
+COLOR=0482
+ITEMNEWBIE=i_hat_wizards
+COLOR=0482
+ITEMNEWBIE=i_boots_calf
+COLOR=0482
+ITEMNEWBIE=I_robe
+COLOR=0482
+ITEMNEWBIE=I_cape
+COLOR=0482
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{25 40}
+
+/////////////////////////////////////////////////
+
+[CHARDEF c_drapac_undead]
+ID=c_wolf
+NAME=Mazlik
+SOUND=snd_ANIMALS_WOLF1
+ICON=i_pet_wolf
+CAN=MT_WALK|MT_run
+
+ATTACK=100
+ARMOR=60
+MOVERATE=7
+
+RESOURCES=4 i_reag_bone
+BLOODCOLOR=096C
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_undead
+TEVENTS=e_selfreser
+TEVENTS=e_NPC_Bleed
+TEVENTS=e_npc_critic
+TEVENTS=e_summoneater
+
+CATEGORY=Monsters
+SUBSECTION=Undeads
+DESCRIPTION=Mazlik
+
+ON=@Create
+COLOR=0989
+NPC=brain_monster
+FAME={200 750}
+KARMA=-3000
+
+STR=750
+DEX=355
+INT=150
+
+MAXHITS={1300 1500}
+MAXSTAM={300}
+MAXMANA=0
+
+tag.experience=<eval {100.0 120.0}>
+
+tag.npc_bleed=1000
+tag.npc_critic_chance=200
+tag.npc_critic_dmg=15,20
+
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<//tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<//tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<//tag.hypnotizable>|<flag_BuffPower[7]>
+
+tag(monstertype,undead)
+
+tag.weapflag=dam_sharp|dam_physical
+
+tag(resist_poison,1000)
+tag.resist_para=<eval {800 950}>
+tag(resist_summon,750)
+tag(resist_bleed,1000)
+
+tag(resist_sharp,150)
+tag(resist_slash,200)
+tag(resist_pierce,250)
+tag(resist_blunt,-200)
+
+tag(resist_fire,-200)
+tag(resist_elect,600)
+tag(resist_cold,200)
+
+Parrying=100.0
+Resist=80.0
+Tactics=100.0
+Wrestling=100.0
+Poisoning={100.0 150.0}
+SpiritSpeak=55.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent_necro, {10 20}
+
+//////////////////////////////////////////////////////////
+
+[CHARDEF c_reaper_snow]
+ID=c_reaper
+NAME=Snow Reaper
+SOUND=snd_MONSTER_REAPER1
+ICON=i_pet_REAPER
+ANIM=078c7f
+CAN=MT_WALK|mt_run
+
+attack=60
+ARMOR=60
+MOVERATE=3
+
+RESOURCES=
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_ovinovac
+TEVENTS=e_summoneater
+TEVENTS=e_npc_infiniteMana
+
+CATEGORY=Monsters
+SUBSECTION=Reapers
+DESCRIPTION=Snow Reaper
+
+ON=@Create
+NPC=brain_monster
+KARMA={-3000 -5999}
+FAME=1100
+COLOR=0481
+
+STR={4000 4500}
+DEX={125 150}
+INT=250
+
+MAXHITS={18000 20000}
+MAXSTAM={100 150}
+MAXMANA=1000
+
+tag.experience=<eval {400.0 450.0}>
+
+//other resists
+tag(resist_poison,1000)
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,1000)
+tag(resist_bleed,1000)
+
+//weap resists
+tag(resist_sharp,300)
+tag(resist_slash,-200)
+tag(resist_pierce,800)
+tag(resist_blunt,800)
+
+//magic resists
+tag(resist_fire,-300)
+tag(resist_elect,750)
+tag(resist_cold,1000)
+
+//typ monstra
+tag(monstertype,reaper,60)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+PARRYING={55.0 65.0}
+RESIST=140.0
+TACTICS={100.0 130.0}
+WRESTLING=100.0
+MAGERY=130.0
+EI=100.0
+SpiritSpeak=55.0
+
+ITEMNEWBIE=i_spellbook
+addspell=s_lightning
+addspell=s_magic_reflection
+
+ON=@NPCRestock
+  ITEM=RANDOM_REAGENT_NECRO,{25 50}
+  ITEM=i_gold
+
+ON=@death
+  arg(i,0)
+  while (<arg(i)><6)
+    f_npcsummoning(1,c_finger_snow,30000,30000,0,600)
+    arg(i,#+1)
+  endwhile
+[EOF]

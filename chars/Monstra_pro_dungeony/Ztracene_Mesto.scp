@@ -1,0 +1,1675 @@
+
+/////////////////////////////////////////////
+/// ztracene_mesto new npcs - mini bosses ///
+/////////////////////////////////////////////
+
+[CHARDEF c_ztracene_mesto_necromancer] // summoni kostlivcov, niejaky fire dmg
+ID=c_man
+NAME=Necromancer
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run
+
+ATTACK=50
+ARMOR=90
+MOVERATE=6
+
+RESOURCES=6 i_reag_bone
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_curse
+TEVENTS=e_summoneater
+TEVENTS=e_npc_summoning
+TEVENTS=e_npc_detect
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=Necromancer
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+Title=The Necromant
+COLOR=0405
+NPC=brain_human
+FAME={100 2000}
+KARMA=-5000
+
+STR=5000
+DEX=300
+INT=340
+
+MAXHITS={17500 18900}
+MAXSTAM={275 350}
+MAXMANA=2000
+
+tag.experience=<eval {300.0 350.0}>
+
+tag.npc_curse_chance=250          // 25% chance to trigger this event
+tag.npc_curse_delay=15,20         // delay between another possible strike
+tag.npc_curse_dmg=40,45           // dmg
+
+tag(npc_summoning_chance,100)  //10% chance
+tag(npc_summoning_time,60)
+tag(npc_summoning_count,4)
+tag(npc_summoning_char[0],c_skeleton_knight_lvl_3)
+tag(npc_summoning_char[1],c_skeleton_axe_lvl_4)
+tag(npc_summoning_char[2],c_skeleton_archer_lvl_4)
+tag(npc_summoning_char[3],c_skeleton_mage_lvl_3)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,40)
+tag.weapflag=dam_fire|dam_magic
+
+tag(resist_poison,600)
+tag(resist_para,1000)
+tag(resist_summon,850)
+tag(resist_bleed,300)
+
+tag(resist_sharp,150)
+tag(resist_slash,-100)        //sekery
+tag(resist_pierce,150)
+tag(resist_blunt,350)
+
+tag(resist_fire,350)
+tag(resist_elect,200)
+tag(resist_cold,100)
+
+EI=100.0
+Magery=120.0
+Resist=150.0
+Wrestling=120.0
+SpiritSpeak=75.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_hair_short
+ITEMNEWBIE=i_platemail_leggings
+COLOR=0989
+ITEMNEWBIE=i_bone_chest
+COLOR=0989
+ITEMNEWBIE=i_bone_arms
+COLOR=0989
+ITEMNEWBIE=i_bone_gloves
+COLOR=0989
+ITEMNEWBIE=i_spellbook
+COLOR=0989
+ADDSPELL=s_fireball
+ADDSPELL=s_flamestrike
+ADDSPELL=s_magic_reflection
+ITEMNEWBIE=i_hair_short
+
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent_necro,{50 70}
+ITEM=i_ztracene_mesto_kluc_1
+
+////////////////////////////////////////////////
+
+[CHARDEF c_ztracene_mesto_amazon]  /// archer, klasicky kritik multishot
+ID=c_woman
+NAME=Amazon
+ICON=i_pet_WOMAN
+CAN=MT_WALK|MT_run
+
+ATTACK=40
+ARMOR=70
+MOVERATE=5
+
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_sniper
+TEVENTS=e_summoneater
+TEVENTS=e_NPC_multishot
+TEVENTS=e_npc_detect
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=Amazonka
+
+ON=@Create
+NAME=#NAMES_HUMANFEMALE
+COLOR=040D
+Title=The Amazon
+NPC=brain_monster
+FAME={100 300}
+KARMA={-2000 -2999}
+
+STR=1200
+DEX=400
+INT=100
+
+MAXHITS={17500 18500}
+MAXSTAM={300 334}
+MAXMANA=0
+
+tag.experience=<eval {300.0 350.0}>
+
+tag.npc_sniper_dmg=35                     //o 35 HP
+tag.npc_sniper_chance=350                 //35% Defaultne 20%
+
+tag.multishot_chance=150                        // 15% chance pri zasahu monstra
+tag.multishot_delay=15,20                      // prodleva nez znovu
+tag.multishot_dmg=35,40                        // dmg in between 35 and 40
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,60)
+tag.weapflag=dam_piercing|dam_physical
+
+tag(resist_poison,700)
+tag(resist_para,1000)
+tag(resist_summon,450)
+tag(resist_bleed,450)
+
+tag(resist_sharp,350)
+tag(resist_slash,350)        //sekery
+tag(resist_pierce,150)
+tag(resist_blunt,-50)
+
+tag(resist_fire,50)
+tag(resist_elect,200)
+tag(resist_cold,250)
+
+Archery=120.0
+Parrying=100.0
+Wrestling=110.0
+Resist=150.0
+SpiritSpeak=60.0
+Provocation=100.0
+Peacemaking=100.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_bow
+COLOR=07D6
+ITEMNEWBIE=i_hair_long
+ITEMNEWBIE=i_chainmail_leggings
+COLOR=097F
+ITEMNEWBIE=i_armor_female_plate
+COLOR=099A
+ITEMNEWBIE=i_leather_sleeves
+COLOR=097F
+ITEMNEWBIE=i_platemail_gloves
+COLOR=099A
+ITEMNEWBIE=i_necklace_gold
+COLOR=00
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=i_arrow,{200 250}
+ITEM=random_reagent,{50 75}
+ITEM=i_ztracene_mesto_kluc_2
+
+/////////////////////////////////////////////
+
+[CHARDEF c_ztracene_mesto_assassin]  /// assassinka, hid probo bleed
+ID=c_woman
+NAME=Assassin
+ICON=i_pet_WOMAN
+CAN=MT_WALK|MT_run
+
+ATTACK=100
+ARMOR=100
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_backstub
+TEVENTS=e_npc_bleed
+TEVENTS=e_npc_detect
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=Assassin
+
+ON=@Create
+NAME=#NAMES_HUMANFEMALE
+COLOR=0413
+Title=The Assassin
+NPC=brain_monster
+FAME={100 300}
+KARMA={-2000 -2999}
+
+STR=1750
+DEX=500
+INT=200
+
+MAXHITS={17500 18500}
+MAXSTAM={400 500}
+MAXMANA=0
+
+tag.experience=<eval {300.0 350.0}>
+
+tag.npc_bleed=800 //80.0%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,40)
+tag.weapflag=dam_sharp|dam_physical
+
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,450)
+tag(resist_bleed,200)
+
+tag(resist_sharp,100)
+tag(resist_slash,100)        //sekery
+tag(resist_pierce,-50)
+tag(resist_blunt,350)
+
+tag(resist_fire,350)
+tag(resist_elect,-200)
+tag(resist_cold,350)
+
+Wrestling=150.0
+Tactics=200.0
+Peacemaking=100.0
+Provocation=100.0
+SpiritSpeak=65.0
+Fencing={90.0 100.0}
+Swordsmanship={90.0 100.0}
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_kryss
+COLOR=098B
+ITEMNEWBIE=i_hair_short
+ITEMNEWBIE=i_chainmail_leggings
+COLOR=0989
+ITEMNEWBIE=i_shirt_fancy
+COLOR=021
+ITEMNEWBIE=i_leather_gloves
+COLOR=0989
+ITEMNEWBIE=i_platemail_gorget
+COLOR=0989
+ITEMNEWBIE=i_chainmail_coif
+COLOR=0989
+ITEMNEWBIE=i_shield_buckler
+COLOR=0989
+ITEMNEWBIE=i_cape
+COLOR=0692
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{50 75}
+ITEM=i_ztracene_mesto_kluc_3
+
+/////////////////////////////////////////////////
+
+[CHARDEF c_ztracene_mesto_barbarian]  //// war, round kritik leap
+ID=c_man
+NAME=Barbarian
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run
+
+ATTACK=120
+ARMOR=140
+MOVERATE=5
+
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_npc_detect
+TEVENTS=e_npc_roundattack_pullall
+TEVENTS=e_npc_leaper
+TEVENTS=e_npc_critic
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=Barbarian
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+COLOR=03FE
+Title=The Barbarian
+NPC=brain_monster
+FAME={100 300}
+KARMA={-2000 -2999}
+
+STR=5500
+DEX=380
+INT=130
+
+MAXHITS={21000 22000}
+MAXSTAM={360 370}
+MAXMANA=0
+
+tag.experience=<eval {300.0 350.0}>
+
+tag.roundattack_damage=50,60 //dmg od - do
+tag.roundattack_time=10,15   //cas od - do
+tag.roundattack_chance=350    //20.0%
+
+tag.npc_port_timer=10
+tag(npc_port_distance,9)
+
+tag.npc_critic_chance=350                    // 35% chance to trigger this event
+tag.npc_critic_dmg=30,45                     // dmg in between 20 and 30
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,40)
+tag.weapflag=dam_slashing|dam_physical
+
+tag(resist_poison,100)
+tag(resist_para,1000)
+tag(resist_summon,450)
+tag(resist_bleed,400)
+
+tag(resist_sharp,250)
+tag(resist_slash,250)        //sekery
+tag(resist_pierce,150)
+tag(resist_blunt,250)
+
+tag(resist_fire,50)
+tag(resist_elect,50)
+tag(resist_cold,50)
+
+Wrestling=130.0
+Tactics=120.0
+Parrying=150.0
+SpiritSpeak=100.0
+Fencing={90.0 100.0}
+Swordsmanship={90.0 100.0}
+Peacemaking=100.0
+Provocation=100.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_axe_double
+COLOR=0999
+ITEMNEWBIE=i_boots_calf
+ITEMNEWBIE=i_leather_leggings
+ITEMNEWBIE=i_ringmail_sleeves
+COLOR=0989
+ITEMNEWBIE=i_ringmail_gloves
+COLOR=0989
+ITEMNEWBIE=i_mask_orc
+ITEMNEWBIE=i_earrings_gold
+COLOR=0987
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{50 75}
+ITEM=i_ztracene_mesto_kluc_4
+
+/////////////////////////////////////////////////
+
+[CHARDEF c_ztracene_mesto_sorceress] // carodejka, velmi silne electric kuzla
+ID=c_woman
+NAME=Sorceress
+ICON=i_pet_WOMAN
+CAN=MT_WALK|MT_run
+
+ATTACK=60
+ARMOR=60
+MOVERATE=4
+
+RESOURCES=6 i_reag_bone
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_curse
+TEVENTS=e_summoneater
+TEVENTS=e_npc_detect
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=Sorceress
+
+ON=@Create
+NAME=#NAMES_HUMANfeMALE
+Title=The Sorceress
+COLOR=0405
+NPC=brain_human
+FAME={100 2000}
+KARMA=-5000
+
+STR=5000
+DEX=400
+INT=380
+
+MAXHITS={18000 18500}
+MAXSTAM={175 250}
+MAXMANA=2000
+
+tag.experience=<eval {300.0 350.0}>
+
+tag.npc_curse_chance=250          // 25% chance to trigger this event
+tag.npc_curse_delay=15,20         // delay between another possible strike
+tag.npc_curse_dmg=40,45           // dmg
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,60)
+tag.weapflag=dam_lightning|dam_magic
+
+tag(resist_poison,250)
+tag(resist_para,1000)
+tag(resist_summon,850)
+tag(resist_bleed,500)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-100)        //sekery
+tag(resist_pierce,-50)
+tag(resist_blunt,350)
+
+tag(resist_fire,450)
+tag(resist_elect,450)
+tag(resist_cold,450)
+
+EI=108.0
+Magery=120.0
+Resist=155.0
+Wrestling=120.0
+SpiritSpeak=100.0
+Peacemaking=100.0
+Provocation=100.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_hair_long
+ITEMNEWBIE=i_boots_calf
+COLOR=0995
+ITEMNEWBIE=i_skirt_short
+COLOR=07D6
+ITEMNEWBIE=i_doublet
+ITEMNEWBIE=i_platemail_gorget
+COLOR=0995
+ITEMNEWBIE=i_platemail_arms
+COLOR=0995
+ITEMNEWBIE=i_earrings_gold
+ITEMNEWBIE=i_bracelet_gold
+ITEMNEWBIE=i_ring_gold
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_energy_bolt
+ADDSPELL=s_magic_reflection
+ITEMNEWBIE=i_staff_gnarled
+COLOR=07D6
+
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{50 70}
+
+/////////////////////////////////////////////////
+
+[CHARDEF c_ztracene_mesto_druid]  /// druid, morfuje sa do medveda a vlka, summoni vlkov a medvedov
+ID=c_man
+NAME=Druid
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run
+
+ATTACK=80
+ARMOR=130
+MOVERATE=5
+
+RESOURCES=6 i_reag_bone
+FOODTYPE=
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_curse
+TEVENTS=e_summoneater
+TEVENTS=e_npc_detect
+TEVENTS=e_ztracene_mesto_druid_medved
+TEVENTS=e_npc_summoning
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=Druid
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+Title=The Druid
+COLOR=041E
+NPC=brain_human
+FAME={100 2000}
+KARMA=-5000
+
+STR=2200
+DEX=370
+INT=120
+
+MAXHITS={17000 17500}
+MAXSTAM={305 355}
+MAXMANA=0
+
+tag.experience=<eval {300.0 350.0}>
+
+tag.npc_curse_chance=250          // 25% chance to trigger this event
+tag.npc_curse_delay=15,20         // delay between another possible strike
+tag.npc_curse_dmg=30,35           // dmg
+
+tag(npc_summoning_chance,100)  //10% chance
+tag(npc_summoning_time,60)
+tag(npc_summoning_count,3)
+tag(npc_summoning_char[0],c_ztracene_mesto_druid_medved)
+tag(npc_summoning_char[1],c_ztracene_mesto_druid_vlk)
+tag(npc_summoning_char[2],c_ztracene_mesto_druid_vlk)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,60)
+tag.weapflag=dam_blunt|dam_physical
+
+tag(resist_poison,400)
+tag(resist_para,1000)
+tag(resist_summon,850)
+tag(resist_bleed,450)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-100)        //sekery
+tag(resist_pierce,50)
+tag(resist_blunt,150)
+
+tag(resist_fire,-100)
+tag(resist_elect,250)
+tag(resist_cold,200)
+
+Peacemaking=100.0
+Wrestling=160.0
+Tactics=120.0
+Parrying=150.0
+SpiritSpeak=60.0
+Provocation=100.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_mask_bear
+ITEMNEWBIE=i_shoes_plain
+ITEMNEWBIE=i_chainmail_leggings
+COLOR=099A
+ITEMNEWBIE=i_tunic
+ITEMNEWBIE=i_leather_gloves
+COLOR=099A
+ITEMNEWBIE=i_staff_quarter
+COLOR=07D6
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent_necro,{50 70}
+ITEM=i_ztracene_mesto_kluc_5
+
+
+//////////////////////////////
+//// PALADIN - BOSS DUNGU ////
+//////////////////////////////
+
+[CHARDEF c_ztracene_mesto_paladin]  //// paladin, hlavny boss, silny dmg, velke resisty + obranna aura
+ID=c_man
+NAME=Paladin
+ICON=i_pet_MAN
+CAN=MT_WALK|MT_run
+
+ATTACK=130
+ARMOR=100
+MOVERATE=5
+
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_summoneater
+TEVENTS=e_npc_detect
+TEVENTS=e_npc_roundattack_pullall
+TEVENTS=e_npc_critic
+TEVENTS=e_npc_reactivearmor
+TEVENTS=e_ztracene_mesto_paladin_boss
+TEVENTS=e_npc_summoning
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=Paladin
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+COLOR=0410
+Title=The Paladin
+NPC=brain_monster
+FAME={100 300}
+KARMA={-2000 -2999}
+
+STR=3300
+DEX=650
+INT=0
+
+MAXHITS={20500 21500}
+MAXSTAM={430 460}
+MAXMANA=0
+
+tag.experience=<eval {450.0 500.0}>
+
+tag(npc_summoning_chance,100)  //10% chance
+tag(npc_summoning_time,60)
+tag(npc_summoning_count,3)
+tag(npc_summoning_char[0],c_ztracene_mesto_guard_hala)
+tag(npc_summoning_char[1],c_ztracene_mesto_guard_hala)
+tag(npc_summoning_char[2],c_ztracene_mesto_guard_hala)
+
+tag.roundattack_damage=65,80 //dmg od - do
+tag.roundattack_time=10,15   //cas od - do
+tag.roundattack_chance=350    //35.0%
+
+tag.npc_critic_chance=350                    // 35% chance to trigger this event
+tag.npc_critic_dmg=40,55                     // dmg in between 20 and 30
+
+tag.hit_damage=65
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,40)
+tag.weapflag=dam_sharp|dam_physical
+
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,850)
+tag(resist_bleed,450)
+
+tag(resist_sharp,150)
+tag(resist_slash,150)        //sekery
+tag(resist_pierce,250)
+tag(resist_blunt,50)
+
+tag(resist_fire,50)
+tag(resist_elect,-50)
+tag(resist_cold,50)
+
+Tactics=100.0
+Wrestling=120.0
+Resist=250.0
+SpiritSpeak=200.0
+Peacemaking=100.0
+Provocation=100.0
+Fencing={90.0 100.0}
+Swordsmanship={90.0 100.0}
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_hair_long
+ITEMNEWBIE=i_platemail_leggings
+COLOR=098B
+ITEMNEWBIE=i_platemail_chest
+COLOR=098B
+ITEMNEWBIE=i_platemail_arms
+COLOR=098B
+ITEMNEWBIE=i_platemail_gloves
+COLOR=098B
+ITEMNEWBIE=i_platemail_gorget
+COLOR=098B
+ITEMNEWBIE=i_sword_long
+COLOR=098B
+ITEMNEWBIE=i_shield_kite_metal
+COLOR=098B
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_reagent,{50 75}
+
+
+/////////////////////////
+/// obludy pre druida ///
+/////////////////////////
+
+[CHARDEF c_ztracene_mesto_druid_vlk]
+ID=c_wolf
+NAME=Vlk
+SOUND=snd_ANIMALS_WOLF1
+ICON=i_pet_wolf
+CAN=MT_WALK|MT_run
+
+ATTACK=65
+ARMOR=65
+MOVERATE=5
+
+RESOURCES=6 i_ribs_raw
+BLOODCOLOR=-1
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+TEVENTS=e_npc_critic
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=vlk
+
+ON=@Create
+NPC=brain_monster
+FAME={200 750}
+KARMA=-3000
+
+STR=850
+DEX=355
+INT=10
+
+MAXHITS={2200 2600}
+MAXSTAM={450 500}
+MAXMANA=0
+
+tag.experience=<eval {100.0 110.0}>
+
+tag.npc_bleed=300 //30.0%
+
+tag.npc_critic_chance=200         //20% chance
+tag.npc_critic_dmg=10,15          //dmg in between
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,750)
+tag.resist_para=<eval {400 650}>
+tag(resist_summon,300)
+tag(resist_bleed,400)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-50)
+tag(resist_pierce,250)
+tag(resist_blunt,150)
+
+//magic resists
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,200)
+
+//typ monstra
+tag(monstertype,animal)
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Wrestling=120.0
+Resist=100.0
+Tactics=100.0
+Parrying=100.0
+Taming=200.0
+Provocation=100.0
+Peacemaking=100.0
+SpiritSpeak=60.0
+Taming=200.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+/////////////////////////////////////////////////
+
+[CHARDEF c_ztracene_mesto_druid_medved]
+ID=c_bear_grizzly
+NAME=Medved
+SOUND=snd_ANIMALS_WOLF1
+ICON=i_pet_Grizzly
+CAN=MT_WALK|MT_run
+
+ATTACK=75
+ARMOR=65
+MOVERATE=5
+
+RESOURCES=6 i_ribs_raw
+BLOODCOLOR=-1
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+TEVENTS=e_npc_critic
+TEVENTS=e_npc_stun
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=medved
+
+ON=@Create
+NPC=brain_monster
+FAME={200 750}
+KARMA=-3000
+
+STR=950
+DEX=400
+INT=10
+
+MAXHITS={2800 3000}
+MAXSTAM={450 500}
+MAXMANA=0
+
+tag.experience=<eval {120.0 130.0}>
+
+tag.npc_bleed=300 //30.0%
+
+tag.npc_critic_chance=200         //20% chance
+tag.npc_critic_dmg=10,15          //dmg in between
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,780)
+tag.resist_para=<eval {400 650}>
+tag(resist_summon,300)
+tag(resist_bleed,400)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-50)
+tag(resist_pierce,250)
+tag(resist_blunt,150)
+
+//magic resists
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,200)
+
+//typ monstra
+tag(monstertype,animal)
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Wrestling=120.0
+Resist=100.0
+Tactics=110.0
+Parrying=100.0
+Taming=200.0
+Provocation=100.0
+Peacemaking=100.0
+SpiritSpeak=60.0
+Taming=200.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+/////////////////////////////////////////////////
+
+[CHARDEF c_ztracene_mesto_druid_vlk_morf]
+ID=c_wolf
+NAME=Vlk
+SOUND=snd_ANIMALS_WOLF1
+ICON=i_pet_wolf
+CAN=MT_WALK|MT_run
+
+ATTACK=100
+ARMOR=70
+MOVERATE=6
+
+RESOURCES=6 i_ribs_raw
+BLOODCOLOR=-1
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+TEVENTS=e_npc_critic
+TEVENTS=e_summoneater
+TEVENTS=e_npc_detect
+TEVENTS=e_npc_roundattack_pullall
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=druid vlk
+
+ON=@Create
+NPC=brain_monster
+FAME={200 750}
+KARMA=-3000
+
+STR=2200
+DEX=440
+INT=50
+
+MAXHITS={17000 17500}
+MAXSTAM={380 400}
+MAXMANA=0
+
+tag.experience=<eval {300.0 350.0}>
+
+tag.npc_bleed=300 //30.0%
+
+tag.npc_critic_chance=200         //20% chance
+tag.npc_critic_dmg=10,15          //dmg in between
+
+tag.roundattack_damage=50,60 //dmg od - do
+tag.roundattack_time=10,15   //cas od - do
+tag.roundattack_chance=200    //20.0%
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,500)
+tag(resist_para,1000)
+tag(resist_summon,300)
+tag(resist_bleed,400)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-50)
+tag(resist_pierce,250)
+tag(resist_blunt,150)
+
+//magic resists
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,200)
+
+//typ monstra
+tag(monstertype,animal)
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Resist=175.0
+Wrestling=150.0
+Parrying=150.0
+Tactics=120.0
+SpiritSpeak=75.0
+Taming=200.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+/////////////////////////////////////////////////
+
+[CHARDEF c_ztracene_mesto_druid_medved_morf]
+ID=c_bear_grizzly
+NAME=Medved
+SOUND=snd_ANIMALS_WOLF1
+ICON=i_pet_grizzly
+CAN=MT_WALK|MT_run
+
+ATTACK=80
+ARMOR=130
+MOVERATE=5
+
+RESOURCES=6 i_ribs_raw
+BLOODCOLOR=-1
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_bleed
+TEVENTS=e_npc_critic
+TEVENTS=e_summoneater
+TEVENTS=e_npc_detect
+TEVENTS=e_npc_stun
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=druid medved
+
+ON=@Create
+NPC=brain_monster
+FAME={200 750}
+KARMA=-3000
+
+STR=6900
+DEX=370
+INT=120
+
+MAXHITS={21000 22500}
+MAXSTAM={380 400}
+MAXMANA=0
+
+tag.experience=<eval {300.0 350.0}>
+
+tag.npc_bleed=300 //30.0%
+
+tag.npc_critic_chance=200         //20% chance
+tag.npc_critic_dmg=10,15          //dmg in between
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,300)
+tag(resist_para,1000)
+tag(resist_summon,300)
+tag(resist_bleed,400)
+
+tag(resist_sharp,-50)
+tag(resist_slash,-50)
+tag(resist_pierce,250)
+tag(resist_blunt,150)
+
+//magic resists
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,200)
+
+//typ monstra
+tag(monstertype,animal)
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Peacemaking=100.0
+Wrestling=160.0
+Tactics=150.0
+Parrying=150.0
+SpiritSpeak=60.0
+Taming=200.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+////////////////////////////////
+/// ZTRAZCE ZTRACENEHO MESTA ///
+////////////////////////////////
+
+[CHARDEF c_ztracene_mesto_guard_hala]
+ID=C_MAN
+NAME=Strazce ztraceneho mesta
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=60
+ARMOR=80
+MOVERATE=4
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_stun
+TEVENTS=e_npc_leaper
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=Strazce ztraceneho mesta
+
+ON=@Create
+NAME=#NAMES_HUMANMALE
+NPC=brain_human
+COLOR=colors_skin
+FAME={100 2000}
+KARMA=-5000
+
+STR=1000
+DEX=250
+INT=50
+
+
+MAXHITS=2500
+MAXSTAM={190 210}
+MAXMANA=40
+
+tag.experience=<eval {100.0 110.0}>
+
+tag.npc_port_timer=3
+tag(npc_port_distance,9)
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(monstertype,humanoid,60)
+tag.weapflag=dam_slashing|dam_physical
+
+tag(resist_poison,300)
+tag.resist_para=<eval {500 750}>
+tag(resist_summon,350)
+tag(resist_bleed,200)
+
+tag(resist_sharp,-100)
+tag(resist_slash,-100)        //sekery
+tag(resist_pierce,-350)
+tag(resist_blunt,-50)
+
+tag(resist_fire,100)
+tag(resist_elect,-100)
+tag(resist_cold,100)
+
+Provocation=100.0
+Peacemaking=100.0
+Tactics={90.0 100.0}
+Wrestling={90.0 100.0}
+Parrying={90.0 100.0}
+Fencing={90.0 100.0}
+Swordsmanship={90.0 100.0}
+Macefighting={90.0 100.0}
+Resist={80.0 100.0}
+EI={90.0 100.0}
+Magery=1500.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_greater_heal
+ADDSPELL=s_magic_reflection
+
+ITEMNEWBIE=random_male_hair
+ITEMNEWBIE=i_platemail_chest
+COLOR=098a
+ITEMNEWBIE=i_iron_plate_helm
+COLOR=098a
+ITEMNEWBIE=i_platemail_gloves
+COLOR=098a
+ITEMNEWBIE=i_surcoat
+ITEMNEWBIE=i_platemail_gorget
+COLOR=098a
+ITEMNEWBIE=i_platemail_leggings
+COLOR=098a
+ITEMNEWBIE=i_platemail_arms
+COLOR=098a
+ITEMNEWBIE=i_cape
+COLOR=098a
+ITEMNEWBIE=i_halberd
+
+ON=@NPCRestock
+ITEM=i_gold
+
+///////////////////////////////////
+///// ork zo ztraceneho mesta /////
+///////////////////////////////////
+
+[CHARDEF c_ztracene_mesto_orc]
+ID=c_orc
+NAME=Orc
+SOUND=snd_MONSTER_ORC1
+ICON=i_pet_ORC
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=80
+ARMOR=80
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+FOODTYPE=
+
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_knockback
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=Orc
+
+ON=@Create
+NAME=#NAMES_ORC
+NPC=brain_monster
+FAME={100 2000}
+KARMA={-5000 -5999}
+
+STR=1500
+DEX=350
+INT=60
+
+MAXHITS={1500 1700}
+MAXSTAM={350 400}
+MAXMANA=0
+
+tag.experience=<eval {110.0 120.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag(monstertype,humanoid,60)
+
+tag.weapflag=dam_physical|dam_blunt
+
+//other resists
+tag(resist_poison,700)
+tag.resist_para=<eval {700 800}>
+tag(resist_summon,600)
+tag(resist_bleed,300)  //krvaci
+
+tag(resist_sharp,150)
+tag(resist_slash,250)   // sekery
+tag(resist_pierce,-150)
+tag(resist_blunt,-50)
+
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,100)
+
+Parrying={40.0 50.0}
+Wrestling={70.0 80.0}
+//Wrestling={40.0 50.0}  drive
+Resist=100.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_ORC
+ITEM=i_gold
+
+/////////////////////////////////////////////////
+
+[CHARDEF c_ztracene_mesto_orc_ranger]
+ID=c_orc
+NAME=Orc
+SOUND=snd_MONSTER_ORC1
+ICON=i_pet_ORC
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=40
+ARMOR=80
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+FOODTYPE=
+
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_sniper
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=Orc ranger
+
+ON=@Create
+NAME=#NAMES_ORC
+NPC=brain_monster
+FAME={100 2000}
+KARMA={-5000 -5999}
+
+STR=1500
+DEX=250
+INT=60
+
+MAXHITS={1500 1700}
+MAXSTAM={150 200}
+MAXMANA=0
+
+tag.experience=<eval {110.0 120.0}>
+
+tag.npc_sniper_dmg=20           //o 20 HP
+tag.npc_sniper_chance=300       //30% Defaultne 20%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag(monstertype,humanoid,60)
+
+tag.weapflag=dam_physical|dam_blunt
+
+//other resists
+tag(resist_poison,700)
+tag.resist_para=<eval {700 800}>
+tag(resist_summon,600)
+tag(resist_bleed,100)  //krvaci
+
+tag(resist_sharp,150)
+tag(resist_slash,250)   // sekery
+tag(resist_pierce,-150)
+tag(resist_blunt,-50)
+
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,100)
+
+Parrying={40.0 50.0}
+Wrestling={70.0 80.0}
+Archery={90.0 95.0}
+Resist=100.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_bow
+ITEMNEWBIE=i_arrow,{50 75}
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_FOOD,{0 1}
+ITEM=RANDOM_REAGENT,{10 20}
+
+///////////////////////////////////////
+///// lizard zo ztraceneho mesta /////
+///////////////////////////////////////
+
+[CHARDEF c_ztracene_mesto_lizard]
+ID=c_lizardman
+NAME=Jester
+SOUND=snd_MONSTER_LZRDMN1
+ICON=i_pet_LIZMAN
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=80
+ARMOR=80
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+FOODTYPE=
+
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_knockback
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=Lizard
+
+ON=@Create
+NAME=#NAMES_LIZARDMAN
+NPC=brain_monster
+FAME={100 2000}
+KARMA={-5000 -5999}
+
+STR=1500
+DEX=350
+INT=60
+
+MAXHITS={1500 1700}
+MAXSTAM={350 400}
+MAXMANA=0
+
+tag.experience=<eval {110.0 120.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[2]>//str
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag(monstertype,humanoid,60)
+
+tag.weapflag=dam_physical|dam_blunt
+
+//other resists
+tag(resist_poison,700)
+tag.resist_para=<eval {700 800}>
+tag(resist_summon,600)
+tag(resist_bleed,300)  //krvaci
+
+tag(resist_sharp,150)
+tag(resist_slash,250)   // sekery
+tag(resist_pierce,-150)
+tag(resist_blunt,-50)
+
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,100)
+
+Parrying={40.0 50.0}
+Wrestling={70.0 80.0}
+//Wrestling={40.0 50.0}  drive
+Resist=100.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=loot_LIZARDMAN
+ITEM=i_gold
+
+/////////////////////////////////////////////////
+
+[CHARDEF c_ztracene_mesto_lizard_ranger]
+ID=c_lizardman
+NAME=Jester
+SOUND=snd_MONSTER_LZRDMN1
+ICON=i_pet_LIZMAN
+ANIM=078c7f
+CAN=MT_WALK|MT_USEHANDS|MT_EQUIP
+
+ATTACK=40
+ARMOR=80
+MOVERATE=3
+
+RESOURCES=10 i_ribs_raw
+FOODTYPE=
+
+BLOODCOLOR=020
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_sniper
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=Lizard ranger
+
+ON=@Create
+NAME=#NAMES_LIZARDMAN
+NPC=brain_monster
+FAME={100 2000}
+KARMA={-5000 -5999}
+
+STR=1500
+DEX=250
+INT=60
+
+MAXHITS={1500 1700}
+MAXSTAM={150 200}
+MAXMANA=0
+
+tag.experience=<eval {110.0 120.0}>
+
+tag.npc_sniper_dmg=20           //o 20 HP
+tag.npc_sniper_chance=300       //30% Defaultne 20%
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//dex
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+tag(monstertype,humanoid,60)
+
+tag.weapflag=dam_physical|dam_blunt
+
+//other resists
+tag(resist_poison,700)
+tag.resist_para=<eval {700 800}>
+tag(resist_summon,600)
+tag(resist_bleed,100)  //krvaci
+
+tag(resist_sharp,150)
+tag(resist_slash,250)   // sekery
+tag(resist_pierce,-150)
+tag(resist_blunt,-50)
+
+tag(resist_fire,200)
+tag(resist_elect,200)
+tag(resist_cold,100)
+
+Parrying={40.0 50.0}
+Wrestling={70.0 80.0}
+Archery={90.0 95.0}
+Resist=100.0
+SpiritSpeak=60.0
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_bow
+ITEMNEWBIE=i_arrow,{50 75}
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_FOOD,{0 1}
+ITEM=RANDOM_REAGENT,{10 20}
+
+/////////////////////////////
+//// IGNAC - WELCOME NPC ////
+/////////////////////////////
+
+
+[SPEECH spk_ztracene_mesto_ignac]
+ON=*hi*
+ON=*zdravim*
+ON=*ahoj*
+
+if (<distance> > 3)
+  src.sysMessage("Na takovou vzdalenost s tebou jednat nebude")
+else
+  f_ztracene_mesto_ignac
+endif
+
+[FUNCTION f_ztracene_mesto_ignac]
+if (<src.flags>&statf_dead)
+  return 1
+else
+  dialog(d_ztracene_mesto_ignac)
+endif
+
+[CHARDEF c_ztracene_mesto_ignac]
+ID=c_man
+NAME=Ignac
+
+TEVENTS=e_item_refuser
+TEVENTS=e_character
+
+TSPEECH=spk_ztracene_mesto_ignac
+
+CATEGORY=Dungeony
+SUBSECTION=Ztracene mesto
+DESCRIPTION=Ignac - welcome npc
+
+ON=@create
+NPC=brain_vendor
+COLOR=color_clovek
+Title=Stary Bojovnik
+STR=1000
+DEX=1000
+INT=1000
+
+Anatomy={55.0 78.0}
+Forensics={35.0 58.0}
+Healing={55.0 78.0}
+SpiritSpeak={55.0 78.0}
+Wrestling={15.0 38.0}
+Tactics={15.0 35.0}
+Resist={30.0 40.0}
+
+tag(noanimate,1)
+
+MAXHITS=1500
+MAXSTAM={100 150}
+MAXMANA=40
+
+tag.resist_para=550
+tag.resist_poison=650
+
+ITEMNEWBIE=i_hair_long
+COLOR=0000
+
+ITEMnewbie=i_sandals
+COLOR=0000
+ITEMnewbie=i_helm_nose
+COLOR=0098f
+ITEMnewbie=i_platemail_arms
+COLOR=0098f
+ITEMnewbie=i_tunic
+COLOR=00
+ITEMnewbie=i_platemail_gloves
+COLOR=0098f
+ITEMnewbie=i_platemail_leggings
+COLOR=0098f
+ITEMnewbie=i_sword_long
+COLOR=00999
+
+
+ON=@userDClick
+if (SRC.TARG.DISTANCE > 3)
+  src.sysMessage("Na takovou vzdalenost s tebou jednat nebude")
+  return 1
+else
+  f_ztracene_mesto_ignac
+endif
+
+[DIALOG d_ztracene_mesto_ignac]
+argo.questDialog_create(03152,"Ignac, stary bojovnik")
+
+argo.dialog_newPage("Pozdrav")
+
+argo.questDialog_baseButt(1) // Kdo jsi?
+argo.questDialog_baseButt(2,21,"Co tady delas?")
+argo.questDialog_baseButt(6) // Prohlednout
+
+argo.dialog_page("Pozdrav")
+  argo.setText(<argo.newTextLine>,"Bud pozdraven.")
+  argo.questDialog_HTMLGUMP
+
+argo.dialog_page("Kdo jsi?") // kdo jsi
+  argo.setText(argo.newTextLine,"Ahoj, jmenuji se Ignac a kdysi davno jsem byl bojovnikem stejne jako ty. Dnes je uz ze mne stary muz, ktery ceka, az bude moci nekomu predat svoje zkusenosti z boju a poradit mu neco uzitecneho.")
+  argo.questDialog_HTMLGUMP
+
+argo.dialog_page("Co tady delas?")
+  argo.setText(<argo.newTextLine>,"Kdyz jsem byl mlady jako ty, snazil jsem se ziskat poklad Ztraceneho Mesta. Trvalo mi velmi dlouho, nez se mi podarilo najit vstup do tohoto mesta. Hledani mne stalo mnoho sil a jsem jiz unaveny. Po dlouhych letech, kdyz se mi konecne podarilo najit Ztracene Mesto, byl jsem velmi slaby, aby jsem ho dokazal prozkoumat sam. Rozhodl jsem se tedy cekat pred vstupem a poradit mladym bojovnikum, kteri se mesto rozhodli hledat stejne jako ja, jak sa dostat dovnitr.")
+  argo.questDialog_HTMLGUMP
+    argo.setText(argo.newTextLine,"Aha, to neni nic pro me, ahoj.")
+    argo.questDialog_addResponse(0,1,1,"Goodbye")
+    argo.setText(argo.newTextLine,"A poradis mi, jak se muzu dostat dovnitr?")
+    argo.questDialog_addResponse(0,0,1,"how_to_get_in")
+
+argo.dialog_page("how_to_get_in")
+  argo.setText(<argo.newTextLine>,"Je to velmi jednoduche. Podivej se na tu branu ktera je tu. Vidis v ni pet otvoru na klicky. Tyto klicky maji v drzeni pani uzemi tady pred Ztracenym Mestem, ale dobrovolne ti je nedaji. Davej si na ne velky pozor, jsou nebezpecni.")
+  argo.questDialog_HTMLGUMP
+    argo.setText(argo.newTextLine,"Dakuji, tak ja to skusim.")
+    argo.questDialog_addResponse(0,1,1,"Goodbye")
+
+argo.dialog_page("Prohlednout")
+  argo.setText(argo.newTextLine,"<def_questDialog_colorTextEmote>*Stary vyslabnuty bojovnik, je videt, ze toho zazil uz spoustu, ten by mohl vypravet pribehy...*")
+  argo.questDialog_HTMLGUMP
+
+[DIALOG d_ztracene_mesto_ignac button]
+ON=@AnyButton
+if (<argn> == argo.dialog_linkButton("Goodbye"))
+  say("Hodne stesti priteli...")
+endif
+
+[EOF]

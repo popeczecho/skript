@@ -1,0 +1,738 @@
+
+[ITEMDEF 04740]
+DEFNAME=i_IRON_PLATEMAIL
+NAME=Iron Platemail
+ID=i_platemail_chest
+
+ARMOR=65
+REQSTR=60
+WEIGHT=23.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=iron platemail
+DESCRIPTION=Platemail chest
+RESOURCES=25 i_ingot_iron
+SKILLMAKE=Blacksmithing 48.0, Tinkering 35.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=22
+armorcreate(iron,plate)
+
+[ITEMDEF 04741]
+DEFNAME=i_IRON_PLATEMAIL_ARMS
+NAME=Iron Platemail Arms
+ID=i_platemail_arms
+
+ARMOR=65
+REQSTR=40
+WEIGHT=18.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=iron platemail
+DESCRIPTION=Platemail Arms
+RESOURCES=18 i_ingot_iron
+SKILLMAKE=Blacksmithing 44.0, Tinkering 35.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=8
+armorcreate(iron,plate)
+
+[ITEMDEF 04742]
+DEFNAME=i_IRON_PLATEMAIL_leggings
+NAME=Iron Platemail Legs
+ID=i_platemail_leggings
+
+ARMOR=65
+REQSTR=60
+WEIGHT=20.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=iron platemail
+DESCRIPTION=Platemail Legs
+RESOURCES=20 i_ingot_iron
+SKILLMAKE=Blacksmithing 46.0, Tinkering 35.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=14
+armorcreate(iron,plate)
+
+[ITEMDEF 04744]
+DEFNAME=i_IRON_PLATEMAIL_GORGET
+NAME=Iron Platemail Gorget
+ID=i_platemail_gorget
+
+ARMOR=65
+REQSTR=30
+WEIGHT=6.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=iron platemail
+DESCRIPTION=Platemail Gorget
+RESOURCES=10 i_ingot_iron
+SKILLMAKE=Blacksmithing 40.0, Tinkering 35.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=5
+armorcreate(iron,plate)
+
+[ITEMDEF 04745]
+DEFNAME=i_IRON_PLATEMAIL_GAUNTLETS
+NAME=Iron Platemail Gauntlets
+ID=i_platemail_gloves
+
+ARMOR=65
+REQSTR=30
+WEIGHT=5.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=iron platemail
+DESCRIPTION=Platemail Gauntlets
+RESOURCES=12 i_ingot_iron
+SKILLMAKE=Blacksmithing 42.0, Tinkering 35.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=5
+armorcreate(iron,plate)
+
+[ITEMDEF 04746]
+DEFNAME=i_IRON_FEMALE_PLATEMAIL
+NAME=Iron Platemail
+ID=i_armor_female_plate
+
+ARMOR=65
+REQSTR=15
+WEIGHT=13.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=iron platemail
+DESCRIPTION=Female Platemail
+RESOURCES=22 i_ingot_iron
+SKILLMAKE=Blacksmithing 40.0, Tinkering 35.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=22
+armorcreate(iron,plate)
+
+/////////////////////////////////////////// helmy
+
+[ITEMDEF 04743]
+DEFNAME=i_IRON_PLATE_HELM
+NAME=Iron Plate Helm
+ID=i_platemail_helm
+
+ARMOR=65
+REQSTR=40
+WEIGHT=10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=iron platemail
+DESCRIPTION=Plate Helm
+RESOURCES=15 i_ingot_iron
+SKILLMAKE=Blacksmithing 45.0, Tinkering 35.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=8
+armorcreate(iron,plate)
+
+[ITEMDEF 04751]
+DEFNAME=i_IRON_CLOSED_HELM
+NAME=Iron Closed Helm
+ID=i_helm_closed
+
+ARMOR=65
+REQSTR=20
+WEIGHT=10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=iron platemail
+DESCRIPTION=Closed Helm
+RESOURCES=15 i_ingot_iron
+SKILLMAKE=Blacksmithing 40.0, Tinkering 35.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=8
+armorcreate(iron,plate)
+
+[ITEMDEF 04753]
+DEFNAME=i_IRON_BASCINET
+NAME=Iron Bascinet
+ID=i_bascinet
+
+ARMOR=65
+REQSTR=10
+WEIGHT=9.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=iron platemail
+DESCRIPTION=Bascinet
+RESOURCES=15 i_ingot_iron
+SKILLMAKE=Blacksmithing 40.0, Tinkering 35.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=8
+armorcreate(iron,plate)
+
+[ITEMDEF 04754]
+DEFNAME=i_IRON_NOSE_HELM
+NAME=Iron Nose Helm
+ID=i_helm_nose
+
+ARMOR=65
+REQSTR=0
+WEIGHT=10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=iron platemail
+DESCRIPTION=Nose Helm
+
+RESOURCES=20 i_ingot_iron
+SKILLMAKE=Blacksmithing 40.0, Tinkering 35.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=8
+armorcreate(iron,plate)
+
+////////////////////////////////////////////// chain mail
+
+[ITEMDEF i_Iron_CHAINMAIL_gorget]
+ID=i_leather_gorget
+NAME=Iron Chainmail Gorget
+WEIGHT=2.0
+ARMOR=35
+REQSTR=20
+RESOURCES=10 i_ingot_Iron
+SKILLMAKE=Blacksmithing 35.0, Tinkering 46.0
+tdata1=2//iron
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron chainmail
+DESCRIPTION=Chainmail gorget
+
+ON=@Create
+HITPOINTS=4
+armorcreate(Iron,chain)
+
+[ITEMDEF i_Iron_CHAINMAIL_sleeves]
+ID=i_leather_sleeves
+NAME=Iron Chainmail Sleeves
+WEIGHT=2.0
+ARMOR=35
+REQSTR=20
+RESOURCES=10 i_ingot_Iron
+SKILLMAKE=Blacksmithing 35.0, Tinkering 46.0
+tdata1=2//iron
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron chainmail
+DESCRIPTION=Chainmail sleeves
+
+ON=@Create
+HITPOINTS=7
+armorcreate(Iron,chain)
+
+[ITEMDEF i_Iron_CHAINMAIL_gloves]
+ID=i_leather_gloves
+NAME=Iron Chainmail Gloves
+WEIGHT=2.0
+ARMOR=35
+REQSTR=20
+RESOURCES=10 i_ingot_Iron
+SKILLMAKE=Blacksmithing 35.0, Tinkering 46.0
+tdata1=2//iron
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron chainmail
+DESCRIPTION=Chainmail gloves
+
+ON=@Create
+HITPOINTS=4
+armorcreate(Iron,chain)
+
+[ITEMDEF 04747]
+DEFNAME=i_IRON_CHAINMAIL_COIF
+NAME=Iron Chainmail Coif
+ID=i_chainmail_coif
+
+ARMOR=35
+REQSTR=20
+WEIGHT=7.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron chainmail
+DESCRIPTION=Chainmail Coif
+RESOURCES=10 i_ingot_iron
+SKILLMAKE=Blacksmithing 35.0, Tinkering 46.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=7
+armorcreate(Iron,chain)
+
+[ITEMDEF 04748]
+DEFNAME=i_IRON_CHAINMAIL_LEGGINGS
+NAME=Iron Chainmail Leggings
+ID=i_chainmail_leggings
+
+ARMOR=35
+REQSTR=20
+WEIGHT=10.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron chainmail
+DESCRIPTION=Chainmail Leggings
+RESOURCES=18 i_ingot_iron
+SKILLMAKE=Blacksmithing 35.0, Tinkering 47.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=11
+armorcreate(Iron,chain)
+
+[ITEMDEF 04749]
+DEFNAME=i_IRON_CHAINMAIL_TUNIC
+NAME=Iron Chainmail Tunic
+ID=i_chainmail_tunic
+
+ARMOR=35
+REQSTR=20
+WEIGHT=15.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron chainmail
+DESCRIPTION=Chainmail Tunic
+RESOURCES=20 i_ingot_iron
+SKILLMAKE=Blacksmithing 35.0, Tinkering 48.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=17
+armorcreate(Iron,chain)
+
+/////////////////////////////////////////////////// ring mail
+
+[ITEMDEF i_Iron_kite_wood_shield]
+ID=i_shield_kite_wood
+NAME=Iron kite shield
+WEIGHT=2.0
+ARMOR=21
+REQSTR=20
+RESOURCES=10 i_ingot_Iron
+SKILLMAKE=Blacksmithing 35.0, Tinkering 43.0
+tdata1=2
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron ringmail
+DESCRIPTION=Kite wood shield
+
+ON=@Create
+HITPOINTS=12
+shieldcreate(Iron,ring)
+
+ON=@equip
+tdata1=2
+
+[ITEMDEF i_Iron_RINGMAIL_gorget]
+ID=i_leather_gorget
+NAME=Iron ringmail gorget
+WEIGHT=2.0
+ARMOR=35
+REQSTR=20
+RESOURCES=10 i_ingot_Iron
+SKILLMAKE=Blacksmithing 35.0, Tinkering 43.0
+tdata1=2//iron
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron ringmail
+DESCRIPTION=Ringmail gorget
+
+ON=@Create
+HITPOINTS=4
+armorcreate(Iron,ring)
+
+[ITEMDEF i_Iron_RINGMAIL_helm]
+ID=i_helm_open
+NAME=Iron Ringmail Helm
+WEIGHT=2.0
+ARMOR=35
+REQSTR=20
+RESOURCES=10 i_ingot_Iron
+SKILLMAKE=Blacksmithing 35.0, Tinkering 43.0
+tdata1=2//iron
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron ringmail
+DESCRIPTION=Ringmail helm
+
+ON=@Create
+HITPOINTS=5
+armorcreate(Iron,ring)
+
+[ITEMDEF 0474a]
+DEFNAME=i_IRON_RINGMAIL_LEGGINGS
+NAME=Iron Ringmail Leggings
+ID=i_ringmail_leggings
+
+ARMOR=35
+REQSTR=20
+WEIGHT=15.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=iron Colored
+DESCRIPTION=Ringmail Leggings
+RESOURCES=16 i_ingot_iron
+SKILLMAKE=Blacksmithing 35.0, Tinkering 43.0
+tdata1=2//iron
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron ringmail
+DESCRIPTION=Ringmail leggings
+
+ON=@Create
+HITPOINTS=7
+armorcreate(Iron,ring)
+
+[ITEMDEF 0474b]
+DEFNAME=i_IRON_RINGMAIL_SLEEVES
+NAME=Iron Ringmail Sleeves
+ID=i_ringmail_sleeves
+
+ARMOR=35
+REQSTR=20
+WEIGHT=13.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron ringmail
+DESCRIPTION=Ringmail Sleeves
+RESOURCES=14 i_ingot_iron
+SKILLMAKE=Blacksmithing 35.0, Tinkering 41.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=5
+armorcreate(Iron,ring)
+
+[ITEMDEF 0474c]
+DEFNAME=i_IRON_RINGMAIL_GLOVES
+NAME=Iron Ringmail Gloves
+ID=i_ringmail_gloves
+
+ARMOR=35
+REQSTR=20
+WEIGHT=2.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron ringmail
+DESCRIPTION=Ringmail Gloves
+RESOURCES=10 i_ingot_iron
+SKILLMAKE=Blacksmithing 35.0, Tinkering 40.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=4
+armorcreate(Iron,ring)
+
+[ITEMDEF 0474d]
+DEFNAME=i_IRON_RINGMAIL_TUNIC
+NAME=Iron Ringmail Tunic
+ID=i_ringmail_tunic
+
+ARMOR=35
+REQSTR=20
+WEIGHT=15.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron ringmail
+DESCRIPTION=Ringmail Tunic
+RESOURCES=18 i_ingot_iron
+SKILLMAKE=Blacksmithing 35.0, Tinkering 44.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=12
+armorcreate(Iron,ring)
+
+///////////////////////////////////////////////// shieldy
+
+[ITEMDEF 0474e]
+DEFNAME=i_IRON_BUCKLER_SHIELD
+NAME=Iron Buckler
+ID=i_shield_buckler
+ARMOR=9
+REQSTR=15
+WEIGHT=7.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron studded
+DESCRIPTION=Buckler
+RESOURCES=10 i_ingot_iron
+SKILLMAKE=Blacksmithing 40.0, Tinkering 35.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=7
+shieldcreate(Iron,studded)
+
+[ITEMDEF 0474f]
+DEFNAME=i_IRON_HEATER_SHIELD
+NAME=Iron Heater Shield
+ID=I_SHIELD_HEATER
+ARMOR=5
+REQSTR=30
+WEIGHT=14.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron platemail
+DESCRIPTION=Heater Shield
+RESOURCES=18 i_ingot_iron
+SKILLMAKE=Blacksmithing 48.0, Tinkering 35.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=19
+shieldcreate(Iron,plate)
+
+[ITEMDEF 04750]
+DEFNAME=i_IRON_METAL_SHIELD
+NAME=Iron Metal Shield
+ID=i_shield_round_metal
+ARMOR=18
+REQSTR=15
+WEIGHT=11.0
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron chainmail
+DESCRIPTION=Metal Shield
+RESOURCES=14 i_ingot_iron
+SKILLMAKE=Blacksmithing 45.0, Tinkering 35.0
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=14
+shieldcreate(Iron,chain)
+
+[ITEMDEF i_bone_arms_Iron]
+ID=i_bone_arms
+RESOURCES=2 i_ingot_iron, i_bone_arms
+NAME=Bone Arms of Iron
+SKILLMAKE=Tinkering 50.0, t_tinker_tools
+
+WEIGHT=4.0
+ARMOR=13
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron bone
+DESCRIPTION=Bone Arms
+tdata1=2//iron
+ON=@Create
+HITPOINTS=4
+armorcreate(Iron,bone)
+
+[ITEMDEF i_bone_chest_Iron]
+ID=i_bone_chest
+NAME=Bone Chest of Iron
+RESOURCES=12 i_ingot_iron, i_bone_chest
+SKILLMAKE=Tinkering 50.0, t_tinker_tools
+
+WEIGHT=15.0
+ARMOR=13
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron bone
+DESCRIPTION=Bone Chest
+tdata1=2//iron
+ON=@Create
+HITPOINTS=9
+armorcreate(Iron,bone)
+
+[ITEMDEF i_bone_gloves_Iron]
+ID=i_bone_gloves
+NAME=Bone Gloves of Iron
+RESOURCES=3 i_ingot_iron, i_bone_gloves
+SKILLMAKE=Tinkering 50.0, t_tinker_tools
+
+WEIGHT=5.0
+ARMOR=13
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron bone
+DESCRIPTION=Bone Gloves
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=3
+armorcreate(Iron,bone)
+
+[ITEMDEF i_bone_helmet_Iron]
+ID=i_bone_helmet
+NAME=Bone Helmet of Iron
+RESOURCES=5 i_ingot_iron, i_bone_helmet
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron bone
+DESCRIPTION=Bone Helmet
+SKILLMAKE=Tinkering 50.0, t_tinker_tools
+
+WEIGHT=6.0
+ARMOR=13
+REQSTR=40
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=5
+armorcreate(Iron,bone)
+
+[ITEMDEF i_bone_leggings_Iron]
+ID=i_bone_leggings
+NAME=Bone Legs of Iron
+RESOURCES=6 i_ingot_iron, i_bone_leggings
+SKILLMAKE=Tinkering 50.0, t_tinker_tools
+
+WEIGHT=10.0
+ARMOR=13
+REQSTR=40
+
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron bone
+DESCRIPTION=Bone Legs
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=6
+armorcreate(Iron,bone)
+
+///studded:
+
+[ITEMDEF i_studded_cap_iron]
+ID=i_leather_cap
+RESOURCES=2 i_ingot_iron, i_leather_cap
+ARMOR=13
+NAME=iron Studded Cap
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron studded
+DESCRIPTION=Studded Cap
+SKILLMAKE=Tinkering 45.0, t_tinker_tools
+tdata1=2//iron
+
+ON=@Create
+HITPOINTS=4
+armorcreate(iron,studded)
+
+[ITEMDEF i_studded_sleeves_Iron]
+ID=i_studded_sleeves
+RESOURCES=2 i_ingot_Iron, i_leather_sleeves
+ARMOR=13
+NAME=Iron Studded Sleeves
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron studded
+DESCRIPTION=Studded Sleeves
+SKILLMAKE=Tinkering 45.0, t_tinker_tools
+tdata1=2//Iron
+
+ON=@Create
+HITPOINTS=4
+armorcreate(Iron,studded)
+
+[ITEMDEF i_studded_gloves_Iron]
+ID=i_studded_gloves
+SKILLMAKE=Tinkering 45.0, t_tinker_tools
+RESOURCES=2 i_ingot_Iron, i_leather_gloves
+ARMOR=13
+NAME=Iron Studded Gloves
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron studded
+DESCRIPTION=Studded Gloves
+tdata1=2//Iron
+
+ON=@Create
+HITPOINTS=3
+armorcreate(Iron,studded)
+
+[ITEMDEF i_studded_gorget_Iron]
+ID=i_studded_gorget
+RESOURCES=1 i_ingot_Iron, i_leather_gorget
+ARMOR=13
+NAME=Iron Studded Gorget
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron studded
+DESCRIPTION=Studded Gorget
+SKILLMAKE=Tinkering 45.0, t_tinker_tools
+tdata1=2//Iron
+
+ON=@Create
+HITPOINTS=3
+armorcreate(Iron,studded)
+
+[ITEMDEF i_studded_leggings_Iron]
+ID=i_studded_leggings
+RESOURCES=6 i_ingot_Iron, i_leather_leggings
+ARMOR=13
+NAME=Iron Studded Leggings
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron studded
+DESCRIPTION=Studded Leggings
+SKILLMAKE=Tinkering 45.0, t_tinker_tools
+tdata1=2//Iron
+
+ON=@Create
+HITPOINTS=6
+armorcreate(Iron,studded)
+
+[ITEMDEF i_studded_tunic_Iron]
+ID=i_studded_tunic
+RESOURCES=12 i_ingot_Iron, i_leather_tunic
+ARMOR=13
+NAME=Iron Studded Tunic
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron studded
+DESCRIPTION=Studded Tunic
+SKILLMAKE=Tinkering 45.0, t_tinker_tools
+tdata1=2//Iron
+
+ON=@Create
+HITPOINTS=9
+armorcreate(Iron,studded)
+
+[ITEMDEF i_armor_female_bustier_studded_Iron]
+ID=i_armor_female_bustier_studded
+RESOURCES=12 i_ingot_Iron, i_armor_female_bustier
+ARMOR=13
+NAME=Iron Studded Bustier
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron studded
+DESCRIPTION=Studded Bustier
+SKILLMAKE=Tinkering 45.0, t_tinker_tools
+tdata1=2//Iron
+
+ON=@Create
+HITPOINTS=9
+armorcreate(Iron,studded)
+
+[ITEMDEF i_armor_female_studded_Iron]
+ID=i_armor_female_studded
+ARMOR=13
+NAME=Iron Female Studded Armor
+CATEGORY=Provisions - Armor - Colored
+SUBSECTION=Iron studded
+DESCRIPTION=Studded Armor
+SKILLMAKE=Tinkering 45.0, t_tinker_tools
+RESOURCES=12 i_ingot_Iron, i_armor_female_leather
+tdata1=2
+
+ON=@Create
+HITPOINTS=9
+armorcreate(Iron,studded)
+
+[EOF]

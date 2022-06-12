@@ -1,0 +1,366 @@
+//////////////////////////////////////////////////////
+//               B O S S - MOUNT DORLAS             //
+//                   (c)  Marek                     //
+//////////////////////////////////////////////////////
+
+[CHARDEF c_MD_boss]             //weak fire + blunt + ostre
+ID=c_shadow
+NAME=Pan Mrazu
+CATEGORY=Dungeony
+SUBSECTION=Mount Dorlas
+DESCRIPTION=Boss MD
+SOUND=snd_MONSTER_GHOST1
+ICON=i_pet_LICH
+
+CAN=MT_WALK|MT_SWIM|MT_GHOST|MT_USEHANDS
+
+ATTACK=120
+ARMOR=120
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_summoneater                          //smaze summona, co zasahne
+TEVENTS=e_npc_summoning
+TEVENTS=e_npc_detect
+TEVENTS=e_parakrik
+TEVENTS=e_explosiondispell
+TEVENTS=e_npc_multishot
+TEVENTS=e_managain
+
+ON=@Create
+COLOR=0480
+NPC=brain_monster
+FAME=100
+KARMA=-5000
+
+STR=1000
+DEX=200
+INT=350
+
+MAXHITS={22000 23000}
+MAXSTAM={200 230}
+MAXMANA=1000
+
+tag.experience=<eval {1500.0 1599.0}>
+
+tag.multishot_chance=50                        // 5% chance pri zasahu monstra
+tag.multishot_delay=15,20                      // prodleva nez znovu
+tag.multishot_dmg=30,35                        // dmg
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[8]>
+
+tag(e_explosiondispell_chance,100) //10% chance
+tag(e_explosiondispell_range,5)
+tag(e_explosiondispell_time,30)
+
+tag(npc_summoning_chance,40)  //4.0% chance
+tag(npc_summoning_time,60)
+tag(npc_summoning_count,4)
+tag(npc_summoning_char[0],c_elem_ice)
+tag(npc_summoning_char[1],c_elem_ice)
+tag(npc_summoning_char[2],c_mahat_boss_leaper)
+tag(npc_summoning_char[3],c_mahat_boss_etheric)
+
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,1000)
+tag(resist_bleed,450)              //human krvaci
+
+tag(resist_sharp,200)              //projde skrz
+tag(resist_slash,750)              //odolny na sekery
+tag(resist_pierce,300)
+tag(resist_blunt,400)              //rozdrti
+
+tag(resist_fire,-100)
+tag(resist_elect,450)
+tag(resist_cold,1000)
+
+//tag(resist_phys,0)
+//tag(resist_magic,0)
+//tag(resist_acid,0)
+
+//typ monstra
+tag(monstertype,humanoid,50)
+
+Wrestling=150.0
+Resist={120.0 170.0}
+Tactics={100.0 150.0}
+Parrying={90.0 100.0}
+Macefighting={90.0 100.0}
+Magery=150.0
+EI=120.0
+Provocation=100.0
+Peacemaking=100.0
+SpiritSpeak=200.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+//addspell=s_magic_reflection
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=random_FOOD,{0 1}
+ITEM=RANDOM_REAGENT,{60 70}
+
+//////////////////////////////////////////
+
+[CHARDEF c_md_guard]
+ID=c_skull_head
+ANIM=078c7f
+NAME=Zamrzla duse
+CATEGORY=Dungeony
+SUBSECTION=Mount Dorlas
+DESCRIPTION=Zamrzla duse bosse
+CAN=MT_WALK
+
+ATTACK=65
+ARMOR=25
+
+BLOODCOLOR=colors_green
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_stun
+
+ON=@Create
+NPC=brain_monster
+COLOR=0480
+FAME=500
+KARMA={-1000 -2000}
+STR=1000
+DEX=300
+INT=100
+MAXHITS={300 350}
+tag.experience=<eval {10.0 15.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,1000)
+tag(resist_bleed,1000)
+
+tag(resist_sharp,1000)
+tag(resist_slash,1000)
+tag(resist_pierce,1000)
+tag(resist_blunt,1000)
+
+tag(resist_fire,1000)
+tag(resist_elect,1000)
+tag(resist_cold,1000)
+
+//tag(resist_phys,0)
+tag(resist_magic,1000)
+//tag(resist_acid,0)
+
+
+Parrying={95.0 100.0}
+Tactics={85.0 120.0}
+Wrestling={95.0 100.0}
+SpiritSpeak=55.0
+Provocation=100.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+
+//////////////////////////////////////////////////////
+//               B O S S - Tutorial                 //
+//                (c)  Marek                        //
+//////////////////////////////////////////////////////
+
+[CHARDEF c_Daemon_Tutorial]
+ID=c_daemon_large
+NAME=Daemon
+SOUND=snd_MONSTER_DAEMON1
+ICON=i_pet_daemon
+ANIM=03fbc7f
+CAN=MT_WALK|MT_FIRE_IMMUNE|mt_run|mt_usehands
+
+ATTACK=105
+ARMOR=85
+MOVERATE=3
+
+RESOURCES=9 i_ribs_raw, 8 i_reag_daemon_bone
+FOODTYPE=15 t_meat_raw
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_phoenix
+TEVENTS=e_explosiondispell
+TEVENTS=e_parakrik
+TEVENTS=e_npc_curse                     //vsechny viditelne zrani o dmg
+TEVENTS=e_npc_summoning
+TEVENTS=e_lightnings
+TEVENTS=e_managain
+
+ON=@Create
+NPC=brain_monster
+COLOR=0901
+FAME=1500
+KARMA={-5000 -6000}
+
+STR=8000
+DEX=300
+INT=400
+
+MAXHITS={9000 9500}
+MAXMANA=2000
+
+tag.experience=<eval {650.0 720.0}>
+
+tag.npc_curse_chance=250                // 25% chance to trigger this event
+tag.npc_curse_delay=15,17               // delay between another possible strike
+tag.npc_curse_dmg=40,45                 // dmg
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+tag(e_explosiondispell_chance,400) //40%
+tag(e_explosiondispell_range,5)
+tag(e_explosiondispell_time,20)
+
+tag(e_lightnings_chance,50) // 5 % chance
+tag(e_lightnings_range,3)
+
+tag(npc_summoning_chance,20)  //2.0% chance
+tag(npc_summoning_time,120)
+tag(npc_summoning_count,2)
+tag(npc_summoning_char[0],c_Daemon_ttnb)
+tag(npc_summoning_char[1],c_mahat_boss_etheric)
+
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,950)
+tag(resist_bleed,800)
+
+tag(resist_sharp,850)
+tag(resist_slash,650)
+tag(resist_pierce,450)
+tag(resist_blunt,550)
+
+tag(resist_fire,900)
+tag(resist_elect,850)
+tag(resist_cold,550)
+
+//tag(resist_phys,0)
+//tag(resist_magic,0)
+//tag(resist_acid,0)
+
+//typ monstra
+tag(monstertype,daemon,50)
+
+Magery=120.1
+EI=110.0
+Peacemaking=100.0
+Provocation=100.0
+Parrying={95.0 100.0}
+Tactics={85.0 120.0}
+Wrestling={95.0 100.0}
+SpiritSpeak=120.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_magic_reflection
+ADDSPELL=s_lightning
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=random_FOOD,{0 1}
+ITEM=i_gold
+
+CATEGORY=Dungeony
+SUBSECTION=Mount Dorlas
+DESCRIPTION=Demon Mage boss
+
+
+//////////////////////////////////////////////////////
+
+[CHARDEF c_daemon_ttnb]
+ID=c_mongbat
+NAME=Daemon
+SOUND=snd_MONSTER_MNGBAT1
+ICON=i_pet_MAN
+ANIM=078c7f
+CAN=MT_WALK|MT_FIRE_IMMUNE|MT_run
+
+ATTACK=55
+ARMOR=60
+MOVERATE=5
+
+RESOURCES=4 i_ribs_raw, 3 i_reag_daemon_bone
+
+BLOODCOLOR=colors_green
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_npc_massleap
+TEVENTS=e_backstub
+
+CATEGORY=Dungeony
+SUBSECTION=Mount Dorlas
+DESCRIPTION=Demon thief - boss
+
+ON=@Create
+COLOR=07FFF
+NPC=brain_monster
+FAME=1
+KARMA=-1500
+STR=2000
+DEX=500
+INT=300
+
+MAXHITS={3000 4000}
+MAXSTAM={400 450}
+MAXMANA=0
+
+tag.experience=<eval {90.0 100.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//typ monstra
+tag(monstertype,daemon,80)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,950)
+tag(resist_bleed,600)
+
+tag(resist_sharp,550)
+tag(resist_slash,450)
+tag(resist_pierce,450)
+tag(resist_blunt,150)
+
+tag(resist_fire,700)
+tag(resist_elect,800)
+tag(resist_cold,600)
+
+//tag(resist_phys,0)
+//tag(resist_magic,0)
+//tag(resist_acid,0)
+
+Tactics=250.0
+Wrestling=100.0
+SpiritSpeak=55.0
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+
+[EOF]

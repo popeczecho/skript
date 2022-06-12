@@ -1,0 +1,750 @@
+///////////////////////////////////////////////////////////
+/////////////////// REAPERS ///////////////////////////////
+///////////////////////////////////////////////////////////
+
+[CHARDEF 02f]
+DEFNAME=c_reaper
+NAME=Reaper
+SOUND=snd_MONSTER_REAPER1
+ICON=i_pet_REAPER
+ANIM=078c7f
+CAN=MT_WALK
+
+ATTACK=23
+ARMOR=32
+MOVERATE=3
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_reaper
+
+CATEGORY=Monsters
+SUBSECTION=Reapers
+DESCRIPTION=Reaper
+
+ON=@Create
+NPC=brain_monster
+KARMA={-3000 -5999}
+FAME=100
+
+STR={166 215}
+DEX={75 95}
+INT=0
+
+MAXHITS={300 330}
+MAXSTAM={70 99}
+MAXMANA=0
+
+tag.experience=<eval {22.0 26.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[2]>
+
+//other resists
+tag(resist_poison,970)          //reaperi nejsou imunni na jed
+tag.resist_para=<eval {250 350}>
+tag(resist_summon,300)          //indivindi podle monstra
+tag(resist_bleed,300)           //docela krvaci
+
+//weap resists
+tag(resist_sharp,200)
+tag(resist_slash,-500)        //sekerami na stromy
+tag(resist_pierce,900)        //sipy na prd
+tag(resist_blunt,900)         //kladivem ne
+//magic resists
+tag(resist_fire,-600)         //ohen je boli
+tag(resist_elect,900)         //elektrina reaperovi neublizuje
+tag(resist_cold,200)          //mraz jaks taks
+
+//typ monstra
+tag(monstertype,reaper,80)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Parrying={55.0 65.0}
+Resist=80.0
+Tactics={65.0 70.0}
+Wrestling={70.0 80.0}
+SpiritSpeak=30.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=I_LOG_copper,{1 5}
+ITEM=i_gold
+ITEM=i_reag_dead_wood,{5 8}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_reaper_spruce]
+ID=c_reaper
+NAME=Spruce Reaper
+SOUND=snd_MONSTER_REAPER1
+ICON=i_pet_REAPER
+ANIM=078c7f
+CAN=MT_WALK
+
+ATTACK=30
+ARMOR=30
+MOVERATE=5
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_ovinovac
+TEVENTS=e_reaper
+TEVENTS=e_summonhater
+
+CATEGORY=Monsters
+SUBSECTION=Reapers
+DESCRIPTION=Spruce Reaper
+
+ON=@Create
+NPC=brain_monster
+KARMA={-3000 -5999}
+FAME=700
+
+STR={2000 2500}
+DEX={60 85}
+INT=200
+
+MAXHITS={900 1000}
+MAXSTAM={60 90}
+MAXMANA=500
+
+tag.experience=<eval {70.0 80.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[3]>
+
+//other resists
+tag(resist_poison,400)          //reaperi nejsou imunni na jed
+tag.resist_para=<eval {500 650}>
+tag(resist_summon,500)          //indivindi podle monstra
+tag(resist_bleed,300)           //docela krvaci
+
+//weap resists
+tag(resist_sharp,200)
+tag(resist_slash,-300)        //sekerami na stromy
+tag(resist_pierce,800)        //sipy na prd
+tag(resist_blunt,800)         //kladivem ne
+
+//magic resists
+tag(resist_fire,-300)         //ohen je boli
+tag(resist_elect,800)         //elektrina reaperovi neublizuje
+tag(resist_cold,200)          //mraz jaks taks
+
+//typ monstra
+tag(monstertype,reaper,80)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Parrying=100.0
+Resist=80.0
+Tactics={45.0 60.0}
+Wrestling={80.0 90.0}
+Magery=100.0
+EI=100.0
+SpiritSpeak=30.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_fireball
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=I_LOG_copper,{1 5}
+ITEM=RANDOM_REAGENT_NECRO,{5 20}
+ITEM=i_gold
+ITEM=i_reag_dead_wood,{7 12}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_reaper_chestnut]
+ID=c_reaper
+NAME=Chestnut Reaper
+SOUND=snd_MONSTER_REAPER1
+ICON=i_pet_REAPER
+ANIM=078c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=35
+ARMOR=35
+MOVERATE=5
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_ovinovac
+TEVENTS=e_summoneater
+TEVENTS=e_summonhater
+TEVENTS=e_reaper
+
+CATEGORY=Monsters
+SUBSECTION=Reapers
+DESCRIPTION=Chestnut Reaper
+
+ON=@Create
+NPC=brain_monster
+KARMA={-3000 -5999}
+FAME=800
+COLOR=05E5
+
+STR={2100 2600}
+DEX={100 120}
+INT=190
+
+MAXHITS={2400 2700}
+MAXSTAM={100 120}
+MAXMANA=1000
+
+tag.experience=<eval {110.0 140.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[4]>
+
+//other resists
+tag(resist_poison,250)          //reaperi nejsou imunni na jed
+tag.resist_para=<eval {500 650}>
+tag(resist_summon,500)          //indivindi podle monstra
+tag(resist_bleed,300)           //docela krvaci
+
+//weap resists
+tag(resist_sharp,200)
+tag(resist_slash,-300)        //sekerami na stromy
+tag(resist_pierce,800)        //sipy na prd
+tag(resist_blunt,800)         //kladivem ne
+
+//magic resists
+tag(resist_fire,-400)         //ohen je boli
+tag(resist_elect,800)         //elektrina reaperovi neublizuje
+tag(resist_cold,200)          //mraz jaks taks
+
+//typ monstra
+tag(monstertype,reaper,80)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Parrying=100.0
+Resist=80.0
+Tactics={60.0 100.0}
+Wrestling={70.0 80.0}
+Magery=100.0
+EI=100.0
+SpiritSpeak=35.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_fireball
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=I_LOG_iron,{1 4}
+ITEM=RANDOM_REAGENT_NECRO,{15 20}
+ITEM=i_gold
+ITEM=i_reag_dead_wood,{8 15}
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_reaper_oak]
+ID=c_reaper
+NAME=Oak Reaper
+SOUND=snd_MONSTER_REAPER1
+ICON=i_pet_REAPER
+ANIM=078c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=40
+ARMOR=40
+MOVERATE=5
+
+RESOURCES=
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_ovinovac
+TEVENTS=e_summoneater
+TEVENTS=e_summonhater
+TEVENTS=e_reaper
+
+CATEGORY=Monsters
+SUBSECTION=Reapers
+DESCRIPTION=Oak Reaper
+
+ON=@Create
+NPC=brain_monster
+KARMA={-3000 -5999}
+FAME=900
+COLOR=05F2
+
+STR={2800 3000}
+DEX=100
+INT=250
+
+MAXHITS={4000 4200}
+MAXSTAM={100 120}
+MAXMANA=1000
+
+tag.experience=<eval {150.0 170.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[5]>
+
+//other resists
+tag(resist_poison,-100)          //reaperi nejsou imunni na jed
+tag.resist_para=<eval {500 650}>
+tag(resist_summon,500)          //indivindi podle monstra
+tag(resist_bleed,200)           //docela krvaci
+
+//weap resists
+tag(resist_sharp,200)
+tag(resist_slash,-300)        //sekerami na stromy
+tag(resist_pierce,800)        //sipy na prd
+tag(resist_blunt,800)         //kladivem ne
+
+//magic resists
+tag(resist_fire,-400)         //ohen je boli
+tag(resist_elect,800)         //elektrina reaperovi neublizuje
+tag(resist_cold,200)          //mraz jaks taks
+
+//typ monstra
+tag(monstertype,reaper,80)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Parrying=100.0
+Resist=100.0
+Tactics={100.0 130.0}
+Wrestling={80.0 90.0}
+Magery=100.0
+EI=100.0
+SpiritSpeak=40.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_fireball
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=I_LOG_verite,{1 3}
+ITEM=RANDOM_REAGENT_NECRO,{15 30}
+ITEM=i_gold
+ITEM=i_reag_dead_wood,{8 15}
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_reaper_teak]
+ID=c_reaper
+NAME=Teak Reaper
+SOUND=snd_MONSTER_REAPER1
+ICON=i_pet_REAPER
+ANIM=078c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=45
+ARMOR=45
+MOVERATE=5
+
+RESOURCES=
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_ovinovac
+TEVENTS=e_summoneater
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_summonhater
+TEVENTS=e_reaper
+
+CATEGORY=Monsters
+SUBSECTION=Reapers
+DESCRIPTION=Teak Reaper
+
+ON=@Create
+NPC=brain_monster
+KARMA={-3000 -5999}
+FAME=1000
+COLOR=01C4
+
+STR={3000 3500}
+DEX=100
+INT=300
+
+MAXHITS={5500 7000}
+MAXSTAM={100 120}
+MAXMANA=1000
+
+tag.experience=<eval {240.0 260.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,-300)          //reaperi nejsou imunni na jed
+tag.resist_para=<eval {650 750}>
+tag(resist_summon,700)          //indivindi podle monstra
+tag(resist_bleed,200)          //docela krvaci
+
+//weap resists
+tag(resist_sharp,300)
+tag(resist_slash,-50)        //sekerami na stromy
+tag(resist_pierce,800)        //sipy na prd
+tag(resist_blunt,800)         //kladivem ne
+
+//magic resists
+tag(resist_fire,-100)         //ohen je boli
+tag(resist_elect,850)         //elektrina reaperovi neublizuje
+tag(resist_cold,350)          //mraz jaks taks
+
+//typ monstra
+tag(monstertype,reaper,60)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Parrying=100.0
+Resist=120.0
+Tactics={100.0 130.0}
+Wrestling=100.0
+Magery=100.0
+EI=100.0
+SpiritSpeak=45.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_fireball
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=I_LOG_valorite,{1 2}
+ITEM=RANDOM_REAGENT_NECRO,{25 40}
+ITEM=i_gold
+ITEM=i_reag_dead_wood,{8 15}
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_reaper_mahagon]
+ID=c_reaper
+NAME=Mahagon Reaper
+SOUND=snd_MONSTER_REAPER1
+ICON=i_pet_REAPER
+ANIM=078c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=60
+ARMOR=60
+MOVERATE=5
+
+RESOURCES=
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_ovinovac
+TEVENTS=e_summoneater
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_summonhater
+TEVENTS=e_reaper
+
+CATEGORY=Monsters
+SUBSECTION=Reapers
+DESCRIPTION=Mahagon Reaper
+
+ON=@Create
+NPC=brain_monster
+KARMA={-3000 -5999}
+FAME=1100
+COLOR=0ED
+
+STR={4000 4500}
+DEX={125 150}
+INT=350
+
+MAXHITS={14000 15000}
+MAXSTAM={100 150}
+MAXMANA=1000
+
+tag.experience=<eval {350.0 400.0}>
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//other resists
+tag(resist_poison,-400)          //reaperi nejsou imunni na jed
+tag.resist_para=<eval {700 850}>
+tag(resist_summon,700)          //indivindi podle monstra
+tag(resist_bleed,200)          //docela krvaci
+
+//weap resists
+tag(resist_sharp,300)
+tag(resist_slash,-50)        //sekerami na stromy
+tag(resist_pierce,800)        //sipy na prd
+tag(resist_blunt,800)         //kladivem ne
+
+//magic resists
+tag(resist_fire,-100)         //ohen je boli
+tag(resist_elect,950)         //elektrina reaperovi neublizuje
+tag(resist_cold,400)          //mraz jaks taks
+
+//typ monstra
+tag(monstertype,reaper,60)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Parrying={55.0 65.0}
+Resist=140.0
+Tactics={100.0 130.0}
+Wrestling=100.0
+Magery=130.0
+EI=100.0
+SpiritSpeak=55.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_fireball
+ADDSPELL=s_magic_reflection
+
+ON=@NPCRestock
+ITEM=I_LOG_obsidian,1
+ITEM=RANDOM_REAGENT_NECRO,{25 50}
+ITEM=i_gold
+ITEM=i_reag_dead_wood,{8 15}
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_reaper_eben]
+ID=c_reaper
+NAME=Eben Reaper
+SOUND=snd_MONSTER_REAPER1
+ICON=i_pet_REAPER
+ANIM=078c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=80
+ARMOR=80
+MOVERATE=5
+
+RESOURCES=
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_ovinovac
+TEVENTS=e_summoneater
+TEVENTS=e_summonhater
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_reaper
+TEVENTS=e_parakrik
+TEVENTS=e_explosiondispell
+
+CATEGORY=Monsters
+SUBSECTION=Reapers
+DESCRIPTION=Eben Reaper
+
+ON=@Create
+NPC=brain_monster
+KARMA={-3000 -5999}
+FAME=1200
+COLOR=0774
+
+STR={4500 5000}
+DEX={150 175}
+INT=400
+
+MAXHITS={18000 19000}
+MAXSTAM={150 200}
+MAXMANA=1000
+
+tag.experience=<eval {700.0 750.0}>
+
+tag(e_explosiondispell_chance,100) //10% chance
+tag(e_explosiondispell_range,6)
+tag(e_explosiondispell_time,30)
+
+tag(Poisoning_dmg,35) // affects spell_poison
+tag(Poisoning_MvM_dmg,80) // affects spell_poison
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[7]>
+
+//other resists
+tag(resist_poison,-400)          //reaperi nejsou imunni na jed
+tag.resist_para=<eval {800 950}>
+tag(resist_summon,700)          //indivindi podle monstra
+tag(resist_bleed,200)           //docela krvaci
+
+//weap resists
+tag(resist_sharp,300)
+tag(resist_slash,-50)        //sekerami na stromy
+tag(resist_pierce,800)        //sipy na prd
+tag(resist_blunt,800)         //kladivem ne
+
+//magic resists
+tag(resist_fire,-100)         //ohen je boli
+tag(resist_elect,900)         //elektrina reaperovi neublizuje
+tag(resist_cold,400)          //mraz jaks taks
+
+//typ monstra
+tag(monstertype,reaper,40)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Parrying={55.0 65.0}
+Resist=160.0
+Tactics={100.0 130.0}
+Wrestling=100.0
+Magery=140.0
+EI=110.0
+SpiritSpeak=100.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_poison
+ADDSPELL=s_lightning
+ADDSPELL=s_fireball
+ADDSPELL=s_magic_reflection
+ADDSPELL=s_summon_elem_air
+
+ON=@NPCRestock
+ITEM=I_LOG_adamantinum,1
+ITEM=RANDOM_REAGENT_NECRO,{35 50}
+ITEM=i_gold
+ITEM=i_reag_dead_wood,{8 15}
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_reaper_elven]
+ID=c_reaper
+NAME=Elven Reaper
+SOUND=snd_MONSTER_REAPER1
+ICON=i_pet_REAPER
+ANIM=078c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=90
+ARMOR=90
+MOVERATE=5
+
+RESOURCES=
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_ovinovac
+TEVENTS=e_summoneater
+TEVENTS=e_summonhater
+TEVENTS=e_npc_infiniteMana
+TEVENTS=e_reaper
+TEVENTS=e_parakrik
+TEVENTS=e_explosiondispell
+
+CATEGORY=Monsters
+SUBSECTION=Reapers
+DESCRIPTION=Elven Reaper
+
+ON=@Create
+NPC=brain_monster
+KARMA={-3000 -5999}
+FAME=1500
+COLOR=07D6
+
+STR=5000
+DEX=200
+INT=420
+
+MAXHITS={30000 31000}
+MAXSTAM={200 240}
+MAXMANA=2000
+
+tag.experience=<eval {850.0 900.0}>
+
+tag(e_explosiondispell_chance,150) //15% chance
+tag(e_explosiondispell_range,6)
+tag(e_explosiondispell_time,20)
+
+//mystik
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[8]>
+
+//other resists
+tag(resist_poison,400)
+tag(resist_para,1000)        //indivindi podle monstra - vetsinou immune
+tag(resist_summon,1000)      //indivindi podle monstra
+tag(resist_bleed,250)
+
+//weap resists
+tag(resist_sharp,300)
+tag(resist_slash,-50)        //sekerami na stromy
+tag(resist_pierce,850)        //sipy na prd
+tag(resist_blunt,850)         //kladivem ne
+
+//magic resists
+tag(resist_fire,-100)         //ohen je boli
+tag(resist_elect,900)         //elektrina reaperovi neublizuje
+tag(resist_cold,400)          //mraz jaks taks
+
+//typ monstra
+tag(monstertype,reaper,40)
+
+//weap flags
+tag.weapflag=dam_blunt|dam_physical
+
+Parrying={55.0 65.0}
+Resist=200.0
+Tactics=100.0
+Wrestling=100.0
+Magery=120.0
+EI=120.0
+SpiritSpeak=190.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_lightning
+ADDSPELL=s_fireball
+ADDSPELL=s_magic_reflection
+ADDSPELL=s_summon_daemon
+
+ON=@NPCRestock
+ITEM=I_LOG_mithril,1
+ITEM=RANDOM_REAGENT_NECRO,{45 50}
+ITEM=i_gold
+ITEM=i_reag_dead_wood,{8 15}
+
+
+///////////////////////////////////////////////////////////
+
+[EOF]

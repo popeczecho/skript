@@ -1,0 +1,317 @@
+//////////////////////////////////////////////////////
+//               B O S S - TUMA OSTO                //
+//                (c)  Marek & Thalion              //
+//////////////////////////////////////////////////////
+
+
+[CHARDEF c_Daemon_aresion] //sharp + cold weak
+ID=c_balron
+NAME=Aresion
+SOUND=snd_monster_daemon1
+ICON=i_pet_ophid_mage
+ANIM=07fc7f
+CAN=MT_WALK|mt_run|MT_fire_immune
+
+ATTACK=100
+ARMOR=120
+MOVERATE=3
+
+CATEGORY=Dungeony
+SUBSECTION=Tuma Osto
+DESCRIPTION=Boss Tuma Osto
+
+RESOURCES=28 i_ribs_raw
+BLOODCOLOR=0996
+
+TEVENTS=e_character
+TEVENTS=e_monster
+TEVENTS=e_summoneater                 //smaze summona, co zasahne
+TEVENTS=e_npc_summoning
+TEVENTS=e_npc_detect
+TEVENTS=e_npc_curse                   //vsechny viditelne zrani o dmg
+TEVENTS=e_phoenix
+TEVENTS=e_phoenix_fire
+TEVENTS=e_parakrik
+TEVENTS=e_explosiondispell
+TEVENTS=e_managain
+
+ON=@Create
+COLOR=colors_wyrm
+NPC=brain_monster
+FAME=1500
+KARMA={-5000 -6000}
+
+STR=10000
+DEX=300
+INT=400
+
+MAXHITS={20000 21000}
+MAXSTAM={250 290}
+MAXMANA=1000
+
+tag.experience=<eval {2000.0 2100.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[9]>
+
+tag(e_explosiondispell_chance,100) //10% chance
+tag(e_explosiondispell_range,5)
+tag(e_explosiondispell_time,30)
+
+tag(npc_summoning_chance,30)  //3.0% chance
+tag(npc_summoning_time,60)
+tag(npc_summoning_count,2)
+tag(npc_summoning_char[0],c_glmm_daemon_phys_lvl_2)
+tag(npc_summoning_char[1],c_mahat_boss_etheric)
+
+tag.npc_curse_chance=250                // 25% chance to trigger this event
+tag.npc_curse_delay=15,17               // delay between another possible strike
+tag.npc_curse_dmg=35,40                 // dmg
+
+//typ monstra
+tag(monstertype,daemon,50)
+
+tag.weapflag=dam_physical
+
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,950)
+tag(resist_bleed,800)
+
+tag(resist_sharp,350)
+tag(resist_slash,750)
+tag(resist_pierce,600)
+tag(resist_blunt,950)                //nepruchodna kuze
+
+tag(resist_fire,950)
+tag(resist_elect,700)
+tag(resist_cold,200)                 //citlivost na chlad demon
+
+//tag(resist_phys,0)
+//tag(resist_magic,0)
+//tag(resist_acid,0)
+
+Peacemaking=100.0
+Provocation=100.0
+Poisoning={200.0 300.0}
+Resist=250.0
+Wrestling=120.0
+Magery=120.1
+EI=150.0
+SpiritSpeak=145.0
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_mass_dispel
+ADDSPELL=s_magic_reflection
+ADDSPELL=s_lightning
+//addspell=s_energy_bolt
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=random_FOOD,{0 1}
+ITEM=i_gold
+
+
+///////////////////////////////////////////////////////////
+
+[CHARDEF c_daemon_xillyon]       // weak na blunt, energy=meeler
+ID=c_golem_copper
+NAME=Xillyon
+SOUND=snd_ELEMENTL_ERTHEL1
+ICON=i_pet_elem_earth
+ANIM=079c7f
+CAN=MT_WALK|mt_run
+
+ATTACK=160
+ARMOR=160
+MOVERATE=3
+
+CATEGORY=Dungeony
+SUBSECTION=Tuma Osto
+DESCRIPTION=miniBoss Tuma Osto
+
+BLOODCOLOR=colors_gray
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_summoneater                          //smaze summona, co zasahne
+TEVENTS=e_npc_roundattack_pullall
+TEVENTS=e_npc_detect
+//TEVENTS=e_phoenix_fire
+TEVENTS=e_parakrik
+TEVENTS=e_explosiondispell
+TEVENTS=e_npc_stun
+TEVENTS=e_NPC_Bleed
+TEVENTS=e_npc_stam_dmg              //mlacenim saje staminu
+
+ON=@Create
+COLOR=01e9
+
+NPC=brain_monster
+FAME=1500
+KARMA={-7500 -10000}
+
+STR=7000
+DEX=400
+INT=0
+
+MAXHITS={30000 30500}
+MAXSTAM={430 460}
+MAXMANA=0
+
+tag.experience=<eval {1700.0 1800.0}>
+
+tag.roundattack_damage=50,55        //dmg od - do
+tag.roundattack_time=15,17          //prodleva od - do v sek
+tag.roundattack_chance=600          //60.0%
+
+tag.stam_dmg_chance=250             // 25% chance to trigger this event
+tag.stam_dmg_power=20               // takes 20 of stam
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[4]>//dmg
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[10]>
+
+//typ monstra
+tag(monstertype,golem,60)
+
+tag(e_explosiondispell_chance,150) //15% chance
+tag(e_explosiondispell_range,5)
+tag(e_explosiondispell_time,30)
+
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,950)
+tag(resist_bleed,1000)
+
+tag(resist_sharp,800)
+tag(resist_slash,800)
+tag(resist_pierce,450)
+tag(resist_blunt,150)            //golem tristi se
+
+tag(resist_fire,850)
+tag(resist_elect,150)            //kovovy golem
+tag(resist_cold,450)
+
+//tag(resist_phys,0)
+//tag(resist_magic,0)
+//tag(resist_acid,0)
+
+Tactics=100.0
+Wrestling=120.0
+Resist=150.0
+SpiritSpeak=200.0
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=loot_DAEMON
+
+////////////////////////////////////////////////////////////////////////////////////////
+
+[CHARDEF c_TO_guard] // dispelujici servant weak na blunt.
+
+ID=c_skeleton_mage
+NAME=Nemrtvy Carodej
+CATEGORY=Dungeony
+SUBSECTION=Tuma Osto
+DESCRIPTION=Boss Guard
+SOUND=snd_MONSTER_SKLETN1
+ICON=i_pet_SKELETON
+ANIM=078c7f
+CAN=MT_WALK|MT_RUN|MT_EQUIP|MT_FIRE_IMMUNE
+
+ATTACK=55
+ARMOR=60
+MOVERATE=3
+
+RESOURCES=12 i_reag_bone
+
+BLOODCOLOR=-1
+
+TEVENTS=e_monster
+TEVENTS=e_character
+TEVENTS=e_explosiondispell
+
+ON=@Create
+COLOR=098d
+NPC=brain_monster
+FAME=240
+KARMA={-999 -3999}
+
+STR=1100
+DEX=400
+INT=320
+
+
+MAXHITS={1900 1999}
+MAXSTAM=350
+MAXMANA=700
+
+tag.experience=<eval {190.0 199.0}>
+
+//tag(hypnotizable,0)
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoCanBe>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_hypnoLoot>
+//tag.hypnotizable=<tag.hypnotizable>|<flag_Buff[1]>//int
+//tag.hypnotizable=<tag.hypnotizable>|<flag_BuffPower[6]>
+
+//typ monstra
+tag(monstertype,undead,60)
+
+tag(e_explosiondispell_chance,500)  //50.0%
+tag(e_explosiondispell_range,6)
+tag(e_explosiondispell_time,10)
+
+tag.weapflag=dam_physical|dam_blunt
+
+tag(resstimer,<eval {45 90}>)
+
+tag(resist_poison,1000)
+tag(resist_para,1000)
+tag(resist_summon,950)
+tag(resist_bleed,1000)
+
+tag(resist_sharp,850)
+tag(resist_slash,650)
+tag(resist_pierce,950)
+tag(resist_blunt,200)
+
+tag(resist_fire,600)
+tag(resist_elect,600)
+tag(resist_cold,400)
+
+//tag(resist_phys,0)
+//tag(resist_magic,0)
+//tag(resist_acid,0)
+
+Parrying={85.0 100.0}
+Resist={65.0 80.0}
+Tactics={85.0 100.0}
+Wrestling=110.0
+Magery={120.0 130.0}
+EI={120.0 135.0}
+Peacemaking=100.0
+Provocation=100.0
+SpiritSpeak=60.0
+
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_mass_dispel
+ADDSPELL=s_lightning
+
+ITEMNEWBIE=i_light_source
+ITEMnewbie=i_monster_create
+
+ON=@NPCRestock
+ITEM=i_gold
+ITEM=RANDOM_REAGENT,{10 30}
+
+[EOF]
