@@ -1,0 +1,160 @@
+//////////////////////////////////////////////////
+/////NPC Bard Mordor(3618,2756)|Gondor(5564,3899)
+
+[CHARDEF c_q020_bard]
+ID=c_man
+NAME=Bard
+TSPEECH=spk_q020_bard
+TEVENTS=e_character
+CATEGORY=Questy
+SUBSECTION=Q020 - Carodejka
+DESCRIPTION=Kurdosaj
+
+ON=@create
+NPC=brain_vendor
+COLOR=color_clovek
+STR=1000
+DEX=1000
+INT=1000
+
+tag(noanimate,1)
+
+ITEMNEWBIE=random_male_hair
+COLOR=colors_hair
+ITEMnewbie=i_robe
+COLOR=colors_yellow
+ITEMnewbie=i_sandals
+
+ON=@UserDClick
+if (src.targ.distance > 3)
+  src.sysMessage("Na takovou vzdalenost s tebou bard jednat nebude")
+else
+  f_q020_Bard
+endif
+
+//////////////////////////////////////////////////
+/////NPC Roxana (2913,1988)
+
+[CHARDEF c_q020_roxana]
+ID=c_woman
+NAME=Roxana
+TSPEECH=spk_q020_roxana,spk_q022_roxana
+TEVENTS=e_character
+CATEGORY=Questy
+SUBSECTION=q020 - Carodejka
+DESCRIPTION=Roxana
+
+ON=@create
+NPC=brain_vendor
+COLOR=color_clovek
+STR=1000
+DEX=1000
+INT=1000
+
+tag(noanimate,1)
+
+Title=Stara carodejnice
+ITEMNEWBIE=random_female_hair
+COLOR=color_none
+
+ITEMnewbie=i_robe
+COLOR=color_gray_dk
+ITEMnewbie=i_sandals
+ITEMnewbie=i_hat_wizards
+COLOR=colors_black
+
+ITEMnewbie=i_staff_black_copper
+
+ON=@UserDClick
+if (src.targ.distance>3)
+  src.sysMessage("Na takovou vzdalenost s tebou carodejka jednat nebude")
+else
+  f_q020_roxana
+endif
+
+//////////////////////////////////////////////////
+/////NPC Stary remeslnik - q021
+
+
+
+//////////////////////////////////////////////////
+/////Monstra - Nemrtvy kouzelnik
+
+[CHARDEF c_q020_lich]
+
+ID=c_liche
+NAME=Nemrtvy carodej
+SOUND=snd_MONSTER_LICHE1
+ICON=i_pet_LICH
+ANIM=07bc7f
+CAN=MT_WALK|MT_FIRE_IMMUNE|MT_RUN|MT_USEHANDS|MT_GHOST
+ATTACK=60
+ARMOR=60
+
+
+RESDISPDN=c_man
+RESDISPHUE=021
+RESLEVEL=4
+RESOURCES=i_q020_srdce
+FOODTYPE=
+//=r_caves,r_dungeon
+//=r_civilization
+BLOODCOLOR=0998
+//TEVENTS=e_undead
+TEVENTS=e_monster
+TEVENTS=e_character
+
+
+CATEGORY=Questy
+SUBSECTION=q020 - Carodejka
+DESCRIPTION=Nemrtvy carodej
+
+ON=@CREATE
+COLOR=0992
+NPC=brain_monster
+FAME=1000
+KARMA={-4000 -4999}
+STR=2000
+DEX=140
+INT=700
+
+MAXHITS={800 1200}
+MAXSTAM=330
+MAXMANA=1200
+
+tag(resist_para,500)
+tag(resist_poison,900)
+tag(resist_bleed,250)
+//tag(hypnotizable,2)
+tag.experience=<eval {60.0 90.0}>
+
+
+Parrying={85.0 100.0}
+Resist=170.0
+Wrestling=100.0
+Magery=200.0
+Macefighting={85.0 100.0}
+Poisoning=80.0
+EI=100.0
+
+
+ITEMNEWBIE=i_spellbook
+ADDSPELL=s_harm
+ADDSPELL=s_fireball
+ADDSPELL=s_energy_bolt
+ADDSPELL=s_lightning
+ADDSPELL=s_paralyze
+ADDSPELL=s_magic_reflection
+ADDSPELL=s_flamestrike
+
+ITEMnewbie=i_monster_create
+
+ON=@NPCRESTOCK
+ITEM=loot_undead
+ITEM=loot_undead_body
+ITEM=i_gold
+ITEM=random_reagent_necro,{15 80}
+ITEM=i_shepherds_crook
+ITEM=RANDOM_SCROLL,{ 0 2 }
+
+[EOF]

@@ -1,0 +1,62 @@
+[ITEMDEF i_qaury_kniha]
+ID=0FBE
+TYPE=t_qaury_kniha
+NAME=Druath arg Matum
+
+ON=@create
+  attr_movenever=1
+
+[ITEMDEF i_qaury_kniha_taken]
+ID=i_spellbook
+TYPE=t_normal
+NAME=Druath arg Matum
+
+ON=@create
+  attr_movenever=1
+  attr_newbie=1
+
+ON=@UserDclick
+  src.sysMessage("Instinkt ti rika, ze by ses tou knihou nemel podrobne zabyvat...")
+  return 1
+
+ON=@UserClick
+  src.sysMessage("Instinkt ti rika, ze by ses tou knihou nemel podrobne zabyvat...")
+  return 1
+
+[TYPEDEF t_qaury_kniha]
+ON=@userClick
+  src.sysMessage("Instinkt ti rika, ze by ses tou knihou nemel podrobne zabyvat...")
+  return 1
+
+ON=@UserDclick
+  if (<src.qtag(qaury)>)
+    if (<src.qtag(qaury)>==1)
+      src.sysMessage("Sebral jsi knihu.")
+      src.giveitem(i_qaury_kniha_taken)
+      src.qtag(qaury,2)
+      return 1
+    else
+      src.sysMessage("Instinkt ti rika, ze by ses tou knihou nemel podrobne zabyvat...")
+      return 1
+    endif
+    src.sysMessage("Instinkt ti rika, ze by ses tou knihou nemel podrobne zabyvat...")
+    return 1
+  endif
+
+[ITEMDEF i_qaury_gata_vstupni]
+ID=I_moongate_blue
+TYPE=t_normal
+NAME=Brana
+
+ON=@create
+  attr_movenever=1
+
+ON=@step
+  if (<src.qtag(qaury)>==1)
+  src.go <morep>
+  else
+    src.redmessage("Nejsi hoden projit branou !")
+  endif
+  return 1
+
+[EOF]

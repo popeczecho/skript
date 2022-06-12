@@ -1,0 +1,79 @@
+[CHARDEF c_q1_lavovyjester_lecitel]
+ID=c_man
+NAME=Lecitel Ceren
+
+TEVENTS=e_character
+TSPEECH=spk_q1_lavovyjester_lecitel
+
+CATEGORY=Questy
+SUBSECTION=q31_kuchar
+DESCRIPTION=Lecitel Ceren
+
+ON=@create
+NPC=brain_human
+COLOR=color_clovek
+STR=1000
+DEX=1000
+INT=1000
+ITEMNEWBIE=i_hair_long
+COLOR=colors_hair
+
+ITEMnewbie=i_shoes_plant
+COLOR=color_gray_lt
+ITEMnewbie=i_robe
+COLOR=0989
+ITEMnewbie=i_hat_wizards
+COLOR=0989
+
+
+ON=@userDClick
+if (SRC.TARG.DISTANCE > 3)
+src.sysMessage("Na takovou vzdalenost s tebou jednat nebude")
+return 1
+endif
+if (<src.tag.q1_neuspel> > !=0)
+  say("To jsi ty! Tahni odsud nebo se neznam!")
+elseif  (<src.tag.q1_lavovyjester> ==0)
+  DIALOG(d_q1_lavovyjester_1)
+elseif (<src.tag.q1_lavovyjester> ==1)
+  DIALOG(d_q1_lavovyjester_2)
+elseif (<src.tag.q1_lavovyjester> ==2)
+  DIALOG(d_q1_lavovyjester_3)
+endif
+
+
+//Lava Zost
+
+[CHARDEF c_q1_lavovyjester_lavovyjester]
+MOUNTID=i_mt_ostard_zostrich
+NAME=Lavovy Jester
+SOUND=snd_ANIMAL_OSTARD_FRENZIED1
+ID= c_ostard_zostrich
+FOODTYPE=6 t_FISH,5 t_fruit, 15 t_meat_raw
+DESCRIPTION=Zostrich Lava
+SUBSECTION=Lavovy Jester
+CATEGORY=Questy
+
+TEVENTS=e_OSTARDS
+TEVENTS=e_monster
+TEVENTS=e_character
+
+AVERSIONS=T_telepad
+
+ON=@Create
+NPC=brain_animal
+COLOR=026
+//NPC=brain_animal jednou staci ne?
+FAME=0
+KARMA={-300 -1300}
+STR=300
+DEX=160
+INT=100
+Parrying=100.0
+Resist=100.0
+Tactics=100.0
+Wrestling=100.0
+Taming=200.0
+ITEMNEWBIE=i_monster_create
+
+[EOF]

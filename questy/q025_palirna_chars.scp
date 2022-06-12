@@ -1,0 +1,119 @@
+//////////////////////////
+//                      //
+//  Eraveth, hospodska  //
+//                      //
+//////////////////////////
+
+[CHARDEF c_q025_hospodska]
+NAME=Hospodska Eraveth
+ID=c_woman
+TSPEECH=spk_q025_hospodska
+TEVENTS=e_character
+CAN=mt_walk|mt_run|mt_usehands
+
+CATEGORY=Questy
+SUBSECTION=q025 - Palirna
+DESCRIPTION=Hospodska
+
+ON=@create
+NAME=Eraveth Ufaile
+TITLE=hospodska
+STR=100
+DEX=100
+INT=100
+
+COLOR=0909
+ITEMNEWBIE=i_dress_plain
+  color=084b
+ITEMNEWBIE=i_apron_half
+  color=0983
+ITEMNEWBIE=i_shoes_plain
+  color=084b
+ITEMNEWBIE=i_necklace_metal_beads
+ITEMNEWBIE=i_ring_gold
+
+//tag(hypnotizable,0)
+tag(noanimate,1)
+tag.experience=0
+
+ON=@npcrestock
+ITEMNEWBIE=i_hair_afro
+  color=06b7
+
+ON=@userdclick
+f_q025_osloveni_hospodske
+
+ON=@gethit
+f_q025_utok_na_hospodskou
+
+////////////////////////////////
+//                            //
+//  Miruvil, majitel palirny  //
+//                            //
+////////////////////////////////
+
+[CHARDEF c_q025_palic]
+NAME=Palic Miruvil
+ID=c_man
+TSPEECH=spk_q025_palic
+TEVENTS=e_character
+CAN=mt_walk|mt_run|mt_usehands
+ATTACK=30
+
+CATEGORY=Questy
+SUBSECTION=q025 - Palirna
+DESCRIPTION=Majitel palirny
+
+ON=@create
+NAME=Miruvil
+TITLE=majitel palirny
+flag_immobile=1
+
+STR=200
+DEX=200
+INT=200
+
+Archery=100.0
+Wrestling=100.0
+Resist=100.0
+Tactics=100.0
+Peacemaking=100.0
+Provocation=100.0
+SpiritSpeak=200.0
+
+COLOR=0909
+ITEMNEWBIE=i_cape
+  color=0581
+ITEMNEWBIE=i_shirt_plain
+  color=0581
+ITEMNEWBIE=i_apron_half
+  color=0900
+ITEMNEWBIE=i_pants_long
+  color=072c
+ITEMNEWBIE=i_earrings_silver
+ITEMNEWBIE=i_shoes_plain
+  color=072c
+ITEMNEWBIE=i_crossbow_heavy_verite
+
+//tag(hypnotizable,0)
+tag(noanimate,1)
+tag.experience=0
+
+ON=@npcrestock
+ITEMNEWBIE=i_hair_long
+  color=047d
+ITEMNEWBIE=i_beard_short_med
+  color=047d
+ITEMNEWBIE=i_q025_ovladani
+ITEMNEWBIE=i_monster_create
+
+ON=@userdclick
+f_q025_osloveni_palice
+
+ON=@gethit
+f_q025_utok_na_palice
+
+ON=@death
+f_q025_zabiti_palice
+
+[EOF]

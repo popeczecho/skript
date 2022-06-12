@@ -1,0 +1,43 @@
+[CHARDEF c_q035_herman]
+ID=c_man
+NAME=Herman
+
+TEVENTS=e_character
+TSPEECH=spk_q035_herman
+
+CATEGORY=Questy
+SUBSECTION=q005 - Brouci
+DESCRIPTION=Herman
+
+ON=@UserDclick
+f_q035_herman
+
+ON=@create
+NPC=brain_human
+COLOR=color_clovek
+STR=1000
+DEX=1000
+INT=1000
+Title=bojovnik proti broukum
+
+tag(noanimate,1)
+
+ITEMNEWBIE=i_cape
+COLOR=00989
+ITEMNEWBIE=i_surcoat
+COLOR=00989
+ITEMNEWBIE=i_pants_long
+COLOR=00989
+ITEMNEWBIE=i_hair_long
+COLOR=00976
+
+[SPEECH spk_q035_herman]
+
+ON=*ukol*
+ON=*prace*
+ON=*zdravim*
+ON=*ahoj*
+
+f_q035_herman
+
+[EOF]

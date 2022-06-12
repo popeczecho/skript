@@ -1,0 +1,53 @@
+[CHARDEF c_q015_paradnice]
+ID=c_woman
+NAME=Paradnice Minny
+
+TEVENTS=e_character
+TSPEECH=spk_q015_paradnice
+
+CATEGORY=Questy
+SUBSECTION=q015_paradnice
+DESCRIPTION=Paradnice Minny
+
+ON=@create
+NPC=brain_human
+COLOR=color_clovek
+STR=600
+DEX=1400
+INT=1000
+
+Anatomy={55.0 78.0}
+Forensics={35.0 58.0}
+Healing={55.0 78.0}
+SpiritSpeak={55.0 78.0}
+Wrestling={30.0 45.0}
+Tactics={25.0 45.0}
+Resist={20.0 40.0}
+
+MAXHITS=1000
+MAXSTAM={170 200}
+MAXMANA=40
+
+tag.resist_para=650
+tag.resist_poison=450
+
+ITEMNEWBIE=i_hair_long
+COLOR=0966
+ITEMnewbie=i_dress_full
+COLOR=0992
+ITEMnewbie=i_sandals
+COLOR=0849
+ITEMnewbie=i_bracelet_gold
+COLOR=00
+ITEMnewbie=i_necklace_gold
+COLOR=00
+
+ON=@userDClick
+if (SRC.TARG.DISTANCE > 3)
+  src.sysMessage("Na takovou vzdalenost s tebou jednat nebude")
+  return 1
+else
+  f_q015_paradnice
+endif
+
+[EOF]

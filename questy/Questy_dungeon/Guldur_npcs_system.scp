@@ -1,0 +1,604 @@
+/////////////////////// GULDUR STAREC ////////////////////////
+
+/////// NPC 
+[CHARDEF c_guldur_starec]
+ID=c_man
+NAME=Raneny muz
+
+MOVERATE=4
+
+TEVENTS=e_character
+TSPEECH=spk_guldur_starec
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Starec
+
+ON=@create
+Title=Rytir
+NPC=brain_human
+COLOR=color_clovek
+
+STR=1000
+DEX=1000
+INT=1000
+
+tag(noanimate,1)
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_hammer_war
+COLOR=07D6
+NAME=Devastator
+ITEMNEWBIE=i_tunic
+NAME=Tunica
+ITEMNEWBIE=i_boots_thigh
+COLOR=0725
+NAME=Osoupane boty
+ITEMNEWBIE=i_cape
+COLOR=0999
+NAME=Plast strazcu
+ITEMNEWBIE=i_ring_silver
+NAME=Rinf of Power
+ITEMNEWBIE=i_bracelet_gold
+NAME=Bracelet of Crusher
+ITEMNEWBIE=i_hair_long
+COLOR=0989
+ITEMNEWBIE=i_beard_long
+COLOR=0989
+
+ON=@userDClick
+if (SRC.TARG.DISTANCE > 3)
+  src.sysMessage("Na takovou vzdalenost s tebou jednat nebude")
+  return 1
+else
+  f_guldur_starec
+endif
+
+/////// Speech
+
+[SPEECH spk_guldur_starec]
+ON=*Hi*
+ON=*Zdravim*
+ON=*Ukol*
+f_qSpeech(f_guldur_starec)
+
+[FUNCTION f_guldur_starec]
+if (<src.flags>&statf_dead)
+return 0
+endif
+if (<src.tag(q_guldur_starec)> == 6)
+say("Nemame si uz co rici ...")
+else
+dialog(d_guldur_starec)
+endif
+
+/////// Dialog
+
+[DIALOG d_guldur_starec]
+argo.questDialog_create(03000,"Neznamy muz")
+arg(q_guldur_starec,<eval src.tag(q_guldur_starec)>)
+
+argo.dialog_newPage("Pozdrav")
+
+if (<arg(q_guldur_starec)> < 2)
+  argo.questDialog_baseButt(1)
+else
+  argo.questdialog_baseButt(1,27,"Potrebuji pomoc")
+endif
+argo.questdialog_baseButt(2)
+argo.questdialog_baseButt(3)
+argo.questdialog_basebutt(4)
+argo.questdialog_baseButt(5)
+argo.questdialog_baseButt(6)
+
+argo.dialog_page("Pozdrav")
+if (<arg(q_guldur_starec)> == 0)
+  argo.setText(argo.newTextLine,"<def_questDialog_colorTextNormal> Co te sem vedlo blazne! <def_questDialog_colorTextEmote>*Zakaslal a chytil se rany na brise.*")
+  argo.questDialog_HTMLGUMP
+elseif (<arg(q_guldur_starec)> == 1)
+  argo.setText(argo.newTextLine,"Tady te neceka nic dobreho.")
+  argo.questDialog_HTMLGUMP
+elseif (<arg(q_guldur_starec)> == 2)
+  argo.setText(argo.newTextLine,"Jsi zpet a zivy ! Dekuji ti za ten dopis, moc pro me znamena. Snad ti ta mince prinese vice stesti nez me a krom toho ti muzu jeste neco malo rici...")
+  argo.questDialog_HTMLGUMP
+endif
+
+argo.dialog_page("Potrebuji pomoc")
+if (<arg(q_guldur_starec)> == 2)
+  argo.settext(argo.newTextLine,"<def_questDialog_colorTextEmote>*Odkaslal si* <def_questDialog_colorTextNormal>Mince jsou pro strazce. Rika se mu ruzne ale nejrozsirenejsi pojem je asi Prevoznik... <def_questDialog_colorTextEmote>*starec zasykal bolesti* <def_questDialog_colorTextNormal>mince jsou potreba dve, druhou mel u sebe Malekto, bez nich vas nepreveze a vy tu uviznete na veky... ")
+  argo.questDialog_HTMLGUMP
+  argo.settext(argo.newTextLine,"Pokracuj")
+  argo.questdialog_addResponse(0,0,1,"q_guldur_story_1")
+endif
+
+if (<arg(q_guldur_starec)> >= 2)
+  argo.dialog_page("q_guldur_story_1")
+  argo.setText(argo.NewTextLine,"Jak jsem se jiz zminil o Bilem plameni... Vim pouze to, ze je potreba ho nejak prenest, mozna louce by se dala pouzit ale sam poradne nevim k cemu je potreba...")
+  argo.questDialog_HTMLGUMP
+  argo.settext(argo.newTextLine,"Dal")
+  argo.questdialog_addResponse(0,0,1,"q_guldur_story_2")
+endif
+
+if (<arg(q_guldur_starec)> >= 2)
+  argo.dialog_page("q_guldur_story_2")
+  argo.setText(argo.NewTextLine,"Pokladnice ktere strazi sama smrt, jsou chranene dvermi se starym mechanismem. Urcite po ceste venuj pozornost zakoutim a vyhledavej... ehm... mechanicke dlazdice.")
+  argo.questDialog_HTMLGUMP
+  argo.settext(argo.newTextLine,"Podekovat")
+  argo.questdialog_addResponse(0,0,1,"q_guldur_story_3")
+endif
+
+if (<arg(q_guldur_starec)> >= 2)
+  argo.dialog_page("q_guldur_story_3")
+  argo.setText(argo.NewTextLine,"Raneny muz vypadal se svou smrti smireny a nyni muze v pokoji spocinout. Za tvoji pomoc ti daroval zahadnou zlatou minci a par rad. Rikal ze slouzi jako platidlo pro jisteho Prevoznika. Zda to bude potrebne se jeste ukaze...")
+  argo.questDialog_HTMLGUMP
+  argo.settext(argo.newTextLine,"Odejit")
+  argo.questdialog_exitResponse(0,1)
+endif
+
+argo.dialog_page("Kdo Jsi?")
+argo.setText(argo.newTextLine,"Me jmeno neni dulezite. Byval jsem velitelem prvni skupiny, ktera se meli pokusit o dobyti teto pevnosti...")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Chci najit straceny poklad Gulduru!")
+argo.questdialog_addResponse(0,0,1,"q_guldur_poklad")
+argo.settext(argo.newTextLine,"Prisel jsem zastavit smrt.")
+argo.questdialog_addResponse(0,0,1,"q_guldur_prichod")
+
+if (<arg(q_guldur_starec)> < 2)
+  argo.dialog_page("q_guldur_poklad")
+  argo.setText(argo.NewTextLine,"Tak to tahni zase tam, odkud si prisel...tu nic z toho nenajdes jen smrt")
+  argo.questDialog_HTMLGUMP
+  argo.settext(argo.newTextLine,"Rozloucit se a odejit...")
+  argo.questdialog_exitResponse(0,1)
+endif
+
+if (<arg(q_guldur_starec)> < 2)
+  argo.dialog_page("q_guldur_prichod")
+  argo.setText(argo.NewTextLine,"<def_questDialog_colorTextNormal>Blazne... <def_questDialog_colorTextEmote>*zakaslal* <def_questDialog_colorTextNormal>proc myslis ze zrovna ty mas na to premoci to co tu ciha…")
+  argo.questDialog_HTMLGUMP
+  argo.settext(argo.newTextLine,"Protoze nikdo jiny krom nas to neudela…")
+  argo.questdialog_addResponse(0,0,1,"q_guldur_pravda")
+endif
+
+if (<arg(q_guldur_starec)> < 2)
+  argo.dialog_page("q_guldur_pravda")
+  argo.setText(argo.NewTextLine,"<def_questDialog_colorTextNormal>asi... asi mate pravdu... mozna jste nase posledni nadeje... <def_questDialog_colorTextEmote>*pokrcil rameny a povzdychl*")
+  argo.questDialog_HTMLGUMP
+  argo.settext(argo.newTextLine,"Co se tu vlastne stalo ? Slyseli jsme jenom zvesti o zivych mrtvych.")
+  argo.questdialog_addResponse(0,0,1,"q_guldur_elfove")
+endif
+
+if (<arg(q_guldur_starec)> < 2)
+  argo.dialog_page("q_guldur_elfove")
+  argo.setText(argo.NewTextLine,"<def_questDialog_colorTextNormal>Tohle kdysi byvalo legendarni nekropole elfu, po tom co to tu Sauron se svymi prizraky opustil, usidlila se tu temna moc... magie jako zadna jina... temnejsi nez vsechny Morgotovy kouzla a starsi nez samotne zaklady Ardy! Usadila se tu bytost ktere se boji I ti nejodvaznejsi! <def_questDialog_colorTextEmote>*zakaslal a pevne se chytil za ranu* <def_questDialog_colorTextNormal>Nase vyprava mela za ukol donest posvatny plamen az k branam samotne smrti a tam se dostat za pomoci prevoznika... avsak kdyz jsme prisli bylo uz pozde... mrtvy se stali zivymi a ti co byli zivy zase mrtvymi... hordy se na nas vrhly a my se dali na ustup... z cele skupiny jsem prezil jen ja a mozna Malekto, ktery se s druhou polovinou vydal do podzemniho chramu... Prave on nesl louci s bilym plamenem.")
+  argo.questDialog_HTMLGUMP
+  argo.settext(argo.newTextLine,"Rozloucit se a odejit...")
+  argo.questdialog_exitResponse(0,1)
+endif
+
+argo.dialog_page("Mohu pomoci?")
+if (<eval src.tag(q_guldur_starec)> == 0)
+  argo.settext(argo.newTextLine,"Jak vidis, moje dny jsou jiz secteny ale chtel bych aby si mi prinesl dopis po me dceri... brasnu ve ktere byl jsem ztratil pri boji v nedaleke krypte. Muzu ti za to nabidnout tuto minci... bez ni se tam kam vede vase cesta, nedostanete.")
+  argo.questDialog_HTMLGUMP
+  argo.settext(argo.newTextLine,"Dopis ?")
+  argo.questdialog_addResponse(0,0,1,"q_guldur_dopis")
+elseif (<eval src.tag(q_guldur_starec)> == 1)
+  argo.settext(argo.newTextLine,"Potrebuju ten dopis. Uz si jej nasel ?")
+  argo.questDialog_HTMLGUMP
+  argo.settext(argo.newtextline,"Zatim ne")
+  argo.questdialog_exitResponse(0,1)
+  argo.settext(argo.newtextline,"Rozmyslel jsem se. Nepomuzu ti, je to moc nebezpecne !")
+  argo.questdialog_addResponse(0,1,1,"q_guldur_starec_decline")
+  if (<src.restest(i_guldur_dopis_dcera)> == 1)
+    argo.settext(argo.newtextline,"Tady mas ten dopis.")
+    argo.questdialog_addResponse(0,1,1,"q_guldur_dopis_accept_2")
+  endif
+else
+  argo.settext(argo.newtextline,"Nepotrebuji pomoc. Udelal jsi pro me dost.")
+  argo.questDialog_HTMLGUMP
+endif
+
+if (<src.tag(q_guldur_starec)> == 0)
+  argo.dialog_page("q_guldur_dopis")
+  argo.setText(argo.newTextLine,"<def_questDialog_colorTextNormal>Ano, je to posledni pamatka na mou dceru... <def_questDialog_colorTextEmote>*povzdechl* <def_questDialog_colorTextNormal>Az mi ho doneses, muzu v poklidu umrit a shledat se tak se svou rodinou...")
+  argo.questDialog_HTMLGUMP
+  argo.settext(argo.newtextline,"Prinesu ti ten dopis !")
+  argo.questdialog_addResponse(0,1,1,"q_guldur_dopis_accept")
+endif
+
+argo.dialog_page("Obchodovat")
+argo.settext(argo.newTextLine,"Nemam co bych ti nabidl...")
+argo.questDialog_HTMLGUMP
+
+argo.dialog_page("Hledam praci")
+argo.settext(argo.newTextLine,"Nic vic pro me nemuzes udelat.")
+argo.questDialog_HTMLGUMP
+
+argo.dialog_page("Nesu ti")
+argo.settext(argo.newTextLine,"Co mi neses ?")
+argo.questDialog_HTMLGUMP
+if (<src.tag(q_guldur_starec)> == 1)
+  if (<src.restest(i_guldur_dopis_dcera)> == 1)
+    argo.settext(argo.newtextline,"Tady mas ten dopis")
+    argo.questdialog_addResponse(0,1,0,"q_guldur_dopis_accept_2")
+  endif
+endif
+
+argo.dialog_page("Prohlednout")
+argo.settext(argo.newTextLine,"<def_questDialog_colorTextEmote>*Vidis starce, ktery dycha z poslednich sil, kdysi obavany valecnik, ale ted uz se chysta odejit..*")
+argo.questDialog_HTMLGUMP
+
+[DIALOG d_guldur_starec button]
+ON=@Anybutton
+if (<argn> == argo.dialog_linkButton("q_guldur_dopis_accept"))
+  src.tag(q_guldur_starec,1)
+elseif (<argn> == argo.dialog_linkButton("q_guldur_dopis_accept_2"))
+  src.consume(i_guldur_dopis_dcera)
+  src.tag(q_guldur_starec,2)
+  src.addexp(1500)
+  src.giveitem(i_guldur_mince)
+  say("Dekuji ti priteli... ")
+elseif (<argn> == argo.dialog_linkButton("q_guldur_starec_decline"))
+  src.tag(q_guldur_starec,3)
+  say("Jak myslis ...")
+endif
+
+/////////////////////// GULDUR PREVOZNIK ////////////////////////
+/////// Speech
+[SPEECH spk_guldur_prevoznik]
+ON=Hi
+ON=hi
+ON=Zdravim
+ON=zdravim
+  say("*Zvedl hlavu*")
+  say("Hmmm! <src.name>, pokud nemas mince zhynes tu na veky!")
+ON=jo
+ON=ano
+ON=mam
+  f_guldur_prevoznik
+
+/////// NPC
+[CHARDEF c_guldur_prevoznik]
+NAME=Postava v kapi 
+ID=C_MAN
+ICON=i_pet_MAN
+CAN=MT_EQUIP|MT_WALK|MT_RUN|MT_USEHANDS
+
+ATTACK=30
+ARMOR=40
+MOVERATE=4
+
+BLOODCOLOR=020
+
+TEVENTS=e_character
+TSPEECH=spk_guldur_prevoznik
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Prevoznik
+
+ON=@Create
+COLOR=0851
+NPC=brain_vendor
+FAME=100
+KARMA=5000
+
+STR=1000
+DEX=250
+INT=200
+
+MAXHITS={1800 2200}
+MAXSTAM={200 310}
+MAXMANA=50
+
+tag.experience=0
+tag(noanimate,1)
+
+Wrestling={65.0 75.0}
+Resist=250.0
+Tactics={70.0 80.0}
+Parrying={85.0 95.0}
+SpiritSpeak=15.0
+
+ITEMNEWBIE=i_beard_mustache
+COLOR=0455
+ITEMNEWBIE=i_deathrobe
+COLOR=0579
+NAME=Kape
+ITEMNEWBIE=i_sandals
+ITEMNEWBIE=i_light_source
+ITEMNEWBIE=i_lantern_lit
+COLOR=01B6
+NAME=Lucerna
+
+ON=@userDClick
+if (SRC.TARG.DISTANCE > 3)
+  src.sysMessage("Na takovou vzdalenost s tebou jednat nebude")
+  return 1
+else
+  f_guldur_prevoznik
+endif
+
+
+/////// DIALOG 
+[function f_guldur_prevoznik]
+if (<src.distance>>3)
+  src.redMessage("Jsi moc daleko!")
+  return 1
+endif
+if (<src.flags>&statf_dead)
+  src.redMessage("Jsi mrtev!")
+  return 1
+endif
+if (<src.rescount(i_guldur_mince)>>=4)
+  say("*Vzal mince a hodil je do vody za sebou*")
+  say("Tam kam se chystas je jenom smrt! Ha,ha,ha...!")
+  src.consume(i_guldur_mince,2)
+  src.wait_then_port(5,5947,3429,20,0)
+else
+  src.sysMessage("Nemas zadne mince, nemohu slouzit.")
+endif
+return 1
+
+//////////////////////////////////////////////////////////
+
+/////// NPC 
+[CHARDEF c_guldur_knez]
+ID=c_man
+NAME=Malekto
+
+MOVERATE=4
+
+TEVENTS=e_character
+TSPEECH=spk_guldur_knez
+
+CATEGORY=Dungeony
+SUBSECTION=Guldur
+DESCRIPTION=Knez
+
+ON=@create
+Title=Veleknez
+NPC=brain_human
+COLOR=color_clovek
+
+STR=1000
+DEX=1000
+INT=1000
+
+tag(noanimate,1)
+
+ITEMnewbie=i_monster_create
+ITEMNEWBIE=i_spellbook
+COLOR=0455
+NAME=Elfske poznamky
+ITEMNEWBIE=i_leather_gloves
+NAME=Rukavice
+ITEMNEWBIE=i_robe
+COLOR=08B0
+NAME=Roba
+ITEMNEWBIE=i_sandals
+COLOR=0725
+NAME=Osoupane boty
+ITEMNEWBIE=i_hair_short
+COLOR=0517
+
+
+ON=@userDClick
+if (SRC.TARG.DISTANCE > 3)
+  src.sysMessage("Na takovou vzdalenost s tebou jednat nebude")
+  return 1
+else
+  f_guldur_knez
+endif
+
+/////// Speech
+
+[SPEECH spk_guldur_knez]
+ON=*Hi*
+ON=*Zdravim*
+ON=*Ukol*
+f_qSpeech(f_guldur_knez)
+
+[FUNCTION f_guldur_knez]
+if (<src.flags>&statf_dead)
+return 0
+endif
+if (<src.tag(q_guldur_knez)> == 6)
+say("Nemame si uz co rici ...")
+else
+dialog(d_guldur_knez)
+endif
+
+/////// Dialog
+
+[DIALOG d_guldur_knez]
+argo.questDialog_create(03000,"Neznamy muz")
+arg(q_guldur_knez,<eval src.tag(q_guldur_knez)>)
+
+argo.dialog_newPage("Pozdrav")
+
+if (<arg(q_guldur_knez)> < 2)
+argo.questDialog_baseButt(1)
+else
+argo.questdialog_baseButt(1,27,"Potrebuji pomoc")
+endif
+argo.questdialog_baseButt(2)
+argo.questdialog_baseButt(3)
+argo.questdialog_basebutt(4)
+argo.questdialog_baseButt(5)
+argo.questdialog_baseButt(6)
+
+argo.dialog_page("Pozdrav")
+if (<arg(q_guldur_knez)> == 0)
+argo.setText(argo.newTextLine,"<def_questDialog_colorTextNormal> Co te sem vedlo blazne! <def_questDialog_colorTextEmote>*Zakaslal a chytil se rany na brise.*")
+argo.questDialog_HTMLGUMP
+elseif (<arg(q_guldur_starec)> == 1)
+argo.setText(argo.newTextLine,"Tady te neceka nic dobreho.")
+argo.questDialog_HTMLGUMP
+elseif (<arg(q_guldur_starec)> == 2)
+argo.setText(argo.newTextLine,"Jsi zpet a zivy ! Dekuji ti za ten dopis, moc pro me znamena. Snad ti ta mince prinese vice stesti nez me a krom toho ti muzu jeste neco malo rici...")
+argo.questDialog_HTMLGUMP
+elseif (<arg(q_guldur_starec)> == 3)
+argo.setText(argo.newTextLine,"<def_questDialog_colorTextEmote>*Hluboce dycha*")
+argo.questDialog_HTMLGUMP
+elseif (<arg(q_guldur_starec)> == 4)
+argo.setText(argo.newTextLine,"<def_questDialog_colorTextEmote>*Usklibl se* <def_questDialog_colorTextNormal>Zda se, ze te nepresvedcim, aby jsi se vratil domu....")
+argo.questDialog_HTMLGUMP
+elseif (<arg(q_guldur_starec)> == 5)
+argo.setText(argo.newTextLine,"Myslim, ze se vidime naposledy... ale nez odejdu... rikavalo se ze elfove maji skryte porty do tajnych prostor, bud pozorny at nic neprehlednes.")
+argo.questDialog_HTMLGUMP
+elseif (<arg(q_guldur_starec)> == 6)
+argo.setText(argo.newTextLine,"<def_questDialog_colorTextEmote>*Sklonil hlavu a zacal si cist dopis od dcery*")
+argo.questDialog_HTMLGUMP
+endif
+
+if (<arg(q_guldur_starec)> >= 2)
+argo.dialog_page("Potrebuji pomoc")
+if (<arg(q_guldur_starec)> == 2)
+argo.settext(argo.newTextLine,"<def_questDialog_colorTextEmote>*Odkaslal si* <def_questDialog_colorTextNormal>Mince jsou pro strazce. Rika se mu ruzne ale nejrozsirenejsi pojem je asi Prevoznik... <def_questDialog_colorTextEmote>*starec zasykal bolesti* <def_questDialog_colorTextNormal>mince jsou potreba dve, druhou mel u sebe Malekto, bez nich vas nepreveze a vy tu uviznete na veky... ")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Podekovat")
+argo.questdialog_addResponse(0,1,1,"q_guldur_story_1")
+elseif (<arg(q_guldur_starec)> == 3)
+argo.settext(argo.newTextLine,"Jak jsem se jiz zminil o Bilem plameni... Vim pouze to, ze je potreba ho nejak prenest, mozna louce by se dala pouzit ale sam poradne nevim k cemu je potreba...")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Podekovat")
+argo.questdialog_addResponse(0,1,1,"q_guldur_story_2")
+elseif (<arg(q_guldur_starec)> == 4)
+argo.settext(argo.newTextLine,"Pokladnice ktere strazi sama smrt, jsou chranene dvermi se starym mechanismem. Urcite po ceste venuj pozornost zakoutim a vyhledavej... ehm... mechanicke dlazdice. ")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Podekovat a odejit.")
+argo.questdialog_addResponse(0,1,1,"q_guldur_story_3")
+else
+argo.settext(argo.newtextLine,"Raneny muz vypadal se svou smrti smireny a nyni muze v pokoji spocinout. Za tvoji pomoc ti daroval zahadnou zlatou minci a par rad. Rikal ze slouzi jako platidlo pro jisteho Prevoznika. Zda to bude potrebne se jeste ukaze…")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Odejit.")
+argo.questdialog_exitResponse(0,1)
+endif
+endif
+
+
+if (<arg(q_guldur_starec)> < 2)
+argo.dialog_page("Kdo Jsi?")
+argo.setText(argo.newTextLine,"Me jmeno neni dulezite. Byval jsem velitelem prvni skupiny, ktera se meli pokusit o dobyti teto pevnosti...")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Chci najit straceny poklad Gulduru!")
+argo.questdialog_addResponse(0,0,1,"q_guldur_poklad")
+argo.settext(argo.newTextLine,"Prisel jsem zastavit smrt.")
+argo.questdialog_addResponse(0,0,1,"q_guldur_smrt")
+endif
+endif
+
+if (<arg(q_guldur_starec)> < 2)
+argo.dialog_page("q_guldur_poklad")
+argo.setText(argo.NewTextLine,"Tak to tahni zase tam, odkud si prisel...tu nic z toho nenajdes jen smrt")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Rozloucit se a odejit...")
+argo.questdialog_exitResponse(0,1)
+endif
+
+if (<arg(q_guldur_starec)> < 2)
+argo.dialog_page("q_guldur_smrt")
+argo.setText(argo.NewTextLine,"<def_questDialog_colorTextNormal>Blazne... <def_questDialog_colorTextEmote>*zakaslal* <def_questDialog_colorTextNormal>proc myslis ze zrovna ty mas na to premoci to co tu ciha…")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Protoze nikdo jiny krom nas to neudela…")
+argo.questdialog_addResponse(0,0,1,"q_guldur_pravda")
+endif
+
+if (<arg(q_guldur_starec)> < 2)
+argo.dialog_page("q_guldur_pravda")
+argo.setText(argo.NewTextLine,"<def_questDialog_colorTextNormal>asi... asi mate pravdu... mozna jste nase posledni nadeje... <def_questDialog_colorTextEmote>*pokrcil rameny a povzdychl*")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Co se tu vlastne stalo ? Slyseli jsme jenom zvesti o zivych mrtvych.")
+argo.questdialog_addResponse(0,0,1,"q_guldur_elfove")
+endif
+
+if (<arg(q_guldur_starec)> < 2)
+argo.dialog_page("q_guldur_elfove")
+argo.setText(argo.NewTextLine,"<def_questDialog_colorTextNormal>Tohle kdysi byvalo legendarni nekropole elfu, po tom co to tu Sauron se svymi prizraky opustil, usidlila se tu temna moc... magie jako zadna jina... temnejsi nez vsechny Morgotovy kouzla a starsi nez samotne zaklady Ardy! Usadila se tu bytost ktere se boji I ti nejodvaznejsi! <def_questDialog_colorTextEmote>*zakaslal a pevne se chytil za ranu* <def_questDialog_colorTextNormal>Nase vyprava mela za ukol donest posvatny plamen az k branam samotne smrti a tam se dostat za pomoci prevoznika... avsak kdyz jsme prisli bylo uz pozde... mrtvy se stali zivymi a ti co byli zivy zase mrtvymi... hordy se na nas vrhly a my se dali na ustup... z cele skupiny jsem prezil jen ja a mozna Malekto, ktery se s druhou polovinou vydal do podzemniho chramu... Prave on nesl louci s bilym plamenem.")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Rozloucit se a odejit...")
+argo.questdialog_exitResponse(0,1)
+endif
+
+argo.dialog_page("Mohu pomoci?")
+if (<eval src.tag(q_guldur_starec)> == 0)
+argo.settext(argo.newTextLine,"Jak vidis, moje dny jsou jiz secteny ale chtel bych aby si mi prinesl dopis po me dceri... brasnu ve ktere byl jsem ztratil pri boji v nedaleke krypte. Muzu ti za to nabidnout tuto minci... bez ni se tam kam vede vase cesta, nedostanete.")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newTextLine,"Dopis ?")
+argo.questdialog_addResponse(0,0,1,"q_guldur_dopis")
+elseif (<eval src.tag(q_guldur_starec)> == 1)
+argo.settext(argo.newTextLine,"Potrebuju ten dopis. Uz si jej nasel ?")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newtextline,"Zatim ne")
+argo.questdialog_exitResponse(0,1)
+argo.settext(argo.newtextline,"Rozmyslel jsem se. Nepomuzu ti, je to moc nebezpecne !")
+argo.questdialog_addResponse(0,1,1,"q_guldur_starec_decline")
+if (<src.restest(i_guldur_dopis_dcera)> == 1)
+argo.settext(argo.newtextline,"Tady mas ten dopis.")
+argo.questdialog_addResponse(0,1,1,"q_guldur_dopis_accept_2")
+endif
+else
+argo.settext(argo.newtextline,"Nepotrebuji pomoc. Udelal jsi pro me dost.")
+argo.questDialog_HTMLGUMP
+endif
+
+if (<eval src.tag(q_guldur_starec)> == 0)
+argo.dialog_page("q_guldur_dopis")
+argo.setText(argo.newTextLine,"<def_questDialog_colorTextNormal>Ano, je to posledni pamatka na mou dceru... <def_questDialog_colorTextEmote>*povzdechl* <def_questDialog_colorTextNormal>Az mi ho doneses, muzu v poklidu umrit a shledat se tak se svou rodinou...")
+argo.questDialog_HTMLGUMP
+argo.settext(argo.newtextline,"Prinesu ti ten dopis !")
+argo.questdialog_addResponse(0,1,1,"q_guldur_dopis_accept")
+endif
+
+argo.dialog_page("Obchodovat")
+argo.settext(argo.newTextLine,"Nemam co bych ti nabidl...")
+argo.questDialog_HTMLGUMP
+
+argo.dialog_page("Hledam praci")
+argo.settext(argo.newTextLine,"Nic vic pro me nemuzes udelat.")
+argo.questDialog_HTMLGUMP
+
+argo.dialog_page("Nesu ti")
+argo.settext(argo.newTextLine,"Co mi neses ?")
+argo.questDialog_HTMLGUMP
+if (<eval src.tag(q_guldur_starec)> == 1)
+if (<src.restest(i_guldur_dopis_dcera)> == 1)
+argo.settext(argo.newtextline,"Tady mas ten dopis")
+argo.questdialog_addResponse(0,1,0,"q_guldur_dopis_accept_2")
+endif
+endif
+
+argo.dialog_page("Prohlednout")
+argo.settext(argo.newTextLine,"<def_questDialog_colorTextEmote>*Vidis starce, ktery dycha z poslednich sil, kdysi obavany valecnik, ale ted uz se chysta odejit..*")
+argo.questDialog_HTMLGUMP
+
+[DIALOG d_guldur_starec button]
+ON=@Anybutton
+if (<argn> == argo.dialog_linkButton("q_guldur_dopis_accept"))
+src.tag(q_guldur_starec,1)
+elseif (<argn> == argo.dialog_linkButton("q_guldur_dopis_accept_2"))
+if (<src.restest(i_guldur_dopis_dcera)> == 1)
+src.consume(i_guldur_dopis_dcera)
+src.tag(q_guldur_starec,2)
+src.addexp(1500)
+src.giveitem(i_guldur_mince,1)
+say("Dekuji ti priteli... ")
+else
+say("Zadny dopis jsi neprinesl")
+endif
+
+elseif (<argn> == argo.dialog_linkButton("q_guldur_story_1"))
+src.tag(q_guldur_starec,3)
+src.addexp(200)
+elseif (<argn> == argo.dialog_linkButton("q_guldur_story_2"))
+src.tag(q_guldur_starec,4)
+src.addexp(200)
+elseif (<argn> == argo.dialog_linkButton("q_guldur_story_3"))
+src.tag(q_guldur_starec,5)
+src.addexp(200)
+elseif (<argn> == argo.dialog_linkButton("q_guldur_starec_decline"))
+src.tag(q_guldur_starec,6)
+say("Jak myslis ...")
+endif
+
+[EOF]

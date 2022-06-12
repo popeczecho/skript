@@ -1,0 +1,54 @@
+[CHARDEF c_q009_krejci]
+NAME=Talathwen //talath=planina nebo plocha zeme, wen=zena
+ID=C_WOMAN
+
+TSPEECH=spk_q009_krejci
+
+TEVENTS=e_character
+TEVENTS=e_item_refuser
+
+CATEGORY=Questy
+SUBSECTION=Kvest Neutralni-009 Krejci
+DESCRIPTION=Krejci Talathwen
+
+ON=@create
+NPC=brain_vendor
+COLOR=colors_skin
+STR=1000
+DEX=1000
+INT=1000
+
+Tailoring={50.0 70.0}
+Anatomy={55.0 78.0}
+Forensics={35.0 58.0}
+Healing={55.0 78.0}
+SpiritSpeak={55.0 78.0}
+Wrestling={15.0 38.0}
+Tactics={15.0 35.0}
+
+tag(noanimate,1)
+
+ITEMNEWBIE=random_female_hair
+COLOR=colors_hair
+
+
+ON=@userDClick
+if (SRC.TARG.DISTANCE > 3)
+  src.sysMessage("Na takovou vzdalenost s tebou jednat nebude")
+  return 1
+else
+  f_q009_krejci
+endif
+
+
+ON=@NPCRestock
+ITEMnewbie=i_shirt_plain
+COLOR=colors_all
+ITEMnewbie=random_skirt
+COLOR=colors_all
+ITEMnewbie=random_shoes
+COLOR=colors_neutral
+
+SELL=VENDOR_S_TAILOR
+
+[EOF]

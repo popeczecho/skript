@@ -1,0 +1,150 @@
+//Umirajici negr, prvni questovni npc
+// souradnice: 3366 3819
+[CHARDEF c_q016_StaryNegr]
+NAME=Nekromant
+ID=C_MAN
+DESIRES=i_gold,t_wand,t_reagent,t_bone
+AVERSIONS=t_TRAP,t_eerie_stuff
+TSPEECH=spk_q016_StaryNegr
+TEVENTS=e_character
+
+CATEGORY=Questy
+SUBSECTION=Prastary Poklad
+DESCRIPTION=Umirajici nekromant
+
+ON=@Create
+NAME=Umirajici Nekromant
+NPC=brain_vendor
+STR=1000
+DEX=1000
+INT=1000
+Meditation=10
+Inscription=10
+Magery=70
+Wrestling=10
+Resist=50
+Tactics=50
+ITEMNEWBIE=random_male_hair
+ITEMNEWBIE=random_facial_hair
+
+//tag(hypnotizable,0)
+tag(noanimate,1)
+
+ON=@UserDclick
+if (src.targ.distance > 3)
+  src.sysMessage("Na takovou vzdalenost s tebou jednat nebude")
+else
+  f_q016_StaryNegr_DClick
+endif
+
+ON=@NPCRestock
+ITEMnewbie=i_hat_wizards
+COLOR=001
+ITEMnewbie=i_sandals
+COLOR=001
+ITEMnewbie=i_robe
+COLOR=001
+
+//mag Orillus, druha questovni postava
+// souradnice: 3796 2859 6
+[CHARDEF c_q016_Orillus]
+NAME=Orillus
+ID=C_MAN
+DESIRES=i_gold,t_wand,t_reagent,t_bone
+AVERSIONS=t_TRAP,t_eerie_stuff
+TSPEECH=spk_q016_orillus
+TEVENTS=e_character
+
+CATEGORY=Questy
+SUBSECTION=Prastary Poklad
+DESCRIPTION=Umirajici nekromant
+
+ON=@Create
+NPC=brain_vendor
+STR=1000
+DEX=1000
+INT=1000
+Meditation=10
+Inscription=10
+Magery=70
+Wrestling=10
+Resist=50
+Tactics=50
+ITEMNEWBIE=random_male_hair
+ITEMNEWBIE=random_facial_hair
+
+ON=@UserDclick
+if (src.targ.distance > 3)
+  src.sysMessage("Na takovou vzdalenost s tebou jednat nebude")
+else
+  f_q016_Orillus_DClick
+endif
+
+ON=@NPCRestock
+ITEMnewbie=i_hat_wizards
+COLOR=color_o_obsidian
+ITEMnewbie=i_sandals
+COLOR=001
+ITEMnewbie=i_robe
+COLOR=color_o_obsidian
+
+//klerik Andor
+//souradnice: 3200 2971 20
+[CHARDEF c_q016_Andor]
+NAME=Klerik Andor
+ID=c_man
+DESIRES=i_gold,t_wand,t_reagent,t_bone
+AVERSIONS=t_TRAP,t_eerie_stuff
+ATTACK=65
+ARMOR=20
+CAN=MT_WALK|mt_run
+TSPEECH=spk_q016_Andor
+TEVENTS=e_character
+TEVENTS=e_summoneater
+
+CATEGORY=Questy
+SUBSECTION=Prastary Poklad
+DESCRIPTION=Umirajici nekromant
+
+ON=@Create
+NPC=brain_vendor
+FAME=1
+STR=3500
+DEX=500
+MAXSTAM=300
+INT=300
+MAXSTAM=450
+Tactics=250.0
+Wrestling=100.0
+Poisoning=500.0
+tag.experience=0
+Wrestling=120.0
+Fencing=100.0
+Tactics=100.0
+COLOR=colors_skin
+
+//tag(hypnotizable,0)
+tag(noanimate,1)
+
+ON=@UserDclick
+if (src.targ.distance > 3)
+  src.sysMessage("Na takovou vzdalenost s tebou jednat nebude")
+else
+  f_q016_Andor_DClick
+endif
+
+ON=@NPCRestock
+ITEMNEWBIE=i_platemail_chest
+COLOR=color_o_valorite
+ITEMNEWBIE=i_platemail_arms
+COLOR=color_o_valorite
+ITEMNEWBIE=i_platemail_gloves
+COLOR=color_o_valorite
+ITEMNEWBIE=i_platemail_gorget
+COLOR=color_o_valorite
+ITEMNEWBIE=i_platemail_helm
+COLOR=color_o_valorite
+ITEMNEWBIE=i_boots_thigh
+COLOR=0982
+
+[EOF]

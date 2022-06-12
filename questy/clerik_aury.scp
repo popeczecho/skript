@@ -1,0 +1,181 @@
+[SPEECH spk_qaury_priest]
+ON=*Dobry*
+ON=*den*
+ON=*zdravim*
+ON=*hi*
+ON=*hello*
+ON=*Ahoj*
+  f_qSpeech(f_qaury_priest)
+
+[FUNCTION f_qaury_priest]
+if !(<src.qtag(qaury)>)
+  src.qtag(qaury,0)
+endif
+if (<src.flags>&statf_dead)
+  return 1
+else
+  dialog(d_quary_priest)
+endif
+
+[DIALOG d_quary_priest]
+argo.page(0)
+argo.resizepic(20,200,2620,640,350)
+argo.gumppic(30,210,03182)
+argo.gumppic(40,215,03049)
+
+argo.questDialog_create(03000,"<name>")
+argo.dialog_newPage("Pozdrav")
+
+argo.questDialog_baseButt(1) // Kdo jsi?
+argo.questDialog_baseButt(2) // Mohu pomoci?
+argo.questDialog_baseButt(3) // Obchodovat
+argo.questDialog_baseButt(4) // Hledam praci
+argo.questDialog_baseButt(5) // Nesu ti
+argo.questDialog_baseButt(6) // Prohlednout
+
+argo.dialog_page("Pozdrav")
+if (<src.qtag(qaury)>==0)
+  argo.setText(argo.newTextLine,"Vitam te na svatem miste.")
+  argo.questDialog_HTMLGUMP
+elseif (<src.qtag(qaury)>==1)
+  argo.setText(argo.newTextLine,"Vitam te. Nasel jsi tu knihu ?")
+  argo.questDialog_HTMLGUMP
+  argo.settext(argo.newTextLine,"Jeste ji nemam.")
+  argo.questdialog_exitResponse(0,1)
+elseif (<src.qtag(qaury)>==2)
+  argo.setText(argo.newTextLine,"Vitam te. Nasel jsi tu knihu ?")
+  argo.questDialog_HTMLGUMP
+if (src.restest(i_qaury_kniha_taken)==1)
+  argo.settext(argo.newTextLine,"Zde je.")
+  argo.questdialog_addResponse(0,0,1,"qaury_priest_odevzdat")
+endif
+  argo.settext(argo.newTextLine,"Jeste ji nemam.")
+  argo.questdialog_exitResponse(0,1)
+else
+  argo.setText(argo.newTextLine,"Vitam te na svatem miste.")
+  argo.questDialog_HTMLGUMP
+endif
+
+argo.dialog_page("Kdo jsi?")
+argo.setText(argo.newTextLine,"Me jmeno neni dulezite. Jsem zde, abych strezil svate misto.")
+argo.questDialog_HTMLGUMP
+
+argo.dialog_page("Mohu pomoci?")
+if (src.profession==class_priest)
+  if (<src.tag(level)>>=40)
+    if (<src.qtag(qaury)>==0)
+      argo.settext(argo.newTextLine,"Temne sily v Dol Gulduru opet rostou. Obavam se nejhorsiho. Potrebuji, abys sehnal partu bojovniku, vydal se tam a nasel tam knihu pana Dol Gulduru - Druath arg Matum. Dej si ale pozor, kniha bude hlidana. Nedovol nikomu knihu nikomu otevrit. Ziskej knihu, neotvirej ji a co nejdrive mi ji dones. Za odmenu te naucim jednu z nejvyssich sil, jakou ti vira muze dat. ")
+      argo.questDialog_HTMLGUMP
+      argo.settext(argo.newTextLine,"Jdu na to.")
+      argo.questdialog_addResponse(0,1,1,"qaury_priest_accept")
+      argo.settext(argo.newTextLine,"*Odmitnout*")
+      argo.questdialog_exitResponse(0,1)
+    elseif (<src.qtag(qaury)>==1)
+      argo.setText(argo.newTextLine,"Potrebuji od tebe tu knihu z Dol Gulduru.")
+      argo.questDialog_HTMLGUMP
+    elseif (<src.qtag(qaury)>==2)
+      argo.setText(argo.newTextLine,"Potrebuji od tebe tu knihu z Dol Gulduru.")
+      argo.questDialog_HTMLGUMP
+    elseif (<src.qtag(qaury)>==3)
+      argo.setText(argo.newTextLine,"Uz jsi pomohl dost. Valar ti jsou vdecni.")
+      argo.questDialog_HTMLGUMP
+    endif
+  else
+    argo.settext(argo.newTextLine,"Soude dle tvych zkusenosti mi nemas jak pomoci.")
+    argo.questDialog_HTMLGUMP
+  endif
+else
+  argo.settext(argo.newTextLine,"Pouze verici mi dokaze pomoct. Ve vire je nejvetsi sila.")
+  argo.questDialog_HTMLGUMP
+endif
+
+argo.dialog_page("Obchodovat")
+argo.setText(argo.newTextLine,"Nic neprodavam.")
+argo.questDialog_HTMLGUMP
+
+argo.dialog_page("Hledam praci")
+argo.setText(argo.newTextLine,"Zadnou praci pro tebe nemam.")
+argo.questDialog_HTMLGUMP
+
+argo.dialog_page("Nesu ti")
+argo.setText(argo.newTextLine,"Co mi neses?")
+argo.questDialog_HTMLGUMP
+
+argo.dialog_page("Prohlednout")
+argo.setText(argo.newTextLine,"Vidis starsiho kneze, z nehoz pocitujes mocnou silu.")
+argo.questDialog_HTMLGUMP
+
+if (<src.qtag(qaury)>==2)
+  argo.dialog_page("qaury_priest_odevzdat")
+  argo.setText(argo.NewTextLine,"Vyborne ! Nyni splnim svuj slib. Dokazu te naucit jednu z mocnych cest viry - jsou 3. Vyber je na tobe. ")
+  argo.questDialog_HTMLGUMP
+  argo.settext(argo.newTextLine,"O prvni ceste ...")
+  argo.questdialog_addResponse(0,0,1,"qaury_prvni_cesta")
+  argo.settext(argo.newTextLine,"O druhe ceste ...")
+  argo.questdialog_addResponse(0,0,1,"qaury_druha_cesta")
+  argo.settext(argo.newTextLine,"O treti ceste ...")
+  argo.questdialog_addResponse(0,0,1,"qaury_treti_cesta")
+endif
+
+if (<src.qtag(qaury)>==2)
+  argo.dialog_page("qaury_prvni_cesta")
+  argo.setText(argo.NewTextLine,"Prvni cesta popis ")
+  argo.questDialog_HTMLGUMP
+  argo.settext(argo.newTextLine,"Chci posvetit touto cestou !")
+  argo.questdialog_addResponse(0,1,1,"qaury_prvni_cesta_accept")
+  argo.settext(argo.newTextLine,"O druhe ceste ...")
+  argo.questdialog_addResponse(0,0,0,"qaury_druha_cesta")
+  argo.settext(argo.newTextLine,"O treti ceste ...")
+  argo.questdialog_addResponse(0,0,0,"qaury_treti_cesta")
+endif
+
+if (<src.qtag(qaury)>==2)
+  argo.dialog_page("qaury_druha_cesta")
+  argo.setText(argo.NewTextLine,"Druha cesta popis ")
+  argo.questDialog_HTMLGUMP
+  argo.settext(argo.newTextLine,"Chci posvetit touto cestou !")
+  argo.questdialog_addResponse(0,1,1,"qaury_druha_cesta_accept")
+  argo.settext(argo.newTextLine,"O prvni ceste ...")
+  argo.questdialog_addResponse(0,0,0,"qaury_prvni_cesta")
+  argo.settext(argo.newTextLine,"O treti ceste ...")
+  argo.questdialog_addResponse(0,0,0,"qaury_treti_cesta")
+endif
+
+if (<src.qtag(qaury)>==2)
+  argo.dialog_page("qaury_treti_cesta")
+  argo.setText(argo.NewTextLine,"Treti cesta popis ")
+  argo.questDialog_HTMLGUMP
+  argo.settext(argo.newTextLine,"Chci posvetit touto cestou !")
+  argo.questdialog_addResponse(0,1,1,"qaury_treti_cesta_accept")
+  argo.settext(argo.newTextLine,"O prvni ceste ...")
+  argo.questdialog_addResponse(0,0,0,"qaury_prvni_cesta")
+  argo.settext(argo.newTextLine,"O druhe ceste ...")
+  argo.questdialog_addResponse(0,0,0,"qaury_druha_cesta")
+endif
+
+[DIALOG d_quary_priest button]
+ON=@AnyButton
+  if (<argn>==argo.dialog_linkButton("qaury_priest_accept"))
+    src.say("lel")
+    src.qtag(qaury,1)
+  elseif (<argn>==argo.dialog_linkButton("qaury_prvni_cesta_accept"))
+    src.consume(i_qaury_kniha_taken)
+    src.addexp(3000)
+    src.tag(ra_faith_number,1)
+    say("Necht te provazi vsichni Valar!")
+    src.qtag(qaury,3)
+  elseif (<argn>==argo.dialog_linkButton("qaury_druha_cesta_accept"))
+    src.consume(i_qaury_kniha_taken)
+    src.addexp(3000)
+    src.tag(ra_faith_number,2)
+    src.qtag(qaury,3)
+    say("Necht te provazi vsichni Valar!")
+  elseif (<argn>==argo.dialog_linkButton("qaury_treti_cesta_accept"))
+    src.consume(i_qaury_kniha_taken)
+    src.addexp(3000)
+    src.tag(ra_faith_number,3)
+    src.qtag(qaury,3)
+    say("Necht te provazi vsichni Valar!")
+  endif
+
+[EOF]

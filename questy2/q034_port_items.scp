@@ -1,0 +1,22 @@
+///SPEC
+[ITEMDEF i_q034_port_timer]
+ID=i_memory
+TYPE=t_eq_script
+NAME=port timer
+
+ON=@equip
+TIMER=1
+
+ON=@timer
+if (<more1> < 1)
+  cont.go(<tag.portto>)
+  remove
+endif
+cont.sysMessage("<?eval(more1)?> sekund do presunu");
+more1=<more1>-1
+TIMER=1
+return 1
+
+///KONEC SPEC
+
+[EOF]

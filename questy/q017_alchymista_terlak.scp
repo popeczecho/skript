@@ -1,0 +1,789 @@
+//   ====   //\\    //===  \\_//
+//    ||   //''\\   || ___  |||
+//    ||  //    \\  \\__//  |||
+//
+//  O r i g T a g y :
+// quest_scout_terlak ==> q017_terlak
+// q017_terlak_ochrana == 1 -> hospodsky (scripty questu haradirovo selatko) chce po hraci prisady na lektvar.
+// q017_terlak_ochrana == 2 -> aktivni ochrana
+//
+
+[FUNCTION f_q017_checkOldTags]
+if (0<tag(quest_scout_terlak)>)
+  qtag(q017_terlak,<tag(quest_scout_terlak)>)
+  tag.remove(quest_scout_terlak)
+endif
+
+
+[ITEMDEF i_scout_crystal_red]
+NAME=Cerveny krystal bran
+ID=I_CRYSTAL_RED
+TYPE=t_script
+
+ON=@Create
+COLOR=colors_red
+
+ON=@userclick
+src.sysMessage("Jeden ze zvlastnich krystalu pro alchymistu Terlaka")
+
+[ITEMDEF i_scout_crystal_blue]
+NAME=Modry krystal bran
+ID=I_CRYSTAL_RED
+TYPE=t_script
+
+ON=@Create
+COLOR=colors_blue
+
+ON=@userclick
+src.sysMessage("Jeden ze zvlastnich krystalu pro alchymistu Terlaka")
+
+[ITEMDEF i_scout_vstupni_gate]
+NAME=Jen pro povolane ...!
+ID=i_moongate_red
+TYPE=t_script
+
+ON=@create
+COLOR=colors_green
+ATTR=attr_static
+morep=1000 1000 //nastavit kam to bude dotycne lidi portovat
+
+ON=@step
+src.f_q017_checkOldTags
+if (src.qtag(q017_terlak)==1)
+  src.qtag(q017_terlak,2,18)
+endif
+if (src.tag(level)<35)
+  src.move(<dir_inttochar(<dir_revert(<src.dir>)>)>)
+  src.sysMessage("Tak sem te nikdo nedostane... vydat se po hlave do neznama, to chce hodne zkusenosti a odvahy...")
+  return 1
+endif
+if (<eval tag(posledni_vstup)>)
+  if (<eval <tag(posledni_vstup)>+144000> > <serv.time>) //od posledniho vstupu neuplynuly 4 hodiny
+  src.sysMessage("Jiny hrdina plni ukoly, musis jeste pockat <f_zbyva_casu(<tag(posledni_vstup)>,144000)>.")
+  return 1
+  endif
+endif
+if (<src.rescount i_scout_crystal_blue> >= <src.qtag(q017_terlak)>) && (<src.rescount i_scout_crystal_red> >= <src.qtag(q017_terlak)>) && (src.qtag(q017_terlak))
+  if (<eval src.qtag(q017_terlak_ochrana)> == 2)
+    src.qtagremove(q017_terlak_ochrana)
+  else
+    src.damage_noresponse(24,dam_god)
+    src.redmessage("Prudka vlna energie trha tve telo na kusy !")
+    return 1
+  endif
+  src.consume=<src.qtag(q017_terlak)> i_scout_crystal_blue
+  src.consume=<src.qtag(q017_terlak)> i_scout_crystal_red
+  src.sysMessage("Krystaly se rozpousteji, citis kolem sebe vir energie...")
+  src.events=+e_scout_alchymista
+  src.newitemsafe(i_alchymistuv_timer)
+  lastnew.equip
+  link.timer=1  //Resetujeme timer Gargamela -> pokud jdou hraci rychle po sobe, dalsi by mel mit to npc spawnuty
+  src.go(<morep>)
+  tag(posledni_vstup,<serv.time>)
+elseif !(src.qtag(q017_terlak)) && (<src.rescount i_scout_crystal_blue> >= 1) && (<src.rescount i_scout_crystal_red> >= 1)
+  if (<eval src.qtag(q017_terlak_ochrana)> == 2)
+    src.qtagremove(q017_terlak_ochrana)
+  else
+    src.damage_noresponse(30,dam_god)
+    src.redmessage("Prudka vlna energie trha tve telo na kusy !")
+    return 1
+  endif
+  src.consume=1 i_scout_crystal_blue
+  src.consume=1 i_scout_crystal_red
+  src.sysMessage("Krystaly se rozpousteji, citis kolem sebe vir energie...")
+  src.events=+e_scout_alchymista
+  src.newitemsafe(i_alchymistuv_timer)
+  lastnew.equip
+  link.timer=1  //Resetujeme timer Gargamela -> pokud jdou hraci rychle po sobe, dalsi by mel mit to npc spawnuty
+  src.go(<morep>)
+elseif !(src.qtag(q017_terlak))
+  src.sysMessage("Ke vstupu potrebujes 1 cerveny a 1 modry krystal.")
+else
+  src.sysMessage("Ke vstupu potrebujes <src.qtag(q017_terlak)> cervenych a <src.qtag(q017_terlak)> modrych krystalu. ")
+endif
+
+[EVENTS e_scout_alchymista]
+ON=@death
+src.consume(i_alchymistuv_timer)
+src.events=-e_scout_alchymista
+src.wait_then_port(0,1350 3027) //pres deathcorpse to buhviproc nejde
+src.sysMessage("<src.sex(Nezvladl,Nezvladla)> jsi tento narocny ukol, jdi tedy!")
+
+[ITEMDEF i_alchymistuv_timer]
+NAME=Delay Scoutuv alchymista
+ID=i_handr_1
+TYPE=T_eq_SCRIPT
+LAYER=layer_special
+
+ON=@Create
+  attr=attr_invis|attr_decay
+  tag(casu,14400)
+  morep=1350 3027
+
+ON=@equip
+TIMER=30
+
+ON=@Timer
+  if (<cont>)
+    if (<tag(casu)>)
+    tag(casu,<eval <tag(casu)>-30>)
+    cont.sysMessage(<tag(casu)>) // put countdown above my head.
+    timer=30
+    return 1
+    else
+    cont.go(<morep>)
+    cont.redmessage("Ve stanovenem limitu jsi nestihl dojit na konec tve cesty muzes se pokusit znovu.")
+    endif
+  endif
+remove
+return 1
+
+[ITEMDEF i_scout_vystupni_gate]
+NAME=Odmena nebo smrt...?
+ID=i_moongate_red
+TYPE=t_script
+
+ON=@create
+COLOR=colors_red
+ATTR=attr_static
+morep=1000 1000 //nastavit k vychodu z dungu!
+
+ON=@step
+src.f_q017_checkOldTags
+if (<src.qtag(q017_terlak)>) //absolvoval quest
+  arg(povolani_vstupujiciho,<src.profession.name>)
+  src.qtag(q017_terlak,<src.qtag(q017_terlak)>+2,18)
+  src.<arg(povolani_vstupujiciho)>ova_odmena //funkce na item
+  src.sysMessage("Diky <src.sex(chrabry hrdino,chrabra hrdinko)> za vysvobozeni me duse, prijmi prosim tuto odmenu. Pronesl duch Alchymisty Terlaka...")
+  src.consume(i_alchymistuv_timer)
+  src.events=-e_scout_alchymista
+  src.go(<morep>)
+  f_quest_complete(18)  // splnenie questu "Alchymista Terlak"
+else
+  arg(povolani_vstupujiciho,<src.profession.name>)
+  src.qtag(q017_terlak,2,18)
+  src.<arg(povolani_vstupujiciho)>ova_odmena //funkce na item
+  src.sysMessage("Diky <src.sex(chrabry hrdino,chrabra hrdinko)> za vysvobozeni me duse, prijmi prosim tuto odmenu. Pronesl duch Alchymisty Terlaka...")
+  src.consume(i_alchymistuv_timer)
+  src.events=-e_scout_alchymista
+  src.go(<morep>)
+  f_quest_complete(18)  // splnenie questu "Alchymista Terlak"
+endif
+
+
+[ITEMDEF i_q017_kolektor_srnky]
+ID=i_bag
+NAME=Mesec na srnci oci
+TYPE=t_collector
+WEIGHT=3
+
+ON=@CREATE
+COLOR=037
+ATTR=010|04
+tag.contentsinfo="V batohu je umisteno"
+tag.contentstype="srncich oci."
+tag.contentsamount=0
+tag.maxcontents=200
+tag.target_remove=1
+tag.target_desc="Ktere srnce chces vyjmout oko?"
+tag.target_id="Body of Srnec"
+tag.absolute_success=400
+tag.value_to_check=398
+tag.contentscount=0
+tag.fail_msg="A u Valar! ... Ta srnka nema oci.. Co to tady v tech bulvach leze ? No fuj ..."
+
+ON=@CollectorCheck
+ON=@UserDeath
+
+
+///////////////////////////////////////////////////////
+///////////       O  D  M  E  N  Y      ///////////////
+///////////////////////////////////////////////////////
+[FUNCTION warova_odmena]
+src.newitemsafe(i_obsidian_heater_shield)
+lastnew.tag(imi_value[134], 10)  // +10 blokace z blizka
+lastnew.tag(imi_value[136], 5)  // +5 blokace kouzla
+lastnew.tag(imi_value[70], 5) //+5 hp regen
+//src.newitemsafe(i_axe_double_obsidian)
+//lastnew.tag(imi_value[52], 15)  // +10 twohanded a Tactics
+lastnew.mif_finishitem
+lastnew.name=Stit obrance
+lastnew.color=00531
+lastnew.events=+t_scout_warova_odmena
+//lastnew.tdata1=7//obsidian
+lastnew.bounce
+
+[TYPEDEF t_scout_warova_odmena]
+ON=@equip
+tag(craftedby,<src>)
+if (<src.tag(terlak_item)>)
+  src.redmessage("Nemuzes nosit dve odmeny soucasne.")
+  src.tag(terlak_item).bounce
+endif
+if (strcmpi(<src.profession>,class_war))) //0 pokud je to stejne
+  src.redmessage("Stit urceny pouze pro wary!")
+  f_svlikaci_pauza(0,2) //ruka
+else
+  if (<src.tag(level)> < 35)
+  src.redmessage("Musis mit level vyssi nez 35!")
+  f_svlikaci_pauza(0,2) //ruka
+  endif
+  src.tag(terlak_item,<uid>)
+endif
+
+ON=@unequip
+src.tag.remove(terlak_item)
+
+
+[FUNCTION magova_odmena]
+src.newitemsafe(i_studded_cap_valorite) //Obejdem to, aby to davalo armor
+lastnew.tag(imi_value[25], 10)  //25 - Magery, +10
+lastnew.tag(imi_value[62], 10)  //62 - int, +10
+lastnew.tag(imi_value[46], 5) //meditace
+lastnew.mif_finishitem
+lastnew.name=Klobouk maga
+lastnew.color=00531
+lastnew.dispID=i_hat_wizards
+lastnew.type=t_clothing
+lastnew.events=-t_allarmors
+lastnew.events=+t_scout_magova_odmena
+lastnew.bounce
+lastnew.events +t_changed_dispID
+lastnew.tag(changedDispId,i_hat_wizards)
+lastnew.dispid=<tag(changedDispId)>
+
+[TYPEDEF t_scout_magova_odmena]
+ON=@equip
+tag(craftedby,<src>)
+if (<src.tag(terlak_item)>)
+  src.redmessage("Nemuzes nosit dve odmeny soucasne.")
+  src.tag(terlak_item).bounce
+endif
+if (strcmpi(<src.profession>,class_mag))) //0 pokud je to stejne
+  src.redmessage("Klobouk urcen pouze pro magy!")
+  f_svlikaci_pauza(0,6) //hlava
+else
+  if (<src.tag(level)> < 35)
+  src.sysMessage("Musis mit level vyssi nez 35!")
+  f_svlikaci_pauza(0,6) //hlava
+  endif
+  src.tag(terlak_item,<uid>)
+endif
+
+ON=@unequip
+src.tag.remove(terlak_item)
+
+[FUNCTION priestova_odmena]
+src.newitemsafe(i_obsidian_HEATER_SHIELD)
+lastnew.tag(imi_value[17], 10)  //17 - Healing, +10
+lastnew.tag(imi_value[71], 5)   //71 - stamina za, +5
+lastnew.tag(imi_value[63], 5) //+5 max hp
+lastnew.mif_finishitem
+lastnew.name=Stit lecitele
+lastnew.color=00531
+lastnew.events=+t_scout_priestova_odmena
+lastnew.bounce
+
+[TYPEDEF t_scout_priestova_odmena]
+ON=@equip
+tag(craftedby,<src>)
+if (<src.tag(terlak_item)>)
+  src.redmessage("Nemuzes nosit dve odmeny soucasne.")
+  src.tag(terlak_item).bounce
+endif
+//src.vit=<eval <src.vit>+10>
+if (strcmpi(<src.profession>,class_priest))) //0 pokud je to stejne
+  src.redmessage("Stit urcen pouze pro priesty!")
+  f_svlikaci_pauza(0,2) //druha ruka
+else
+  if (<src.tag(level)> < 35)
+  src.redmessage("Musis mit level vyssi nez 35!")
+  f_svlikaci_pauza(0,2) //druha ruka
+  endif
+  src.tag(terlak_item,<uid>)
+endif
+
+ON=@unequip
+src.tag.remove(terlak_item)
+
+[FUNCTION necroova_odmena]
+src.newitemsafe(i_robe)
+lastnew.HITPOINTS={350 450}
+lastnew.tag(imi_value[16], 5)   //16 - Ei, +5
+lastnew.tag(imi_value[17], 5)   //17 - Healing, +5
+lastnew.tag(imi_value[25], 10)  //25 - Magery, +10
+lastnew.mif_finishitem
+lastnew.name=Roba temneho
+lastnew.color=00531
+lastnew.events=+t_scout_necroova_odmena
+lastnew.bounce
+
+[TYPEDEF t_scout_necroova_odmena]
+ON=@equip
+tag(craftedby,<src>)
+if (<src.tag(terlak_item)>)
+  src.redmessage("Nemuzes nosit dve odmeny soucasne.")
+  src.tag(terlak_item).bounce
+endif
+if (strcmpi(<src.profession>,class_necro)) //0 pokud je to stejne
+  src.redmessage("Roba urcena pouze pro necromancery!")
+  f_svlikaci_pauza(0,22) //roba
+else
+  if (<src.tag(level)> < 35)
+  src.redmessage("Musis mit level vyssi nez 35!")
+  f_svlikaci_pauza(0,22)
+  endif
+  src.tag(terlak_item,<uid>)
+endif
+
+ON=@unequip
+src.tag.remove(terlak_item)
+
+
+[FUNCTION thiefova_odmena]
+src.newitemsafe(i_sash)
+lastnew.tag(imi_value[42], 10)
+lastnew.tag(imi_value[111], 5)
+lastnew.tag(imi_value[47], 5)
+//src.newitemsafe(i_scimitar_obsidian)
+//lastnew.tag(imi_value[61], 15)  //61 - dex, +15
+//lastnew.tag(imi_value[27], 10)  //27 - Tactics, +10
+//lastnew.tag(imi_value[42], 10)  //42 - Fencing=onehand, +10
+lastnew.mif_finishitem
+lastnew.name=Serpa zlodeje
+lastnew.color=00531
+lastnew.events=+t_scout_thiefova_odmena
+lastnew.bounce
+
+[TYPEDEF t_scout_thiefova_odmena]
+ON=@equip
+tag(craftedby,<src>)
+if (<src.tag(terlak_item)>)
+  src.redmessage("Nemuzes nosit dve odmeny soucasne.")
+  src.tag(terlak_item).bounce
+endif
+if (strcmpi(<src.profession>,class_thief)) //0 pokud je to stejne
+  src.redmessage("Serpa je urcena pouze pro zlodeje!")
+  f_svlikaci_pauza(0,20)//druha ruka
+// f_svlikaci_pauza(0,1)//prvni ruka
+else
+  if (<src.tag(level)> < 35)
+  src.redmessage("Musis mit level vyssi nez 35!")
+  f_svlikaci_pauza(0,20)//druha ruka
+//  f_svlikaci_pauza(0,1)//prvni ruka
+  endif
+  src.tag(terlak_item,<uid>)
+endif
+
+ON=@unequip
+src.tag.remove(terlak_item)
+
+[FUNCTION mystikova_odmena]
+src.newitemsafe(i_cape)
+lastnew.tag(imi_value[72], 5)  //mana, +5
+lastnew.tag(imi_value[43], 10)  //Wrestling, +10
+lastnew.tag(imi_value[62], 5) //int, +5
+//src.newitemsafe(i_cape)
+//lastnew.HITPOINTS={350 450}
+//lastnew.tag(imi_value[25], 10)  //25 - Magery, +10
+//lastnew.tag(imi_value[43], 15)  //43 - Wrestling, +15
+lastnew.mif_finishitem
+lastnew.name=Plast mysli
+lastnew.color=00531
+lastnew.events=+t_scout_mystikova_odmena
+lastnew.bounce
+
+[TYPEDEF t_scout_mystikova_odmena]
+ON=@equip
+tag(craftedby,<src>)
+if (<src.tag(terlak_item)>)
+  src.redmessage("Nemuzes nosit dve odmeny soucasne.")
+  src.tag(terlak_item).bounce
+endif
+if (strcmpi(<src.profession>,class_Mystik)) //0 pokud je to stejne
+  src.redmessage("Plast urcen pouze pro mystiky!")
+  f_svlikaci_pauza(0,20)//plast
+else
+  if (<src.tag(level)> < 35)
+  src.redmessage("Musis mit level vyssi nez 35!")
+  f_svlikaci_pauza(0,20)//plast
+  endif
+  src.tag(terlak_item,<uid>)
+endif
+
+ON=@unequip
+src.tag.remove(terlak_item)
+
+[FUNCTION craftova_odmena]
+src.newitemsafe(i_pickaxe)
+lastnew.weaponcreate(adamantinum)
+lastnew.tag(imi_value[45], 10)  //45 - Mining, +10
+lastnew.mif_finishitem
+lastnew.more1L=400
+lastnew.more1H=400
+lastnew.name=Adamantiovy krumpac
+lastnew.color=00531
+lastnew.events=+t_scout_craftova_odmena
+lastnew.bounce
+
+[TYPEDEF t_scout_craftova_odmena]
+ON=@equip
+tag(craftedby,<src>)
+if (<src.tag(terlak_item)>)
+  src.redmessage("Nemuzes nosit dve odmeny soucasne.")
+  src.tag(terlak_item).bounce
+endif
+if (strcmpi(<src.profession>,class_craft)) //0 pokud je to stejne
+  src.redmessage("Krumpac urcen pouze pro crafty!")
+  f_svlikaci_pauza(0,1)//ruka
+else
+  if (<src.tag(level)> < 35)
+  src.redmessage("Musis mit level vyssi nez 35!")
+  f_svlikaci_pauza(0,1)//ruka
+  endif
+  if (<src.tag(terlak_item)>)
+    src.redmessage("Odmenu mas jiz na sobe.")
+    return(1)
+  endif
+  src.tag(terlak_item,<uid>)
+endif
+
+ON=@unequip
+src.tag.remove(terlak_item)
+
+[FUNCTION rangerova_odmena]
+src.newitemsafe(i_obsidian_CHAINMAIL_gloves)
+lastnew.tag(imi_value[21], 5)   //5 - Hiding, +5
+lastnew.tag(imi_value[27], 10)  //27 - Tactics, +10
+lastnew.tag(imi_value[31], 10)  //31 - Archery, +10
+lastnew.mif_finishitem
+lastnew.name=Rukavice presneho zasahu
+lastnew.color=00531
+lastnew.events=+t_scout_rangerova_odmena
+lastnew.bounce
+
+[TYPEDEF t_scout_rangerova_odmena]
+ON=@equip
+tag(craftedby,<src>)
+if (<src.tag(terlak_item)>)
+  src.redmessage("Nemuzes nosit dve odmeny soucasne.")
+  src.tag(terlak_item).bounce
+endif
+if (strcmpi(<src.profession>,class_ranger)) //0 pokud je to stejne
+  src.redmessage("Rukavice urceny pouze pro rangery!")
+  f_svlikaci_pauza(0,7)//rukavice
+else
+  if (<src.tag(level)> < 35)
+  src.redmessage("Musis mit level vyssi nez 35!")
+  f_svlikaci_pauza(0,7)//rukavice
+  endif
+  if (<src.tag(terlak_item)>)
+    src.redmessage("Odmenu mas jiz na sobe.")
+    return(1)
+  endif
+  src.tag(terlak_item,<uid>)
+endif
+
+ON=@unequip
+src.tag.remove(terlak_item)
+
+[FUNCTION shamanova_odmena]
+src.newitemsafe(i_obsidian_RINGMAIL_gloves)
+lastnew.tag(imi_value[17], 10)  //17 - Healing +10
+lastnew.tag(imi_value[72], 10)  //72 - mana za, +10
+lastnew.tag(imi_value[25], 5) //Magery
+lastnew.mif_finishitem
+lastnew.name=Voodoo rukavice
+lastnew.color=00531
+lastnew.events=+t_scout_shamanova_odmena
+lastnew.bounce
+
+[TYPEDEF t_scout_shamanova_odmena]
+ON=@equip
+tag(craftedby,<src>)
+if (<src.tag(terlak_item)>)
+  src.redmessage("Nemuzes nosit dve odmeny soucasne.")
+  src.tag(terlak_item).bounce
+endif
+if (strcmpi(<src.profession>,class_shaman)) //0 pokud je to stejne
+  src.redmessage("Rukavice urceny pouze pro shamany!")
+  f_svlikaci_pauza(0,7)//rukavice
+else
+  if (<src.tag(level)> < 35)
+  src.redmessage("Musis mit level vyssi nez 35!")
+  f_svlikaci_pauza(0,7)//rukavice
+  endif
+  if (<src.tag(terlak_item)>)
+    src.redmessage("Odmenu mas jiz na sobe.")
+    return(1)
+  endif
+  src.tag(terlak_item,<uid>)
+endif
+
+ON=@unequip
+src.tag.remove(terlak_item)
+
+
+[SPEECH spk_q017_sberatel]
+ON=*hi*
+ON=*ahoj*
+ON=*zdrav*
+ON=*cau*
+say("Zdravim, sbiram stare artefakty od alchymisty Terlaka! Nemas nejaky na VYMENu ?")
+
+ON=*vymen*
+ON=*vymena*
+ON=*vymenit*
+ON=*zamen*
+ON=*artefakt*
+
+if !(strcmpi(<src.profession>,class_war)))  //ak to JE war
+  if (src.findid(i_hammer_war_obsidian)||src.findid(i_axe_double_obsidian))  //ma obsid kladivo alebo sekeru
+    if (src.findid(i_hammer_war_obsidian).isevent(t_scout_warova_odmena))  //ma obsid kladivo od terlaka (s tym eventom)
+//      if (strcmpi(<src.findid(i_hammer_war_obsidian).name>,"Nejake kladivo"))  //ak sa vec NEVOLA "..." - nemusi byt
+      say("Ano to je ono!")  //to co povie to npc ked zoberie vec
+      src.consume(i_hammer_war_obsidian)  //zoberie vec
+      src.newitemsafe(i_cashiers_check)
+      lastnew.more1=50000
+      lastnew.bounce
+      if (<src.qtag(q017_terlak)>>0)  // ak je tak vacsi ako 0 -> nepojdeme s tym tagom do zaporu
+        src.qtag(q017_terlak,<src.qtag(q017_terlak)>-2)  // odcita sa 2 z tagu
+      endif
+      if (<src.qtag(q017_terlak)><1)
+        src.qtag(q017_terlak,0)
+      endif
+//      else
+//        say("Tyto novy nesbiram, jenom stary!")
+//      endif
+    elseif (src.findid(i_axe_double_obsidian).isevent(t_scout_warova_odmena))
+      say("Ano to je ono!")
+      src.consume(i_axe_double_obsidian)
+      src.newitemsafe(i_cashiers_check)
+      lastnew.more1=50000
+      lastnew.bounce
+      if (<src.qtag(q017_terlak)>>0)
+        src.qtag(q017_terlak,<src.qtag(q017_terlak)>-2)
+      endif
+      if (<src.qtag(q017_terlak)><1)
+        src.qtag(q017_terlak,0)
+      endif
+    else
+      say("Nevidim u tebe zadnou vec kterou potrebuji")
+    endif
+  else
+    say("Nevidim u tebe zadnou vec kterou potrebuji")
+  endif
+  return(1)
+endif
+
+if !(strcmpi(<src.profession>,class_mag))  //ak to je mag
+  if (src.findid(i_hat_wizards))
+    if (src.findid(i_hat_wizards).isevent(t_scout_magova_odmena))
+      if (strcmpi(<src.findid(i_hat_wizards).name>,"Klobouk maga"))
+        say("Ano to je ono!")
+        src.consume(i_hat_wizards)
+        src.newitemsafe(i_cashiers_check)
+        lastnew.more1=50000
+        lastnew.bounce
+        if (<src.qtag(q017_terlak)>>0)
+          src.qtag(q017_terlak,<src.qtag(q017_terlak)>-2)
+        endif
+        if (<src.qtag(q017_terlak)><1)
+          src.qtag(q017_terlak,0)
+        endif
+      else
+        say("Tyto novy nesbiram, jenom stary!")
+      endif
+    else
+      say("Nevidim u tebe zadnou vec kterou potrebuji")
+    endif
+  else
+    say("Nevidim u tebe zadnou vec kterou potrebuji")
+  endif
+  return(1)
+endif
+
+if !(strcmpi(<src.profession>,class_priest))  //ak to je priest
+  if (src.findid(i_obsidian_HEATER_SHIELD))
+    if (src.findid(i_obsidian_HEATER_SHIELD).isevent(t_scout_priestova_odmena))
+      if (strcmpi(<src.findid(i_obsidian_heater_shield).name>,"Stit lecitele"))
+        say("Ano to je ono!")
+        src.consume(i_obsidian_HEATER_SHIELD)
+        src.newitemsafe(i_cashiers_check)
+        lastnew.more1=50000
+        lastnew.bounce
+        if (<src.qtag(q017_terlak)>>0)
+          src.qtag(q017_terlak,<src.qtag(q017_terlak)>-2)
+        endif
+        if (<src.qtag(q017_terlak)><1)
+          src.qtag(q017_terlak,0)
+        endif
+      else
+        say("Tyto novy nesbiram, jenom stary!")
+      endif
+    else
+      say("Nevidim u tebe zadnou vec kterou potrebuji")
+    endif
+  else
+    say("Nevidim u tebe zadnou vec kterou potrebuji")
+  endif
+  return(1)
+endif
+
+if !(strcmpi(<src.profession>,class_necro))  //ak to je necro
+  if (src.findid(i_robe))
+    if (src.findid(i_robe).isevent(t_scout_necroova_odmena))
+      if (strcmpi(<src.findid(i_robe).name>,"Roba temneho"))
+        say("Ano to je ono!")
+        src.consume(i_robe)
+        src.newitemsafe(i_cashiers_check)
+        lastnew.more1=50000
+        lastnew.bounce
+        if (<src.qtag(q017_terlak)>>0)
+          src.qtag(q017_terlak,<src.qtag(q017_terlak)>-2)
+        endif
+        if (<src.qtag(q017_terlak)><1)
+          src.qtag(q017_terlak,0)
+        endif
+      else
+        say("Tyto novy nesbiram, jenom stary!")
+      endif
+    else
+      say("Nevidim u tebe zadnou vec kterou potrebuji")
+    endif
+  else
+    say("Nevidim u tebe zadnou vec kterou potrebuji")
+  endif
+  return(1)
+endif
+
+if !(strcmpi(<src.profession>,class_thief))  //ak to je thief
+  if (src.findid(i_scimitar_obsidian))
+    if (src.findid(i_scimitar_obsidian).isevent(t_scout_thiefova_odmena))
+      say("Ano to je ono!")
+      src.consume(i_scimitar_obsidian)
+      src.newitemsafe(i_cashiers_check)
+      lastnew.more1=50000
+      lastnew.bounce
+      if (<src.qtag(q017_terlak)>>0)
+        src.qtag(q017_terlak,<src.qtag(q017_terlak)>-2)
+      endif
+      if (<src.qtag(q017_terlak)><1)
+        src.qtag(q017_terlak,0)
+      endif
+    else
+      say("Nevidim u tebe zadnou vec kterou potrebuji")
+    endif
+  else
+    say("Nevidim u tebe zadnou vec kterou potrebuji")
+  endif
+  return(1)
+endif
+
+if !(strcmpi(<src.profession>,class_mystik))  //ak to je mystik
+  if (src.findid(i_cape))
+    if (src.findid(i_cape).isevent(t_scout_mystikova_odmena))
+      say("Ano to je ono!")
+      src.consume(i_cape)
+      src.newitemsafe(i_cashiers_check)
+      lastnew.more1=50000
+      lastnew.bounce
+      if (<src.qtag(q017_terlak)>>0)
+        src.qtag(q017_terlak,<src.qtag(q017_terlak)>-2)
+      endif
+        if (<src.qtag(q017_terlak)><1)
+          src.qtag(q017_terlak,0)
+        endif
+    else
+      say("Nevidim u tebe zadnou vec kterou potrebuji")
+    endif
+  else
+    say("Nevidim u tebe zadnou vec kterou potrebuji")
+  endif
+  return(1)
+endif
+
+if !(strcmpi(<src.profession>,class_craft))  //ak to je craft
+  if (src.findid(i_pickaxe))
+    if (src.findid(i_pickaxe).isevent(t_scout_craftova_odmena))
+      if (strcmpi(<src.findid(i_pickaxe).name>,"Adamantiovy krumpac"))
+        say("Ano to je ono!")
+        src.consume(i_pickaxe)
+        src.newitemsafe(i_cashiers_check)
+        lastnew.more1=50000
+        lastnew.bounce
+        if (<src.qtag(q017_terlak)>>0)
+          src.qtag(q017_terlak,<src.qtag(q017_terlak)>-2)
+        endif
+        if (<src.qtag(q017_terlak)><1)
+          src.qtag(q017_terlak,0)
+        endif
+      else
+        say("Tyto novy nesbiram, jenom stary!")
+      endif
+    else
+      say("Nevidim u tebe zadnou vec kterou potrebuji")
+    endif
+  else
+    say("Nevidim u tebe zadnou vec kterou potrebuji")
+  endif
+  return(1)
+endif
+
+if !(strcmpi(<src.profession>,class_ranger))  //ak to je ranger
+  if (src.findid(i_obsidian_CHAINMAIL_gloves))
+    if (src.findid(i_obsidian_CHAINMAIL_gloves).isevent(t_scout_rangerova_odmena))
+      if (strcmpi(<src.findid(i_obsidian_CHAINMAIL_gloves).name>,"Rukavice presneho zasahu"))
+        say("Ano to je ono!")
+        src.consume(i_obsidian_CHAINMAIL_gloves)
+        src.newitemsafe(i_cashiers_check)
+        lastnew.more1=50000
+        lastnew.bounce
+        if (<src.qtag(q017_terlak)>>0)
+          src.qtag(q017_terlak,<src.qtag(q017_terlak)>-2)
+        endif
+        if (<src.qtag(q017_terlak)><1)
+          src.qtag(q017_terlak,0)
+        endif
+      else
+        say("Tyto novy nesbiram, jenom stary!")
+      endif
+    else
+      say("Nevidim u tebe zadnou vec kterou potrebuji")
+    endif
+  else
+    say("Nevidim u tebe zadnou vec kterou potrebuji")
+  endif
+  return(1)
+endif
+
+if !(strcmpi(<src.profession>,class_shaman))  //ak to je shaman
+  if (src.findid(i_obsidian_RINGMAIL_leggings))
+    if (src.findid(i_obsidian_RINGMAIL_leggings).isevent(t_scout_shamanova_odmena))
+      if (strcmpi(<src.findid(i_obsidian_RINGMAIL_leggings).name>,"Voodoo kalhoty"))
+        say("Ano to je ono!")
+        src.consume(i_obsidian_RINGMAIL_leggings)
+        src.newitemsafe(i_cashiers_check)
+        lastnew.more1=50000
+        lastnew.bounce
+        if (<src.qtag(q017_terlak)>>0)
+          src.qtag(q017_terlak,<src.qtag(q017_terlak)>-2)
+        endif
+        if (<src.qtag(q017_terlak)><1)
+          src.qtag(q017_terlak,0)
+        endif
+      else
+        say("Tyto novy nesbiram, jenom stary!")
+      endif
+    else
+      say("Nevidim u tebe zadnou vec kterou potrebuji")
+    endif
+  else
+    say("Nevidim u tebe zadnou vec kterou potrebuji")
+  endif
+  return(1)
+endif
+
+say("Bohuzel nemas nic, co by mne zajimalo.")
+
+[EOF]

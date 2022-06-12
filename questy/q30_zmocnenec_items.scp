@@ -1,0 +1,30 @@
+[ITEMDEF i_plast_bojovnika]
+ID=i_cape
+NAME=Plast bojovnika
+
+CATEGORY=questy
+SUBSECTION=q30_zmocnenec
+DESCRIPTION=Plast bojovnika
+
+ON=@create
+NAME=Plast bojovnika
+HITPOINTS=100
+
+ON=@equip
+
+if (<hitpoints> == 0)
+	hitpoints=100
+endif
+
+if (<tag(owner)>!=<src.uid>)
+	src.sysMessage("Nemuzes nosit tenhle plast")
+	return 1
+endif
+
+ON=@unequip
+
+ON=@userclick
+  src.sysMessage("Majitel: <?finduid(<tag(owner)>).name?>")
+return 1
+
+[EOF]

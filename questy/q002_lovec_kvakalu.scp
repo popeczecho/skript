@@ -1,0 +1,50 @@
+[CHARDEF c_q002_Bungo]
+NAME=Bungo z Parezova
+ID=C_MAN
+CAN=MT_WALK|MT_run|MT_equip
+TSPEECH=spk_q002_baseNpc
+
+CATEGORY=Questy
+SUBSECTION=q002 - lovec kvakalu
+DESCRIPTION=Gondor - Bungo z Parezova
+
+ARMOR=17
+ATTACK=8
+
+TEVENTS=e_character
+
+ON=@create
+color=040E
+FAME=5
+KARMA=100
+NPC=brain_vendor
+STR=100
+DEX=100
+INT=100
+
+MAXHITS=200
+MAXSTAM=100
+MAXMANA=50
+
+tag(noanimate,1)
+tag.experience=0
+
+ON=@userdclick
+if (src.targ.distance > 3)
+  src.sysMessage("Na takovou vzdalenost s tebou jednat nebude")
+else
+  f_q002_Bungo_speech
+endif
+
+ON=@npcrestock
+ITEMNEWBIE=i_hair_afro
+color=03FE
+
+ITEMNEWBIE=i_tunic
+COLOR=0252
+ITEMNEWBIE=i_pants_short
+COLOR=0377
+ITEMNEWBIE=i_bandana
+ITEMNEWBIE=i_ring_gold
+
+[function f_q002_Bungo_speech]
